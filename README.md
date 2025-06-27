@@ -1,25 +1,18 @@
-# DevFest 2025 - The Prompt War: Attacks and Defenses in the LLM Kingdom
+# [DevFest 2025] La Guerre des Prompts : attaques & défenses au royaume des LLM ⚔️🛡️🤖
+<center>
 
-🚧 **Under Construction** 🚧
+</center>
 
-This repository is currently being built and will contain materials for the DevFest 2025 presentation on prompt engineering attacks and defenses in Large Language Models.
+Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.linkedin.com/in/benvii/), [Xavier Charef](https://www.linkedin.com/in/xavier-charef-6b843497/), [François Nollen](https://www.linkedin.com/in/francois-nollen/) et [Pierre Therrode](https://www.linkedin.com/in/ptherrode/), pour le Devfest 2025, avec comme sujet : [La Guerre des Prompts : attaques & défenses au royaume des LLM ⚔️🛡️🤖]
 
-## Coming Soon
 
-This repository will include:
-- Presentation materials
-- Code examples demonstrating prompt attacks
-- Defense strategies and implementations
-- Interactive demos and exercises
+## Sommaire
 
-## Status
 
-⏳ Work in progress - Content will be added soon
 
-## About
 
-This project explores the fascinating world of prompt engineering security, covering both offensive and defensive techniques in the realm of Large Language Models.
 
----
+## Pour aller plus loin
 
-*Stay tuned for updates!*
+- [Remerciements](thanks-you.md)
+- [En savoir plus / ressources](resources.md)
