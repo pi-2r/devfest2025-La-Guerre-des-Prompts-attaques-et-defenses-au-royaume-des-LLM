@@ -5,9 +5,17 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.l
 
 ## Sommaire
 
+- [0 - Introduction](step_0.md)
 
+### Introduction aux Menaces de l'IA Générative
 
+### Comprendre les Principes du Prompt Injection et leurs Impacts
 
+### Exercices Pratiques et Test de Robustesse
+
+### Contre-mesures et Stratégies de Défense
+
+### Et demain ?
 
 ## Pour aller plus loin
 
