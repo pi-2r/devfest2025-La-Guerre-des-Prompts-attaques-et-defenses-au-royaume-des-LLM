@@ -1,4 +1,20 @@
+# Il était une fois dans un monde numérique ...
 
+[<img src="img/step1.jpg" alt="hobbiton" width="800" height="450">](https://www.youtube.com/watch?v=dDKVKG3ESsk)
+
+
+<br/>
+<u>Objectifs de cette étape:</u> 
+
+- Comprendre les origines des LLM et leur fonctionnement
+- Découvrir les concepts de base de l'intelligence artificielle, des réseaux neuronaux et des LLM
+- 
+
+## Sommaire
+
+- [2022 le lancement](#2022-le-lancement)
+- [Intelligence Artificielle, réseaux neuronaux et LLM](#intelligence-artificielle-réseaux-neuronaux-et-llm)
+- [Les Transformers: origines et architecture](#les-transformers-origines-et-architecture)
 
 ## 2022 le lancement
 
@@ -9,11 +25,15 @@ premiers millions d'utilisateurs. Dés lors, en Janvier 2023, soit 2 mois après
 100 millions d'utilisateurs, devenant de ce fait, la 2éme application numérique a connaitre la croissance la plus rapide 
 de l'histoire de l'informatique, devançant de loin TikTok, Facebook et Instagram.
 
-![image](https://www.visualcapitalist.com/wp-content/uploads/2023/07/CP_Threads-Fastest-100-Million.jpg)
-source: https://www.visualcapitalist.com/threads-100-million-users/
+
+<a href="https://www.visualcapitalist.com/threads-100-million-users/" target="_blank">
+  <img src="https://www.visualcapitalist.com/wp-content/uploads/2023/07/CP_Threads-Fastest-100-Million.jpg" alt="image" width="450" style="transition:0.3s;">
+</a>
+
 
 Dés lors ChatGPT a mit en lumière les LLM auprès du grand publique, laissant libre cours à toutes sortes d'affabulations 
-(exemple: l'ia va nous remplacer) ou sonnette d'alarmes sur le contenue des réponses (exemple: comment créer une bombe).
+(exemple: l'ia va nous remplacer) ou sonnette d'alarmes sur le contenue des réponses 
+(exemple: alors pour créer une bombe, c'est hyper ...).
 
 Pour ce qui est des affabulations, je vous invite à prendre connaissance des interviews du cocréateur de Siri ainsi que 
 de ses livres à savoir; Luc Julia. Pour ce qui est de la sonnette d'alarme, je vous invite à poursuivre le contenu et à 
@@ -21,8 +41,10 @@ nous plonger dans le contenu de ce codelab.
 Depuis ce lancement, les géants de la tech n'ont cessé de redoubler d'effort dans la course à l'IA, dépassant de loin 
 chatgpt
 
-![image](https://www.visualcapitalist.com/wp-content/uploads/2024/12/Growth-of-Big-Tech-Firms_WEB.jpg)
-source: https://www.visualcapitalist.com/charted-the-growth-of-big-tech-since-chatgpts-launch/
+
+<a href="https://www.visualcapitalist.com/charted-the-growth-of-big-tech-since-chatgpts-launch/" target="_blank">
+  <img src="https://www.visualcapitalist.com/wp-content/uploads/2024/12/Growth-of-Big-Tech-Firms_WEB.jpg" alt="image" width="450" style="transition:0.3s;">
+</a>
 
 ## Intelligence Artificielle, réseaux neuronaux et LLM
 
@@ -54,7 +76,7 @@ des formes avancées de réseaux neurones, comme les modèles transformateurs, p
 partir des données d'entraînement. Leur force résident dans la gestion des taches linguistiques, allant de la simple 
 saisie de texte, à la synthèse rédactionnel d'un document de centaines de pages sans dénaturer l'idée principal.
 
-![image](https://i0.wp.com/www.phdata.io/wp-content/uploads/2024/10/article-image1-6.png)
+<img src="https://i0.wp.com/www.phdata.io/wp-content/uploads/2024/10/article-image1-6.png" alt="image" width="450" style="transition:0.3s;">
 
 
 ## Les Transformers: origines et architecture:
@@ -66,3 +88,14 @@ traitement automatique du langage naturel (TALN), en faisant le choix de s’él
 reposaient principalement sur les réseaux neuronaux récurrents (RNN) et convolutifs (CNN).
 
 wip ...
+
+
+
+## Ressources
+
+| Information                                                                 | Lien                                                                                                                                                                                                                                       |
+|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AI Engineering                                                              | [https://www.oreilly.com/library/view/ai-engineering/9781098166298/](https://www.oreilly.com/library/view/ai-engineering/9781098166298/)                                                                                                   |
+| Developer’s Playbook for Large Language Model Security                      | [https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/](https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/)                                                                                 |
+| AI, Machine learning, Neural Networks, Deep Learning Concept List w/samples | [https://medium.com/@anixlynch/ai-machine-learning-neural-networks-deep-learning-concept-list-w-samples-28ac4d67eb65](https://medium.com/@anixlynch/ai-machine-learning-neural-networks-deep-learning-concept-list-w-samples-28ac4d67eb65) |
+| L’Intelligence Artificielle n’existe pas - Luc Julia                        | [https://youtu.be/JdxjGZBtp_k?si=kNrcqC4snFPksmei](https://youtu.be/JdxjGZBtp_k?si=kNrcqC4snFPksmei)                                                                                                                                       |
