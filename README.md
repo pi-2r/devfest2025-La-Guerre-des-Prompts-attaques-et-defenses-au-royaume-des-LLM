@@ -8,6 +8,8 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.l
 - [0 - Introduction](step_0.md)
 
 ### Introduction aux Menaces de l'IA Générative
+ 
+- [1 - Il était une fois dans un monde numérique ...](step_1.md)
 
 ### Comprendre les Principes du Prompt Injection et leurs Impacts
 

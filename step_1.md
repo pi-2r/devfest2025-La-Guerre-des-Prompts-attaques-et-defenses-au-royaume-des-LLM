@@ -8,7 +8,7 @@
 
 - Comprendre les origines des LLM et leur fonctionnement
 - Découvrir les concepts de base de l'intelligence artificielle, des réseaux neuronaux et des LLM
-- 
+
 
 ## Sommaire
 
@@ -51,17 +51,19 @@ chatgpt
 Dans les médias, il n'est pas rare de lire différents termes pour parler spécifiquement d'intelligence artificielle.  
 Certains utiliseront le terme réseaux neuronaux, d'autre le terme LLM ou tout simplement l'intelligence artificielle; 
 cependant ces 3 termes représentent différentes facettes d'un paysage plus vaste d'apprentissage automatique et 
-d'intelligence computationnelle. Tentons d'appliquer une distinction sur chacun de ces 3 termes:
+d'intelligence computationnelle. 
+
+Tentons d'appliquer une distinction sur chacun de ces 3 termes:
 
 
-IA:
-L'intelligence artificielle ou Intelligence Augmenter pour d'autre est, par essence, un domaine multidisciplinaire 
+**IA:**
+L'intelligence artificielle (ou Intelligence Augmentée pour certains) est, par essence, un domaine multidisciplinaire 
 visant à créer des systèmes capables d'effectuer des tâches qui nécessiteraient normalement l'intelligence humaine. 
 Dans ces taches ont retrouve la résolution de problèmes, la perception ainsi que la compréhension du langage.
 L'IA correspond à un large éventail de technologies, de méthodologies et des systèmes basés sur des règles aux 
 algorithmes d'apprentissage automatique, servant de terme générique à de multiples approches pour parvenir à l'intelligence artificielle.
 
-réseaux neuronaux:
+**Réseaux Neuronaux:**
 Cette partie de l'intelligence artificielle s'inspire du fonctionnement du cerveau humain. Les réseaux neuronaux, 
 sont des modèles informatiques conçu pour reconnaitre des schémas et d'appliquer des décisions suivant les données 
 qu'ils traitent. Ils peuvent parfois être simple (on parlera alors de réseaux neurones superficiels)ou d'autre fois 
@@ -70,7 +72,7 @@ Dans tous les cas, les réseaux neuronaux forment la base essentielle de nombreu
 d’intelligence artificielle, telles que la reconnaissance d’images, le traitement automatique du langage naturel et la 
 conduite autonome de véhicules.
 
-LLM:
+**LLM:**
 Pour faire simple, les LLM (ou grand modèles de langage) sont un type spécifique de réseau neuronal. Ils se basent sur 
 des formes avancées de réseaux neurones, comme les modèles transformateurs, pour comprendre et produire du textes a 
 partir des données d'entraînement. Leur force résident dans la gestion des taches linguistiques, allant de la simple 
