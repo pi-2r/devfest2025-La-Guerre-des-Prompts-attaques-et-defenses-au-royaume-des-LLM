@@ -1,7 +1,7 @@
 # Il était une fois dans un monde numérique ...
 
 [<img src="img/step1.jpg" alt="hobbiton" width="800" height="450">](https://www.youtube.com/watch?v=dDKVKG3ESsk)
-
+> "Home is now behind you, the world is ahead!", Gandalf, The Hobbit
 
 <br/>
 <u>Objectifs de cette étape:</u> 
@@ -84,14 +84,25 @@ saisie de texte, à la synthèse rédactionnel d'un document de centaines de pag
 ## Les Transformers: origines et architecture:
 Là on ne va pas parler des films de Michael Bay, mais on va continuer à parler d'IA.
 
-L'architecture du transformateur a été introduite dans un article scientifique intitulé "Attention is All You Need", 
-publié en 2017 par une équipe de Google Brain. l'article présentait une approche innovante pour les tâches de 
-traitement automatique du langage naturel (TALN), en faisant le choix de s’éloigner des modèles traditionnels qui 
-reposaient principalement sur les réseaux neuronaux récurrents (RNN) et convolutifs (CNN).
+L'architecture du transformateur a été introduite dans un article scientifique intitulé "**Attention is All You Need**",
+publié en 2017 par une équipe de Google Brain.
 
-wip ...
+<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*jKqypwGzmDv7KDUZ.png" alt="image" width="450" style="transition:0.3s;">
+
+ 
+
+L'article présentait une approche innovante pour les tâches de 
+traitement automatique du langage naturel (**TALN**), en faisant le choix de s’éloigner des modèles traditionnels qui 
+reposaient principalement sur les réseaux neuronaux récurrents (**RNN**) et convolutifs (**CNN**).
+
+Le **transformateur** a apporté une avancée majeure : **le mécanisme d’auto-attention**.
+
+Grâce à ce procédé, le modèle peut 
+déterminer l’importance relative de chaque mot dans une phrase, ce qui améliore considérablement sa compréhension du 
+contexte (et c'est ou se trouve l'angle de l'attaque par prompt injection).
 
 
+wip ..
 
 ## Ressources
 
@@ -101,3 +112,7 @@ wip ...
 | Developer’s Playbook for Large Language Model Security                      | [https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/](https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/)                                                                                 |
 | AI, Machine learning, Neural Networks, Deep Learning Concept List w/samples | [https://medium.com/@anixlynch/ai-machine-learning-neural-networks-deep-learning-concept-list-w-samples-28ac4d67eb65](https://medium.com/@anixlynch/ai-machine-learning-neural-networks-deep-learning-concept-list-w-samples-28ac4d67eb65) |
 | L’Intelligence Artificielle n’existe pas - Luc Julia                        | [https://youtu.be/JdxjGZBtp_k?si=kNrcqC4snFPksmei](https://youtu.be/JdxjGZBtp_k?si=kNrcqC4snFPksmei)                                                                                                                                       |
+| Attention Is All You Need                                                   | [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)                                                                                                                                                                       |
+| TALN                                                                        | [https://fr.wikipedia.org/wiki/Traitement_automatique_des_langues](https://fr.wikipedia.org/wiki/Traitement_automatique_des_langues)                                                                                                       |
+| RNN                                                                         | [https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents](https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents)                                                                                             |
+| CNN                                                                         | [https://fr.wikipedia.org/wiki/R%C3%A9seau_neuronal_convolutif](https://fr.wikipedia.org/wiki/R%C3%A9seau_neuronal_convolutif)                                                                                                             |
