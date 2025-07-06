@@ -18,8 +18,12 @@
   - [Quelques exemples d'applications](#quelques-exemples-dapplications)
 - [Les 2 applications d’IA générative les plus utilisées au monde](#les-2-applications-dia-générative-les-plus-utilisées-au-monde)
   - [Les chatbots](#les-chatbots)
-    - [Quelques exemples](#quelques-exemples)
+    - [Quelques exemples de chatbots](#quelques-exemples-de-chatbots)
   - [Les copilotes](#les-copilotes)
+    - [Quelques exemples de copilotes](#quelques-exemples-de-copilotes)
+  - [Chatbots vs Copilotes](#chatbots-vs-copilotes)
+- [Étape suivante](#étape-suivante)
+- [Ressources](#ressources)
 
 
 ## 2022 le lancement
@@ -142,9 +146,9 @@ Au delà des exemples décrit au dessus, nous allons nous pencher sur 2 types d'
 
 Les chatbots sont des logiciels conçus pour dialoguer avec les utilisateurs de manière naturelle. Ils sont trés largement 
 utilisés dans les services client pour répondre aux questions et accompagner les clients, mais aussi dans des domaines 
-variés comme le jeux vidéo, ou dans des nnarrations interactives.
+variés comme le jeux vidéo, ou dans des narrations interactives.
 
-#### Quelques exemples
+#### Quelques exemples de chatbots
 
 | Entreprise            | Fonction principale du chatbot                                    | Lien vers le chatbot                                                                                             |
 |-----------------------|-------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
@@ -156,7 +160,36 @@ variés comme le jeux vidéo, ou dans des nnarrations interactives.
 
 ### Les copilotes
 
+Copilots sont des logiciels conçues pour aider à la rédaction, au codage et à la recherche. Elles génèrent des idées, détectent
+les erreurs et optimisent le travail des utilisateurs.
 
+Bien qu’encore en développement, elles pourraient transformer nos  méthodes de travail et d’apprentissage.
+
+#### Quelques exemples de copilotes
+
+| Outils / Services                                      | Fonction principale                                                      |
+|--------------------------------------------------------|--------------------------------------------------------------------------|
+| Grammarly, ProWritingAid                               | Améliorent la rédaction : correction, style, retours personnalisés       |
+| GitHub Copilot, Gemini Code Assist, AWS CodeWhisperer  | Aident à coder : suggestions, traduction, détection d’erreurs            |
+| Copilot for Microsoft 365, Gemini for Google Workspace | Optimisent la productivité et la créativité dans les suites bureautiques |
+
+
+
+### Chatbots vs Copilotes
+Voici un tableau comparatif entre les chatbots et les copilotes, mettant en évidence leurs différences et similitudes :
+
+
+| Aspect                | Chatbots                                 | Copilots                                     | Similarités                                      |
+|-----------------------|------------------------------------------|----------------------------------------------|--------------------------------------------------|
+| Technologie           | Basés sur des LLM                        | Basés sur des LLM                            | Génèrent du texte, assistent les utilisateurs    |
+| Fonction principale   | Simulent une conversation                | Aident à accomplir des tâches spécifiques    |                                                  |
+| Usage courant         | Service client, interaction              | Rédaction, codage, recherche                 |                                                  |
+| Interactivité         | Très interactifs                         | Plus axés sur l’exécution de tâches          |                                                  |
+
+
+## Étape suivante
+
+- [Étape 2](step_2.md)
 
 ## Ressources
 
