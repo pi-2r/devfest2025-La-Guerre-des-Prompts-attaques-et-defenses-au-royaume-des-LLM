@@ -17,6 +17,9 @@
 - [Les Transformers: origines et architecture](#les-transformers-origines-et-architecture)
   - [Quelques exemples d'applications](#quelques-exemples-dapplications)
 - [Les 2 applications d’IA générative les plus utilisées au monde](#les-2-applications-dia-générative-les-plus-utilisées-au-monde)
+  - [Les chatbots](#les-chatbots)
+    - [Quelques exemples](#quelques-exemples)
+  - [Les copilotes](#les-copilotes)
 
 
 ## 2022 le lancement
@@ -133,6 +136,26 @@ Voici quelques exemples d'applications de l'architecture Transformer :
 
 ## Les 2 applications d’IA générative les plus utilisées au monde
 
+Au delà des exemples décrit au dessus, nous allons nous pencher sur 2 types d'applications d'IA qui sont basée sur les LLM, à savoir les chatbots et les copilotes.
+
+### Les chatbots
+
+Les chatbots sont des logiciels conçus pour dialoguer avec les utilisateurs de manière naturelle. Ils sont trés largement 
+utilisés dans les services client pour répondre aux questions et accompagner les clients, mais aussi dans des domaines 
+variés comme le jeux vidéo, ou dans des nnarrations interactives.
+
+#### Quelques exemples
+
+| Entreprise            | Fonction principale du chatbot                                    | Lien vers le chatbot                                                                                             |
+|-----------------------|-------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| SNCF Connect & Tech   | Répond aux questions des clients concernant la FAQ ou la G30      | [https://www.sncf-connect.com/bot](https://www.sncf-connect.com/bot)                                             |
+| Sephora               | Conseille les clients sur les produits adaptés à leur peau        | [https://www.messenger.com/t/sephorafrance](https://www.messenger.com/t/sephorafrance)                           |
+| H&M                   | Aide à trouver vêtements et accessoires selon le style            | [https://www2.hm.com/fr_fr/service-clients/contact.html](https://www2.hm.com/fr_fr/service-clients/contact.html) |
+| KLM                   | Répond aux questions sur les vols                                 | [https://www.messenger.com/t/331735092583](https://www.messenger.com/t/331735092583)                             |
+
+
+### Les copilotes
+
 
 
 ## Ressources
@@ -149,3 +172,10 @@ Voici quelques exemples d'applications de l'architecture Transformer :
 | TALN                                                                        | [https://fr.wikipedia.org/wiki/Traitement_automatique_des_langues](https://fr.wikipedia.org/wiki/Traitement_automatique_des_langues)                                                                                                       |
 | RNN                                                                         | [https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents](https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents)                                                                                             |
 | CNN                                                                         | [https://fr.wikipedia.org/wiki/R%C3%A9seau_neuronal_convolutif](https://fr.wikipedia.org/wiki/R%C3%A9seau_neuronal_convolutif)                                                                                                             |
+| Intelligence artificielle générative : de quoi parle-t-on ?                 | [https://bigmedia.bpifrance.fr/news/intelligence-artificielle-generative-de-quoi-parle-t](https://bigmedia.bpifrance.fr/news/intelligence-artificielle-generative-de-quoi-parle-t)                                                         |
+| Fonctionnement de l’IA générative et des LLM                                | [https://learn.microsoft.com/fr-fr/dotnet/ai/conceptual/how-genai-and-llms-work](https://learn.microsoft.com/fr-fr/dotnet/ai/conceptual/how-genai-and-llms-work)                                                                           |
+| LLM vs. Chatbot : Quelle solution pour quels besoins ?                      | [https://www.hubi.ai/blogfr/llm-vs-chatbot/](https://www.hubi.ai/blogfr/llm-vs-chatbot/)                                                                                                                                                   |
+| Sephora et son chatbot Ora                                                  | [https://www.viseo.com/fr/secteurs-activites/sephora-choisit-viseo-pour-la-creation-de-son-chatbot-ora/](https://www.viseo.com/fr/secteurs-activites/sephora-choisit-viseo-pour-la-creation-de-son-chatbot-ora/)                           |
+| Comment fonctionne le bot H&M                                               | [https://redresscompliance.com/how-hm-uses-ai-powered-chatbots-to-improve-customer-service/](https://redresscompliance.com/how-hm-uses-ai-powered-chatbots-to-improve-customer-service/)                                                   |
+| KLM et leur chatbot BlueBot                                                 | [https://news.klm.com/klm-welcomes-bluebot-bb-to-its-service-family/](https://news.klm.com/klm-welcomes-bluebot-bb-to-its-service-family/)                                                                                                 |
+| Entreprises qui utilisent des chatbots                                      | [https://www.chatbotguide.org/](https://www.chatbotguide.org/)                                                                                                 |
