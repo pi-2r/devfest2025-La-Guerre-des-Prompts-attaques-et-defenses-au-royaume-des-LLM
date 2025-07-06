@@ -15,6 +15,10 @@
 - [2022 le lancement](#2022-le-lancement)
 - [Intelligence Artificielle, réseaux neuronaux et LLM](#intelligence-artificielle-réseaux-neuronaux-et-llm)
 - [Les Transformers: origines et architecture](#les-transformers-origines-et-architecture)
+  - [Quelques exemples d'applications](#quelques-exemples-dapplications)
+- [
+  Les 2 applications d’IA générative les plus utilisées au monde](#les-2-applications-dia-générative-les-plus-utilisées-au-monde)
+
 
 ## 2022 le lancement
 
@@ -102,7 +106,35 @@ déterminer l’importance relative de chaque mot dans une phrase, ce qui améli
 contexte (et c'est ou se trouve l'angle de l'attaque par prompt injection).
 
 
-wip ..
+Il faut comprendre qu'avant l’arrivée des transformateurs, **les réseaux neuronaux traditionnels** comme les **RNN** et 
+les **CNN** montraient des limites importantes dans la compréhension du langage naturel, principalement à cause de 
+leur difficulté à saisir le contexte sur de longues séquences. Incapables d’appréhender l’ensemble d’un texte, ils 
+peinaient à restituer le sens global et les nuances. 
+
+L’architecture du transformateur a comblé cette lacune, révolutionnant ainsi le traitement du langage par l’IA.
+
+
+Dés lors,L’architecture Transformer a représenté un véritable tournant dans l’IA. 
+D’abord conçue pour la compréhension et la génération de texte, elle s’est rapidement révélée efficace dans de 
+nombreux autres domaines, dépassant largement les attentes initiales des chercheurs et ingénieurs !
+
+### Quelques exemples d'applications
+
+Voici quelques exemples d'applications de l'architecture Transformer :
+
+| Domaine                       | Applications clés                                                          | Impact principal                                                    |
+|-------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------|
+| Traitement du langage naturel | Traduction, synthèse, questions-réponses, analyse des sentiments           | Nouvelles performances de référence, parfois supérieures à l’humain |
+| Vision par ordinateur         | Classification d’images, détection d’objets, segmentation (ViT)            | Performances compétitives, voire meilleures que les CNN             |
+| Reconnaissance vocale         | Compréhension du langage parlé, modèles hybrides (conformateur)            | Nouvelles normes en reconnaissance vocale                           |
+| Systèmes autonomes            | Véhicules autonomes, compréhension contextuelle                            | Pilote l’intelligence des voitures sans conducteur                  |
+| Santé                         | Découverte de médicaments, analyse d’images médicales, diagnostics         | Accélère la recherche et améliore la précision des diagnostics      |
+
+
+
+## Les 2 applications d’IA générative les plus utilisées au monde
+
+
 
 ## Ressources
 
@@ -110,6 +142,7 @@ wip ..
 |-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AI Engineering                                                              | [https://www.oreilly.com/library/view/ai-engineering/9781098166298/](https://www.oreilly.com/library/view/ai-engineering/9781098166298/)                                                                                                   |
 | Developer’s Playbook for Large Language Model Security                      | [https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/](https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/)                                                                                 |
+| How AI Works: From Sorcery to Science                                       | [https://www.amazon.com/How-AI-Works-Sorcery-Science/dp/1718503725](https://www.amazon.com/How-AI-Works-Sorcery-Science/dp/1718503725)                                                                                                     |                                                                                                      
 | AI, Machine learning, Neural Networks, Deep Learning Concept List w/samples | [https://medium.com/@anixlynch/ai-machine-learning-neural-networks-deep-learning-concept-list-w-samples-28ac4d67eb65](https://medium.com/@anixlynch/ai-machine-learning-neural-networks-deep-learning-concept-list-w-samples-28ac4d67eb65) |
 | L’Intelligence Artificielle n’existe pas - Luc Julia                        | [https://youtu.be/JdxjGZBtp_k?si=kNrcqC4snFPksmei](https://youtu.be/JdxjGZBtp_k?si=kNrcqC4snFPksmei)                                                                                                                                       |
 | Attention Is All You Need                                                   | [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)                                                                                                                                                                       |
