@@ -16,8 +16,7 @@
 - [Intelligence Artificielle, réseaux neuronaux et LLM](#intelligence-artificielle-réseaux-neuronaux-et-llm)
 - [Les Transformers: origines et architecture](#les-transformers-origines-et-architecture)
   - [Quelques exemples d'applications](#quelques-exemples-dapplications)
-- [
-  Les 2 applications d’IA générative les plus utilisées au monde](#les-2-applications-dia-générative-les-plus-utilisées-au-monde)
+- [Les 2 applications d’IA générative les plus utilisées au monde](#les-2-applications-dia-générative-les-plus-utilisées-au-monde)
 
 
 ## 2022 le lancement
