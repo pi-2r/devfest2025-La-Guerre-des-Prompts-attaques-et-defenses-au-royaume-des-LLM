@@ -8,6 +8,9 @@
 
 - Comprendre les origines des LLM et leur fonctionnement
 - Découvrir les concepts de base de l'intelligence artificielle, des réseaux neuronaux et des LLM
+- Explorer l'architecture des Transformers et son impact sur le traitement du langage naturel
+- Identifier les applications d'IA générative les plus utilisées, notamment les chatbots et les copilotes
+- Analyser l'impact des LLM sur la productivité professionnelle
 
 
 ## Sommaire
@@ -22,6 +25,7 @@
   - [Les copilotes](#les-copilotes)
     - [Quelques exemples de copilotes](#quelques-exemples-de-copilotes)
   - [Chatbots vs Copilotes](#chatbots-vs-copilotes)
+- [L’impact des LLM sur la productivité professionnelle](#limpact-des-llm-sur-la-productivité-professionnelle)
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
 
@@ -185,6 +189,26 @@ Voici un tableau comparatif entre les chatbots et les copilotes, mettant en évi
 | Fonction principale   | Simulent une conversation                | Aident à accomplir des tâches spécifiques    |                                                  |
 | Usage courant         | Service client, interaction              | Rédaction, codage, recherche                 |                                                  |
 | Interactivité         | Très interactifs                         | Plus axés sur l’exécution de tâches          |                                                  |
+
+
+
+## L’impact des LLM sur la productivité professionnelle
+
+<a href="https://www.visualcapitalist.com/charted-productivity-gains-from-using-ai/" target="_blank">
+  <img src="https://www.visualcapitalist.com/wp-content/uploads/2025/06/Human-vs-AI-Site.png" alt="image" width="450" style="transition:0.3s;">
+</a>
+
+L’efficacité des modèles de langage de grande taille (LLM) dans les applications d’IA générative est aujourd’hui largement reconnue. À mesure que ces outils s’intègrent, voire deviennent incontournables, dans les environnements professionnels, leur influence sur la productivité se confirme de façon tangible.
+
+- L’intégration de l’IA générative dans les processus de travail a permis de réduire de plus de 60% le temps moyen nécessaire à l’accomplissement de diverses tâches.
+- Contrairement à l’idée reçue selon laquelle l’IA remplacerait le travail humain, les données montrent que les professionnels équipés d’outils d’IA accomplissent leurs missions de manière nettement plus efficace.
+
+Exemples concrets d’amélioration :
+
+- Pour la rédaction de contenus, le temps moyen est passé de 80 minutes à seulement 25 minutes grâce à l’IA générative.
+- Sur des tâches cognitives complexes telles que les mathématiques, l’analyse de systèmes ou les opérations, l’IA permet de gagner plus d’une heure par tâche.
+
+En résumé, l’IA générative ne se contente pas d’automatiser certaines fonctions : elle amplifie considérablement l’efficacité des professionnels, en leur permettant d’atteindre des niveaux de productivité inédits.
 
 
 ## Étape suivante
