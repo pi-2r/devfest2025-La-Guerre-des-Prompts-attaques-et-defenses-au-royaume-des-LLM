@@ -1,11 +1,21 @@
 # Pourquoi la Sécurité des LLM est-elle Cruciale ?
 
-<!--[<img src="img/step2.jpg" alt="hobbiton" width="800" height="250">](https://www.youtube.com/watch?v=1suhHsuw0bw)
-> "sleep",
--->
+[<img src="img/step2.png" alt="gandalf" >](https://www.youtube.com/watch?v=whF2na8AIbw)
+> "The Year 3434 of the second age. Here follows the account of Isildur, High King of Gondor, and the finding of the Ring of Power.", Gandalf, LOTR - The Followship of the Ring
 
 
 
+<br/>
+<u>Objectifs de cette étape:</u>
+
+- Comprendre l'importance de la sécurité des LLM dans le contexte de l'IA générative.
+
+## Sommaire
+
+- [L'émergence de l'IA, une nouvelle ère technologique](#l-emergence-de-l-ia-une-nouvelle-ere-technologique)
+
+
+## L'émergence de l'IA, une nouvelle ère technologique
 
 L’essor fulgurant de l’intelligence artificielle, porté notamment par ChatGPT, a propulsé cette technologie sur le 
 devant de la scène. Son adoption massive ne se limite plus au grand public: les entreprises, séduites par l’efficacité 
@@ -37,8 +47,10 @@ d’informations sensibles, ou encore actions non prévues par les concepteurs d
 ## Ressources
 
 
-| Information                                                                 | Lien                                                                                                                                                                                         |
-|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| How AI can move from hype to global solutions                               | [https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/](https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/) |
+| Information                                                                                         | Lien                                                                                                                                                                                                                                                                       |
+|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| How AI can move from hype to global solutions                                                       | [https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/](https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/)                                                                               |
+| ChatGPT séduit les pros : 32 % des entreprises US utilisent OpenAI, loin devant Google et Anthropic | [https://siecledigital.fr/2025/05/12/chatgpt-seduit-les-pros-32-des-entreprises-us-utilisent-openai-loin-devant-google-et-anthropic/](https://siecledigital.fr/2025/05/12/chatgpt-seduit-les-pros-32-des-entreprises-us-utilisent-openai-loin-devant-google-et-anthropic/) |
+
 
 
