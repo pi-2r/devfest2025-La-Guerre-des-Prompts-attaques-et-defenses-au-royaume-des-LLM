@@ -45,15 +45,18 @@ de l'histoire de l'informatique, devançant de loin TikTok, Facebook et Instagra
 </a>
 
 
-Dés lors ChatGPT a mit en lumière les LLM auprès du grand publique, laissant libre cours à toutes sortes d'affabulations 
-(exemple: l'ia va nous remplacer) ou sonnette d'alarmes sur le contenue des réponses 
-(exemple: alors pour créer une bombe, c'est hyper ...).
+Depuis l’apparition de ChatGPT, les modèles de langage (LLM) ont été propulsés sur le devant de la scène auprès du grand
+public. Cette exposition a suscité de nombreuses idées reçues, parfois exagérées — comme la crainte que l’intelligence 
+artificielle remplace l’humain — ainsi que des inquiétudes concernant la nature des réponses générées, notamment sur la 
+facilité supposée d’obtenir des informations sensibles ou dangereuses.
 
-Pour ce qui est des affabulations, je vous invite à prendre connaissance des interviews du cocréateur de Siri ainsi que 
-de ses livres à savoir; Luc Julia. Pour ce qui est de la sonnette d'alarme, je vous invite à poursuivre le contenu et à 
-nous plonger dans le contenu de ce codelab.
-Depuis ce lancement, les géants de la tech n'ont cessé de redoubler d'effort dans la course à l'IA, dépassant de loin 
-chatgpt
+>Pour mieux comprendre la réalité derrière ces idées reçues, il est pertinent de se référer aux interviews et ouvrages 
+de Luc Julia, co-créateur de Siri, qui apporte un regard éclairé et nuancé sur les véritables capacités de l’IA. Quant 
+aux questions de sécurité et de fiabilité des contenus générés, je vous invite à poursuivre ce codelab pour explorer 
+ces enjeux plus en détail.
+
+Par ailleurs, depuis ce lancement, les grandes entreprises technologiques ont intensifié leurs efforts dans la course à 
+l’intelligence artificielle, dépassant largement les avancées initiales de ChatGPT.
 
 
 <a href="https://www.visualcapitalist.com/charted-the-growth-of-big-tech-since-chatgpts-launch/" target="_blank">
