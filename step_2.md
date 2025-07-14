@@ -103,6 +103,9 @@ ou d’empoisonnement des données provenant d’informations contradictoires. E
 plateforme X (anciennement Twitter) qui se base essentiellement sur les commentaires (Troll ?) des utilisateurs.
 <details>
   <summary>Exemple</summary>
+<a href="https://bsky.app/profile/epyon.bsky.social/post/3ltcxxxv22s2k" target="_blank">
+  <img src="https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ltgm2ysjnysy4hnpxjdwuwn3/bafkreicd5bm65vhtvn47ykkzfnzrunqyqjgsu6whkcgdaowhacspg2gzzm@jpeg" alt="image" width="450" style="transition:0.3s;">
+</a>
 
 </details>
 
@@ -137,7 +140,9 @@ d’invites. Cette vigilance doit être renforcée si vous permettez aux utilisa
 ou de téléverser des documents susceptibles d’être compromis.
 <details>
   <summary>Exemple</summary>
-
+<a href="https://arxiv.org/html/2505.22998v1" target="_blank">
+  <img src="img/arxiv-faill-injection.png" alt="image" width="450" style="transition:0.3s;">
+</a>
 </details>
 
 # Le modèle LLM
@@ -177,5 +182,6 @@ todo
 | Large language models : les nouveaux enjeux à venir dans la cybersécurité                           | [https://www.journaldunet.com/intelligence-artificielle/1542135-large-language-models-les-nouveaux-enjeux-a-venir-dans-la-cybersecurite/](https://www.journaldunet.com/intelligence-artificielle/1542135-large-language-models-les-nouveaux-enjeux-a-venir-dans-la-cybersecurite/) |
 | Vulnérabilités LLM et sécurité des IA génératives                                                   | [https://www.vaadata.com/blog/fr/vulnerabilites-llm-et-securite-des-ia-generatives/](https://www.vaadata.com/blog/fr/vulnerabilites-llm-et-securite-des-ia-generatives/)                                                                                                           |
 | L'IA en cybersécurité : comprendre les risques                                                      | [https://www.malwarebytes.com/fr/cybersecurity/basics/risks-of-ai-in-cyber-security](https://www.malwarebytes.com/fr/cybersecurity/basics/risks-of-ai-in-cyber-security)                                                                                                           | 
- 
+| Pièges des LLM                                                                                      | [https://learnprompting.org/fr/docs/basics/pitfalls](https://learnprompting.org/fr/docs/basics/pitfalls)                                                                                                                                                                           | 
+
 
