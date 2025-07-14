@@ -89,23 +89,44 @@ donc essentiel de mettre en place des dispositifs visant à protéger le modèle
 contradictoires ou trompeuses, qu’elles proviennent des utilisateurs ou d’autres systèmes. Une vigilance particulière 
 doit également être accordée aux contenus toxiques, inexacts ou sensibles que le modèle pourrait générer et transmettre 
 à l’utilisateur.
+<details>
+  <summary>Exemple</summary>
+<a href="https://twitter.com/MathisHammel/status/1600413492636307456?s=20&t=fPcFwvq05Oe8JHkvVi95xw" target="_blank">
+  <img src="https://pbs.twimg.com/media/FjXOpGiWYAAG-9r?format=jpg&name=small" alt="image" width="450" style="transition:0.3s;">
+</a>
+</details>
 
 ### Données d'entraînement publique
 Les LLM sont généralement entraînés à partir d’immenses ensembles de données issues d’Internet. Il est donc essentiel de 
 considérer ces sources comme potentiellement peu fiables et de rester vigilant face aux risques de toxicité, de biais 
 ou d’empoisonnement des données provenant d’informations contradictoires. Exemple Grok avec son modèle issue de la 
 plateforme X (anciennement Twitter) qui se base essentiellement sur les commentaires (Troll ?) des utilisateurs.
+<details>
+  <summary>Exemple</summary>
+
+</details>
 
 ### Données d'entraînement interne
 
 Il est possible d’utiliser des données internes pour optimiser le modèle, ce qui peut sensiblement accroître sa précision. 
 Toutefois, il est impératif de s’assurer que les informations sensibles, confidentielles ou à caractère personnel ne 
 soient ni intégrées ni exposées lors de ce processus.
+<details>
+  <summary>Exemple</summary>
+
+</details>
 
 ### Services internes
 Il est indispensable de maîtriser la manière dont le LLM interagit avec les services connectés de l’entreprise, tels 
 que les bases de données ou les API, afin de prévenir toute interaction non autorisée ou fuite de données, comme des 
 injections SQL ou des requêtes abusives sur les API.
+<details>
+  <summary>Exemple</summary>
+
+<a href="https://snyk.io/fr/articles/llm-weaponized-via-prompt-injection-to-generate-sql-injection-payloads/" target="_blank">
+  <img src="https://res.cloudinary.com/snyk/image/upload/v1746471560/llm-to-sql-injection2_vpmvte.gif" alt="image" width="450" style="transition:0.3s;">
+</a>
+</details>
 
 
 ### Accès aux données publiques
@@ -114,6 +135,10 @@ un levier efficace pour enrichir les fonctionnalités de votre application. Tout
 ces informations comme potentiellement peu fiables et de rester attentif à des risques tels que l’injection indirecte 
 d’invites. Cette vigilance doit être renforcée si vous permettez aux utilisateurs de proposer des sites web à explorer 
 ou de téléverser des documents susceptibles d’être compromis.
+<details>
+  <summary>Exemple</summary>
+
+</details>
 
 # Le modèle LLM
 
