@@ -130,7 +130,7 @@ injections SQL ou des requêtes abusives sur les API.
   <summary>Exemple</summary>
 
 <a href="https://snyk.io/fr/articles/llm-weaponized-via-prompt-injection-to-generate-sql-injection-payloads/" target="_blank">
-  <img src="https://res.cloudinary.com/snyk/image/upload/v1746471560/llm-to-sql-injection2_vpmvte.gif" alt="image" width="450" style="transition:0.3s;">
+  <img src="img/sql-injection-llm.png" alt="image" width="450" style="transition:0.3s;">
 </a>
 </details>
 
