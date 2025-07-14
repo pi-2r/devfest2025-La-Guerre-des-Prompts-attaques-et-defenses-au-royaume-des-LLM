@@ -1,10 +1,11 @@
-# Il était une fois dans un monde numérique ...
+
+
+#  Il était une fois dans un monde numérique ...
 
 [<img src="img/step1.jpg" alt="hobbiton" width="800" height="450">](https://www.youtube.com/watch?v=dDKVKG3ESsk)
 > "Home is now behind you, the world is ahead!", Gandalf, The Hobbit
 
-<br/>
-<u>Objectifs de cette étape:</u> 
+## 🎯 Objectifs de cette étape 
 
 - Comprendre les origines des LLM et leur fonctionnement
 - Découvrir les concepts de base de l'intelligence artificielle, des réseaux neuronaux et des LLM
@@ -211,14 +212,43 @@ Exemples concrets d’amélioration :
 - Pour la rédaction de contenus, le temps moyen est passé de 80 minutes à seulement 25 minutes grâce à l’IA générative.
 - Sur des tâches cognitives complexes telles que les mathématiques, l’analyse de systèmes ou les opérations, l’IA permet de gagner plus d’une heure par tâche.
 
-En résumé, l’IA générative ne se contente pas d’automatiser certaines fonctions : elle amplifie considérablement l’efficacité des professionnels, en leur permettant d’atteindre des niveaux de productivité inédits.
+En somme, l’IA générative ne se limite pas à l’automatisation de tâches : elle décuple l’efficacité des professionnels 
+en leur ouvrant l’accès à des niveaux de productivité inégalés. Cette avancée s’explique notamment par le fait que 
+certains modèles récents, comme le dernier modèle OpenAI o3, affichent des capacités de raisonnement équivalentes, 
+voire supérieures, à celles d’un individu doté d’un QI supérieur à 130.
+
+<details>
+  <summary>Consulter la typologie des niveaux d’intelligence des modèles.</summary>
+
+<a href="https://www.visualcapitalist.com/ranked-the-smartest-ai-models-by-iq/" target="_blank">
+  <img src="https://www.visualcapitalist.com/wp-content/uploads/2025/06/IQ-of-AI_02-web.jpg" alt="image" width="450" style="transition:0.3s;">
+</a>
+</details>
 
 
 ## Étape suivante
 
 - [Étape 2](step_2.md)
 
-## Ressources
+<!-- ## 📚 Étape suivante
+
+<div align="center">
+
+**⏩ [Étape 2 : Pourquoi la Sécurité des LLM est-elle Cruciale ?](step_2.md)**
+
+*Découvrez les enjeux de sécurité spécifiques aux LLM et les points de contrôle essentiels*
+
+</div>
+
+---
+
+<div align="center">
+
+**🏠 [Accueil](README.md) | ⏪ [Étape 0](step_0.md) | ⏩ [Étape 2 : Sécurité des LLM](step_2.md)**
+
+</div> -->
+
+## 📖 Ressources
 
 
 | Information                                                                 | Lien                                                                                                                                                                                                                                       |
