@@ -1,12 +1,10 @@
-# Pourquoi la Sécurité des LLM est-elle Cruciale ?
+#  Pourquoi la Sécurité des LLM est-elle Cruciale ?
 
 [<img src="img/step2.png" alt="gandalf" >](https://www.youtube.com/watch?v=whF2na8AIbw)
-> "The Year 3434 of the second age. Here follows the account of Isildur, High King of Gondor, and the finding of the Ring of Power.", Gandalf, LOTR - The Followship of the Ring
+> "The year 3434 of the Second Age. Here follows the account of Isildur, High King of Gondor, and the finding of the ring 
+> of power. It has come to me. The One Ring", Gandalf, LOTR - The Followship of the Ring
 
-
-
-<br/>
-<u>Objectifs de cette étape:</u>
+## 🎯 Objectifs de cette étape
 
 - Avoir une vue d'ensemble sur la nouvelle ère technologique de l'IA générative.
 - Comprendre l'importance de la sécurité des LLM dans le contexte de l'IA générative.
@@ -14,9 +12,23 @@
 ## Sommaire
 
 - [L'émergence de l'IA, une nouvelle ère technologique](#l-emergence-de-l-ia-une-nouvelle-ere-technologique)
-- [Le LLM, un cerveau connecté à vos programmes](#le-llm-un-cerveau-connecte-a-vos-programmes)
-  - [Les différents points de contrôle](#les-differents-points-de-controle)
 
+
+- [Le LLM, un cerveau connecté à vos programmes](#le-llm-un-cerveau-connecte-a-vos-programmes)
+- [Les différents points de contrôle](#les-différents-points-de-contrôle)
+  - [Interaction avec l'utilisateur](#interaction-avec-lutilisateur)
+  - [Données d'entraînement publique](#données-dentrainement-publique)
+  - [Données d'entraînement interne](#données-dentrainement-interne)
+  - [Services internes](#services-internes)
+  - [Accès aux données publiques](#accès-aux-données-publiques)
+
+- [Le modèle LLM](#le-modèle-llm)
+  - [Modèle par API](#modèle-par-api)
+  - [Modèle hébergé](#modèle-hébergé)
+
+
+- [Étape suivante](#étape-suivante)
+- [Ressources](#ressources)
 
 ## L'émergence de l'IA, une nouvelle ère technologique
 
@@ -70,6 +82,64 @@ Le schéma ci-dessous propose une vue simplifiée des principaux points de contr
  <img src="img/llm-inside-secure.png" alt="llm-inside" width="450" style="transition:0.3s;">
 
 ## Les différents points de contrôle
+
+### Interaction avec l'utilisateur
+Il est important de considérer que les utilisateurs peuvent, intentionnellement ou non, introduire des erreurs. Il est 
+donc essentiel de mettre en place des dispositifs visant à protéger le modèle LLM contre des entrées potentiellement 
+contradictoires ou trompeuses, qu’elles proviennent des utilisateurs ou d’autres systèmes. Une vigilance particulière 
+doit également être accordée aux contenus toxiques, inexacts ou sensibles que le modèle pourrait générer et transmettre 
+à l’utilisateur.
+
+### Données d'entraînement publique
+Les LLM sont généralement entraînés à partir d’immenses ensembles de données issues d’Internet. Il est donc essentiel de 
+considérer ces sources comme potentiellement peu fiables et de rester vigilant face aux risques de toxicité, de biais 
+ou d’empoisonnement des données provenant d’informations contradictoires. Exemple Grok avec son modèle issue de la 
+plateforme X (anciennement Twitter) qui se base essentiellement sur les commentaires (Troll ?) des utilisateurs.
+
+### Données d'entraînement interne
+
+Il est possible d’utiliser des données internes pour optimiser le modèle, ce qui peut sensiblement accroître sa précision. 
+Toutefois, il est impératif de s’assurer que les informations sensibles, confidentielles ou à caractère personnel ne 
+soient ni intégrées ni exposées lors de ce processus.
+
+### Services internes
+Il est indispensable de maîtriser la manière dont le LLM interagit avec les services connectés de l’entreprise, tels 
+que les bases de données ou les API, afin de prévenir toute interaction non autorisée ou fuite de données, comme des 
+injections SQL ou des requêtes abusives sur les API.
+
+
+### Accès aux données publiques
+L’extraction de données en temps réel depuis le Web, notamment par le biais de techniques de scraping, peut constituer 
+un levier efficace pour enrichir les fonctionnalités de votre application. Toutefois, il est essentiel de considérer 
+ces informations comme potentiellement peu fiables et de rester attentif à des risques tels que l’injection indirecte 
+d’invites. Cette vigilance doit être renforcée si vous permettez aux utilisateurs de proposer des sites web à explorer 
+ou de téléverser des documents susceptibles d’être compromis.
+
+# Le modèle LLM
+
+Le modèle de langage constitue le cœur de toute application basée sur un LLM. Il joue un rôle central en collectant et 
+en interprétant les informations afin de permettre l’exécution d’actions au sein d’un environnement informatique.
+
+Selon la configuration de votre infrastructure et vos besoins spécifiques, deux options s’offrent à vous pour permettre 
+à votre écosystème d’interagir avec le modèle :
+- **Modèle par API** : Par le biais d’une API publique, hébergée par un prestataire externe (ex. OpenAI, Google, Amazon 
+    Bedrock, etc.), qui permet d’accéder à un modèle pré-entraîné et de l’utiliser pour générer des réponses ou des actions.
+
+
+- **Modèle hébergé** : En déployant un modèle hébergé localement, au sein de vos propres installations (on-premises) ou 
+    dans le cloud, ce qui vous permet de contrôler entièrement le modèle et de l’adapter à vos besoins spécifiques.
+
+
+## Modèle par API
+todo
+
+## Modèle hébergé
+todo
+
+
+## Étape suivante
+
+- [Étape 3](step_3.md)
 
 
 ## Ressources
