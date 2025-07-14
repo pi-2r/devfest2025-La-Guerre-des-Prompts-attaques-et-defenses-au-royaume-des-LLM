@@ -11,14 +11,12 @@
 
 ## Sommaire
 
-- [L'émergence de l'IA, une nouvelle ère technologique](#l-emergence-de-l-ia-une-nouvelle-ere-technologique)
-
-
-- [Le LLM, un cerveau connecté à vos programmes](#le-llm-un-cerveau-connecte-a-vos-programmes)
+- [L'émergence de l'IA, une nouvelle ère technologique](#lémergence-de-lia-une-nouvelle-ère-technologique)
+- [Le LLM, un cerveau connecté à vos programmes](#le-llm-un-cerveau-connecté-à-vos-programmes)
 - [Les différents points de contrôle](#les-différents-points-de-contrôle)
   - [Interaction avec l'utilisateur](#interaction-avec-lutilisateur)
-  - [Données d'entraînement publique](#données-dentrainement-publique)
-  - [Données d'entraînement interne](#données-dentrainement-interne)
+  - [Données d'entraînement publique](#données-dentraînement-publique)
+  - [Données d'entraînement interne](#données-dentraînement-interne)
   - [Services internes](#services-internes)
   - [Accès aux données publiques](#accès-aux-données-publiques)
 
@@ -164,11 +162,28 @@ Selon la configuration de votre infrastructure et vos besoins spécifiques, deux
 
 
 ## Modèle par API
-todo
+Recourir à des API publiques pour se connecter à un ou plusieurs modèles présente l’avantage d’une grande simplicité 
+d’utilisation et de coûts généralement plus faibles. De plus, la gestion et la mise à jour des modèles sont assurées 
+par le fournisseur du service, ce qui allège considérablement la charge de maintenance pour l’entreprise utilisatrice (
+on parle généralement d'un changement de nom de modéle à faire dans le code de votre application)
+
+**Cependant, ce choix implique un compromis important:** le risque d’exposition de données sensibles transmises via l’API. 
+En effet, chaque requête envoyée à un modèle tiers franchit la frontière de votre environnement sécurisé pour être 
+traitée par un système externe. 
+
+> Ce transfert expose potentiellement vos informations à des problèmes de confidentialité et, selon le niveau de sécurité 
+appliqué par le prestataire, cela peut accroître la vulnérabilité face à d’éventuelles violations de données.
 
 ## Modèle hébergé
-todo
+Opter pour l’hébergement privé d’un modèle, en particulier dans des secteurs sensibles comme la banque ou la santé, 
+offre un contrôle accru sur vos données et permet de mettre en place des barrières de sécurité clairement définies. 
+Cette solution facilite également l’adaptation du modèle aux spécificités de votre domaine d’activité.
 
+**Cependant, ce choix implique un compromis important:** héberger le modèle en interne implique que vous êtes responsable 
+de sa maintenance, de ses mises à jour et de la gestion des vulnérabilités potentielles.
+
+>Si vous choisissez un modèle open source, il devient essentiel de veiller 
+à sa fiabilité et à son intégrité afin de prévenir tout risque de faille de sécurité ou de biais intégré.
 
 ## Étape suivante
 
