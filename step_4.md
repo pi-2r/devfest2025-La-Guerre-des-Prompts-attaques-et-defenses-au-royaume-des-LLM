@@ -15,6 +15,7 @@
 - [Réglementation législative](#réglementation-législative)
     - [Réglementation aux États-Unis](#réglementation-aux-états-unis)
     - [Réglementation en Europe](#réglementation-en-europe)
+- [Ressources](#ressources)
 
 ## OWASP Top 10 for LLM Applications
 
@@ -41,3 +42,12 @@
 
 <img src="img/saif-map.png" alt="SAIF">
 
+## Ressources
+
+| Information                           | Lien                                                                                                                                                                                                                                                   |
+|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MITRE ATLAS™ Introduction             | [https://www.youtube.com/watch?v=3FN9v-y-C-w](https://www.youtube.com/watch?v=3FN9v-y-C-w)                                                                                                                                                             |
+| OWASP Top 10 for LLM Applications     | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf) |
+| Secure AI Framework (SAIF)            | [https://saif.google/](https://saif.google/)                                                                                                                                                                                                           |
+| Anatomy of an AI ATTACK: MITRE ATLAS  | [https://www.youtube.com/watch?v=QhoG74PDFyc](https://www.youtube.com/watch?v=QhoG74PDFyc)                                                                                                                                                             |
+ 
