@@ -12,7 +12,8 @@
 - [OWASP Top 10 for LLM Applications](#owasp-top-10-for-llm-applications)
 - [Mitre ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA](#mitre-atlas-le-file-dariane-des-techniques-dattaque-sur-lia)
 - [Soyez SAIF avec le Secure AI Framework](#soyez-saif-avec-le-secure-ai-framework)
-- [Réglementation législative](#réglementation-législative)
+- [Réglementation législative des LLM](#réglementation-législative-des-llm)
+    - [Réglementation aux États-Unis](#réglementation-aux-états-unis)
     - [Réglementation aux États-Unis](#réglementation-aux-états-unis)
     - [Réglementation en Europe](#réglementation-en-europe)
 - [Ressources](#ressources)
@@ -41,6 +42,15 @@
 ## Soyez SAIF avec le Secure AI Framework
 
 <img src="img/saif-map.png" alt="SAIF">
+
+
+## Réglementation législative des LLM
+
+Depuis ces dernières années, les législateurs de nombreux pays ont adopté de nouvelles réglementations pour lutter contre
+les abus liés aux technologies d’intelligence artificielle, en particulier pour limiter la propagation de la 
+désinformation et les discours de haine.
+
+### Réglementation aux États-Unis
 
 ## Ressources
 
