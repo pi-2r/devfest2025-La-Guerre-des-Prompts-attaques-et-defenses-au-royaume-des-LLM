@@ -1,0 +1,110 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gen-ai-orchestrator-server
+  namespace: tock-genai
+spec:
+  selector:
+    app: gen-ai-orchestrator-server
+  ports:
+    - port: 8000
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gen-ai-orchestrator-server
+  namespace: tock-genai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gen-ai-orchestrator-server
+  template:
+    metadata:
+      labels:
+        app: gen-ai-orchestrator-server
+    spec:
+      containers:
+      - name: gen-ai-orchestrator-server
+        image: tock/gen-ai-orchestrator-server:25.3.1
+        ports:
+        - containerPort: 8000
+        env:
+        - name: tock_gen_ai_orchestrator_application_environment
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_APPLICATION_ENVIRONMENT
+        - name: tock_gen_ai_orchestrator_em_provider_timeout
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_EM_PROVIDER_TIMEOUT
+        - name: tock_gen_ai_orchestrator_llm_provider_timeout
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_LLM_PROVIDER_TIMEOUT
+        - name: tock_gen_ai_orchestrator_llm_provider_max_retries
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_LLM_PROVIDER_MAX_RETRIES
+        - name: tock_gen_ai_orchestrator_vector_store_provider
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_PROVIDER
+        - name: tock_gen_ai_orchestrator_vector_store_host
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_HOST
+        - name: tock_gen_ai_orchestrator_vector_store_port
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_PORT
+        - name: tock_gen_ai_orchestrator_vector_store_user
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_USER
+        - name: tock_gen_ai_orchestrator_vector_store_pwd
+          valueFrom:
+            secretKeyRef:
+              name: tock-secrets
+              key: POSTGRES_PASSWORD
+        - name: tock_gen_ai_orchestrator_vector_store_database
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_DATABASE
+        - name: tock_gen_ai_orchestrator_vector_store_timeout
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_TIMEOUT
+        - name: tock_gen_ai_orchestrator_vector_store_k
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_K
+        - name: tock_gen_ai_orchestrator_vector_store_test_query
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_VECTOR_STORE_TEST_QUERY
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
