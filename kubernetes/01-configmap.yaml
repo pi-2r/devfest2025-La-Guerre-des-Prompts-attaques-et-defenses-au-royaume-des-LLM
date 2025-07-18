@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tock-config
+  namespace: tock-genai
+data:
+  # Configuration MongoDB
+  MONGO_URLS: "mongodb://mongo:27017,mongo2:27018,mongo3:27019/?replicaSet=tock"
+  MONGO1: "mongo"
+  MONGO2: "mongo2"
+  MONGO3: "mongo3"
+  RS: "tock"
+  
+  # Configuration Tock
+  TOCK_ENV: "prod"
+  TOCK_NAMESPACE_OPEN_ACCESS: "true"
+  TOCK_HTTPS_ENV: "false"
+  TOCK_DEFAULT_LOG_LEVEL: "debug"
+  TOCK_SERVICE_LOG_LEVEL: "debug"
+  
+  # Configuration Postgres
+  POSTGRES_DB: "postgres"
+  POSTGRES_USER: "postgres"
+  POSTGRES_HOST: "postgres-db"
+  POSTGRES_PORT: "5432"
+  
+  # Configuration URLs
+  NLP_DUCKLING_URL: "http://duckling:8080"
+  BOT_ADMIN_REST_DEFAULT_BASE_URL: "http://nemo-proxy:8002"
+  CONFIGURATION_BOT_DEFAULT_BASE_URL: "http://nemo-proxy:8002"
+  GEN_AI_ORCHESTRATOR_SERVER_URL: "http://gen-ai-orchestrator-server:8000"
+  NLP_SERVICE_URL: "http://nlp-api:8080"
+  NEMO_GUARDRAILS_URL: "http://nemo-guardrails:8000"
+  BOT_API_URL: "http://bot-api:8080"
+  
+  # Configuration GenAI
+  GEN_AI_ORCHESTRATOR_APPLICATION_ENVIRONMENT: "DEV"
+  GEN_AI_ORCHESTRATOR_EM_PROVIDER_TIMEOUT: "120"
+  GEN_AI_ORCHESTRATOR_LLM_PROVIDER_TIMEOUT: "120"
+  GEN_AI_ORCHESTRATOR_LLM_PROVIDER_MAX_RETRIES: "0"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_PROVIDER: "PGVector"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_HOST: "postgres-db"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_PORT: "5432"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_USER: "postgres"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_DATABASE: "postgres"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_TIMEOUT: "5"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_K: "4"
+  GEN_AI_ORCHESTRATOR_VECTOR_STORE_TEST_QUERY: "virement bancaire"
+  
+  # Configuration Langfuse
+  LANGFUSE_DATABASE_URL: "postgresql://langfuse:langfuse@postgres-db:5432/langfuse"
+  LANGFUSE_NEXTAUTH_SECRET: "mysecret"
+  LANGFUSE_SALT: "mysalt"
+  LANGFUSE_NEXTAUTH_URL: "http://localhost:3000"
+  LANGFUSE_TELEMETRY_ENABLED: "true"
+  LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES: "false"
+  
+  # Configuration utilisateurs Tock (pour dev uniquement)
+  TOCK_USERS: "techadmin@app.com,admin@app.com,user@app.com,botUser@app.com,nlpUserOnly@app.com,botUserOnly@app.com,adminOnly@app.com,techadminOnly@app.com"
+  TOCK_PASSWORDS: "password,password,password,password,password,password,password,password"
+  TOCK_ROLES: "nlpUser|botUser|admin|technicalAdmin,nlpUser|botUser|admin,nlpUser|botUser,nlpUser|botUser,nlpUser,botUser,admin,technicalAdmin"
+  TOCK_ORGANIZATIONS: "app,app,app,app,app,app,app,app"

@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nemo-guardrails
+  namespace: tock-genai
+spec:
+  selector:
+    app: nemo-guardrails
+  ports:
+    - port: 8000
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nemo-guardrails
+  namespace: tock-genai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nemo-guardrails
+  template:
+    metadata:
+      labels:
+        app: nemo-guardrails
+    spec:
+      containers:
+      - name: nemo-guardrails
+        # Utiliser l'image buildée ou une image registry
+        image: nemo-guardrails:latest
+        imagePullPolicy: Never  # Pour utiliser l'image locale
+        ports:
+        - containerPort: 8000
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: tock-secrets
+              key: OPENAI_API_KEY
+        command: ["poetry", "run", "nemoguardrails", "server", "--config=/app/config", "--port=8000", "--verbose"]
+        # Si vous avez besoin de monter la configuration
+        # volumeMounts:
+        # - name: guardrails-config
+        #   mountPath: /app/config
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+      # volumes:
+      # - name: guardrails-config
+      #   configMap:
+      #     name: guardrails-config

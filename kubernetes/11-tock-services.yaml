@@ -1,0 +1,177 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: build-worker
+  namespace: tock-genai
+spec:
+  selector:
+    app: build-worker
+  ports:
+    - port: 8080
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: build-worker
+  namespace: tock-genai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: build-worker
+  template:
+    metadata:
+      labels:
+        app: build-worker
+    spec:
+      containers:
+      - name: build-worker
+        image: tock/build_worker:25.3.1
+        env:
+        - name: tock_mongo_url
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: MONGO_URLS
+        - name: tock_env
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_ENV
+        - name: JAVA_ARGS
+          value: "-Xmx1g -XX:MaxMetaspaceSize=256m"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-web
+  namespace: tock-genai
+spec:
+  selector:
+    app: admin-web
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: LoadBalancer  # Pour exposer l'interface d'administration
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-web
+  namespace: tock-genai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-web
+  template:
+    metadata:
+      labels:
+        app: admin-web
+    spec:
+      containers:
+      - name: admin-web
+        image: tock/bot_admin:25.3.1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: tock_mongo_url
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: MONGO_URLS
+        - name: nlp_duckling_url
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: NLP_DUCKLING_URL
+        - name: tock_env
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_ENV
+        - name: tock_file_upload_directory
+          value: "file-uploads"
+        - name: tock_namespace_open_access
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_NAMESPACE_OPEN_ACCESS
+        - name: tock_bot_admin_rest_default_base_url
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: BOT_ADMIN_REST_DEFAULT_BASE_URL
+        - name: tock_configuration_bot_default_base_url
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: CONFIGURATION_BOT_DEFAULT_BASE_URL
+        - name: tock_gen_ai_orchestrator_server_url
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: GEN_AI_ORCHESTRATOR_SERVER_URL
+        - name: tock_gen_ai_orchestrator_client_request_timeout_ms
+          value: "55000"
+        - name: tock_gen_ai_orchestrator_technical_error
+          value: "Technical error :( sorry!"
+        - name: tock_https_env
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_HTTPS_ENV
+        - name: botadminverticle_body_limit
+          value: "-1"
+        - name: tock_users
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_USERS
+        - name: tock_passwords
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_PASSWORDS
+        - name: tock_roles
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_ROLES
+        - name: tock_organizations
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_ORGANIZATIONS
+        - name: tock_default_log_level
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_DEFAULT_LOG_LEVEL
+        - name: tock_service_log_level
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: TOCK_SERVICE_LOG_LEVEL
+        - name: tock_gen_ai_orchestrator_vector_store_provider
+          value: "PGVector"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
