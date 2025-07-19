@@ -13,10 +13,10 @@
   - [Plus en détail](#plus-en-détail)
 
 
-- [Mitre ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA](#mitre-atlas-le-file-dariane-des-techniques-dattaque-sur-lia)
-
-
 - [Soyez SAIF avec le Secure AI Framework](#soyez-saif-avec-le-secure-ai-framework)
+
+
+- [Mitre ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA](#mitre-atlas-le-file-dariane-des-techniques-dattaque-sur-lia)
 
 
 - [Réglementation législative des LLM](#réglementation-législative-des-llm)
@@ -46,16 +46,16 @@ Voici une synthèse des vulnérabilités qui concernent spécifiquement les LLM:
 
 | IDENTIFIANT  | Description                                                                                                                                                                                                                    |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **LLM01**    | **Injection de prompt** : Les attaquants manipulent l'entrée du LLM directement ou indirectement pour provoquer un comportement malveillant ou illégal.                                                                        |
-| **LLM02**    | **Gestion non sécurisée de la sortie** : La sortie du LLM est gérée de manière non sécurisée, entraînant des vulnérabilités d'injection telles que le Cross-Site Scripting (XSS), l'injection SQL ou l'injection de commandes. |
+| ✨ **LLM01**  | **Injection de prompt** : Les attaquants manipulent l'entrée du LLM directement ou indirectement pour provoquer un comportement malveillant ou illégal.                                                                        |
+| ✨ **LLM02**  | **Gestion non sécurisée de la sortie** : La sortie du LLM est gérée de manière non sécurisée, entraînant des vulnérabilités d'injection telles que le Cross-Site Scripting (XSS), l'injection SQL ou l'injection de commandes. |
 | **LLM03**    | **Empoisonnement des données d'entraînement** : Les attaquants injectent des données malveillantes ou trompeuses dans les données d'entraînement du LLM, compromettant ses performances ou créant des portes dérobées.         |
-| **LLM04**    | **Déni de service du modèle** : Les attaquants fournissent au LLM des entrées provoquant une consommation excessive de ressources, causant potentiellement des perturbations du service.                                       |
+| ✨ **LLM04**  | **Déni de service du modèle** : Les attaquants fournissent au LLM des entrées provoquant une consommation excessive de ressources, causant potentiellement des perturbations du service.                                       |
 | **LLM05**    | **Vulnérabilités de la chaîne d'approvisionnement** : Les attaquants exploitent les vulnérabilités dans n’importe quelle partie de la chaîne d’approvisionnement du LLM.                                                       |
-| **LLM06**    | **Divulgation d’informations sensibles** : Les attaquants trompent le LLM pour qu'il révèle des informations sensibles dans sa réponse.                                                                                        |
+| ✨ **LLM06**  | **Divulgation d’informations sensibles** : Les attaquants trompent le LLM pour qu'il révèle des informations sensibles dans sa réponse.                                                                                        |
 | **LLM07**    | **Conception de plugins non sécurisée** : Les attaquants exploitent des vulnérabilités dans la sécurité des plugins LLM.                                                                                                       |
-| **LLM08**    | **Accès excessif (agency)** : Les attaquants exploitent l’accès insuffisamment restreint du LLM à des systèmes ou à des actions sensibles.                                                                                     |
-| **LLM09**    | **Dépendance excessive** : Une organisation dépend de manière excessive des résultats d’un LLM pour prendre des décisions critiques, exposant ainsi la sécurité à des comportements inattendus du modèle.                      |
-| **LLM10**    | **Vol de modèle** : Les attaquants obtiennent un accès non autorisé au LLM, volant de la propriété intellectuelle et causant potentiellement des pertes financières.                                                           |
+| 📖 **LLM08** | **Accès excessif (agency)** : Les attaquants exploitent l’accès insuffisamment restreint du LLM à des systèmes ou à des actions sensibles.                                                                                     |
+| 📖 **LLM09** | **Dépendance excessive** : Une organisation dépend de manière excessive des résultats d’un LLM pour prendre des décisions critiques, exposant ainsi la sécurité à des comportements inattendus du modèle.                      |
+| 📖 **LLM10** | **Vol de modèle** : Les attaquants obtiennent un accès non autorisé au LLM, volant de la propriété intellectuelle et causant potentiellement des pertes financières.                                                           |
 
 
 ### Plus en détail
@@ -109,13 +109,192 @@ En résumé, toute intégration d’un LLM dans une application, en particulier 
 </details>
 
 
-## Mitre ATLAS, le file d'Ariane des techniques d'attaque sur l'IA
+<details>
+  <summary>Empoisonnement des données d'entraînement (LLM03)</summary>
+
+La qualité et les performances d’un modèle de langage (LLM) dépendent en grande partie des données utilisées durant sa 
+phase d'entraînement. L’empoisonnement des données d’entraînement (Training Data Poisoning) consiste à manipuler tout 
+ou partie de ces données afin d’introduire des biais volontaires, incitant le modèle à produire des résultats incorrects
+ou malveillants.
+
+
+Selon l’usage du LLM ainsi compromis, les conséquences peuvent aller d’une perte de crédibilité à des vulnérabilités 
+critiques en matière de sécurité, notamment si le modèle génère du code réutilisé dans d’autres composants logiciels.
+
+
+Pour réussir une attaque par empoisonnement des données d’apprentissage, un attaquant doit d’abord avoir accès au corpus
+de données utilisé pour entraîner le modèle. Lorsque l’entraînement repose sur des données accessibles publiquement 
+(comme du contenu web), il est crucial de les nettoyer et de vérifier leur intégrité afin d’écarter toute source de 
+biais ou de contenu manipulé.
+
+Parmi les stratégies de mitigation à adopter, on peut citer :
+- La vérification fine et régulière de la chaîne d’approvisionnement des données d’entraînement
+- L’évaluation de la légitimité et de la provenance des sources
+- L’implémentation de filtres capables d’identifier et d’exclure les données incorrectes ou malveillantes
+
+En somme, une attention rigoureuse portée à la qualité des données d’entraînement est essentielle pour garantir un 
+comportement fiable et éthique des LLM.
+</details>
+
+
+<details>
+  <summary>Déni de service du modèle (LLM04)</summary>
+
+Une attaque par déni de service (DoS) visant un modèle de langage (LLM) fonctionne selon le même principe que toute autre
+attaque de ce type : elle vise à perturber ou bloquer l'accès au service pour les autres utilisateurs en réduisant sa disponibilité.
+
+
+Comme les LLM nécessitent généralement une puissance de calcul élevée, une requête volontairement conçue pour solliciter
+énormément de ressources peut facilement saturer le système. Si l’infrastructure ne dispose pas de protections 
+suffisantes ou de capacités adéquates, ce type de surcharge peut provoquer une interruption complète du service.
+
+
+Pour se prémunir contre de telles attaques, la validation rigoureuse des entrées utilisateur est indispensable. 
+Toutefois, en raison du caractère non déterministe et parfois imprévisible des LLM, il n’est pas efficace de bloquer 
+simplement certaines requêtes préalablement identifiées comme malveillantes.
+
+Une protection efficace repose donc sur une combinaison de mesures, notamment :
+- La mise en place de limites strictes de fréquence d’accès (rate limiting)
+- Le suivi en temps réel de la consommation des ressources
+- La détection précoce des comportements anormaux pouvant signaler un début d’attaque
+
+Ces précautions permettent d'assurer que le service reste disponible pour tous les utilisateurs, même en cas de 
+tentatives de saturation malveillantes.
+</details>
+
+<details>
+  <summary>Vulnérabilités de la chaîne d'approvisionnement (LLM05)</summary>
+
+Les vulnérabilités de la chaîne d’approvisionnement dans le contexte des LLM concernent tous les éléments impliqués dans
+leur développement ou leur déploiement. Cela inclut notamment les jeux de données utilisés pour l’entraînement (voir LLM03), 
+les modèles préentraînés fournis par des tiers, ainsi que les plugins, extensions ou autres systèmes interagissant 
+avec le LLM (cf. LLM07).
+
+
+L’impact de ces vulnérabilités peut varier considérablement, allant de simples dysfonctionnements à des conséquences 
+critiques. L’un des scénarios les plus courants est la fuite de données sensibles ou la divulgation de propriété 
+intellectuelle, compromettant la confidentialité ou les actifs stratégiques de l’organisation.
+</details>
+
+<details>
+  <summary>Divulgation d’informations sensibles (LLM06)</summary>
+
+Les modèles de langage (LLM) peuvent, de manière involontaire, divulguer des données confidentielles dans leurs réponses.
+Une telle exposition peut entraîner un accès non autorisé à des informations sensibles, des atteintes à la vie privée, 
+voire des failles de sécurité. Il est donc essentiel de restreindre strictement l'accès aux informations que le LLM est 
+autorisé à consulter.
+
+
+Cela est particulièrement important lorsque le modèle est utilisé pour traiter des données sensibles ou stratégiques, 
+comme des informations clients. Dans ces cas, les requêtes adressées au LLM doivent faire l’objet de contrôles d’accès 
+rigoureux afin de limiter le risque de fuite de données.
+
+Si le LLM a été entraîné ou affiné à l’aide d’un jeu de données personnalisé, il est crucial de garder à l’esprit qu’il 
+peut être manipulé (par des attaques d'injection de prompt, par exemple) pour révéler des éléments de ces données 
+d’apprentissage. Ainsi, toute information sensible intégrée au corpus d’entraînement doit être soigneusement identifiée,
+évaluée en fonction de sa criticité, et protégée en conséquence.
+
+De plus, les données sensibles fournies au LLM via des "prompts" utilisateurs peuvent être exposées par des attaques 
+d’injection (voir LLM01), même si l’on a explicitement demandé au modèle de garder ces informations confidentielles. 
+Cela souligne la nécessité de mettre en place des mesures de sécurité adaptées à chaque point de contact entre 
+l’utilisateur et le modèle.
+</details>
+
+
+<details>
+  <summary>Conception de plugins non sécurisée (LLM07)</summary>
+
+Les modèles de langage (LLM) peuvent être connectés à d'autres systèmes ou services via des plugins. Cependant, si un 
+plugin traite les réponses générées par le LLM sans procéder à une validation ou un filtrage rigoureux, cela peut 
+entraîner des failles de sécurité significatives.
+
+
+Selon les fonctionnalités offertes par le plugin, plusieurs types de vulnérabilités connues sur le Web peuvent se 
+produire, notamment :
+- **Cross-Site Scripting (XSS)** : Si le plugin affiche du contenu généré par le LLM sans validation, un attaquant peut 
+injecter du code malveillant qui sera exécuté dans le navigateur de l’utilisateur.
+- **Injection SQL** : Si le plugin utilise les réponses du LLM pour interagir avec une base de données sans filtrage
+- **fraude par requêtes côté serveur (SSRF)** : Si le plugin permet au LLM d’accéder à des ressources internes ou externes
+sans restrictions, un attaquant peut exploiter cette fonctionnalité pour accéder à des données sensibles ou exécuter des 
+actions non autorisées.
+- **Exécution de commandes à distance (RCE)** : Si le plugin exécute des commandes système basées sur les réponses du LLM
+
+Pour éviter ces risques, il est essentiel que tout échange entre un LLM et son environnement d'exécution — notamment via
+des plugins — soit strictement contrôlé, avec un mécanisme de validation des sorties du modèle avant toute action ou 
+interaction avec des composants externes.
+</details>
+
+
+<details>
+  <summary>Accès excessif (LLM08)</summary>
+
+Des vulnérabilités de sécurité peuvent survenir lorsqu’un LLM dispose de plus d’autonomie ou de privilèges que 
+nécessaire pour remplir sa fonction. À l’instar du **principe du moindre privilège**, il est essentiel de limiter 
+strictement les capacités accordées au LLM afin de réduire sa surface d’exposition face aux attaques potentielles.
+
+
+Par exemple, si un LLM est autorisé à interagir avec d’autres systèmes ou services, il convient de mettre en place une 
+liste blanche (whitelisting) définissant précisément les ressources auxquelles il peut accéder. Il est 
+également crucial de bien délimiter les actions que le modèle est censé accomplir, en restreignant ses permissions à 
+cette finalité unique.
+
+Prenons le cas d’un LLM connecté à une base de données SQL afin de récupérer des informations à la demande de 
+l’utilisateur. Si son accès à la base n’est pas restreint, un attaquant pourrait le manipuler pour qu’il exécute des 
+instructions telles que DELETE ou INSERT, compromettant ainsi l'intégrité des données.
+
+
+En résumé, il est impératif de contrôler avec précision les autorisations du LLM, tant au niveau des services 
+accessibles que des actions autorisées, afin de garantir un usage sécurisé et maîtrisé du modèle.
+</details>
+
+
+<details>
+  <summary>Dépendance excessive (LLM09)</summary>
+
+En raison de leur mode de fonctionnement, les modèles de langage (LLM) sont naturellement sujets à produire des 
+informations erronées. Cela peut se traduire aussi bien par des affirmations factuellement inexactes que par du code 
+contenant des erreurs ou des bugs.
+
+
+Si un LLM est intégré dans les processus métiers d’une organisation sans mécanismes de vérification adéquats, les 
+données incorrectes qu’il génère peuvent devenir une source potentielle de vulnérabilités, 
+notamment dans des contextes sensibles ou critiques.
+
+
+Il est donc essentiel de valider manuellement les informations fournies par le LLM avant toute utilisation 
+opérationnelle. Cette étape de contrôle joue un rôle crucial pour éviter la propagation d’erreurs, limiter les 
+risques de faille de sécurité et garantir la fiabilité du système dans son ensemble.
+</details>
+
+
+<details>
+  <summary>Vol de modèle (LLM10)</summary>
+
+Le vol de modèle se produit lorsqu’un attaquant parvient à s’approprier un LLM dans son intégralité, c’est-à-dire à 
+extraire ses poids et ses paramètres internes. Une fois en possession de ces éléments, l’attaquant est capable de 
+reproduire fidèlement le modèle d’origine. Cela peut non seulement nuire à la réputation de l’entité victime, mais 
+aussi permettre à l’attaquant de proposer un service équivalent à moindre coût, sans avoir eu à supporter les lourds 
+investissements en temps, en données et en ressources nécessaires à l'entraînement du LLM.
+
+
+Pour se prémunir contre ce type de menace, il est essentiel de mettre en place des mécanismes robustes 
+d’authentification et de contrôle d’accès, afin d’empêcher toute extraction ou utilisation non autorisée du modèle.
+
+Par exemple, la fuite du modèle Meta LLaMA (2023) : Les poids du modèle LLaMA de Meta, initialement sous accès restreint,
+ont été partagés publiquement à la suite d’un acte interne, illustrant un cas réel de vol de modèle avec diffusion 
+massive et non autorisée sur internet.
+
+</details>
 
 
 
 ## Soyez SAIF avec le Secure AI Framework
 
 <img src="img/saif-map.png" alt="SAIF">
+
+
+
+## Mitre ATLAS, le file d'Ariane des techniques d'attaque sur l'IA
 
 
 ## Réglementation législative des LLM
@@ -241,6 +420,7 @@ efficace des abus technologiques.
 |------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | MITRE ATLAS™ Introduction                                                                            | [https://www.youtube.com/watch?v=3FN9v-y-C-w](https://www.youtube.com/watch?v=3FN9v-y-C-w)                                                                                                                                                             |
 | OWASP Top 10 for LLM Applications                                                                    | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf) |
+| Model theft: Meta LLaMA leak                                                                         | [https://learn.snyk.io/lesson/model-theft-llm/](https://learn.snyk.io/lesson/model-theft-llm/)                                                                                                                                                         |
 | Secure AI Framework (SAIF)                                                                           | [https://saif.google/](https://saif.google/)                                                                                                                                                                                                           |
 | Anatomy of an AI ATTACK: MITRE ATLAS                                                                 | [https://www.youtube.com/watch?v=QhoG74PDFyc](https://www.youtube.com/watch?v=QhoG74PDFyc)                                                                                                                                                             |
 | Faut-il investir sur la tech européenne ? L'analyse d'un insider - Finary Talk #60 & Olivier Coste - | [https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af](https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af)                                                                                                                                                   |
