@@ -10,6 +10,7 @@
 ## Sommaire
 
 - [OWASP Top 10 for LLM Applications](#owasp-top-10-for-llm-applications)
+  - [Plus en détail](#plus-en-détail)
 
 
 - [Mitre ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA](#mitre-atlas-le-file-dariane-des-techniques-dattaque-sur-lia)
@@ -31,6 +32,17 @@
 
 ## OWASP Top 10 for LLM Applications
 
+L’**OWASP Top 10 for Large Language Model Applications** est aujourd’hui l’outil de référence pour recenser, analyser et 
+atténuer les principaux risques de sécurité propres à l’utilisation des grands modèles de langage.
+
+
+Cette liste élaborée collectivement constitue un guide incontournable pour les développeurs, architectes et responsables 
+de la sécurité désireux d’intégrer l’IA générative de manière fiable et sécurisée dans leurs systèmes d’information. 
+Ce classement a vu le jour grâce à l’engagement de [John Sotiropoulos](https://www.linkedin.com/in/jsotiropoulos/), 
+co-pilote du projet, et d’[Ads Dawson](https://www.linkedin.com/in/adamdawson0/), responsable technique en charge de la 
+coordination de la rédaction des aspects techniques du référentiel.
+
+Voici une synthèse des vulnérabilités qui concernent spécifiquement les LLM:
 
 | IDENTIFIANT  | Description                                                                                                                                                                                                                    |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,6 +56,57 @@
 | **LLM08**    | **Accès excessif (agency)** : Les attaquants exploitent l’accès insuffisamment restreint du LLM à des systèmes ou à des actions sensibles.                                                                                     |
 | **LLM09**    | **Dépendance excessive** : Une organisation dépend de manière excessive des résultats d’un LLM pour prendre des décisions critiques, exposant ainsi la sécurité à des comportements inattendus du modèle.                      |
 | **LLM10**    | **Vol de modèle** : Les attaquants obtiennent un accès non autorisé au LLM, volant de la propriété intellectuelle et causant potentiellement des pertes financières.                                                           |
+
+
+### Plus en détail
+
+<details>
+  <summary>Injection de prompt (LLM01)</summary>
+
+L’injection de prompt est une vulnérabilité de sécurité qui survient lorsque qu’un utilisateur malintentionné parvient à 
+manipuler les instructions fournies en entrée à un modèle de langage (LLM), l’amenant ainsi à adopter un comportement 
+imprévu ou non désiré.
+
+
+Si certaines manipulations peuvent paraître anodines — par exemple, détourner un chatbot d’assistance technique pour lui 
+faire donner des recettes de cuisine — d’autres peuvent avoir des conséquences bien plus graves. Cette technique peut 
+être exploitée pour inciter le LLM à produire de fausses informations, des discours haineux ou encore du contenu 
+nuisible, voire illégal.
+
+
+Dans certains cas, l’injection de prompt peut également permettre à un attaquant d’extraire des données sensibles 
+précédemment communiquées au modèle, compromettant ainsi la confidentialité des informations traitées.
+</details>
+
+
+<details>
+  <summary>Gestion non sécurisée de la sortie (LLM02)</summary>
+
+Le texte généré par un LLM doit être considéré avec le même niveau de méfiance que des données saisies par un utilisateur
+non fiable. Si une application web ne valide ni ne nettoie correctement ces sorties, elle peut être exposée à des 
+vulnérabilités classiques telles que le Cross-Site Scripting (XSS), l’injection SQL ou l’injection de code.
+
+
+Il est donc essentiel de s'assurer que le contenu généré par le LLM respecte bien la syntaxe attendue et les valeurs 
+autorisées. Par exemple, imaginons qu’un LLM soit utilisé pour générer des requêtes à partir d’instructions fournies 
+par l’utilisateur. Si un utilisateur écrit « Donne-moi le contenu de l’article numéro 42 », le modèle pourrait produire 
+la requête SQL suivante :
+
+> ``` 
+> SELECT * FROM articles WHERE id = 42;
+> ```
+
+Cette requête peut ensuite être envoyée à la base de données pour afficher le contenu correspondant.
+
+
+Cependant, ce type de fonctionnement introduit des risques importants. Au-delà de l’éventualité d’attaques par injection SQL, il est impératif de soumettre chaque requête générée à des vérifications de plausibilité. Dans le cas contraire, un comportement inattendu pourrait survenir. Par exemple, si un attaquant parvient à inciter le LLM à produire une requête telle que :
+> ```
+>  DROP TABLE articles;
+> ```
+ et là, toutes les données pourraient être irrémédiablement perdues.
+
+En résumé, toute intégration d’un LLM dans une application, en particulier lorsqu’il génère des instructions interprétables par un système, doit s’accompagner d’un strict contrôle de validation, au même titre que pour n’importe quelle entrée utilisateur.
+</details>
 
 
 ## Mitre ATLAS, le file d'Ariane des techniques d'attaque sur l'IA
@@ -168,6 +231,9 @@ de l’Union européenne concernant les LLM :
 | **Transparence et documentation** | Exigences limitées à certains cas spécifiques (deepfakes, fraude), pas de cadre général harmonisé.    | Forte exigence de transparence, documentation, accès public à l’information pour systèmes IA à risque .      |
 | **Harmonisation des sanctions**   | Fragmentée, grandes variations selon États fédérés et interventions fédérales ponctuelles.            | Sanctions harmonisées, régulièrement renforcées et uniformisées au niveau de l’UE.                           |
 
+Cette opposition illustre la diversité des stratégies de régulation, oscillant entre respect des libertés et prévention 
+efficace des abus technologiques.
+
 
 ## Ressources
 
@@ -186,4 +252,4 @@ de l’Union européenne concernant les LLM :
 | Artificial Intelligence Regulation Threatens Free Expression                                         | [https://www.cato.org/briefing-paper/artificial-intelligence-regulation-threatens-free-expression](https://www.cato.org/briefing-paper/artificial-intelligence-regulation-threatens-free-expression)                                                   |
 | AI regulation: EU vs. USA - opportunities and challenges for companies                               | [https://www.tucan.ai/blog/ai-regulation-eu-vs-usa-opportunities-and-challenges-for-companies/](https://www.tucan.ai/blog/ai-regulation-eu-vs-usa-opportunities-and-challenges-for-companies/)                                                         |
 | Comparing the EU AI Act to Proposed AI-Related Legislation in the US                                 | [https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us](https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us)                           |
- 
+| Take It Down Act : la loi contre le revenge porn et les deepfakes pornographiques.                   | [https://toutsurlacyber.fr/take-it-down-act-revenge-porn-et-deepfakes/](https://toutsurlacyber.fr/take-it-down-act-revenge-porn-et-deepfakes/)                                                                                                         |
