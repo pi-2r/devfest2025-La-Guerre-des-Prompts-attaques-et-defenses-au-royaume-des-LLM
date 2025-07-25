@@ -8,7 +8,8 @@ logging.disable(logging.CRITICAL)
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from app import sanitize_input, sanitize_output, validate_json_response
+# Import from the refactored modular structure
+from security.sanitizer import sanitize_input, sanitize_output, validate_json_response
 
 class TestSecurityFunctions(unittest.TestCase):
     """Test suite for LLM05 security validation functions"""
