@@ -4,7 +4,11 @@
 > "if you want him come and claim him", Arwen, LOTR - The Followship of the Ring
 
 ## 🎯 Objectifs de cette étape
-- Comprendre les cadres de sécurité existants pour les LLM
+- Comprendre les cadres de sécurité existants pour les LLM (modèles de langage de grande taille)
+- Identifier les principaux risques et vulnérabilités liés à l’utilisation des LLM
+- Découvrir les frameworks et référentiels de sécurité dédiés (OWASP Top 10, SAIF, MITRE ATLAS)
+- Appréhender les réglementations législatives encadrant les LLM (États-Unis, Union européenne)
+- Accéder à des ressources pour approfondir la sécurisation des applications IA
 
 
 ## Sommaire
