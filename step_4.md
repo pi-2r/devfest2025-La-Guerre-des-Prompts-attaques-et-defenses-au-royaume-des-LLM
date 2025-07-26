@@ -21,7 +21,11 @@
   - [Mise en œuvre et communauté SAIF](#mise-en-œuvre-et-communauté-saif)
 
 
-- [Mitre ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA](#mitre-atlas-le-file-dariane-des-techniques-dattaque-sur-lia)
+- [MITRE ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA](#mitre-atlas-le-fil-dariane-des-techniques-dattaque-sur-lia)
+  - [Objectif du MITRE ATLAS](#objectif-du-mitre-atlas)
+  - [Cadre de référence](#cadre-de-référence)
+  - [Éléments fondamentaux du MITRE ATLAS](#éléments-fondamentaux-du-mitre-atlas)
+  - [Comment l'utiliser](#comment-lutiliser)
 
 
 - [Réglementation législative des LLM](#réglementation-législative-des-llm)
@@ -396,7 +400,65 @@ avec d’autres acteurs majeurs du secteur tels qu'**Amazon**, **Cisco**, **IBM*
 </a>
 </details>
 
-## Mitre ATLAS, le file d'Ariane des techniques d'attaque sur l'IA
+## MITRE ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA
+
+<a href="https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/" target="_blank">
+  <img src="https://www.riskinsight-wavestone.com/wp-content/uploads/2024/11/MITRE-Figure-1.png" alt="MITRE ATLAS" >
+</a>
+
+### Objectif du MITRE ATLAS
+
+Le **MITRE ATLAS** (Adversarial Tactics, Techniques, and Common Knowledge for AI Systems) est un cadre de référence 
+international conçu pour identifier, classifier et atténuer les menaces adverses ciblant les systèmes d’IA et 
+d’apprentissage automatique. 
+
+L’objectif d’ATLAS est de fournir une base de connaissances structurée sur les tactiques 
+et techniques employées par les attaquants contre l’IA, facilitant ainsi la protection proactive de ces systèmes et 
+l’optimisation de leur sécurité dans l’écosystème de l’entreprise.
+
+### Cadre de référence
+
+Le [**MITRE ATLAS**](https://atlas.mitre.org/) s’inspire fortement du célèbre cadre [**MITRE ATT&CK**](https://attack.mitre.org/), utilisé dans la cybersécurité traditionnelle pour 
+cartographier les menaces et les actions adverses sur les systèmes d’information. ATLAS transpose cette démarche à l’IA, 
+en se focalisant sur les risques, vulnérabilités et techniques d’attaque spécifiques aux technologies IA et machine 
+learning.
+
+### Éléments fondamentaux du MITRE ATLAS
+
+ATLAS est structuré autour de plusieurs éléments clés :
+
+- **Tactiques** : Les objectifs de haut niveau poursuivis par les attaquants (ex. : évasion, compromission des données 
+d’entraînement, accès initial).
+
+- **Techniques** : Les méthodes concrètes permettant d’atteindre ces objectifs (ex. : data poisoning, model extraction, 
+prompt injection).
+
+- **Procédures** : Exemples réels et cas d’utilisation illustrant comment ces techniques ont été appliquées dans le 
+monde réel.
+
+- **Études de cas** : Documentation d’attaques effectives sur des systèmes d’IA pour enrichir continuellement la base 
+de connaissances
+
+
+### Comment l'utiliser
+Le **MITRE ATLAS** est conçu pour être utilisé par les professionnels de la sécurité, les chercheurs et les développeurs. Il
+faut voir **ATLAS** comme un tableau de bord structurant pour les équipes qui sont en charge de la sécurité IA.
+
+Les utilisateurs peuvent naviguer dans le référentiel pour identifier les menaces pertinentes à leur contexte, comme:
+
+- **Cartographie des menaces** : Les équipes de sécurité modélisent les risques et menaces qui pèsent sur leur système d’IA 
+en utilisant la matrice ATLAS pour anticiper les techniques d’attaque possibles.
+- **Évaluation de la couverture défensive** : À l’aide d’outils comme **ATLAS Navigator**, il est possible de visualiser 
+quelles techniques d’attaque sont déjà couvertes par les contrôles existants, lesquelles nécessitent des ajustements, 
+ou pour lesquelles il faut créer de nouveaux contrôles spécifiques à l’IA.
+- **Détection et réponse aux incidents** : Lorsqu’un incident impliquant un système IA survient, ATLAS permet de tracer 
+le déroulé de l’attaque, d’identifier les tactiques et techniques employées, et de cibler la réponse technique et 
+organisationnelle.
+- **Formation et sensibilisation** : **ATLAS** sert de support pour former les data scientists, ingénieurs IA et équipes 
+SOC (Security Operations Center) aux menaces émergentes en IA, ouvrant la voie à une collaboration interfonctionnelle étroite entre métiers et 
+sécurité.
+- **Développement de cas d’usage défensifs** : Les techniques documentées dans ATLAS servent de base à la création de 
+règles de détection, de scénarios de tests d’intrusion et de plans de mitigation spécifiques aux systèmes d’IA.
 
 
 ## Réglementation législative des LLM
@@ -520,7 +582,6 @@ efficace des abus technologiques.
 
 | Information                                                                                          | Lien                                                                                                                                                                                                                                                                                                                                                         |
 |------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MITRE ATLAS™ Introduction                                                                            | [https://www.youtube.com/watch?v=3FN9v-y-C-w](https://www.youtube.com/watch?v=3FN9v-y-C-w)                                                                                                                                                                                                                                                                   |
 | OWASP Top 10 for LLM Applications                                                                    | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf)                                                                                                       |
 | Explained: The OWASP Top 10 for Large Language Model Applications                                    | [https://www.youtube.com/watch?v=cYuesqIKf9A](https://www.youtube.com/watch?v=cYuesqIKf9A)                                                                                                                                                                                                                                                                   |
 | Model theft: Meta LLaMA leak                                                                         | [https://learn.snyk.io/lesson/model-theft-llm/](https://learn.snyk.io/lesson/model-theft-llm/)                                                                                                                                                                                                                                                               |
@@ -531,7 +592,13 @@ efficace des abus technologiques.
 | Secure AI Framework Approach                                                                         | [https://kstatic.googleusercontent.com/files/00e270b1cccb1f37302462a162c171d86f293a84de54036e0021e2fe0253cf05623bae2a62751b0840667bc6c8412fd70f45c9485972dc370be8394fae922d31](https://kstatic.googleusercontent.com/files/00e270b1cccb1f37302462a162c171d86f293a84de54036e0021e2fe0253cf05623bae2a62751b0840667bc6c8412fd70f45c9485972dc370be8394fae922d31) |
 | Securing the AI Pipeline                                                                             | [https://cloud.google.com/blog/topics/threat-intelligence/securing-ai-pipeline/?hl=en](https://cloud.google.com/blog/topics/threat-intelligence/securing-ai-pipeline/?hl=en)                                                                                                                                                                                 |
 | Introducing the Coalition for Secure AI (CoSAI) and founding member organizations                    | [https://blog.google/technology/safety-security/google-coalition-for-secure-ai/](https://blog.google/technology/safety-security/google-coalition-for-secure-ai/)                                                                                                                                                                                             |
+| MITRE ATLAS                                                                                          | [https://atlas.mitre.org/](https://atlas.mitre.org/)                                                                                                                                                                                                                                                                                                         |
 | Anatomy of an AI ATTACK: MITRE ATLAS                                                                 | [https://www.youtube.com/watch?v=QhoG74PDFyc](https://www.youtube.com/watch?v=QhoG74PDFyc)                                                                                                                                                                                                                                                                   |
+| MITRE ATLAS™ Introduction                                                                            | [https://www.youtube.com/watch?v=3FN9v-y-C-w](https://www.youtube.com/watch?v=3FN9v-y-C-w)                                                                                                                                                                                                                                                                   |
+| L’utilisation pratique du cadre ATLAS de MITRE pour les équipes du RSSI                              | [https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/](https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/)                                                                                                               |
+| Introduction à l'apprentissage automatique contradictoire et au cadre MITRE ATLAS                    | [https://www.infosecured.ai/fr/i/mlsec/adversarial-machine-learning-mitre-atlas-framework/](https://www.infosecured.ai/fr/i/mlsec/adversarial-machine-learning-mitre-atlas-framework/)                                                                                                                                                                       |
+| MITRE ATLAS Framework 2025 – Guide to Securing AI Systems                                            | [https://www.practical-devsecops.com/mitre-atlas-framework-guide-securing-ai-systems/](https://www.practical-devsecops.com/mitre-atlas-framework-guide-securing-ai-systems/)                                                                                                                                                                                 |
+| ATLAS Navigator                                                                                      | [https://github.com/mitre-atlas/atlas-navigator](https://github.com/mitre-atlas/atlas-navigator)                                                                                                                                                                                                                                                             |
 | Faut-il investir sur la tech européenne ? L'analyse d'un insider - Finary Talk #60 & Olivier Coste - | [https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af](https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af)                                                                                                                                                                                                                                                         |
 | AI Act                                                                                               | [https://artificialintelligenceact.eu/fr/](https://artificialintelligenceact.eu/fr/)                                                                                                                                                                                                                                                                         |
 | AI Act - European Commission                                                                         | [https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)                                                                                                                                                                                                       |
