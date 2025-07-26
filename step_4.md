@@ -14,6 +14,10 @@
 
 
 - [Soyez SAIF avec le Secure AI Framework](#soyez-saif-avec-le-secure-ai-framework)
+  - [Cadre Secure AI Framework (SAIF) de Google](#cadre-secure-ai-framework-saif-de-google)
+  - [Les quatre grandes catégories du SAIF](#les-quatre-grandes-catégories-du-saif)
+  - [Les six éléments fondamentaux du SAIF](#les-six-éléments-fondamentaux-du-saif)
+  - [Cartographie des risques et contrôles SAIF](#cartographie-des-risques-et-contrôles-saif)
 
 
 - [Mitre ATLAS, le fil d'Ariane des techniques d'attaque sur l'IA](#mitre-atlas-le-file-dariane-des-techniques-dattaque-sur-lia)
@@ -290,6 +294,48 @@ massive et non autorisée sur internet.
 
 ## Soyez SAIF avec le Secure AI Framework
 
+## Cadre Secure AI Framework (SAIF) de Google
+
+Le **Secure AI Framework (SAIF)** de **Google** est un cadre conceptuel développé pour assurer la sécurité tout au long 
+du cycle de vie des systèmes d’intelligence artificielle, depuis la collecte des données jusqu’au déploiement des modèles.
+Il a été élaboré pour traiter les enjeux majeurs de gestion des risques, de sécurité et de confidentialité propres aux 
+modèles d’IA et de machine learning. Le **SAIF** vise à ce que ces systèmes soient « secure by default » dès 
+leur mise en œuvre, en intégrant des mesures de protection essentielles dès la phase de conception et tout au long du 
+processus de développement jusqu'au déploiement en production.
+
+**SAIF** s’inscrit dans la démarche générale de **Google** pour une IA responsable, alignée sur des principes tels que: 
+ - la sécurité
+ - l’équité
+ - l’interprétabilité
+ - la protection de la vie privée. 
+
+Le framework propose des normes et des 
+contrôles concrets pour la construction, l’évaluation et le déploiement des systèmes d’IA, en intégrant la sécurité de 
+façon transverse.
+
+
+### Les quatre grandes catégories du SAIF
+
+SAIF structure le développement sécuritaire de l’IA autour de quatre axes majeurs, chacun étant associé à plusieurs 
+composants techniques clés:
+
+ - **Données** : concerne les sources de données, les processus de filtrage et de préparation, ainsi que les ensembles 
+utilisés pour l’entraînement des modèles.
+ - **Infrastructure** : englobe le matériel, la sécurité de l’hébergement, les frameworks et le code nécessaires à 
+l’entraînement, le stockage des données et des modèles, ainsi que le déploiement (Model Serving).
+ - **Modèle** : inclut le modèle lui-même (code et poids), la gestion des entrées (input handling) pour protéger contre 
+les entrées malicieuses, et la gestion des sorties (output handling) pour éviter les expositions de données ou des 
+comportements inattendus.
+ - **Application** : se rapporte à l’ensemble applicatif qui interagit avec le modèle, y compris les agents ou plugins 
+qui peuvent présenter des risques additionnels.
+
+
+### Les six éléments fondamentaux du SAIF
+
+
+
+
+
 <img src="img/saif-map.png" alt="SAIF">
 
 
@@ -416,20 +462,26 @@ efficace des abus technologiques.
 
 ## Ressources
 
-| Information                                                                                          | Lien                                                                                                                                                                                                                                                   |
-|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MITRE ATLAS™ Introduction                                                                            | [https://www.youtube.com/watch?v=3FN9v-y-C-w](https://www.youtube.com/watch?v=3FN9v-y-C-w)                                                                                                                                                             |
-| OWASP Top 10 for LLM Applications                                                                    | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf) |
-| Model theft: Meta LLaMA leak                                                                         | [https://learn.snyk.io/lesson/model-theft-llm/](https://learn.snyk.io/lesson/model-theft-llm/)                                                                                                                                                         |
-| Secure AI Framework (SAIF)                                                                           | [https://saif.google/](https://saif.google/)                                                                                                                                                                                                           |
-| Anatomy of an AI ATTACK: MITRE ATLAS                                                                 | [https://www.youtube.com/watch?v=QhoG74PDFyc](https://www.youtube.com/watch?v=QhoG74PDFyc)                                                                                                                                                             |
-| Faut-il investir sur la tech européenne ? L'analyse d'un insider - Finary Talk #60 & Olivier Coste - | [https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af](https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af)                                                                                                                                                   |
-| AI Act                                                                                               | [https://artificialintelligenceact.eu/fr/](https://artificialintelligenceact.eu/fr/)                                                                                                                                                                   |
-| AI Act - European Commission                                                                         | [https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)                                                                                                 |
-| Digital Services Act (DSA)                                                                           | [https://www.vie-publique.fr/eclairage/285115-dsa-le-reglement-sur-les-services-numeriques-ou-digital-services-act](https://www.vie-publique.fr/eclairage/285115-dsa-le-reglement-sur-les-services-numeriques-ou-digital-services-act)                 |
-| Take It Down Act                                                                                     | [https://www.congress.gov/bill/119th-congress/senate-bill/146](https://www.congress.gov/bill/119th-congress/senate-bill/146)                                                                                                                           |
-| NIST AI RMF                                                                                          | [https://www.nist.gov/itl/ai-risk-management-framework](https://www.nist.gov/itl/ai-risk-management-framework)                                                                                                                                         |
-| Artificial Intelligence Regulation Threatens Free Expression                                         | [https://www.cato.org/briefing-paper/artificial-intelligence-regulation-threatens-free-expression](https://www.cato.org/briefing-paper/artificial-intelligence-regulation-threatens-free-expression)                                                   |
-| AI regulation: EU vs. USA - opportunities and challenges for companies                               | [https://www.tucan.ai/blog/ai-regulation-eu-vs-usa-opportunities-and-challenges-for-companies/](https://www.tucan.ai/blog/ai-regulation-eu-vs-usa-opportunities-and-challenges-for-companies/)                                                         |
-| Comparing the EU AI Act to Proposed AI-Related Legislation in the US                                 | [https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us](https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us)                           |
-| Take It Down Act : la loi contre le revenge porn et les deepfakes pornographiques.                   | [https://toutsurlacyber.fr/take-it-down-act-revenge-porn-et-deepfakes/](https://toutsurlacyber.fr/take-it-down-act-revenge-porn-et-deepfakes/)                                                                                                         |
+| Information                                                                                          | Lien                                                                                                                                                                                                                                                                                                                                                                   |
+|------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MITRE ATLAS™ Introduction                                                                            | [https://www.youtube.com/watch?v=3FN9v-y-C-w](https://www.youtube.com/watch?v=3FN9v-y-C-w)                                                                                                                                                                                                                                                                             |
+| OWASP Top 10 for LLM Applications                                                                    | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf)                                                                                                                 |
+| Model theft: Meta LLaMA leak                                                                         | [https://learn.snyk.io/lesson/model-theft-llm/](https://learn.snyk.io/lesson/model-theft-llm/)                                                                                                                                                                                                                                                                         |
+| Secure AI Framework (SAIF)                                                                           | [https://saif.google/](https://saif.google/)                                                                                                                                                                                                                                                                                                                           |
+| Google lance un framework pour sécuriser les modèles d'IA                                            | [https://www.lemondeinformatique.fr/actualites/lire-google-lance-un-framework-pour-securiser-les-modeles-d-ia-90694.html](https://www.lemondeinformatique.fr/actualites/lire-google-lance-un-framework-pour-securiser-les-modeles-d-ia-90694.html)                                                                                                                     |
+| Présentation de la sécurité dans le monde de l'IA                                                    | [https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr](https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr)                                                                                                                                                                                                       |
+| What Is Google's Secure AI Framework (SAIF)?                                                         | [https://www.paloaltonetworks.com/cyberpedia/google-secure-ai-framework](https://www.paloaltonetworks.com/cyberpedia/google-secure-ai-framework)                                                                                                                                                                                                                       |
+| Secure AI Framework Approach                                                                         | [https://kstatic.googleusercontent.com/files/00e270b1cccb1f37302462a162c171d86f293a84de54036e0021e2fe0253cf05623bae2a62751b0840667bc6c8412fd70f45c9485972dc370be8394fae922d31](https://kstatic.googleusercontent.com/files/00e270b1cccb1f37302462a162c171d86f293a84de54036e0021e2fe0253cf05623bae2a62751b0840667bc6c8412fd70f45c9485972dc370be8394fae922d31)           |
+| Anatomy of an AI ATTACK: MITRE ATLAS                                                                 | [https://www.youtube.com/watch?v=QhoG74PDFyc](https://www.youtube.com/watch?v=QhoG74PDFyc)                                                                                                                                                                                                                                                                             |
+| Faut-il investir sur la tech européenne ? L'analyse d'un insider - Finary Talk #60 & Olivier Coste - | [https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af](https://youtu.be/Tw-HRXlVIa0?si=ZRHWRjy_vzHcQ6Af)                                                                                                                                                                                                                                                                   |
+| AI Act                                                                                               | [https://artificialintelligenceact.eu/fr/](https://artificialintelligenceact.eu/fr/)                                                                                                                                                                                                                                                                                   |
+| AI Act - European Commission                                                                         | [https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)                                                                                                                                                                                                                 |
+| Digital Services Act (DSA)                                                                           | [https://www.vie-publique.fr/eclairage/285115-dsa-le-reglement-sur-les-services-numeriques-ou-digital-services-act](https://www.vie-publique.fr/eclairage/285115-dsa-le-reglement-sur-les-services-numeriques-ou-digital-services-act)                                                                                                                                 |
+| Take It Down Act                                                                                     | [https://www.congress.gov/bill/119th-congress/senate-bill/146](https://www.congress.gov/bill/119th-congress/senate-bill/146)                                                                                                                                                                                                                                           |
+| NIST AI RMF                                                                                          | [https://www.nist.gov/itl/ai-risk-management-framework](https://www.nist.gov/itl/ai-risk-management-framework)                                                                                                                                                                                                                                                         |
+| Artificial Intelligence Regulation Threatens Free Expression                                         | [https://www.cato.org/briefing-paper/artificial-intelligence-regulation-threatens-free-expression](https://www.cato.org/briefing-paper/artificial-intelligence-regulation-threatens-free-expression)                                                                                                                                                                   |
+| AI regulation: EU vs. USA - opportunities and challenges for companies                               | [https://www.tucan.ai/blog/ai-regulation-eu-vs-usa-opportunities-and-challenges-for-companies/](https://www.tucan.ai/blog/ai-regulation-eu-vs-usa-opportunities-and-challenges-for-companies/)                                                                                                                                                                         |
+| Comparing the EU AI Act to Proposed AI-Related Legislation in the US                                 | [https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us](https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us)                                                                                                                                           |
+| Take It Down Act : la loi contre le revenge porn et les deepfakes pornographiques.                   | [https://toutsurlacyber.fr/take-it-down-act-revenge-porn-et-deepfakes/](https://toutsurlacyber.fr/take-it-down-act-revenge-porn-et-deepfakes/)                                                                                                                                                                                                                         |
+| Le ministère américain du Commerce publie un outil de mesure des risques inhérents aux LLM           | [https://www.usine-digitale.fr/article/le-ministere-americain-du-commerce-publie-un-outil-de-mesure-des-risques-inherents-aux-llm.N2216752](https://www.usine-digitale.fr/article/le-ministere-americain-du-commerce-publie-un-outil-de-mesure-des-risques-inherents-aux-llm.N2216752)                                                                                 |
+| Entrée en vigueur du règlement européen sur l’IA : les premières questions-réponses de la CNIL       | [https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil](https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil)                                                                                                                               |
