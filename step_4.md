@@ -299,7 +299,8 @@ massive et non autorisée sur internet.
 
 ## Soyez SAIF avec le Secure AI Framework
 
-## Cadre Secure AI Framework (SAIF) de Google
+
+### Cadre Secure AI Framework (SAIF) de Google
 
 Le **Secure AI Framework (SAIF)** de **Google** est un cadre conceptuel développé pour assurer la sécurité tout au long 
 du cycle de vie des systèmes d’intelligence artificielle, depuis la collecte des données jusqu’au déploiement des modèles.
@@ -391,7 +392,7 @@ avec d’autres acteurs majeurs du secteur tels qu'**Amazon**, **Cisco**, **IBM*
 <details>
   <summary>The Coalition for Secure AI</summary>
 <a href="https://www.coalitionforsecureai.org/" target="_blank">
-  <img src="img/CoSAI.png" alt="image" width="850" style="transition:0.3s;">
+  <img src="img/CoSAI.png" alt="image" width="450" style="transition:0.3s;">
 </a>
 </details>
 
