@@ -58,12 +58,18 @@
 
 ## Cours
 
-| Titre                                                                   | Plateforme                | Lien                                                                                 |
-|-------------------------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------|
-| Artificial Intelligence for Beginners - A Curriculum                    | GitHub                    | https://microsoft.github.io/AI-For-Beginners/                                        |
-| Beginner: Introduction to Generative AI Learning Path                   | Google Cloud Skills Boost | https://www.cloudskillsboost.google/paths/118                                        |
-| HarvardX: CS50's Introduction to Artificial Intelligence with Python    | edX                       | https://www.edx.org/course/cs50s-introduction-to-artificial-intelligence-with-python |
-| Prompt Engineering for ChatGPT                                          | Coursera                  | https://www.coursera.org/learn/prompt-engineering                                    |
-| Big Data, Artificial Intelligence, and Ethics                           | Coursera                  | https://www.coursera.org/learn/big-data-ai-ethics                                    |
-| Generative AI with Large Language Models                                | Coursera                  | https://www.coursera.org/learn/generative-ai-with-llms                               |
-| Présentation de la sécurité dans le monde de l'IA                       | Google                    | https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr       |
+| Titre                                                                | Plateforme                | Lien                                                                                 |
+|----------------------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------|
+| Artificial Intelligence for Beginners - A Curriculum                 | GitHub                    | https://microsoft.github.io/AI-For-Beginners/                                        |
+| Beginner: Introduction to Generative AI Learning Path                | Google Cloud Skills Boost | https://www.cloudskillsboost.google/paths/118                                        |
+| HarvardX: CS50's Introduction to Artificial Intelligence with Python | edX                       | https://www.edx.org/course/cs50s-introduction-to-artificial-intelligence-with-python |
+| Prompt Engineering for ChatGPT                                       | Coursera                  | https://www.coursera.org/learn/prompt-engineering                                    |
+| Big Data, Artificial Intelligence, and Ethics                        | Coursera                  | https://www.coursera.org/learn/big-data-ai-ethics                                    |
+| Generative AI with Large Language Models                             | Coursera                  | https://www.coursera.org/learn/generative-ai-with-llms                               |
+| Présentation de la sécurité dans le monde de l'IA                    | Google                    | https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr       |
+| Red Teaming LLM Applications                                         | DeepLearning.AI           | https://learn.deeplearning.ai/courses/red-teaming-llm-applications                   |
+| Exploring Adversarial Machine Learning                               | NVIDIA                    | https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-DS-03+V1    |
+| Microsoft AI Red Team                                                | Microsoft Learn           | https://learn.microsoft.com/en-us/security/ai-red-team/                              |
+
+
+
