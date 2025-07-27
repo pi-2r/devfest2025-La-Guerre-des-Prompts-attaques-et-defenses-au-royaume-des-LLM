@@ -44,6 +44,8 @@ de l'histoire de l'informatique, devançant de loin TikTok, Facebook et Instagra
 <a href="https://www.visualcapitalist.com/threads-100-million-users/" target="_blank">
   <img src="https://www.visualcapitalist.com/wp-content/uploads/2023/07/CP_Threads-Fastest-100-Million.jpg" alt="image" width="450" style="transition:0.3s;">
 </a>
+<a href="https://www.visualcapitalist.com/threads-100-million-users/" target="_blank"><em>source: visualcapitalist.com</em></a>
+
 
 
 Depuis l’apparition de ChatGPT, les modèles de langage (LLM) ont été propulsés sur le devant de la scène auprès du grand
@@ -63,6 +65,8 @@ l’intelligence artificielle, dépassant largement les avancées initiales de C
 <a href="https://www.visualcapitalist.com/charted-the-growth-of-big-tech-since-chatgpts-launch/" target="_blank">
   <img src="https://www.visualcapitalist.com/wp-content/uploads/2024/12/Growth-of-Big-Tech-Firms_WEB.jpg" alt="image" width="450" style="transition:0.3s;">
 </a>
+<a href="https://www.visualcapitalist.com/charted-the-growth-of-big-tech-since-chatgpts-launch/" target="_blank"><em>source: visualcapitalist.com</em></a>
+
 
 ## Intelligence Artificielle, réseaux neuronaux et LLM
 
@@ -97,6 +101,7 @@ partir des données d'entraînement. Leur force résident dans la gestion des ta
 saisie de texte, à la synthèse rédactionnel d'un document de centaines de pages sans dénaturer l'idée principal.
 
 <img src="https://i0.wp.com/www.phdata.io/wp-content/uploads/2024/10/article-image1-6.png" alt="image" width="450" style="transition:0.3s;">
+<a href="https://phdata.io" target="_blank"><em>source: phdata.io</em></a>
 
 
 ## Les Transformers: origines et architecture:
@@ -106,6 +111,7 @@ L'architecture du transformateur a été introduite dans un article scientifique
 publié en 2017 par une équipe de Google Brain.
 
 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*jKqypwGzmDv7KDUZ.png" alt="image" width="450" style="transition:0.3s;">
+<a href="https://medium.com" target="_blank"><em>source: medium.com</em></a>
 
  
 
@@ -201,6 +207,8 @@ Voici un tableau comparatif entre les chatbots et les copilotes, mettant en évi
 <a href="https://www.visualcapitalist.com/charted-productivity-gains-from-using-ai/" target="_blank">
   <img src="https://www.visualcapitalist.com/wp-content/uploads/2025/06/Human-vs-AI-Site.png" alt="image" width="450" style="transition:0.3s;">
 </a>
+<a href="https://www.visualcapitalist.com/charted-productivity-gains-from-using-ai/" target="_blank"><em>source: visualcapitalist.com</em></a>
+
 
 L’efficacité des modèles de langage de grande taille (LLM) dans les applications d’IA générative est aujourd’hui largement reconnue. À mesure que ces outils s’intègrent, voire deviennent incontournables, dans les environnements professionnels, leur influence sur la productivité se confirme de façon tangible.
 
@@ -223,6 +231,7 @@ voire supérieures, à celles d’un individu doté d’un QI supérieur à 130.
 <a href="https://www.visualcapitalist.com/ranked-the-smartest-ai-models-by-iq/" target="_blank">
   <img src="https://www.visualcapitalist.com/wp-content/uploads/2025/06/IQ-of-AI_02-web.jpg" alt="image" width="450" style="transition:0.3s;">
 </a>
+<a href="https://www.visualcapitalist.com/ranked-the-smartest-ai-models-by-iq/" target="_blank"><em>source: visualcapitalist.com</em></a>
 </details>
 
 

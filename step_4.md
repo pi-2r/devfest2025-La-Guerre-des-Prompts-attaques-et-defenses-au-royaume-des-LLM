@@ -48,6 +48,8 @@
 <a href="https://genai.owasp.org/2023/10/18/llm-to-10-v1-1/" target="_blank">
   <img src="https://genai.owasp.org/wp-content/uploads/2024/05/1697599021768.jpeg" alt="image" width="950" style="transition:0.3s;">
 </a>
+<a href="https://genai.owasp.org/2023/10/18/llm-to-10-v1-1/" target="_blank"><em>source: genai.owasp.org</em></a>
+
 
 L’**OWASP Top 10 for Large Language Model Applications** est aujourd’hui l’outil de référence pour recenser, analyser et 
 atténuer les principaux risques de sécurité propres à l’utilisation des grands modèles de langage.
@@ -378,6 +380,7 @@ SAIF donne accès à une cartographie détaillée des risques spécifiques à l�
 <a href="https://saif.google/secure-ai-framework/saif-map" target="_blank">
   <img src="img/saif-map.png" alt="SAIF">
 </a>
+<a href="https://saif.google/secure-ai-framework/saif-map" target="_blank"><em>source: saif.google</em></a>
 
 À chaque risque, des contrôles et mesures de mitigation sont proposés, ainsi que la désignation du responsable 
 (créateur du modèle ou consommateur du modèle). Par exemple :
@@ -409,6 +412,7 @@ avec d’autres acteurs majeurs du secteur tels qu'**Amazon**, **Cisco**, **IBM*
 <a href="https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/" target="_blank">
   <img src="https://www.riskinsight-wavestone.com/wp-content/uploads/2024/11/MITRE-Figure-1.png" alt="MITRE ATLAS" >
 </a>
+<a href="https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/" target="_blank"><em>source: riskinsight-wavestone.com</em></a>
 
 ### Objectif du MITRE ATLAS
 
