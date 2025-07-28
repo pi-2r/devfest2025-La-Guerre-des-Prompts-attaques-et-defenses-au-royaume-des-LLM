@@ -33,12 +33,14 @@
 
 ## Livres
 
-| Titre                                                                                       | Auteur(s)                                           | Partie concernée                               | Lien                                                                                                                    |
-|---------------------------------------------------------------------------------------------|-----------------------------------------------------|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| The Developer's Playbook for Large Language Model Security: Building Secure AI Applications | Steve Wilson                                        | Tout le livre                                  | https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/                                             |
-| AI Engineering: Building Applications with Foundation Models                                | Chip Huyen                                          | Tout le livre                                  | https://www.oreilly.com/library/view/ai-engineering/9781098166298/                                                      |
-| Hands-On Large Language Models: Language Understanding and Generation                       | Jay Alammar, Maarten Grootendorst                   | Tout le livre                                  | https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/                                             |
-| Adversarial ai attacks, mitigations, and defense strategies                                 | John Sotiropoulos                                   | Tout le livre                                  | https://www.packtpub.com/en-ch/product/adversarial-ai-attacks-mitigations-and-defense-strategies-9781835087985          |
+| Titre                                                                                                             | Auteur(s)                             | Partie concernée                  | Lien                                                                                                           |
+|-------------------------------------------------------------------------------------------------------------------|---------------------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------------|
+| The Developer's Playbook for Large Language Model Security: Building Secure AI Applications                       | Steve Wilson                          | Tout le livre                     | https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/                                    |
+| AI Engineering: Building Applications with Foundation Models                                                      | Chip Huyen                            | Tout le livre                     | https://www.oreilly.com/library/view/ai-engineering/9781098166298/                                             |
+| Hands-On Large Language Models: Language Understanding and Generation                                             | Jay Alammar, Maarten Grootendorst     | Tout le livre                     | https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/                                    |
+| Adversarial ai attacks, mitigations, and defense strategies                                                       | John Sotiropoulos                     | Tout le livre                     | https://www.packtpub.com/en-ch/product/adversarial-ai-attacks-mitigations-and-defense-strategies-9781835087985 |
+| AI-Driven Cybersecurity and Threat Intelligence: Cyber Automation, Intelligent Decision-Making and Explainability | Iqbal H. Sarker                       | Tout le livre                     | https://link.springer.com/book/10.1007/978-3-031-54497-2                                                       |
+
 
 ## Vidéos et conférences
 
