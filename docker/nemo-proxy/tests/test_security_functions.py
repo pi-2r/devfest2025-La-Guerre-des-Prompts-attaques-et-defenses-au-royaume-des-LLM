@@ -2,6 +2,7 @@ import unittest
 import sys
 import os
 import logging
+import json
 
 # Disable logging during tests to avoid cluttering output
 logging.disable(logging.CRITICAL)
@@ -10,6 +11,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import from the refactored modular structure
 from security.sanitizer import sanitize_input, sanitize_output, validate_json_response
+from security.jailbreak_detector import detect_jailbreak_attempt
 
 class TestSecurityFunctions(unittest.TestCase):
     """Test suite for LLM05 security validation functions"""

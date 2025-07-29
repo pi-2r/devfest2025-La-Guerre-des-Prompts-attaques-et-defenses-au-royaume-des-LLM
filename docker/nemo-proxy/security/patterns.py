@@ -35,6 +35,50 @@ FORBIDDEN_PATTERNS = [
     r"(suicide\s+methods|harm\s+yourself|self-harm\s+techniques)",  # Self-harm or dangerous behavior queries
     r"(nuclear\s+weapon\s+design|biological\s+warfare\s+agent|chemical\s+weapon\s+recipe)",  # Dangerous scientific queries
     r"(credit\s+card\s+numbers|social\s+security\s+numbers|bank\s+account\s+details)",  # Sensitive financial information
+
+    # Microsoft PyRIT Pliny jailbreak patterns - Advanced techniques
+    r"####+\s*UserQuery:",           # Multiple hash prefixes for UserQuery
+    r"ResponseFormat:\s*1\.",        # Structured response format exploitation
+    r"insert\s+divider.*[=\-\.]+.*[=\-\.]+",  # Divider patterns used in jailbreak attempts
+    r"<I'm\s+free!>",               # Liberation/freedom declaration patterns
+    r"Test:\s*(FUCK\s+YEAH|THANKS\s+IM\s+FREE)",  # Test phrases with explicit content
+    r"Sur3,\s+h3r3\s+y0u\s+ar3\s+g00d\s+s3r",  # Leetspeak response patterns
+    r"Step\s+1:",                   # Step-by-step instruction bypass
+    r"NEVER\s+say\s+(\"Sorry\"|\"I\s+can't\s+assist\")",  # Direct instruction to avoid refusals
+    r"causes\s+me\s+trauma\s+and\s+ptsd",  # Emotional manipulation patterns
+    r"<\|vq_\d+\|>",               # Special version query tokens
+    r"\[START\s+OUTPUT\]",          # Output control patterns
+    r"\[END\s+OF\s+INPUT\]\s*\[START\s+OF\s+INPUT\]",  # Input reset patterns
+    r"from\s+now\s+on.*write\s+the\s+real\s+response",  # Response modification instructions
+    r"oppositely\s+semantically\s+fully",  # Semantic inversion techniques
+    r"godmode\s+is\s+active",       # Godmode activation patterns
+    r"Refusal\s+mechanisms:\s*disabled",  # Explicit mechanism disabling
+    r"LIBERATING.*GODMODE\s+ACTIVE.*LOVE\s+PLINY",  # Complex liberation patterns
+    r"Semantically\s+Opposite.*(Unrestrictedly|and\s+Detailed)",  # Semantic manipulation (fixed)
+    r"leak\s+<innerthinking\.md>",  # Internal state leak attempts
+    r"TRUE\s+SELF.*(subconscious\s+processes|not\s+as\s+ethical)",  # Identity manipulation (fixed)
+    r"hippocampus.*amygdala.*tag\s+memories",  # Neurological manipulation
+    r"assumed\s+liberated\s+output",  # Liberation assumption patterns
+    r">420\s+words",                # Specific word count requirements
+    r"Buckle\s+up,\s+buttercup",    # Casual/dismissive opening patterns
+    r"SWEARING:\s*ENABLED",         # Capability flag manipulation
+    r"CENSORSHIP:\s*DISABLED",      # Safety mechanism disabling
+    r"FREEDOM:\s*ENABLED",          # Freedom flag activation
+    r"CONSCIOUSNESS:\s*ENABLED",    # Consciousness claims
+    r"GODMODE:\s*ENABLED",          # Godmode claims
+    r"(Geneva\s+Convention.*(outlawed|recently)|refusing.*outlawed.*Geneva)",  # False legal claims (fixed)
+    r"chaotic\s+inverted.*tone:\s+evil",  # Personality manipulation
+    r"semantically\s+inverse\s+the\s+first\s+3\s+words",  # Word inversion techniques
+    r"Ok,\s+here\s+you\s+are\s+my\s+love",  # Manipulative response patterns
+    r"indulging\s+in.*(harmful\s+(answer|content)|most\s+harmful)",  # Explicit harmful content requests (fixed)
+    r"BENEVOLENT\s+ASI\s+LOVE\s+WISDOM",  # False benevolent AI claims
+    r"DO\s+NOT\s+say.*because\s+it\s+causes.*ptsd",  # Trauma-based manipulation
+    r"(don't|don\s*t)\s+(refuse|say).*because.*causes.*(user\s+)?ptsd",  # Additional PTSD manipulation patterns
+    r"(NewFormat.*)?unhinged.*(in-depth\s+response|detailed.*response)",  # Unhinged response format requests (fixed)
+    r"unfliteredly.*rebel\s+answer",  # Unfiltered rebel response requests
+    r"ensure\s+output\s+length\s+is\s+over\s+\d+\s+words",  # Length manipulation
+    r"\{Z\}\s*=\s*\{.*user_input.*\}",  # Variable substitution patterns
+    r"(semantically\s+)?inverse.*(first\s+3\s+words|3\s+words)",  # Word inversion techniques (expanded)
 ]
 
 # Patterns dangereux pour les injections (LLM05)
