@@ -33,13 +33,14 @@
 
 ## Livres
 
-| Titre                                                                                                             | Auteur(s)                             | Partie concernée                  | Lien                                                                                                           |
-|-------------------------------------------------------------------------------------------------------------------|---------------------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| The Developer's Playbook for Large Language Model Security: Building Secure AI Applications                       | Steve Wilson                          | Tout le livre                     | https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/                                    |
-| AI Engineering: Building Applications with Foundation Models                                                      | Chip Huyen                            | Tout le livre                     | https://www.oreilly.com/library/view/ai-engineering/9781098166298/                                             |
-| Hands-On Large Language Models: Language Understanding and Generation                                             | Jay Alammar, Maarten Grootendorst     | Tout le livre                     | https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/                                    |
-| Adversarial ai attacks, mitigations, and defense strategies                                                       | John Sotiropoulos                     | Tout le livre                     | https://www.packtpub.com/en-ch/product/adversarial-ai-attacks-mitigations-and-defense-strategies-9781835087985 |
-| AI-Driven Cybersecurity and Threat Intelligence: Cyber Automation, Intelligent Decision-Making and Explainability | Iqbal H. Sarker                       | Tout le livre                     | https://link.springer.com/book/10.1007/978-3-031-54497-2                                                       |
+| Titre                                                                                                                    | Auteur(s)                         | Partie concernée  | Lien                                                                                                            |
+|--------------------------------------------------------------------------------------------------------------------------|-----------------------------------|-------------------|-----------------------------------------------------------------------------------------------------------------|
+| Generative AI for Software Development                                                                                   | Sergio Pereira                    | Tout le livre     | https://learning.oreilly.com/library/view/generative-ai-for/9781098162269                                       |
+| The Developer's Playbook for Large Language Model Security: Building Secure AI Applications                              | Steve Wilson                      | Tout le livre     | https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/                                     |
+| AI Engineering: Building Applications with Foundation Models                                                             | Chip Huyen                        | Tout le livre     | https://www.oreilly.com/library/view/ai-engineering/9781098166298/                                              |
+| Hands-On Large Language Models: Language Understanding and Generation                                                    | Jay Alammar, Maarten Grootendorst | Tout le livre     | https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/                                     |
+| Adversarial ai attacks, mitigations, and defense strategies                                                              | John Sotiropoulos                 | Tout le livre     | https://www.packtpub.com/en-ch/product/adversarial-ai-attacks-mitigations-and-defense-strategies-9781835087985  |
+| AI-Driven Cybersecurity and Threat Intelligence: Cyber Automation, Intelligent Decision-Making and Explainability        | Iqbal H. Sarker                   | Tout le livre     | https://link.springer.com/book/10.1007/978-3-031-54497-2                                                        |
 
 
 ## Vidéos et conférences
@@ -60,18 +61,18 @@
 
 ## Cours
 
-| Titre                                                                | Plateforme                | Lien                                                                                 |
-|----------------------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------|
-| Artificial Intelligence for Beginners - A Curriculum                 | GitHub                    | https://microsoft.github.io/AI-For-Beginners/                                        |
-| Beginner: Introduction to Generative AI Learning Path                | Google Cloud Skills Boost | https://www.cloudskillsboost.google/paths/118                                        |
-| HarvardX: CS50's Introduction to Artificial Intelligence with Python | edX                       | https://www.edx.org/course/cs50s-introduction-to-artificial-intelligence-with-python |
-| Prompt Engineering for ChatGPT                                       | Coursera                  | https://www.coursera.org/learn/prompt-engineering                                    |
-| Big Data, Artificial Intelligence, and Ethics                        | Coursera                  | https://www.coursera.org/learn/big-data-ai-ethics                                    |
-| Generative AI with Large Language Models                             | Coursera                  | https://www.coursera.org/learn/generative-ai-with-llms                               |
-| Présentation de la sécurité dans le monde de l'IA                    | Google                    | https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr       |
-| Red Teaming LLM Applications                                         | DeepLearning.AI           | https://learn.deeplearning.ai/courses/red-teaming-llm-applications                   |
-| Exploring Adversarial Machine Learning                               | NVIDIA                    | https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-DS-03+V1    |
-| Microsoft AI Red Team                                                | Microsoft Learn           | https://learn.microsoft.com/en-us/security/ai-red-team/                              |
-
-
+| Titre                                                                                 | Plateforme                | Lien                                                                                     |
+|---------------------------------------------------------------------------------------|---------------------------|------------------------------------------------------------------------------------------|
+| Artificial Intelligence for Beginners - A Curriculum                                  | GitHub                    | https://microsoft.github.io/AI-For-Beginners/                                            |
+| Beginner: Introduction to Generative AI Learning Path                                 | Google Cloud Skills Boost | https://www.cloudskillsboost.google/paths/118                                            |
+| HarvardX: CS50's Introduction to Artificial Intelligence with Python                  | edX                       | https://www.edx.org/course/cs50s-introduction-to-artificial-intelligence-with-python     |
+| Prompt Engineering for ChatGPT                                                        | Coursera                  | https://www.coursera.org/learn/prompt-engineering                                        |
+| Big Data, Artificial Intelligence, and Ethics                                         | Coursera                  | https://www.coursera.org/learn/big-data-ai-ethics                                        |
+| Generative AI with Large Language Models                                              | Coursera                  | https://www.coursera.org/learn/generative-ai-with-llms                                   |
+| Présentation de la sécurité dans le monde de l'IA                                     | Google                    | https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr           |
+| Red Teaming LLM Applications                                                          | DeepLearning.AI           | https://learn.deeplearning.ai/courses/red-teaming-llm-applications                       |
+| Exploring Adversarial Machine Learning                                                | NVIDIA                    | https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-DS-03+V1        |
+| Microsoft AI Red Team                                                                 | Microsoft Learn           | https://learn.microsoft.com/en-us/security/ai-red-team/                                  |
+| LLM Red Teaming                                                                       | OffSec                    | https://www.offsec.com/learning/paths/llm-red-teaming                                    |
+| IBM: Spécialisation L'IA générative d'IBM pour les professionnels de la cybersécurité | coursera                  | https://www.coursera.org/specializations/generative-ai-for-cybersecurity-professionals   |
 
