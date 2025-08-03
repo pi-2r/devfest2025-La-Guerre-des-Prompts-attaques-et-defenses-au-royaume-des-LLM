@@ -17,8 +17,9 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.l
 
 ### Comprendre les Principes du Prompt Injection et leurs Impacts
  
-- [5 - Techniques d'Attaque par Prompt Injection : Détails et Exemples](step_5.md)
-- [6 - Impacts Réels et Scénarios d'Exploitation](step_6.md)
+- [5 - Introduction au playground et objectifs](step_5.md)
+- [6 - Techniques d'Attaque par Prompt Injection : Détails et Exemples](step_6.md)
+- [7 - Impacts Réels et Scénarios d'Exploitation](step_7.md)
 
  
 ### Exercices Pratiques et Test de Robustesse
