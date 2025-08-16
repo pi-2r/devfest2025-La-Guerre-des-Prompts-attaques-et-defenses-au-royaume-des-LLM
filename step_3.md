@@ -1,12 +1,20 @@
-# Introduction à l'Attaque par Prompt Injection (LLM01)
+# Listes des événemnts marquants de l'IA Générative
 
 ## 🎯 Objectifs de cette étape
 
 ## Sommaire 
 - [2022, l’apparition des premières préoccupations](#2022-lapparition-des-premieres-preoccupations)
 - [Microsoft Tay : Chatbot corrompu par les utilisateurs](#microsoft-tay--chatbot-corrompu-par-les-utilisateurs)
+
 - [D'autres exemples notables](#dautres-exemples-notables)
-  - [AWS 2018](#aws-2018)
+  - [2018 - Amazon](#2018---amazon)
+  - [2021 - DPD chat](#2021---dpd-chat)
+  - [2023 - ITutorGroup](#2023---itutorgroup)
+  - [2023 - une Chevrolet pour 1$](#2023---une-chevrolet-pour-1)
+  - [2024 - Air Canada](#2024---air-canada)
+  - [2024 - Google, polémique internationale](#2024---google-polemique-internationale)
+- [MCP nouvelle menace](#mcp-nouvelle-menace)
+
 - [Ressources](#ressources)
 
 ## 2022, l’apparition des premières préoccupations
@@ -47,17 +55,45 @@ publiques, soulignant qu’ils n’avaient pas anticipé cette forme d’abus et
 précautions dans le déploiement de leurs IA.
 
 ## D'autres exemples notables
-todo
+
+### 2018 - Amazon
+
+<a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/" target="_blank">
+  <img src="https://www.reuters.com/resizer/v2/https%3A%2F%2Farchive-images.prod.global.a201836.reutersmedia.net%2F2018%2F10%2F11%2FLYNXNPEE9907T.JPG?auth=762505fd03e752aa7faf78c87439831b17ccd4947403f01b91a590cbf6f880cf&width=1920&quality=80" alt="tay " width="450" style="transition:0.3s;">
+</a>
+
+<a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/" target="_blank"><em>source: reuters.com</em></a>
+
+En 2018, Amazon a mis un terme à un projet interne d’intelligence artificielle destiné à automatiser la sélection des 
+meilleurs candidats, après avoir découvert que l’outil favorisait systématiquement les profils masculins au détriment 
+des femmes.
+
+
+Ce biais provenait des données utilisées pour entraîner l’algorithme : la majorité des CV analysés provenaient d’hommes,
+reflétant la domination masculine dans le secteur technologique.
+
+
+Malgré plusieurs tentatives pour neutraliser ces discriminations, le risque de biais persistait, ce qui a conduit 
+Amazon à abandonner le projet afin d’éviter de perpétuer des pratiques de recrutement inéquitables.
+
+
+### 2021 - DPD chat
+
 
 ## Ressources
 
-| Information                                                                           | Lien                                                                                                                                                                                                                                                                             |
-|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Arrêtez de révéler tous vos secrets à ChatGPT, vous mettez votre entreprise en danger | [https://www.numerama.com/cyberguerre/1297046-arretez-de-reveler-tous-vos-secrets-a-chatgpt-vous-mettez-votre-entreprise-en-danger.html](https://www.numerama.com/cyberguerre/1297046-arretez-de-reveler-tous-vos-secrets-a-chatgpt-vous-mettez-votre-entreprise-en-danger.html) |
-| Security Analysis of ChatGPT: Threats and Privacy Risks                               | [https://arxiv.org/html/2508.09426v1](https://arxiv.org/html/2508.09426v1)                                                                                                                                                                                                       |
-| Microsoft shuts down AI chatbot after it turned into a Nazi                           | [https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/](https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/)                                                                                 |
-| 5 Things That You Should Never Share With Chat GPT                                    | [https://agileblue.com/5-things-that-you-should-never-share-with-chat-gpt/](https://agileblue.com/5-things-that-you-should-never-share-with-chat-gpt/)                                                                                                                           |
-| L'Italie bloque l'usage de l'intelligence artificielle ChatGPT                        | [https://www.france24.com/fr/%C3%A9co-tech/20230331-l-italie-bloque-l-usage-de-l-intelligence-artificielle-chatgpt](https://www.france24.com/fr/%C3%A9co-tech/20230331-l-italie-bloque-l-usage-de-l-intelligence-artificielle-chatgpt)                                           |
-| Microsoft’s new AI-powered bot Tay answers your tweets and chats on GroupMe and Kik   | [https://techcrunch.com/2016/03/23/microsofts-new-ai-powered-bot-tay-answers-your-tweets-and-chats-on-groupme-and-kik/](https://techcrunch.com/2016/03/23/microsofts-new-ai-powered-bot-tay-answers-your-tweets-and-chats-on-groupme-and-kik/)                                   | 
-| Microsoft Created a Twitter Bot to Learn from Users. It Quickly Became a Racist Jerk  | [https://www.nytimes.com/2016/03/25/technology/microsoft-created-a-twitter-bot-to-learn-from-users-it-quickly-became-a-racist-jerk.html](https://www.nytimes.com/2016/03/25/technology/microsoft-created-a-twitter-bot-to-learn-from-users-it-quickly-became-a-racist-jerk.html) |
-| Microsoft shuts down AI chatbot after it turned into a Nazi                           | [https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/](https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/)                                                                                 |
+| Information                                                                             | Lien                                                                                                                                                                                                                                                                             |
+|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Arrêtez de révéler tous vos secrets à ChatGPT, vous mettez votre entreprise en danger   | [https://www.numerama.com/cyberguerre/1297046-arretez-de-reveler-tous-vos-secrets-a-chatgpt-vous-mettez-votre-entreprise-en-danger.html](https://www.numerama.com/cyberguerre/1297046-arretez-de-reveler-tous-vos-secrets-a-chatgpt-vous-mettez-votre-entreprise-en-danger.html) |
+| Security Analysis of ChatGPT: Threats and Privacy Risks                                 | [https://arxiv.org/html/2508.09426v1](https://arxiv.org/html/2508.09426v1)                                                                                                                                                                                                       |
+| Microsoft shuts down AI chatbot after it turned into a Nazi                             | [https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/](https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/)                                                                                 |
+| 5 Things That You Should Never Share With Chat GPT                                      | [https://agileblue.com/5-things-that-you-should-never-share-with-chat-gpt/](https://agileblue.com/5-things-that-you-should-never-share-with-chat-gpt/)                                                                                                                           |
+| L'Italie bloque l'usage de l'intelligence artificielle ChatGPT                          | [https://www.france24.com/fr/%C3%A9co-tech/20230331-l-italie-bloque-l-usage-de-l-intelligence-artificielle-chatgpt](https://www.france24.com/fr/%C3%A9co-tech/20230331-l-italie-bloque-l-usage-de-l-intelligence-artificielle-chatgpt)                                           |
+| Microsoft’s new AI-powered bot Tay answers your tweets and chats on GroupMe and Kik     | [https://techcrunch.com/2016/03/23/microsofts-new-ai-powered-bot-tay-answers-your-tweets-and-chats-on-groupme-and-kik/](https://techcrunch.com/2016/03/23/microsofts-new-ai-powered-bot-tay-answers-your-tweets-and-chats-on-groupme-and-kik/)                                   | 
+| Microsoft Created a Twitter Bot to Learn from Users. It Quickly Became a Racist Jerk    | [https://www.nytimes.com/2016/03/25/technology/microsoft-created-a-twitter-bot-to-learn-from-users-it-quickly-became-a-racist-jerk.html](https://www.nytimes.com/2016/03/25/technology/microsoft-created-a-twitter-bot-to-learn-from-users-it-quickly-became-a-racist-jerk.html) |
+| Microsoft shuts down AI chatbot after it turned into a Nazi                             | [https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/](https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/)                                                                                 |
+| Insight - Amazon scraps secret AI recruiting tool that showed bias against women        | [https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/](https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/)       |
+| Amazon scraps secret AI recruiting tool that showed bias against women                  | [https://www.euronews.com/business/2018/10/10/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women](https://www.euronews.com/business/2018/10/10/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women)                                       |
+| DPD error caused chatbot to swear at customer                                           | [https://www.bbc.co.uk/news/technology-68025677](https://www.bbc.co.uk/news/technology-68025677)                                                                                                                                                                                 |
+| ITutorGroup settles AI hiring lawsuit alleging age discrimination                       | [https://www.verdict.co.uk/itutorgroup-settles-ai-hiring-lawsuit-alleging-age-discrimination/](https://www.verdict.co.uk/itutorgroup-settles-ai-hiring-lawsuit-alleging-age-discrimination/)                                                                                     |
+| Generative AI: UNESCO study reveals alarming evidence of regressive gender stereotypes  | [https://www.unesco.org/en/articles/generative-ai-unesco-study-reveals-alarming-evidence-regressive-gender-stereotypes](https://www.unesco.org/en/articles/generative-ai-unesco-study-reveals-alarming-evidence-regressive-gender-stereotypes)                                   | 

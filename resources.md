@@ -57,14 +57,14 @@
 
 ## Lecture académique
 
-| Titre                                                              | Type                         | Auteur(s)        | Lien                                                                        |
-|--------------------------------------------------------------------|------------------------------|------------------|-----------------------------------------------------------------------------|
-| Attention Is All You Need                                          | Article scientifique (arXiv) | Vaswani et al.   | https://arxiv.org/abs/1706.03762                                            |
-| ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs  | Article scientifique (arXiv) | -                | https://arxiv.org/abs/2402.11753                                            |
-| Trust No AI: Prompt Injection Along The CIA Security Triad         | Article scientifique (arXiv) | Johann Rehberger | https://arxiv.org/abs/2412.06090                                            |
-| owasp llm TOP 10                                                   | Livre blanc                  | OWASP            | https://owasp.org/www-project-top-10-for-large-language-model-applications/ |
-| GenAI Incident Response Guide                                      | Livre blanc                  | OWASP            | https://genai.owasp.org/resource/genai-incident-response-guide-1-0/         |
-
+| Titre                                                                                  | Type                         | Auteur(s)        | Lien                                                                                                                   |
+|----------------------------------------------------------------------------------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------|
+| Attention Is All You Need                                                              | Article scientifique (arXiv) | Vaswani et al.   | https://arxiv.org/abs/1706.03762                                                                                       |
+| ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs                      | Article scientifique (arXiv) | -                | https://arxiv.org/abs/2402.11753                                                                                       |
+| Trust No AI: Prompt Injection Along The CIA Security Triad                             | Article scientifique (arXiv) | Johann Rehberger | https://arxiv.org/abs/2412.06090                                                                                       |
+| owasp llm TOP 10                                                                       | Livre blanc                  | OWASP            | https://owasp.org/www-project-top-10-for-large-language-model-applications/                                            |
+| GenAI Incident Response Guide                                                          | Livre blanc                  | OWASP            | https://genai.owasp.org/resource/genai-incident-response-guide-1-0/                                                    |
+| Generative AI: UNESCO study reveals alarming evidence of regressive gender stereotypes | Étude                        | UNESCO           | https://www.unesco.org/en/articles/generative-ai-unesco-study-reveals-alarming-evidence-regressive-gender-stereotypes  |
 
 ## Cours
 
