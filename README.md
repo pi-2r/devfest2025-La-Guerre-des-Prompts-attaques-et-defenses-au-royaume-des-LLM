@@ -12,7 +12,7 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.l
  
 - [1 - Il était une fois dans un monde numérique ...](step_1.md)
 - [2 - Pourquoi la Sécurité des LLM est-elle Cruciale ?](step_2.md)
-- [3 - Introduction à l'Attaque par Prompt Injection (LLM01)](step_3.md)
+- [3 - Des écarts sous contrôle relatif](step_3.md)
 - [4 - Cadres de Sécurité Référents](step_4.md)
 
 ### Comprendre les Principes du Prompt Injection et leurs Impacts
