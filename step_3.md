@@ -1,5 +1,9 @@
 # Listes des événemnts marquants de l'IA Générative
 
+[<img src="img/step3.png" alt="Nazgul" >](https://www.youtube.com/watch?v=Sk47qO8rW4Y)
+> "What are you doing !", Frodon, LOTR - The Followship of the Ring
+
+
 ## 🎯 Objectifs de cette étape
 
 ## Sommaire 
