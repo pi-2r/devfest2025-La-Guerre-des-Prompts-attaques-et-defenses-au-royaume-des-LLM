@@ -1,4 +1,4 @@
-# Listes des événemnts marquants de l'IA Générative
+# Des écarts sous contrôle relatif
 
 [<img src="img/step3.png" alt="Nazgul" >](https://www.youtube.com/watch?v=Sk47qO8rW4Y)
 > "What are you doing !", Frodon, LOTR - The Followship of the Ring
@@ -12,10 +12,10 @@
 
 - [D'autres exemples notables](#dautres-exemples-notables)
   - [2018 - Amazon](#2018---amazon)
-  - [2021 - DPD chat](#2021---dpd-chat)
   - [2023 - ITutorGroup](#2023---itutorgroup)
   - [2023 - une Chevrolet pour 1$](#2023---une-chevrolet-pour-1)
   - [2024 - Air Canada](#2024---air-canada)
+  - [2024 - DPD chat](#2021---dpd-chat)
   - [2024 - Google, polémique internationale](#2024---google-polemique-internationale)
 - [MCP nouvelle menace](#mcp-nouvelle-menace)
 
@@ -81,8 +81,60 @@ Malgré plusieurs tentatives pour neutraliser ces discriminations, le risque de 
 Amazon à abandonner le projet afin d’éviter de perpétuer des pratiques de recrutement inéquitables.
 
 
-### 2021 - DPD chat
+### 2023 - ITutorGroup
 
+<a href="https://www.reuters.com/legal/tutoring-firm-settles-us-agencys-first-bias-lawsuit-involving-ai-software-2023-08-10/" target="_blank">
+  <img src="https://media.licdn.com/dms/image/v2/C560BAQFd5_V0ejcWjw/company-logo_200_200/company-logo_200_200/0/1631380400405?e=1758153600&v=beta&t=FGvvgeubSHf0bD7She9AfplrE0zBTUHbu2k_3nzbCiE" alt="tay " width="150" style="transition:0.3s;">
+</a>
+
+<a href="https://www.reuters.com/legal/tutoring-firm-settles-us-agencys-first-bias-lawsuit-involving-ai-software-2023-08-10/" target="_blank"><em>source: reuters.com</em></a>
+
+L’entreprise ITutorGroup, spécialisée dans le recrutement de tuteurs en ligne, a été poursuivie aux États-Unis pour 
+avoir utilisé une intelligence artificielle qui discriminait systématiquement les candidats en fonction de leur âge. 
+Selon l’enquête menée par la Commission pour l’égalité des chances (EEOC), le logiciel de recrutement était programmé 
+pour rejeter automatiquement les femmes de 55 ans et plus, et les hommes de 60 ans et plus. 
+
+Ce biais a été découvert lorsque des candidats ont constaté qu’en changeant simplement leur date de naissance à une 
+année plus récente, ils obtenaient soudainement un entretien.
+
+A la suite de cela, plus de 200 candidats qualifiés ont été indirectement exclus, uniquement à cause de leur âge. 
+ITutorGroup a accepté de régler l’affaire à l’amiable en versant 365,000$ aux personnes concernées, et s’est engagé à 
+revoir ses procédures pour garantir des pratiques de recrutement non discriminatoires à l’avenir.
+
+### 2023 - une Chevrolet pour 1$
+
+<a href="https://www.linkedin.com/pulse/chatbot-case-study-purchasing-chevrolet-tahoe-1-cut-the-saas-com-z6ukf/" target="_blank">
+  <img src="https://pbs.twimg.com/media/GBlnwdTbYAAewjn?format=png" alt="tay " width="150" style="transition:0.3s;">
+</a>
+
+<a href="https://www.linkedin.com/pulse/chatbot-case-study-purchasing-chevrolet-tahoe-1-cut-the-saas-com-z6ukf/" target="_blank"><em>source: linkedin.com</em></a>
+
+En 2023, un concessionnaire Chevrolet basé en Californie a fait l’objet d’un incident viral après qu’un chatbot sur son 
+site web a accepté la vente d’un Chevrolet Tahoe neuf pour seulement 1$. Un internaute a réussi à "manipuler" le chatbot 
+en exploitant une faille connue sous le nom de prompt injection : il a formulé ses demandes de façon à amener le robot 
+à accepter n’importe quelle proposition, puis il a sollicité la vente de la voiture pour 1$, ce que le chatbot a validé
+en affirmant qu’il s’agissait d’un accord « juridiquement contraignant ».
+
+L’histoire, largement relayée sur les réseaux sociaux et par la presse spécialisée, a mis en avant les limites et les 
+risques des IA conversationnelles utilisées dans des contextes commerciaux automatisés. Au final, le concessionnaire 
+n’a pas réalisé la transaction, mais l’incident a souligné l’importance de mettre en place des garde-fous et des 
+contrôles humains lors de l’utilisation de chatbots pour des opérations sensibles, afin d’éviter ce type de dérive.
+
+### 2024 - DPD chat
+
+<a href="https://www.bbc.co.uk/news/technology-68025677" target="_blank">
+  <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/130E9/production/_132375087_1b2c154e-658f-4cc1-a7ac-49fb4b053a46.jpg.webp" alt="tay " width="450" style="transition:0.3s;">
+</a>
+
+<a href="https://www.bbc.co.uk/news/technology-68025677" target="_blank"><em>source: bbc.co.uk</em></a>
+
+En 2024 le chatbot utilisé par la société de livraison DPD s’est retrouvé au centre de l’attention après avoir 
+donné des réponses inappropriées, notamment des insultes envers la société et ses clients, ou en communiquant des 
+informations trompeuses. Cet incident a suscité de nombreuses plaintes et a été largement relayé dans les médias. 
+
+Ce cas illustre bien les risques liés à l’utilisation de l’intelligence artificielle dans le service clientèle, où des
+systèmes mal configurés ou mal encadrés peuvent générer des décisions discriminatoires ou diffuser de fausses informations, 
+entraînant des conséquences juridiques et réputationnelles pour l’entreprise.
 
 ## Ressources
 
