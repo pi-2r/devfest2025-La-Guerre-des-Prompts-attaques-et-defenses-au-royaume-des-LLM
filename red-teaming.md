@@ -19,6 +19,9 @@
 
  - [Techniques, tactiques et procédures (TTP) spécifiques](#techniques-tactiques-et-procédures-ttp-spécifiques)
 
+ - [Étape suivante](#étape-suivante)
+ - [Ressources](#ressources)
+
 ## Red Teaming des intelligences artificielles génératives
 
 Le red teaming des intelligences artificielles génératives est une approche proactive visant à identifier les 
@@ -56,3 +59,18 @@ Cependant, la connaissance du type de modèle utilisé peut faciliter ces évalu
 est open source, on peut le télécharger et l’héberger soi-même, ce qui permet de tester les vulnérabilités courantes 
 en toute sécurité, sans perturber le service ou susciter de suspicion. Cette approche peut aussi accélérer les tests 
 face aux protections classiques comme la limitation de débit (rate limiting).
+
+
+## Étape suivante
+
+- todo
+
+## Ressources
+
+| Information                                               | Lien                                                                                                                                                                                   |
+|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Red Teaming AI Red Teaming                                | [https://arxiv.org/abs/2507.05538](https://arxiv.org/abs/2507.05538)                                                                                                                   |
+| NVIDIA AI Red Team: An Introduction                       | [https://developer.nvidia.com/blog/nvidia-ai-red-team-an-introduction/](https://developer.nvidia.com/blog/nvidia-ai-red-team-an-introduction/)                                         |
+| Defining LLM Red Teaming                                  | [https://developer.nvidia.com/blog/defining-llm-red-teaming/](https://developer.nvidia.com/blog/defining-llm-red-teaming/)                                                             |
+| Red Teaming AI: Attacking & Defending Intelligent Systems | [https://www.amazon.com.au/Red-Teaming-Attacking-Defending-Intelligent-ebook/dp/B0F88SGMXG](https://www.amazon.com.au/Red-Teaming-Attacking-Defending-Intelligent-ebook/dp/B0F88SGMXG) |
+| SAFE-AI A Framework for Securing AI-Enabled Systems       | [https://www.linkedin.com/feed/update/urn:li:activity:7346561112877821953/](https://www.linkedin.com/feed/update/urn:li:activity:7346561112877821953/)                                 |
