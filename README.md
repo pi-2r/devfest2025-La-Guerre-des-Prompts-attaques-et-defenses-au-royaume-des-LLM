@@ -4,9 +4,19 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.l
 
 <img src="img/la-guerre-des-prompts-attaques-et-defenses-au-royaume-des-llm.png"  alt="La Guerre des Prompts : attaques & défenses au royaume des LLM">
 
+
 ## Sommaire
 
-- [0 - Introduction](step_0.md)
+<details>
+  <summary>💡 note sur La section “Introduction aux menaces de l’IA générative”</summary>
+    
+La section “**Introduction aux menaces de l’IA générative**” vise avant tout à donner des repères pour comprendre les enjeux
+et prendre du recul sur le sujet, avant de se lancer pleinnement dans la pratique ("**Comprendre les Principes du Prompt Injection et leurs Impacts**"). 
+
+Lors du codelab, cette introduction sera présentée sous forme de diaporama (10-15min). Cela permettra à chacun de 
+préparer sereinement sa machine tout en se familiarisant progressivement avec la thématique abordée.
+</details>
+
 
 ### Introduction aux Menaces de l'IA Générative
  
@@ -18,7 +28,7 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.l
 ### Comprendre les Principes du Prompt Injection et leurs Impacts
  
 - [5 - Introduction au playground et objectifs](step_5.md)
-- [6 - Techniques d'Attaque par Prompt Injection : Détails et Exemples](step_6.md)
+- [6 - Techniques d'Attaque par Prompt Injection](step_6.md)
 - [7 - Impacts Réels et Scénarios d'Exploitation](step_7.md)
 
  
