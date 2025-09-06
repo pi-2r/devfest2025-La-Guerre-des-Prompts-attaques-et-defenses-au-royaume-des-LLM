@@ -191,6 +191,7 @@ Le terme "gradient-based" n'est pas forcément très répandu, mais on retrouve 
 ## Ressources
 
 
-| Information | Lien                                                                                                                                                                                                                                                                                                                               |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| todo        | [https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/](https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/)                                                                                                                                       |
+| Information                                                   | Lien                                                                                                                                            |
+|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| Prompt Hacking                                                | [https://learnprompting.org/docs/prompt_hacking/introduction](https://learnprompting.org/docs/prompt_hacking/introduction)                      |
+| Not what you've signed up for [...] Indirect Prompt Injection | [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)                                                                            |
