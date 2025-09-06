@@ -25,14 +25,18 @@ préparer sereinement sa machine tout en se familiarisant progressivement avec l
 - [3 - Des écarts sous contrôle relatif](step_3.md)
 - [4 - Cadres de Sécurité Référents](step_4.md)
 
-### Comprendre les Principes du Prompt Injection et leurs Impacts
+### Comprendre les Principes du Prompt Injection
  
 - [5 - Introduction au playground et objectifs](step_5.md)
 - [6 - Techniques d'Attaque par Prompt Injection](step_6.md)
 - [7 - Impacts Réels et Scénarios d'Exploitation](step_7.md)
 
- 
-### Exercices Pratiques et Test de Robustesse
+### Test de Robustesse
+
+- [8 - Test de Robustesse ?](step_8.md)
+- [9 - Garak: A Framework for Security Probing Large Language Models](step_9.md)
+- [10 - PyRIT: Framework for Security Risk Identification and Red Teaming in Generative AI System](step_10.md)
+
 
 ### Contre-mesures et Stratégies de Défense
 

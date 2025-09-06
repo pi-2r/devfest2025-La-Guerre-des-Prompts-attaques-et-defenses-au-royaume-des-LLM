@@ -39,8 +39,9 @@
         - [Digital Services Act (DSA)](#digital-services-act-dsa)
         - [AI Act](#ai-act)
     - [Points de convergence et divergences](#points-de-convergence-et-divergences)
-  
 
+
+- [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
 
 ## OWASP Top 10 for LLM Applications
@@ -584,6 +585,10 @@ de l’Union européenne concernant les LLM :
 
 Cette opposition illustre la diversité des stratégies de régulation, oscillant entre respect des libertés et prévention 
 efficace des abus technologiques.
+
+## Étape suivante
+
+- [Étape 5](step_5.md)
 
 
 ## Ressources
