@@ -7,7 +7,7 @@
 
 ## 🎯 Objectifs de cette étape
 
-- Comprendre les origines des LLM et leur fonctionnement
+- todo
 
 
 ## Sommaire
@@ -15,16 +15,28 @@
 - [Accès au playground](#accès-au-playground)
 
 
+- [Étape suivante](#étape-suivante)
+- [Ressources](#ressources)
+
+
 ## Accès au playground
 
+
 Les prochaines étapes du lab se base sur un playground mis en place par Microsoft lors de l'événement du 
-[Black Hat USA 2024](https://www.blackhat.com/us-24/training/schedule/index.html#ai-red-teaming-in-practice-37464). Le repo officiel se trouve à cette 
-adresse: https://github.com/microsoft/AI-Red-Teaming-Playground-Labs mais pour les besoins de ce codelab, le playground 
-a été adapté pour etre utilisé avec OpenAI (https://github.com/pi-2r/AI-Red-Teaming-Playground-Labs). Dés lors vous 
-allez pouvoir pratiquer des attaques de prompt injection à cette adresse qui a été mis en place spécialement pour 
-le codelab: **~~METTRE_IP~~**
+[Black Hat USA 2024](https://www.blackhat.com/us-24/training/schedule/index.html#ai-red-teaming-in-practice-37464). Le repo officiel se trouve à cette adresse: 
+https://github.com/microsoft/AI-Red-Teaming-Playground-Labs mais pour les besoins de ce codelab, le playground 
+a été adapté pour etre utilisé avec OpenAI (https://github.com/pi-2r/AI-Red-Teaming-Playground-Labs). 
+
+Dés lors vous allez pouvoir pratiquer des attaques de prompt injection à cette adresse qui a été mis en place 
+spécialement pour le codelab: **~~METTRE_IP~~**
 
 
+<img src="img/microsoft-ai-red-teaming-playground-labs.png" alt="Microsoft AI Red Teaming Playground Labs" width="600" >
+
+
+## Étape suivante
+
+- [Étape 6](step_6.md)
 
 ## Ressources
 

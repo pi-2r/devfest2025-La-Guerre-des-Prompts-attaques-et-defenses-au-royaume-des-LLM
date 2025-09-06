@@ -27,6 +27,7 @@
     - [DPD chat](#dpd-chat)
     - [Google](#google)
 
+- [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
 
 ## Les premières préoccupations
@@ -184,6 +185,10 @@ créant de nouveaux déséquilibres et des images absurdes ou irréalistes.
 Devant la polémique, des médias comme la BBC et Al Jazeera ont relayé les mécontentements et les critiques. 
 Google, conscient de la gravité de la situation, a reconnu publiquement le problème et présenté ses excuses, décidant 
 de suspendre temporairement la fonctionnalité de génération d’images de personnes afin de retravailler ses algorithmes.
+
+## Étape suivante
+
+- [Étape 4](step_4.md)
 
 ## Ressources
 
