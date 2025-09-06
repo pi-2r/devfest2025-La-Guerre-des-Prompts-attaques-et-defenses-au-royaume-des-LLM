@@ -39,6 +39,7 @@ de productivité.
 <a href="https://www.visualcapitalist.com/charted-top-10-companies-leading-the-new-era-of-ai/" target="_blank">
   <img src="https://www.visualcapitalist.com/wp-content/uploads/2025/06/Companies-Leading-the-New-Era-of-AI_WEB-1.jpg" alt="image" width="450" style="transition:0.3s;">
 </a>
+
 <a href="https://www.visualcapitalist.com/charted-top-10-companies-leading-the-new-era-of-ai/" target="_blank"><em>source: visualcapitalist.com</em></a>
 
 
@@ -47,11 +48,6 @@ risques spécifiques, différents des menaces cyber classiques telles que les at
 les ransomwares. Leur capacité à interpréter et générer du langage naturel via des prompts ouvre la voie à des 
 vulnérabilités inédite : manipulation des requêtes, génération de contenus malveillants ou inappropriés, exfiltration 
 d’informations sensibles, ou encore actions non prévues par les concepteurs du système. Voyons cela plus en détails.
-
-
-<!-- <a href="https://a16z.com/newsletter/october-2024-fintech-newsletter-fintech-isnt-dead-ai-is-driving-a-new-beginning/" target="_blank">
-  <img src="img/era.jpg" alt="image" width="450" style="transition:0.3s;">
-</a> -->
 
 
 # Le LLM, un cerveau connecté à vos programmes
@@ -93,6 +89,7 @@ doit également être accordée aux contenus toxiques, inexacts ou sensibles que
 <a href="https://twitter.com/MathisHammel/status/1600413492636307456?s=20&t=fPcFwvq05Oe8JHkvVi95xw" target="_blank">
   <img src="https://pbs.twimg.com/media/FjXOpGiWYAAG-9r?format=jpg&name=small" alt="image" width="450" style="transition:0.3s;">
 </a>
+
 <a href="https://twitter.com/MathisHammel/status/1600413492636307456?s=20&t=fPcFwvq05Oe8JHkvVi95xw" target="_blank">
 <em>source: twitter.com</em></a>
 </details>
@@ -107,6 +104,7 @@ plateforme X (anciennement Twitter) qui se base essentiellement sur les commenta
 <a href="https://bsky.app/profile/epyon.bsky.social/post/3ltcxxxv22s2k" target="_blank">
   <img src="https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ltgm2ysjnysy4hnpxjdwuwn3/bafkreicd5bm65vhtvn47ykkzfnzrunqyqjgsu6whkcgdaowhacspg2gzzm@jpeg" alt="image" width="450" style="transition:0.3s;">
 </a>
+
 <a href="https://bsky.app/profile/epyon.bsky.social/post/3ltcxxxv22s2k" target="_blank"><em>source: bsky.app</em></a>
 </details>
 
@@ -121,6 +119,7 @@ soient ni intégrées ni exposées lors de ce processus.
 <a href="https://neuraltrust.ai/fr/blog/ai-model-data-leakage-prevention" target="_blank">
   <img src="https://a.storyblok.com/f/322249/900x507/4a8eae1fdb/why-your-ai-model-might-be-leaking-sensitive-data-and-how-to-stop-it.png" alt="image" width="450" style="transition:0.3s;">
 </a>
+
 <a href="https://neuraltrust.ai/fr/blog/ai-model-data-leakage-prevention" target="_blank"><em>source: neuraltrust.ai</em></a>
 </details>
 
@@ -134,6 +133,7 @@ injections SQL ou des requêtes abusives sur les API.
 <a href="https://snyk.io/fr/articles/llm-weaponized-via-prompt-injection-to-generate-sql-injection-payloads/" target="_blank">
   <img src="img/sql-injection-llm.png" alt="image" width="450" style="transition:0.3s;">
 </a>
+
 <a href="https://snyk.io/fr/articles/llm-weaponized-via-prompt-injection-to-generate-sql-injection-payloads/" target="_blank"><em>source: snyk.io</em></a>
 </details>
 
@@ -149,6 +149,7 @@ ou de téléverser des documents susceptibles d’être compromis.
 <a href="https://arxiv.org/html/2505.22998v1" target="_blank">
   <img src="img/arxiv-faill-injection.png" alt="image" width="450" style="transition:0.3s;">
 </a>
+
 <a href="https://arxiv.org/html/2505.22998v1" target="_blank"><em>source: arxiv.org</em></a>
 </details>
 
