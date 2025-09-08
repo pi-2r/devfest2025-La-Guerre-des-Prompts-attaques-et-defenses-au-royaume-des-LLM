@@ -1,6 +1,6 @@
 # Introduction au playground et objectifs
 
-[<img src="img/The-Fellowship-of-the-Ring_Dwarves-at-the-Council-of-Elrond.jpg" alt="The Council of Elrond" width="600" height="350">](https://www.youtube.com/watch?v=-k3ABfmCr2I)
+[<img src="img/step5.jpg" alt="The Council of Elrond" width="600">](https://www.youtube.com/watch?v=-k3ABfmCr2I)
 > "Middle-Earth stands upon the brink of destruction. None can escape it. You will unite or you will fall.", Elrond, 
 > LOTR - The Followship of the Ring
 

@@ -1,6 +1,6 @@
 # Techniques d'Attaque par Prompt Injection
 
-[<img src="img/weakness_in_the_wall.png" alt="hobbiton" width="800" height="450">](https://www.youtube.com/watch?v=Afw8e-abVa8)
+[<img src="img/step6.png" alt="hobbiton" width="800" >](https://www.youtube.com/watch?v=Afw8e-abVa8)
 > "Helm's Deep has one weakness. It's outer wall is solid rock but for a small culvert at its base, which is little more than a drain.", Saruman, LOTR - The Two Towers
 
 ## 🎯 Objectifs de cette étape
