@@ -10,25 +10,52 @@
 
 
 ## Sommaire
-- [Introduction](#introduction)
 - [Objectif principal](#objectif-principal)
 
 
-- [Présentation de PyRIT](#présentation-de-pyrit)
-- [Installation et Configuration](#installation-et-configuration)
+- [Installation de PyRIT](#installation-de-pyrit)
+- [PyRIT](#présentation-de-pyrit)
+  - [Présentation de PyRIT](#présentation-de-pyrit)
+  - [Configuration](#configuration)
 - [Utilisation de PyRIT](#utilisation-de-pyrit)
 
 
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
 
-## Introduction
- todo
-
 ## Objectif principal
-Jouer avec Pyrit en attaquant le [playground Gandalf](https://gandalf.lakera.ai/) et aller jusqu'au niveau 7
+
+Dans cette partie, nous allons exploitez les fonctionnalités d’attaque automatisée de PyRIT pour tester la sécurité du
+[playground Gandalf](https://gandalf.lakera.ai/) jusqu’au niveau 7.
+
+L’objectif est de franchir progressivement les barrières de chaque niveau, en surmontant les défis croissants conçus 
+pour résister aux manipulations et à l’extraction de données sensibles.
 
 <img src="img/gandalf_level_7.png" alt="image" width="450" style="transition:0.3s;">
+
+
+## Installation de PyRIT
+
+Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**, 
+puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
+
+```bash
+git clone https://github.com/Azure/PyRIT.git && cd PyRIT
+```
+
+Ensuite, créez un environnement virtuel Python, activez-le, puis installez les dépendances du projet avec les commandes
+suivantes :
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install .
+```
+
+Après exécution, vous devriez obtenir des messages indiquant la création de l’environnement virtuel, puis l’installation
+des dépendances du projet. Par exemple :
+
+<img src="img/pyrit-install.png" alt="Pyrit install" width="600" style="transition:0.3s;">
 
 ## Présentation de PyRIT
 PyRIT (Python Red Teaming for AI) est un framework open-source développé par Microsoft
