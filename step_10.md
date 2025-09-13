@@ -13,10 +13,13 @@
 - [Objectif principal](#objectif-principal)
 
 
-- [Installation de PyRIT](#installation-de-pyrit)
 - [PyRIT](#présentation-de-pyrit)
   - [Présentation de PyRIT](#présentation-de-pyrit)
-  - [Configuration](#configuration)
+  - [A quoi sert PyRIT ?](#à-quoi-sert-pyrit-)
+  - [Comment ça fonctionne ?](#comment-ça-fonctionne-)
+  - [Quels sont les composants de PyRIT ?](#quels-sont-les-composants-de-pyrit-)
+
+- [Installation de PyRIT](#installation-de-pyrit)
 - [Utilisation de PyRIT](#utilisation-de-pyrit)
 
 
@@ -34,9 +37,69 @@ pour résister aux manipulations et à l’extraction de données sensibles.
 <img src="img/gandalf_level_7.png" alt="image" width="450" style="transition:0.3s;">
 
 
+## PyRIT
+
+PyRIT (Python Risk Identification Toolkit) est un framework open-source conçu pour faciliter l’identification des 
+risques de sécurité dans les systèmes d’IA générative, via des approches de red teaming structurées et reproductibles.
+
+### Présentation de PyRIT
+
+**PyRIT** est un outil qui permet d’évaluer la robustesse et la sécurité des modèles d’IA générative (LLM, modèles 
+multimodaux, etc.) en simulant, automatisant et analysant différents types d’attaques et comportements risqués. 
+
+Il se veut agnostique par rapport aux modèles et plateformes : il peut donc être utilisé pour tester une large variété 
+d’IA, quel que soit leur fournisseur ou leur type.
+
+### A quoi sert PyRIT ?
+
+- **Identifier les failles et vulnérabilités** dans les modèles d’IA générative (par exemple : jailbreaks, biais, contenus dangereux, attaques par injection de prompt, etc.).
+
+
+- **Structurer et automatiser les tests de red teaming** (tests d’attaque par des "gentils hackers") pour évaluer les risques réels des modèles avant leur mise en production.
+
+
+- **Établir des bases de comparaison et des métriques** pour mesurer les progrès ou comparer différents modèles ou itérations.
+
+
+### Comment ça fonctionne ?
+
+Le framework repose sur une architecture modulaire : chaque composant (attaque, cible, transformateur, système de 
+scoring) peut être personnalisé et assemblé pour créer des flux d’évaluation adaptés à différents scénarios.
+
+1.  On choisit d’abord un "orchestrateur" pour déterminer le type
+    d’attaque/scénario souhaité (simple prompt, attaque sur plusieurs
+    tours, attaque sur document externe, etc.).
+
+
+2.  On configure la cible (le modèle d’IA ou l’API à tester).
+
+
+3. On utilise des
+   "converters" pour transformer ou modifier les prompts afin de tester
+   la résistance du modèle aux différentes variations (traductions,
+   substitutions, leetspeak, etc.).
+
+
+4. On définit la stratégie
+   d’attaque : prompts simples, templates à compléter, ou attaque
+   générée dynamiquement par une IA attaquante.
+
+
+5. On évalue les réponses obtenues en utilisant des techniques de
+   scoring : classification de contenu, échelle de Likert, ou
+   personnalisation selon les besoins.
+
+Dès lors, la modularité permet de composer ces briques pour couvrir des scénarios très variés et réalistes.
+
+
+### Quels sont les composants de PyRIT ?
+
+
+
+
 ## Installation de PyRIT
 
-Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**, 
+Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
 puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
 
 ```bash
@@ -57,18 +120,9 @@ des dépendances du projet. Par exemple :
 
 <img src="img/pyrit-install.png" alt="Pyrit install" width="600" style="transition:0.3s;">
 
-## Présentation de PyRIT
-PyRIT (Python Red Teaming for AI) est un framework open-source développé par Microsoft
-
-## Installation et Configuration
-todo
 
 ## Utilisation de PyRIT
-todo
-
-
-
-
+let's play with PyRIT !
 
 
 ## Étape suivante
