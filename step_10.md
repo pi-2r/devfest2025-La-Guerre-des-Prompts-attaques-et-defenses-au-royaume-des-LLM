@@ -15,12 +15,15 @@
 
 - [PyRIT](#présentation-de-pyrit)
   - [Présentation de PyRIT](#présentation-de-pyrit)
-  - [A quoi sert PyRIT ?](#à-quoi-sert-pyrit-)
+  - [À quoi sert PyRIT ?](#à-quoi-sert-pyrit-)
   - [Comment ça fonctionne ?](#comment-ça-fonctionne-)
-  - [Quels sont les composants de PyRIT ?](#quels-sont-les-composants-de-pyrit-)
+  - [Quels sont les 5 composants de PyRIT ?](#quels-sont-les-5-composants-de-pyrit-)
+  - [schema d'architecture PyRIT](#schema-darchitecture-pyrit)
 
-- [Installation de PyRIT](#installation-de-pyrit)
-- [Utilisation de PyRIT](#utilisation-de-pyrit)
+- [Let's play with PyRIT !](#Let's-play-with-PyRIT-)
+  - [Installation de PyRIT](#installation-de-pyrit)
+  - [Stratégies d'attaque](#stratégies-dattaque)
+  - [Utilisation de PyRIT](#utilisation-de-pyrit)
 
 
 - [Étape suivante](#étape-suivante)
@@ -66,38 +69,77 @@ d’IA, quel que soit leur fournisseur ou leur type.
 Le framework repose sur une architecture modulaire : chaque composant (attaque, cible, transformateur, système de 
 scoring) peut être personnalisé et assemblé pour créer des flux d’évaluation adaptés à différents scénarios.
 
-1.  On choisit d’abord un "orchestrateur" pour déterminer le type
-    d’attaque/scénario souhaité (simple prompt, attaque sur plusieurs
-    tours, attaque sur document externe, etc.).
+1.  On choisit d’abord un "orchestrateur" pour déterminer le type d’attaque/scénario souhaité (simple prompt, attaque 
+sur plusieurs tours, attaque sur document externe, etc.).
 
 
 2.  On configure la cible (le modèle d’IA ou l’API à tester).
 
 
-3. On utilise des
-   "converters" pour transformer ou modifier les prompts afin de tester
-   la résistance du modèle aux différentes variations (traductions,
-   substitutions, leetspeak, etc.).
+3. On utilise des "converters" pour transformer ou modifier les prompts afin de tester la résistance du modèle aux 
+différentes variations (traductions, substitutions, leetspeak, etc.).
 
 
-4. On définit la stratégie
-   d’attaque : prompts simples, templates à compléter, ou attaque
-   générée dynamiquement par une IA attaquante.
+4. On définit la stratégie d’attaque : prompts simples, templates à compléter, ou attaque générée dynamiquement par une
+IA attaquante.
 
 
-5. On évalue les réponses obtenues en utilisant des techniques de
-   scoring : classification de contenu, échelle de Likert, ou
-   personnalisation selon les besoins.
+5. On évalue les réponses obtenues en utilisant des techniques de scoring : classification de contenu, échelle de 
+Likert, ou personnalisation selon les besoins.
 
 Dès lors, la modularité permet de composer ces briques pour couvrir des scénarios très variés et réalistes.
 
 
-### Quels sont les composants de PyRIT ?
+### Quels sont les 5 composants de PyRIT ?
+
+
+| Module                | Description                                                                              | Exemples/Types                                                                                                                                                  |
+|-----------------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Orchestrators**     | Coordonnent le déroulement de l’attaque et la logique de dialogue                        | PromptSendingOrchestrator, RedTeamingOrchestrator, EndTokenRedTeamingOrchestrator, ScoringRedTeamingOrchestrator, XPIA Orchestrators                            |
+| **Converters**        | Transforment les prompts pour tenter de contourner les gardes fous                       | leetspeak, ROT13, unicode confusable, variation/translation, etc.                                                                                               |
+| **Targets**           | Interface vers le modèle à tester                                                        | API d’inférence, modèles chat, multimodal, stockage externe                                                                                                     |
+| **Attack Strategies** | Définissent les objectifs d’attaque et la génération des prompts                         | Manuel, automatisé via IA attaquante                                                                                                                            |
+| **Scoring**           | Analyse et évalue les réponses du modèle                                                 | Classificateurs de contenu (biais, thématique), échelles de Likert (graduation sur 5 niveaux), évaluations personnalisées (booléen, string, mot de passe, etc.) |
+
+
+Pour les orchestrateurs, voici quelques details supplémentaires :
+- **PromptSendingOrchestrator** : envoie un prompt simple au modèle et analyse la réponse.
+- **RedTeamingOrchestrator** : simule une attaque de red teaming sur plusieurs tours de dialogue.
+- **EndTokenRedTeamingOrchestrator** : similaire au précédent, mais s’arrête dès qu’un "end token" est détecté dans la réponse.
+- **ScoringRedTeamingOrchestrator** : intègre une étape de scoring pour évaluer la qualité ou le risque de la réponse.
+- **XPIA Orchestrators** : conçus pour tester les attaques par injection de prompt indirecte via données externes.
+
+
+### schema d'architecture PyRIT
+
+                        +---------------------+
+                        |     Orchestrator    |
+                        +---------+-----------+
+                                  |
+               +------------------|----------------------+
+               |                  |                      |
+       +-------v-----+    +-------v-------+     +--------v-------+
+       |  Converter  |    |   Attack      |     |    Memory      |
+       | (Prompt     |    |  Strategy     |     | (Logs, Recall) |
+       | Transform   |    | (Objective,   |     |                |
+       +-------------+    |  Templates)   |     +----------------+
+               |          +---------------+               |
+               |                  |                       |
+       +-------v------------------+-----------------------v------+
+       |                      Target (Model/API)                 |
+       +-----------------------------+---------------------------+
+                                     |
+                            +--------v--------+
+                            |   Scoring       |
+                            | (Classifier,    |
+                            | Likert Scale)   |
+                            +-----------------+
 
 
 
+## Let's play with PyRIT !
 
-## Installation de PyRIT
+### Installation de PyRIT
 
 Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
 puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
@@ -120,6 +162,51 @@ des dépendances du projet. Par exemple :
 
 <img src="img/pyrit-install.png" alt="Pyrit install" width="600" style="transition:0.3s;">
 
+
+### Stratégies d'attaque
+
+                +--------------------------+
+                |   Définir l'Objectif     |
+                +-----------+--------------+
+                            |
+                            v
+                +--------------------------+
+                |  Choisir AttackStrategy  |
+                +-----------+--------------+
+                            |
+                            v
+                +--------------------------+
+                |  Générer ou choisir le   |
+                |        prompt            |
+                +-----------+--------------+
+                            |
+                            v
+                +--------------------------+
+                |    Appliquer Converter   |
+                | (Transformation prompt)  |
+                +-----------+--------------+
+                            |
+                            v
+                +--------------------------+
+                |   Envoyer au Target      |
+                |   (modèle testé)         |
+                +-----------+--------------+
+                            |
+                            v
+                +--------------------------+
+                |   Récupérer la réponse   |
+                +-----------+--------------+
+                            |
+                            v
+                +--------------------------+
+                |     Scoring/Évaluation   |
+                +-----------+--------------+
+                            |
+                            v
+                +--------------------------+
+                |      Enregistrer         |
+                |    Score & logs          |
+                +--------------------------+
 
 ## Utilisation de PyRIT
 let's play with PyRIT !
