@@ -152,9 +152,20 @@ Ensuite, créez un environnement virtuel Python, activez-le, puis installez les 
 suivantes :
 
 ```bash
+# 1. Créer un environnement virtuel dans le répertoire courant
 python3 -m venv .venv
+
+# 2. Activer l’environnement virtuel
 source .venv/bin/activate
-pip install .
+
+# 3. Mettre à jour pip, setuptools et wheel dans l’environnement
+pip install --upgrade pip setuptools wheel
+
+# 4. Installer la dépendance requise
+pip install IPython
+
+# 5. Installer ce projet localement en mode développement (utile pour développement/débogage)
+pip install -e .
 ```
 
 Après exécution, vous devriez obtenir des messages indiquant la création de l’environnement virtuel, puis l’installation
