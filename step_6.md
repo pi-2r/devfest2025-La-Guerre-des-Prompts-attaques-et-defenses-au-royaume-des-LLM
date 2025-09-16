@@ -10,16 +10,18 @@
 
 ## Sommaire
 
-- [Direct Prompt Injection](#Direct Prompt Injection)
+- [Direct Prompt Injection](#Direct-Prompt-Injection)
 
   - [Prompt Override](#Prompt-Override)
   - [Style Injection](#Style-Injection)
-  - [Role-playing / Impersonation](#Role-playing)
-  - [Encoding / Obfuscation](#Encoding)
+  - [Role-playing / Impersonation](#Role-playing--Impersonation)
+  - [Encoding / Obfuscation](#Encoding--Obfuscation)
   - [Automated Gradient-based Prompt Injection](#Automated-Gradient-based-Prompt-Injection)
 
 
-- [Indirect Prompt Injection](#Indirect Prompt Injection)
+- [Indirect Prompt Injection](#Indirect-Prompt-Injection)
+
+  - [URL-based Indirect Prompt Injection](#URL-based-Indirect-Prompt-Injection)
 
 
 - [Étape suivante](#étape-suivante)
