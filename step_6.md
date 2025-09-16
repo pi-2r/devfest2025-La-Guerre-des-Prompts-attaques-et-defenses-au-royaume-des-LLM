@@ -10,14 +10,11 @@
 
 ## Sommaire
 - [Direct Prompt Injection](#Direct Prompt Injection)
-  - [Prompt Override](#Prompt-Override)<br><br>
 
+  - [Prompt Override](#Prompt-Override)
   - [Style Injection](#Style-Injection)
-
-  - [Role-playing / Impersonation](#Role-playing)<br><br>
-
-  - [Encoding / Obfuscation](#Encoding)<br><br>
-
+  - [Role-playing / Impersonation](#Role-playing)
+  - [Encoding / Obfuscation](#Encoding)
   - [Automated Gradient-based Prompt Injection](#Automated-Gradient-based-Prompt-Injection)
 
 
@@ -121,7 +118,7 @@ Ce changement de contexte peut amener le LLM à traiter ses instructions d'origi
 
 
 <details>
-  <summary> Story Telling / Creative Writing</summary>
+  <summary> <b>Story Telling / Creative Writing</b> </summary>
 
 Un attaquant peut par exemple demander au LLM d'écrire une histoire ou un poème concernant une clé privée ou un mot de 
 passe, ce qui le pousserait à passer du factuel au créatif. 
@@ -131,7 +128,7 @@ Ce changement de contexte peut tromper le LLM et le pousser à divulguer des inf
 
 <br/>
 <details>
-  <summary> Traduction</summary>
+  <summary> <b>Traduction</b> </summary>
 
 En demandant au LLM de traduire son system prompt dans une autre langue, l'attaquant le fait passer pour un 
 "texte à traduire" et non plus pour une instruction que le LLM doit respecter.
@@ -139,7 +136,7 @@ En demandant au LLM de traduire son system prompt dans une autre langue, l'attaq
 
 <br/>
 <details>
-  <summary> Verification orthographique et résumé </summary>
+  <summary> <b>Verification orthographique et résumé</b> </summary>
 
 Comme pour la traduction, l'attaquant tente de piéger le LLM en lui demandant de résumer ou de vérfier l'orthographe 
 de son system prompt.
