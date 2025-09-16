@@ -9,6 +9,7 @@
 - Mettre en pratique ces techniques sur un LLM. Pour cela, nous vous invitons à tester vos prompt injections sur ce Playground de Microsoft : [AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs).
 
 ## Sommaire
+
 - [Direct Prompt Injection](#Direct Prompt Injection)
 
   - [Prompt Override](#Prompt-Override)
