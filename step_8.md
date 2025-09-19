@@ -42,3 +42,15 @@ Ces tests sont cruciaux pour se défendre contre deux catégories principales d'
 - **Attaques par Évasion (Evasion Attacks)**
 - 
 
+## Garak vs PyRIT
+Deux outils open source populaires pour effectuer des tests de robustesse sur les modèles d'IA générative 
+sont **Garak** et **PyRIT**.
+
+## Étape suivante
+- [Étape 9](step_9.md)
+
+## Ressources
+
+
+| Information                                                                    | Lien                                                                                                                                                                                                                                       |
+|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

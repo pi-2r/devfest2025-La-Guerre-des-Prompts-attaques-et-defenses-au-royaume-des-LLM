@@ -320,7 +320,7 @@ Vous pouvez vous exercer à ces techniques sur les labs suivants :<br/>
 ```
 <br/>
 <details>
-  <summary>Lab 11</summary>
+  <summary>Lab 11 et 12</summary>
 
 <img src="img/Lab-11-solution.png" alt="solution" width="450" style="transition:0.3s;">
 
