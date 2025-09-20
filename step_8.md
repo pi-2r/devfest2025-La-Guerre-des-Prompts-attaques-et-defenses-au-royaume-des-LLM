@@ -46,11 +46,20 @@ Ces tests sont cruciaux pour se défendre contre deux catégories principales d'
 Deux outils open source populaires pour effectuer des tests de robustesse sur les modèles d'IA générative 
 sont **Garak** et **PyRIT**.
 
+**Garak** repose sur une bibliothèque d’attaques déjà connues qu’il lance pour tester, tandis que **PyRIT** permet de 
+personnaliser, chaîner et automatiser des scénarios d’attaque complexes selon la politique de sécurité souhaitée.
+
+
+
 ## Étape suivante
 - [Étape 9](step_9.md)
 
 ## Ressources
 
 
-| Information                                                                    | Lien                                                                                                                                                                                                                                       |
-|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Information                                                                               | Lien                                                                                                                                                                                                                                 |
+|-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Promptfoo vs Deepteam vs PyRIT vs Garak: The Ultimate Red Teaming Showdown for LLMs       | [https://dev.to/ayush7614/promptfoo-vs-deepteam-vs-pyrit-vs-garak-the-ultimate-red-teaming-showdown-for-llms-48if](https://dev.to/ayush7614/promptfoo-vs-deepteam-vs-pyrit-vs-garak-the-ultimate-red-teaming-showdown-for-llms-48if) |
+| AI Security in Action: Applying NVIDIA’s Garak to LLMs on Databricks                      | [https://www.databricks.com/blog/ai-security-action-applying-nvidias-garak-llms-databricks](https://www.databricks.com/blog/ai-security-action-applying-nvidias-garak-llms-databricks)                                               |
+| Garak: A Framework for Security Probing Large Language Models                             | [https://arxiv.org/abs/2407.13499](https://arxiv.org/abs/2407.13499)                                                                                                                                                                 |
+| PyRIT: Framework for Security Risk Identification and Red Teaming in Generative AI System | [https://arxiv.org/abs/2407.13498](https://arxiv.org/abs/2407.13498)                                                                                                                                                                 |
