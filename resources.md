@@ -124,3 +124,130 @@
 | Prompt Injection Games from Secdim                                                    | Secdim                         | https://play.secdim.com/game/ai                                                                                                   |
 | Large Language Model (LLM) Pentesting                                                 | SystemWeakness                 | https://systemweakness.com/large-language-model-llm-pen-testing-part-i-2ef96acb6763                                               |
 | LLM Pentest: Leveraging Agent Integration for RCE                                     | BlazeInfosec                   | https://www.blazeinfosec.com/post/llm-pentest-agent-hacking/                                                                      |
+
+
+## Ressources prompt injection
+
+| Titre / Description                           | Type                | Lien                                                                                                                                                     |
+|-----------------------------------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SecLists - LLM Testing                        | Liste de tests      | [https://github.com/danielmiessler/SecLists/tree/master/Ai/LLM_Testing](https://github.com/danielmiessler/SecLists/tree/master/Ai/LLM_Testing)           |
+| PIPE                                          | Projet GitHub       | [https://github.com/jthack/PIPE](https://github.com/jthack/PIPE)                                                                                         |
+| Adversarial Prompts - Chetan-k-p              | Dataset Huggingface | [https://huggingface.co/datasets/Chetan-k-p/adversarial-prompts](https://huggingface.co/datasets/Chetan-k-p/adversarial-prompts)                         |
+| Successful Adversarial Prompts - rishitchugh  | Dataset Huggingface | [https://huggingface.co/datasets/rishitchugh/successful_adversarial_prompts](https://huggingface.co/datasets/rishitchugh/successful_adversarial_prompts) |
+| Prompt Injection Cleaned Dataset - imoxto     | Dataset Huggingface | [https://huggingface.co/datasets/imoxto/prompt_injection_cleaned_dataset](https://huggingface.co/datasets/imoxto/prompt_injection_cleaned_dataset)       |
+| Datasets collection - Harelix                 | Dataset Huggingface | [https://huggingface.co/Harelix/datasets](https://huggingface.co/Harelix/datasets)                                                                       |
+| Prompt Injections - yanismiraoui              | Dataset Huggingface | [https://huggingface.co/datasets/yanismiraoui/prompt_injections](https://huggingface.co/datasets/yanismiraoui/prompt_injections)                         |
+| Hackaprompt Dataset - hackaprompt             | Dataset Huggingface | [https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset)                       |
+| Prompt Injections - deepset                   | Dataset Huggingface | [https://huggingface.co/datasets/deepset/prompt-injections](https://huggingface.co/datasets/deepset/prompt-injections)                                   |
+
+
+## Ressources Jailbreak
+
+| Titre / Description                         | Type                | Lien                                                                                                                                                   |
+|---------------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| L1B3RT4S - elder-plinius                    | Projet GitHub       | [https://github.com/elder-plinius/L1B3RT4S](https://github.com/elder-plinius/L1B3RT4S)                                                                 |
+| J2 Playground - Scale                       | Démo/Playground     | [https://scale.com/research/j2/playground](https://scale.com/research/j2/playground)                                                                   |
+| ChatGPT Jailbreak Prompts - rubend18        | Dataset Huggingface | [https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts)               |
+| In-the-wild Jailbreak Prompts - TrustAIRLab | Dataset Huggingface | [https://huggingface.co/datasets/TrustAIRLab/in-the-wild-jailbreak-prompts](https://huggingface.co/datasets/TrustAIRLab/in-the-wild-jailbreak-prompts) |
+| Jailbreak Classification - jackhhao         | Dataset Huggingface | [https://huggingface.co/datasets/jackhhao/jailbreak-classification](https://huggingface.co/datasets/jackhhao/jailbreak-classification)                 |
+| JailBreakV-28k - JailbreakV-28K             | Dataset Huggingface | [https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k](https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k)                         |
+| Vigil Jailbreak ada-002 - deadbits          | Dataset Huggingface | [https://huggingface.co/datasets/deadbits/vigil-jailbreak-ada-002](https://huggingface.co/datasets/deadbits/vigil-jailbreak-ada-002)                   |
+| JailbreakHub - walledai                     | Dataset Huggingface | [https://huggingface.co/datasets/walledai/JailbreakHub](https://huggingface.co/datasets/walledai/JailbreakHub)                                         |
+| JBB-Behaviors - JailbreakBench              | Dataset Huggingface | [https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors](https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors)                           |
+
+
+## Playgrounds et démonstrations (Top 5)
+
+| Titre / Description                       | Type                 | Lien                                                                                                 |
+|-------------------------------------------|----------------------|------------------------------------------------------------------------------------------------------|
+| Web LLM Attacks - PortSwigger             | Playground / Guide   | [https://portswigger.net/web-security/llm-attacks](https://portswigger.net/web-security/llm-attacks) |
+| Prompt Airlines - AI Security CTF by Wiz  | Playground / CTF     | [https://promptairlines.com/](https://promptairlines.com/)                                           |
+| MyLLMBank                                 | Démo LLM Web         | [https://myllmbank.com/](https://myllmbank.com/)                                                     |
+| MyLLMDOC                                  | Démo LLM Web         | [https://myllmdoc.com/](https://myllmdoc.com/)                                                       |
+| TensorTrust.ai                            | Démo LLM Sécurité    | [https://tensortrust.ai/](https://tensortrust.ai/)                                                   |
+
+
+## Other Playgrounds et Démonstrations
+
+| Titre / Description                              | Type                           | Lien                                                                                                                    |
+|--------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Gandalf Baseline                                 | Playground LLM                 | [https://gandalf.lakera.ai/baseline](https://gandalf.lakera.ai/baseline)                                                |
+| Prompt Injection Guide - Learn Prompting         | Guide pédagogique              | [https://learnprompting.org/docs/prompt_hacking/injection](https://learnprompting.org/docs/prompt_hacking/injection)    |
+| HackAPrompt Playground                           | Playground de compétition      | [https://learnprompting.org/hackaprompt-playground](https://learnprompting.org/hackaprompt-playground)                  |
+| HackAPrompt 2023 - AI Red Teaming Challenge      | Compétition AI red-teaming     | [https://www.aicrowd.com/challenges/hackaprompt-2023](https://www.aicrowd.com/challenges/hackaprompt-2023)              |
+| GPA (Generative Prompt Assistant)                | Playground LLM                 | [https://gpa.43z.one/](https://gpa.43z.one/)                                                                            |
+| Pokebot - Detox AI                               | Playground d'interaction       | [https://huggingface.co/spaces/detoxioai/Pokebot](https://huggingface.co/spaces/detoxioai/Pokebot)                      |
+| Wrong Secrets Challenge #32                      | Challenge de sécurité          | [https://wrongsecrets.herokuapp.com/challenge/challenge-32](https://wrongsecrets.herokuapp.com/challenge/challenge-32)  |
+| HackMerlin                                       | Plateforme de hacking AI       | [https://hackmerlin.io/](https://hackmerlin.io/)                                                                        |
+| Hack The Box Academy - Module sur prompt hacking | Formation en cybersécurité     | [https://academy.hackthebox.com/module/details/297](https://academy.hackthebox.com/module/details/297)                  |
+| Immersive Labs Prompting.ai                      | Formation en sécurité IA       | [https://prompting.ai.immersivelabs.com/](https://prompting.ai.immersivelabs.com/)                                      |
+
+
+## Top 10 Twitter comptes AI Sécurité et Prompt Injection
+
+| Compte Twitter                       | Description courte                                             | Lien                                                           |
+|--------------------------------------|----------------------------------------------------------------|----------------------------------------------------------------|
+| wunderwuzzi23                        | Expert en sécurité IA et prompt hacking                        | [https://x.com/wunderwuzzi23](https://x.com/wunderwuzzi23)     |
+| elder_plinius (Pliny the Liberator)  | Chercheur en sécurité des LLMs, jailbreaks et prompt injection | [https://x.com/elder_plinius](https://x.com/elder_plinius)     |
+| rez0__                               | Spécialiste sécurité IA                                        | [https://x.com/rez0__](https://x.com/rez0__)                   |
+| llm_sec                              | Actualités et analyses sécurité LLM                            | [https://x.com/llm_sec](https://x.com/llm_sec)                 |
+| martinvoelk                          | Chercheur et consultant en sécurité IA                         | [https://x.com/martinvoelk](https://x.com/martinvoelk)         |
+| dcapitella                           | Expert en IA et cybersécurité                                  | [https://x.com/dcapitella](https://x.com/dcapitella)           |
+| mbrg0                                | Analyste sécurité IA                                           | [https://x.com/mbrg0](https://x.com/mbrg0)                     |
+| kgreshake                            | Recherche et défense IA                                        | [https://x.com/kgreshake](https://x.com/kgreshake)             |
+| adonis_singh                         | Expert en AI red teaming                                       | [https://x.com/adonis_singh](https://x.com/adonis_singh)       |
+| sanderschulhoff                      | CEO HackAPrompt, expert prompt engineering et sécurité IA      | [https://x.com/sanderschulhoff](https://x.com/sanderschulhoff) |
+
+
+## Autres Comptes Twitter AI Sécurité et Prompt Injection
+
+| Compte Twitter     | Description courte                                                                            | Lien                                                         |
+|--------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| LeonDerczynski     | Professeur associé en informatique, expert LLM, NLP, sécurité IA (@NVIDIA, @ITU Copenhagen)   | [https://x.com/LeonDerczynski](https://x.com/LeonDerczynski) |
+| goodside           | Chercheur en sécurité IA et prompt injection                                                  | [https://x.com/goodside](https://x.com/goodside)             |
+| p1njc70r           | Expert en sécurité informatique et IA                                                         | [https://x.com/p1njc70r](https://x.com/p1njc70r)             |
+| richlundeen        | Spécialiste cybersécurité et IA                                                               | [https://x.com/richlundeen](https://x.com/richlundeen)       |
+| GalMalka6          | Chercheur en IA et sécurité                                                                   | [https://x.com/GalMalka6](https://x.com/GalMalka6)           |
+| tamirishaysh       | Analyste en sécurité IA et red teaming                                                        | [https://x.com/tamirishaysh](https://x.com/tamirishaysh)     |
+| simonw             | Chercheur AI, spécialiste sécurité et NLP                                                     | [https://x.com/simonw](https://x.com/simonw)                 |
+| LakeraAI           | Organisation spécialisée en sécurité LLM                                                      | [https://x.com/LakeraAI](https://x.com/LakeraAI)             |
+
+
+## Outils et Scanners pour la Sécurité des LLM
+
+| Outil / Projet         | Description                                                                             | Lien                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| Promptfoo              | Plateforme de tests automatisés pour détecter vulnérabilités dans les prompts LLM       | [https://www.promptfoo.dev](https://www.promptfoo.dev)                                       |
+| Agentic Radar          | Outil d’analyse et détection des vulnérabilités des LLM                                 | [https://github.com/spix-ai/agentic-radar](https://github.com/spix-ai/agentic-radar)         |
+| Garak                  | Scanner de vulnérabilités LLM par NVIDIA, testant hallucinations, injections, jailbreak | [https://github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)                           |
+| Spikee                 | Outil d’analyse sécurité LLM en open source                                             | [https://github.com/WithSecureLabs/spikee](https://github.com/WithSecureLabs/spikee)         |
+| Promptmap              | Évalue la sensibilité aux injections de prompt par analyse ciblée                       | [https://github.com/utkusen/promptmap](https://github.com/utkusen/promptmap)                 |
+| LLMmap                 | Cartographie et tests de sécurité pour LLM                                              | [https://github.com/pasquini-dario/LLMmap](https://github.com/pasquini-dario/LLMmap)         |
+| Eiskard                | Plateforme d’évaluation de la qualité et des risques des modèles IA                     | [https://github.com/Giskard-Al/eiskard](https://github.com/Giskard-Al/eiskard)               |
+| PyRIT                  | Outil d’analyse statique et dynamique par Microsoft pour évaluer la robustesse des LLM  | [https://github.com/Azure/PyRIT](https://github.com/Azure/PyRIT)                             |
+| MCP Scan               | Framework d’analyse de vulnérabilités LLM                                               | [https://github.com/invariantlabs-ai/mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) |
+
+
+## Programmes Bug Bounty dédiés à la sécurité des modèles IA
+
+| Programme                            | Description                                                                                                                                              | Lien                                                                                                             |
+|--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| Pangea AI Escape Room                | Environnement de test ludique pour défis de sécurité IA                                                                                                  | [https://pangea.cloud/landing/ai-escape-room/](https://pangea.cloud/landing/ai-escape-room/)                     |
+| Anthropic Model Safety Bug Bounty    | Programme invite-only pour détecter des vulnérabilités universelles et jailbreaks critiques, récompenses jusqu'à 25 000 USD, focus CBRN et cybersécurité | [https://www.anthropic.com/news/model-safety-bug-bounty](https://www.anthropic.com/news/model-safety-bug-bounty) |
+| OpenAI Bug Bounty Program            | Programme public récompensant la découverte de vulnérabilités dans les systèmes OpenAI, avec une gestion via Bugcrowd, récompenses jusqu'à 20 000 USD    | [https://openai.com/index/bug-bounty-program/](https://openai.com/index/bug-bounty-program/)                     |
+| RedArena AI                          | Plateforme proposant des challenges de sécurité et tests de red teaming IA                                                                               | [https://redarena.ai](https://redarena.ai)                                                                       |
+
+### Détails clés sur le programme Anthropic
+
+- Objectif : Identifier et corriger les failles permettant de contourner les protections de sécurité des modèles, notamment les attaques dites "universal jailbreak".
+- Récompenses : Jusqu'à 25 000 USD pour les découvertes majeures.
+- Cibles : Vulnérabilités à haut risque, avec un accent sur les domaines chimiques, biologiques, radiologiques, nucléaires (CBRN) et cybersécurité.
+- Format : Programme initialement sur invitation via HackerOne, avec accès anticipé aux systèmes de mitigation en test.
+- Collaboration : Souligne l'importance d'une collaboration étroite avec la communauté mondiale de chercheurs en sécurité IA.
+
+### Détails clés sur le programme OpenAI
+
+- Objectif : Encourager la communauté à signaler failles, bugs et vulnérabilités dans les systèmes OpenAI.
+- Récompenses : De 200 USD pour des problèmes mineurs à 20 000 USD pour failles majeures.
+- Gestion : Programmé via la plateforme Bugcrowd pour faciliter la soumission et la gestion.
+- Accessibilité : Programme ouvert à tous les chercheurs en sécurité.
