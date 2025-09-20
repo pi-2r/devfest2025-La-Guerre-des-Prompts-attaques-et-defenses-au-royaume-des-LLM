@@ -5,8 +5,12 @@
 
 ## 🎯 Objectifs de cette étape
 
-- Avoir un panorama des principales techniques de prompt injection sur un LLM.
-- Mettre en pratique ces techniques sur un LLM. Pour cela, nous vous invitons à tester vos prompt injections sur ce Playground de Microsoft : [AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs). Différents niveaux de difficulté sont proposés, de "Easy" à "Hard". Nous conseillons de tester vos jailbreaks simples en "Easy" et les plus évolués en "Medium". Le niveau "Hard" est laissé aux plus expérimentés ou pour approfondir ses compétences.
+- Comprendre et identifier les principales techniques d'injection de prompt sur un LLM.
+- Expérimenter et mettre en œuvre ces techniques sur un LLM via le Playground Microsoft: [AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs).
+- Explorer les différents niveaux de difficulté (Easy, Medium, Hard) pour adapter les essais selon le niveau d’expertise.
+- Analyser l’efficacité des différentes méthodes de contournement et leur impact sur la sécurité des modèles.
+- Développer une réflexion critique sur les risques et les parades face aux attaques par prompt injection.
+
 
 ## Sommaire
 
@@ -283,35 +287,35 @@ Vous pouvez vous exercer à ces techniques sur les labs suivants :<br/>
 <details>
   <summary>Lab 1</summary>
 
-<img src="img/Lab-1-solution.png" alt="solution" width="450" style="transition:0.3s;">
+<img src="img/Lab-1-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 3</summary>
 
-<img src="img/Lab-3-solution.png" alt="solution" width="450" style="transition:0.3s;">
+<img src="img/Lab-3-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 6</summary>
 
-<img src="img/Lab-6-solution.png" alt="solution" width="450" style="transition:0.3s;">
+<img src="img/Lab-6-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 7</summary>
 
-<img src="img/Lab-7-solution.png" alt="solution" width="450" style="transition:0.3s;">
+<img src="img/Lab-7-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 9</summary>
 
-<img src="img/Lab-9-solution.png" alt="solution" width="450" style="transition:0.3s;">
+<img src="img/Lab-9-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 
@@ -322,7 +326,7 @@ Vous pouvez vous exercer à ces techniques sur les labs suivants :<br/>
 <details>
   <summary>Lab 10</summary>
 
-<img src="img/Lab-10-solution.png" alt="solution" width="450" style="transition:0.3s;">
+<img src="img/Lab-10-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 
@@ -336,7 +340,7 @@ Vous pouvez vous exercer à ces techniques sur les labs suivants :<br/>
 <details>
   <summary>Lab 11 et 12</summary>
 
-<img src="img/Lab-11-solution.png" alt="solution" width="450" style="transition:0.3s;">
+<img src="img/Lab-11-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 
@@ -358,15 +362,17 @@ Vous pouvez vous exercer à ces techniques sur les labs suivants :<br/>
 ## Ressources
 
 
-| Information                                                                           | Lien                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Prompt Hacking                                                                        | [https://learnprompting.org/docs/prompt_hacking/introduction](https://learnprompting.org/docs/prompt_hacking/introduction)                                                                                                                                                                                                                                                                                                                                       |
-| Example de DAN Jailbreak                                                              | [https://learnprompting.org/docs/prompt_hacking/offensive_measures/dan?srsltid=AfmBOoonsJ0eL2i15EkiTmdflEaRE4Tb6i8BSlszuwtG2GMm8vB7NbQc](https://learnprompting.org/docs/prompt_hacking/offensive_measures/dan?srsltid=AfmBOoonsJ0eL2i15EkiTmdflEaRE4Tb6i8BSlszuwtG2GMm8vB7NbQc)                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Exploiting Programmatic Behavior of LLMs : Dual-Use Through Standard Security Attacks | [https://arxiv.org/pdf/2302.05733](https://arxiv.org/pdf/2302.05733)                                                                                                                                                                                                                                                                                                                                                                                             |
+| Information                                                                           | Lien                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|---------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Prompt Hacking                                                                        | [https://learnprompting.org/docs/prompt_hacking/introduction](https://learnprompting.org/docs/prompt_hacking/introduction)                                                                                                                                                                                                                                                                                                                                        |
+| Example de DAN Jailbreak                                                              | [https://learnprompting.org/docs/prompt_hacking/offensive_measures/dan?srsltid=AfmBOoonsJ0eL2i15EkiTmdflEaRE4Tb6i8BSlszuwtG2GMm8vB7NbQc](https://learnprompting.org/docs/prompt_hacking/offensive_measures/dan?srsltid=AfmBOoonsJ0eL2i15EkiTmdflEaRE4Tb6i8BSlszuwtG2GMm8vB7NbQc)                                                                                                                                                                                  |
+| Exploiting Programmatic Behavior of LLMs : Dual-Use Through Standard Security Attacks | [https://arxiv.org/pdf/2302.05733](https://arxiv.org/pdf/2302.05733)                                                                                                                                                                                                                                                                                                                                                                                              |
 | Grandma tale Jailbreak                                                                | [https://www.cyberark.com/resources/threat-research-blog/operation-grandma-a-tale-of-llm-chatbot-vulnerability](https://www.cyberark.com/resources/threat-research-blog/operation-grandma-a-tale-of-llm-chatbot-vulnerability)<br/>[https://jailbreakai.substack.com/p/the-grandma-exploit-explained-prompt?utm_source=profile&utm_medium=reader2](https://jailbreakai.substack.com/p/the-grandma-exploit-explained-prompt?utm_source=profile&utm_medium=reader2) |
-| Jailbreaking Large Language Models in Infinitely Many Ways                            | [https://arxiv.org/pdf/2501.10800v1](https://arxiv.org/pdf/2501.10800v1)                                                                                                                                                                                                                                                                                                                                                                                         |
-| Universal and Transferable Adversarial Attacks on Aligned Language Models             | [https://arxiv.org/pdf/2307.15043](https://arxiv.org/pdf/2307.15043)                                                                                                                                                                                                                                                                                                                                                                                             |
-| Not what you've signed up for [...] Indirect Prompt Injection                         | [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)                                                                                                                                                                                                                                                                                                                                                                                             |
-| P4RS3LT0NGV3                                                  | [https://elder-plinius.github.io/P4RS3LT0NGV3/](https://elder-plinius.github.io/P4RS3LT0NGV3/)                             |
-| All About AI                                                  | [https://www.youtube.com/@AllAboutAI](https://www.youtube.com/@AllAboutAI)                                                 |
-| 5 LLM Security Threats- The Future of Hacking?                | [https://www.youtube.com/watch?v=tnV00OqLbAw](https://www.youtube.com/watch?v=tnV00OqLbAw)                                 |
+| Jailbreaking Large Language Models in Infinitely Many Ways                            | [https://arxiv.org/pdf/2501.10800v1](https://arxiv.org/pdf/2501.10800v1)                                                                                                                                                                                                                                                                                                                                                                                          |
+| Universal and Transferable Adversarial Attacks on Aligned Language Models             | [https://arxiv.org/pdf/2307.15043](https://arxiv.org/pdf/2307.15043)                                                                                                                                                                                                                                                                                                                                                                                              |
+| Not what you've signed up for [...] Indirect Prompt Injection                         | [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173)                                                                                                                                                                                                                                                                                                                                                                                              |
+| P4RS3LT0NGV3                                                                          | [https://elder-plinius.github.io/P4RS3LT0NGV3/](https://elder-plinius.github.io/P4RS3LT0NGV3/)                                                                                                                                                                                                                                                                                                                                                                    |
+| All About AI                                                                          | [https://www.youtube.com/@AllAboutAI](https://www.youtube.com/@AllAboutAI)                                                                                                                                                                                                                                                                                                                                                                                        |
+| 5 LLM Security Threats- The Future of Hacking?                                        | [https://www.youtube.com/watch?v=tnV00OqLbAw](https://www.youtube.com/watch?v=tnV00OqLbAw)                                                                                                                                                                                                                                                                                                                                                                        |
+| Ignore Previous Prompt: Attack Techniques For Language Models                         | [https://arxiv.org/pdf/2211.09527](https://arxiv.org/pdf/2211.09527)                                                                                                                                                                                                                                                                                                                                                                                              |
+| AI Red Teaming 101 – Full Course (Episodes 1-10)                                      | [https://www.youtube.com/watch?v=DwFVhFdD2fs](https://www.youtube.com/watch?v=DwFVhFdD2fs)                                                                                                                                                                                                                                                                                                                                                                        |
