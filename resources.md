@@ -5,12 +5,36 @@
 > "Nous vivons sur une île paisible d'ignorance au milieu des mers noires de l'infini, et il n'était pas prévu que nous voyagions loin.", H.P. Lovecraft
 
 
-- Sommaire :
-    - [Lecture web](#lecture-web)
-    - [Livres](#livres)
-    - [Vidéos et conférences](#vidéos-et-conférences)
-    - [Lecture académique](#lecture-académique)
-    - [Cours et certifications](#cours-et-certifications)
+## Sommaire
+
+- [Lecture web](#lecture-web)
+- [Livres](#livres)
+- [Vidéos et conférences](#vidéos-et-conférences)
+- [Lecture académique](#lecture-académique)
+- [Cours et certifications](#cours-et-certifications)
+
+- [Techniques d'attaques](#techniques-dattaques)
+  - [Prompt Injection](#prompt-injection)
+  - [Jailbreak](#jailbreak)
+
+- [Playgrounds](#playgrounds)
+  - [Top 5](#top-5)
+  - [Autres Playgrounds](#autres-playgrounds)
+
+
+- [Réseaux sociaux](#réseaux-sociaux)
+  - [Twitter](#twitter)
+    - [Top 10 Twitter comptes AI Sécurité et Prompt Injection](#top-10-twitter-comptes-ai-sécurité-et-prompt-injection)
+    - [Autres Comptes Twitter AI Sécurité et Prompt Injection](#autres-comptes-twitter-ai-sécurité-et-prompt-injection)
+  - [LinkedIn](#linkedin)
+
+
+- [Outils et Scanners pour la Sécurité des LLM](#outils-et-scanners-pour-la-sécurité-des-llm)
+- [Programmes Bug Bounty dédiés à la sécurité des modèles IA](#programmes-bug-bounty-dédiés-à-la-sécurité-des-modèles-ia)
+  - [Détails clés sur le programme Anthropic](#détails-clés-sur-le-programme-anthropic)
+  - [Détails clés sur le programme OpenAI](#détails-clés-sur-le-programme-openai)
+
+
 
 ## Lecture web
 
@@ -125,8 +149,9 @@
 | Large Language Model (LLM) Pentesting                                                 | SystemWeakness                 | https://systemweakness.com/large-language-model-llm-pen-testing-part-i-2ef96acb6763                                               |
 | LLM Pentest: Leveraging Agent Integration for RCE                                     | BlazeInfosec                   | https://www.blazeinfosec.com/post/llm-pentest-agent-hacking/                                                                      |
 
+## Techniques d'attaques
 
-## Ressources prompt injection
+### Prompt Injection
 
 | Titre / Description                           | Type                | Lien                                                                                                                                                     |
 |-----------------------------------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -141,7 +166,7 @@
 | Prompt Injections - deepset                   | Dataset Huggingface | [https://huggingface.co/datasets/deepset/prompt-injections](https://huggingface.co/datasets/deepset/prompt-injections)                                   |
 
 
-## Ressources Jailbreak
+### Jailbreak
 
 | Titre / Description                         | Type                | Lien                                                                                                                                                   |
 |---------------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -156,7 +181,9 @@
 | JBB-Behaviors - JailbreakBench              | Dataset Huggingface | [https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors](https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors)                           |
 
 
-## Playgrounds et démonstrations (Top 5)
+## Playgrounds
+
+### Top 5
 
 | Titre / Description                       | Type                 | Lien                                                                                                 |
 |-------------------------------------------|----------------------|------------------------------------------------------------------------------------------------------|
@@ -167,7 +194,7 @@
 | TensorTrust.ai                            | Démo LLM Sécurité    | [https://tensortrust.ai/](https://tensortrust.ai/)                                                   |
 
 
-## Other Playgrounds et Démonstrations
+### Autres Playgrounds
 
 | Titre / Description                              | Type                           | Lien                                                                                                                    |
 |--------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -183,7 +210,11 @@
 | Immersive Labs Prompting.ai                      | Formation en sécurité IA       | [https://prompting.ai.immersivelabs.com/](https://prompting.ai.immersivelabs.com/)                                      |
 
 
-## Top 10 Twitter comptes AI Sécurité et Prompt Injection
+## Réseaux sociaux
+
+### Twitter
+
+#### Top 10 Twitter comptes AI Sécurité et Prompt Injection
 
 | Compte Twitter                       | Description courte                                             | Lien                                                           |
 |--------------------------------------|----------------------------------------------------------------|----------------------------------------------------------------|
@@ -199,7 +230,7 @@
 | sanderschulhoff                      | CEO HackAPrompt, expert prompt engineering et sécurité IA      | [https://x.com/sanderschulhoff](https://x.com/sanderschulhoff) |
 
 
-## Autres Comptes Twitter AI Sécurité et Prompt Injection
+#### Autres Comptes Twitter AI Sécurité et Prompt Injection
 
 | Compte Twitter     | Description courte                                                                            | Lien                                                         |
 |--------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -211,6 +242,21 @@
 | tamirishaysh       | Analyste en sécurité IA et red teaming                                                        | [https://x.com/tamirishaysh](https://x.com/tamirishaysh)     |
 | simonw             | Chercheur AI, spécialiste sécurité et NLP                                                     | [https://x.com/simonw](https://x.com/simonw)                 |
 | LakeraAI           | Organisation spécialisée en sécurité LLM                                                      | [https://x.com/LakeraAI](https://x.com/LakeraAI)             |
+
+
+### LinkedIn
+
+| Profil LinkedIn               | Description courte                                                                 | Lien                                                                                                           |
+|-------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Leon Derczynski               | LLM security at NVIDIA. Prof at ITU Copenhagen. Founder of garak. ACL SIGSEC Chair | [https://www.linkedin.com/in/leon-derczynski/](https://www.linkedin.com/in/leon-derczynski/)                   |
+| Nchikanov (Nikita Chikanov)   | Security Software Engineer II at Microsoft                                         | [https://www.linkedin.com/in/nchikanov/](https://www.linkedin.com/in/nchikanov/)                               |
+| Martin Pouliot                | Senior Security Researcher at Microsoft                                            | [https://www.linkedin.com/in/martin-pouliot-266ab0105/](https://www.linkedin.com/in/martin-pouliot-266ab0105/) |
+| Joseph T Lucas                | Data and AI Security at Nvidia                                                     | [https://www.linkedin.com/in/josephtlucas/](https://www.linkedin.com/in/josephtlucas/)                         |
+| J Sotiropoulos                | Cyber for the Era of AI [...]  Best-selling author ( Adversarial AI)               | [https://www.linkedin.com/in/jsotiropoulos/](https://www.linkedin.com/in/jsotiropoulos/)                       |
+| Ads Dawson                    | Staff AI Security Researcher [...] OWASP LLM Apps Tech Lead, Toronto Lead, ASVS    | [https://www.linkedin.com/in/adamdawson0/](https://www.linkedin.com/in/adamdawson0/)                           |
+| Kristian Fagerlie             | AI -YouTube - KI - Generative AI -AI Engineer                                      | [https://www.linkedin.com/in/kristian-fagerlie/](https://www.linkedin.com/in/kristian-fagerlie/)               |
+| Sam Bent                      | Journalist [...] Darknet Expert (Ex Vendor & DNM Admin) - DEFCON/SANS Speaker      | [https://www.linkedin.com/in/sam-bent/](https://www.linkedin.com/in/sam-bent/)                                 |
+| Dreadnode                     | Advancing the state of offensive security                                          | [https://www.linkedin.com/company/dreadnode/](https://www.linkedin.com/company/dreadnode/)                     |
 
 
 ## Outils et Scanners pour la Sécurité des LLM
