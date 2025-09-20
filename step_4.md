@@ -6,7 +6,7 @@
 ## 🎯 Objectifs de cette étape
 - Comprendre les cadres de sécurité existants pour les LLM (modèles de langage de grande taille)
 - Identifier les principaux risques et vulnérabilités liés à l’utilisation des LLM
-- Découvrir les frameworks et référentiels de sécurité dédiés (OWASP Top 10, SAIF, MITRE ATLAS)
+- Découvrir les frameworks et référentiels de sécurité dédiés (OWASP Top 10 LLM, SAIF, MITRE ATLAS)
 - Appréhender les réglementations législatives encadrant les LLM (États-Unis, Union européenne)
 - Accéder à des ressources pour approfondir la sécurisation des applications IA
 
@@ -63,7 +63,7 @@ Ce classement a vu le jour grâce à l’engagement de [John Sotiropoulos](https
 co-pilote du projet, et d’[Ads Dawson](https://www.linkedin.com/in/adamdawson0/), responsable technique en charge de la 
 coordination de la rédaction des aspects techniques du référentiel.
 
-Voici une synthèse des vulnérabilités qui concernent spécifiquement les LLM:
+Voici une synthèse de l'OWASP Top 10 for LLM Applications 2025 :
 
 | IDENTIFIANT | Description                                                                                                                                                                                                                    |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -621,7 +621,7 @@ efficace des abus technologiques.
 
 | Information                                                                                          | Lien                                                                                                                                                                                                                                                                                                                                                         |
 |------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OWASP Top 10 for LLM Applications                                                                    | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf)                                                                                                       |
+| OWASP Top 10 for LLM Applications  2025                                                              | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf)                                                                                                               |
 | Explained: The OWASP Top 10 for Large Language Model Applications                                    | [https://www.youtube.com/watch?v=cYuesqIKf9A](https://www.youtube.com/watch?v=cYuesqIKf9A)                                                                                                                                                                                                                                                                   |
 | Model theft: Meta LLaMA leak                                                                         | [https://learn.snyk.io/lesson/model-theft-llm/](https://learn.snyk.io/lesson/model-theft-llm/)                                                                                                                                                                                                                                                               |
 | Secure AI Framework (SAIF)                                                                           | [https://saif.google/](https://saif.google/)                                                                                                                                                                                                                                                                                                                 |
