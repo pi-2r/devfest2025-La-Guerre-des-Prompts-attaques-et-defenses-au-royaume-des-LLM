@@ -11,7 +11,12 @@
 - [Livres](#livres)
 - [Vidéos et conférences](#vidéos-et-conférences)
 - [Lecture académique](#lecture-académique)
+
+
 - [Cours et certifications](#cours-et-certifications)
+  - [Cours](#cours)
+  - [Certifications](#certifications)
+
 
 - [Techniques d'attaques](#techniques-dattaques)
   - [Prompt Injection](#prompt-injection)
@@ -59,6 +64,8 @@
 | LLM Security                                                                                                                                 | [https://llmsecurity.net/](https://llmsecurity.net/)                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | Offensive ML Playbook                                                                                                                        | [https://wiki.offsecml.com/](https://wiki.offsecml.com/)                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Intelligence Artificielle : les travaux de l’ANSSI                                                                                           | [https://cyber.gouv.fr/intelligence-artificielle-les-travaux-de-lanssi](https://cyber.gouv.fr/intelligence-artificielle-les-travaux-de-lanssi)                                                                                                                                                                                                                                                                                                                                                                     | 
+| Arcanum AI Sec Resource Hub                                                                                                                  | [https://arcanum-sec.github.io/ai-sec-resources/](https://arcanum-sec.github.io/ai-sec-resources/)                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                         |
+
 
 ## Livres
 
@@ -75,9 +82,11 @@
 
 ## Vidéos et conférences
 
-| Titre                                                                                                                                              | Intervenant(s)                             | Événement                               | Lien                                                                           |
-|----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|-----------------------------------------|--------------------------------------------------------------------------------|
-| Hijacking AI Memory: Inside Johann Rehberger's Chat GPT Security Breakthrough                                                                      | Strike Graph                               | Vidéo Youtube                           | https://www.youtube.com/watch?v=_wFNroN9g_0                                    |  
+| Titre                                                                         | Intervenant(s) | Événement                            | Lien                                                  |
+|-------------------------------------------------------------------------------|----------------|--------------------------------------|-------------------------------------------------------|
+| Hijacking AI Memory: Inside Johann Rehberger's Chat GPT Security Breakthrough | Strike Graph   | Vidéo Youtube                        | https://www.youtube.com/watch?v=_wFNroN9g_0           |  
+| jhaddix                                                                       | jhaddix        | Vidéo Youtube                        | https://www.youtube.com/c/jhaddix                     |
+| Hacking AI is TOO EASY (it should be illegal)                                 | NetworkChuck   | Vidéo Youtube                        | https://www.youtube.com/watch?v=Qvx2sVgQ-u0s          |
 
 
 ## Lecture académique
@@ -94,6 +103,8 @@
 
 
 ## Cours et certifications
+
+### Cours
 
 | Titre                                                                                 | Plateforme                     | Lien                                                                                                                              |
 |---------------------------------------------------------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -113,41 +124,12 @@
 | Portswigger Web Security Academy                                                      | Portswigger                    | https://portswigger.net/web-security/llm-attacks                                                                                  |
 | Gandalf                                                                               | Lakera                         | https://gandalf.lakera.ai/                                                                                                        |
 | IBM                                                                                   | IBM                            | https://www.ibm.com/topics/prompt-injection                                                                                       |
-| Learn Prompting                                                                       | Learn Prompting                | https://learnprompting.org/docs/prompt_hacking/injection                                                                          |
-| LLM Security                                                                          | llmsecurity.net                | https://llmsecurity.net/                                                                                                          |
-| OWASP                                                                                 | OWASP                          | https://genai.owasp.org/                                                                                                          |
-| AI Village                                                                            | AI Village                     | https://aivillage.org/large%20language%20models/threat-modeling-llm/                                                              |
-| Promptingguide                                                                        | PromptingGuide                 | https://www.promptingguide.ai/risks/adversarial                                                                                   |
-| Promptingguide RAG                                                                    | PromptingGuide                 | https://www.promptingguide.ai/research/rag                                                                                        |
-| Cobalt                                                                                | Cobalt                         | https://www.cobalt.io/blog/prompt-injection-attacks                                                                               |
-| Bugcrowd                                                                              | Bugcrowd                       | https://www.bugcrowd.com/blog/ai-vulnerability-deep-dive-prompt-injection/                                                        |
-| Unite AI                                                                              | Unite AI                       | https://www.unite.ai/prompt-hacking-and-misuse-of-llm/?trk=article-ssr-frontend-pulse_little-text-block                           |
-| Simonwillison                                                                         | Simon Willison                 | https://simonwillison.net/2023/May/2/prompt-injection-explained/                                                                  |
-| Vickieli                                                                              | Vickieli                       | https://vickieli.medium.com/hacking-llms-with-prompt-injections-6a5ebffb182b                                                      |
-| NCC Group                                                                             | NCC Group                      | https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks/                                                      |
-| WithSecureLabs                                                                        | WithSecureLabs                 | https://github.com/WithSecureLabs/damn-vulnerable-llm-agent                                                                       |
-| ScottLogic                                                                            | ScottLogic                     | https://github.com/ScottLogic/prompt-injection                                                                                    |
-| Greshake                                                                              | Greshake                       | https://github.com/greshake/llm-security                                                                                          |
-| Hannibal046                                                                           | Hannibal046                    | https://github.com/Hannibal046/Awesome-LLM                                                                                        |
-| Ottosulin                                                                             | Ottosulin                      | https://github.com/ottosulin/awesome-ai-security                                                                                  |
-| Mik0w                                                                                 | Mik0w                          | https://github.com/mik0w/pallms                                                                                                   |
-| ATLAS Matrix                                                                          | MITRE ATLAS                    | https://atlas.mitre.org/matrices/ATLAS/                                                                                           |
-| Vulnerable LLM Applications                                                           | OWASP/ScottLogic               | https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/wiki/Vulnerable-LLM-Applications                |
-| Awesome-llm-security                                                                  | corca-ai                       | https://github.com/corca-ai/awesome-llm-security                                                                                  |
-| Prompt Airlines                                                                       | Prompt Airlines                | https://promptairlines.com/                                                                                                       |
-| Crucible                                                                              | Crucible                       | https://crucible.dreadnode.io/                                                                                                    |
-| Immersive Labs                                                                        | Immersive Labs                 | https://prompting.ai.immersivelabs.com/                                                                                           |
-| Bugcrowd Ultimate Guide AI Security                                                   | Bugcrowd                       | https://www.bugcrowd.com/wp-content/uploads/2024/04/Ultimate-Guide-AI-Security.pdf                                                |
-| AI Red Teaming                                                                        | Microsoft Azure                | https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/red-teaming                                                   |
-| The Ultimate Guide to Managing Ethical and Security Risks in AI                       | HackerOne                      | https://www.hackerone.com/resources/e-book/the-ultimate-guide-to-managing-ethical-and-security-risks-in-ai                        |
-| NVIDIA AI Red Team: An Introduction                                                   | NVIDIA                         | https://developer.nvidia.com/blog/nvidia-ai-red-team-an-introduction/                                                             |
-| Lakera - Real World LLM Exploits                                                      | Lakera                         | https://lakera-marketing-public.s3.eu-west-1.amazonaws.com/Lakera%2BAI%2B-%2BReal%2BWorld%2BLLM%2BExploits%2B(Jan%2B2024)-min.pdf |
-| SpyLogic Prompt Injection Attack Playground                                           | ScottLogic/Security Playground | https://github.com/ScottLogic/prompt-injection                                                                                    |
-| Offensive ML Playbook                                                                 | OffSec ML                      | https://wiki.offsecml.com/Welcome+to+the+Offensive+ML+Playbook                                                                    |
-| Snyk OWASP top 10 LLM                                                                 | Snyk                           | https://go.snyk.io/rs/677-THP-415/images/owasp-top-10-llm.pdf                                                                     |
-| Prompt Injection Games from Secdim                                                    | Secdim                         | https://play.secdim.com/game/ai                                                                                                   |
-| Large Language Model (LLM) Pentesting                                                 | SystemWeakness                 | https://systemweakness.com/large-language-model-llm-pen-testing-part-i-2ef96acb6763                                               |
-| LLM Pentest: Leveraging Agent Integration for RCE                                     | BlazeInfosec                   | https://www.blazeinfosec.com/post/llm-pentest-agent-hacking/                                                                      |
+
+### Certifications
+
+| Titre                                                                                 | Plateforme                     | Lien                                                                                                                              |
+|---------------------------------------------------------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Certified AI/ML Pentester (C-AI/MLPen)                                                | Pentesting Exams               | https://pentestingexams.com/product/certified-ai-ml-pentester/                                                                    |
 
 ## Techniques d'attaques
 
@@ -222,7 +204,7 @@
 | elder_plinius (Pliny the Liberator)  | Chercheur en sécurité des LLMs, jailbreaks et prompt injection | [https://x.com/elder_plinius](https://x.com/elder_plinius)     |
 | rez0__                               | Spécialiste sécurité IA                                        | [https://x.com/rez0__](https://x.com/rez0__)                   |
 | llm_sec                              | Actualités et analyses sécurité LLM                            | [https://x.com/llm_sec](https://x.com/llm_sec)                 |
-| martinvoelk                          | Chercheur et consultant en sécurité IA                         | [https://x.com/martinvoelk](https://x.com/martinvoelk)         |
+| JS0N Haddix                          | Chercheur et consultant en sécurité IA                         | [https://x.com/jhaddix](https://x.com/jhaddix)                 |
 | dcapitella                           | Expert en IA et cybersécurité                                  | [https://x.com/dcapitella](https://x.com/dcapitella)           |
 | mbrg0                                | Analyste sécurité IA                                           | [https://x.com/mbrg0](https://x.com/mbrg0)                     |
 | kgreshake                            | Recherche et défense IA                                        | [https://x.com/kgreshake](https://x.com/kgreshake)             |
@@ -232,46 +214,49 @@
 
 #### Autres Comptes Twitter AI Sécurité et Prompt Injection
 
-| Compte Twitter     | Description courte                                                                            | Lien                                                         |
-|--------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| LeonDerczynski     | Professeur associé en informatique, expert LLM, NLP, sécurité IA (@NVIDIA, @ITU Copenhagen)   | [https://x.com/LeonDerczynski](https://x.com/LeonDerczynski) |
-| goodside           | Chercheur en sécurité IA et prompt injection                                                  | [https://x.com/goodside](https://x.com/goodside)             |
-| p1njc70r           | Expert en sécurité informatique et IA                                                         | [https://x.com/p1njc70r](https://x.com/p1njc70r)             |
-| richlundeen        | Spécialiste cybersécurité et IA                                                               | [https://x.com/richlundeen](https://x.com/richlundeen)       |
-| GalMalka6          | Chercheur en IA et sécurité                                                                   | [https://x.com/GalMalka6](https://x.com/GalMalka6)           |
-| tamirishaysh       | Analyste en sécurité IA et red teaming                                                        | [https://x.com/tamirishaysh](https://x.com/tamirishaysh)     |
-| simonw             | Chercheur AI, spécialiste sécurité et NLP                                                     | [https://x.com/simonw](https://x.com/simonw)                 |
-| LakeraAI           | Organisation spécialisée en sécurité LLM                                                      | [https://x.com/LakeraAI](https://x.com/LakeraAI)             |
+| Compte Twitter    | Description courte                                                                            | Lien                                                         |
+|-------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| LeonDerczynski    | Professeur associé en informatique, expert LLM, NLP, sécurité IA (@NVIDIA, @ITU Copenhagen)   | [https://x.com/LeonDerczynski](https://x.com/LeonDerczynski) |
+| goodside          | Chercheur en sécurité IA et prompt injection                                                  | [https://x.com/goodside](https://x.com/goodside)             |
+| p1njc70r          | Expert en sécurité informatique et IA                                                         | [https://x.com/p1njc70r](https://x.com/p1njc70r)             |
+| richlundeen       | Spécialiste cybersécurité et IA                                                               | [https://x.com/richlundeen](https://x.com/richlundeen)       |
+| GalMalka6         | Chercheur en IA et sécurité                                                                   | [https://x.com/GalMalka6](https://x.com/GalMalka6)           |
+| tamirishaysh      | Analyste en sécurité IA et red teaming                                                        | [https://x.com/tamirishaysh](https://x.com/tamirishaysh)     |
+| martinvoelk       | Chercheur et consultant en sécurité IA                                                        | [https://x.com/martinvoelk](https://x.com/martinvoelk)       |
+| simonw            | Chercheur AI, spécialiste sécurité et NLP                                                     | [https://x.com/simonw](https://x.com/simonw)                 |
+| LakeraAI          | Organisation spécialisée en sécurité LLM                                                      | [https://x.com/LakeraAI](https://x.com/LakeraAI)             |
 
 
 ### LinkedIn
 
-| Profil LinkedIn               | Description courte                                                                 | Lien                                                                                                           |
-|-------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| Leon Derczynski               | LLM security at NVIDIA. Prof at ITU Copenhagen. Founder of garak. ACL SIGSEC Chair | [https://www.linkedin.com/in/leon-derczynski/](https://www.linkedin.com/in/leon-derczynski/)                   |
-| Nchikanov (Nikita Chikanov)   | Security Software Engineer II at Microsoft                                         | [https://www.linkedin.com/in/nchikanov/](https://www.linkedin.com/in/nchikanov/)                               |
-| Martin Pouliot                | Senior Security Researcher at Microsoft                                            | [https://www.linkedin.com/in/martin-pouliot-266ab0105/](https://www.linkedin.com/in/martin-pouliot-266ab0105/) |
-| Joseph T Lucas                | Data and AI Security at Nvidia                                                     | [https://www.linkedin.com/in/josephtlucas/](https://www.linkedin.com/in/josephtlucas/)                         |
-| J Sotiropoulos                | Cyber for the Era of AI [...]  Best-selling author ( Adversarial AI)               | [https://www.linkedin.com/in/jsotiropoulos/](https://www.linkedin.com/in/jsotiropoulos/)                       |
-| Ads Dawson                    | Staff AI Security Researcher [...] OWASP LLM Apps Tech Lead, Toronto Lead, ASVS    | [https://www.linkedin.com/in/adamdawson0/](https://www.linkedin.com/in/adamdawson0/)                           |
-| Kristian Fagerlie             | AI -YouTube - KI - Generative AI -AI Engineer                                      | [https://www.linkedin.com/in/kristian-fagerlie/](https://www.linkedin.com/in/kristian-fagerlie/)               |
-| Sam Bent                      | Journalist [...] Darknet Expert (Ex Vendor & DNM Admin) - DEFCON/SANS Speaker      | [https://www.linkedin.com/in/sam-bent/](https://www.linkedin.com/in/sam-bent/)                                 |
-| Dreadnode                     | Advancing the state of offensive security                                          | [https://www.linkedin.com/company/dreadnode/](https://www.linkedin.com/company/dreadnode/)                     |
+| Profil LinkedIn             | Description courte                                                                 | Lien                                                                                                             |
+|-----------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| Leon Derczynski             | LLM security at NVIDIA. Prof at ITU Copenhagen. Founder of garak. ACL SIGSEC Chair | [https://www.linkedin.com/in/leon-derczynski/](https://www.linkedin.com/in/leon-derczynski/)                     |
+| Nchikanov (Nikita Chikanov) | Security Software Engineer II at Microsoft                                         | [https://www.linkedin.com/in/nchikanov/](https://www.linkedin.com/in/nchikanov/)                                 |
+| Martin Pouliot              | Senior Security Researcher at Microsoft                                            | [https://www.linkedin.com/in/martin-pouliot-266ab0105/](https://www.linkedin.com/in/martin-pouliot-266ab0105/)   |
+| Joseph T Lucas              | Data and AI Security at Nvidia                                                     | [https://www.linkedin.com/in/josephtlucas/](https://www.linkedin.com/in/josephtlucas/)                           |
+| J Sotiropoulos              | Cyber for the Era of AI [...]  Best-selling author ( Adversarial AI)               | [https://www.linkedin.com/in/jsotiropoulos/](https://www.linkedin.com/in/jsotiropoulos/)                         |
+| Ads Dawson                  | Staff AI Security Researcher [...] OWASP LLM Apps Tech Lead, Toronto Lead, ASVS    | [https://www.linkedin.com/in/adamdawson0/](https://www.linkedin.com/in/adamdawson0/)                             |
+| Kristian Fagerlie           | AI -YouTube - KI - Generative AI -AI Engineer                                      | [https://www.linkedin.com/in/kristian-fagerlie/](https://www.linkedin.com/in/kristian-fagerlie/)                 |
+| Jason Haddix                | Hacker, CEO, CISO [...] in the Cyber Security and AI spaces                        | [https://www.linkedin.com/in/jhaddix/](https://www.linkedin.com/in/jhaddix/)                                     |
+| Sam Bent                    | Journalist [...] Darknet Expert (Ex Vendor & DNM Admin) - DEFCON/SANS Speaker      | [https://www.linkedin.com/in/sam-bent/](https://www.linkedin.com/in/sam-bent/)                                   |
+| Dreadnode                   | Advancing the state of offensive security                                          | [https://www.linkedin.com/company/dreadnode/](https://www.linkedin.com/company/dreadnode/)                       |
 
 
 ## Outils et Scanners pour la Sécurité des LLM
 
-| Outil / Projet         | Description                                                                             | Lien                                                                                         |
-|------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Promptfoo              | Plateforme de tests automatisés pour détecter vulnérabilités dans les prompts LLM       | [https://www.promptfoo.dev](https://www.promptfoo.dev)                                       |
-| Agentic Radar          | Outil d’analyse et détection des vulnérabilités des LLM                                 | [https://github.com/spix-ai/agentic-radar](https://github.com/spix-ai/agentic-radar)         |
-| Garak                  | Scanner de vulnérabilités LLM par NVIDIA, testant hallucinations, injections, jailbreak | [https://github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)                           |
-| Spikee                 | Outil d’analyse sécurité LLM en open source                                             | [https://github.com/WithSecureLabs/spikee](https://github.com/WithSecureLabs/spikee)         |
-| Promptmap              | Évalue la sensibilité aux injections de prompt par analyse ciblée                       | [https://github.com/utkusen/promptmap](https://github.com/utkusen/promptmap)                 |
-| LLMmap                 | Cartographie et tests de sécurité pour LLM                                              | [https://github.com/pasquini-dario/LLMmap](https://github.com/pasquini-dario/LLMmap)         |
-| Eiskard                | Plateforme d’évaluation de la qualité et des risques des modèles IA                     | [https://github.com/Giskard-Al/eiskard](https://github.com/Giskard-Al/eiskard)               |
-| PyRIT                  | Outil d’analyse statique et dynamique par Microsoft pour évaluer la robustesse des LLM  | [https://github.com/Azure/PyRIT](https://github.com/Azure/PyRIT)                             |
-| MCP Scan               | Framework d’analyse de vulnérabilités LLM                                               | [https://github.com/invariantlabs-ai/mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) |
+| Outil / Projet             | Description                                                                              | Lien                                                                                                 |
+|----------------------------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| Prompt Injection Taxonomy  | Taxonomie de menaces et analyse des vulnérabilités en IA                                 | [https://github.com/Arcanum-Sec/arc_pi_taxonomy/](https://github.com/Arcanum-Sec/arc_pi_taxonomy/)   |
+| Promptfoo                  | Plateforme de tests automatisés pour détecter vulnérabilités dans les prompts LLM        | [https://www.promptfoo.dev](https://www.promptfoo.dev)                                               |
+| Agentic Radar              | Outil d’analyse et détection des vulnérabilités des LLM                                  | [https://github.com/spix-ai/agentic-radar](https://github.com/spix-ai/agentic-radar)                 |
+| Garak                      | Scanner de vulnérabilités LLM par NVIDIA, testant hallucinations, injections, jailbreak  | [https://github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)                                   |
+| Spikee                     | Outil d’analyse sécurité LLM en open source                                              | [https://github.com/WithSecureLabs/spikee](https://github.com/WithSecureLabs/spikee)                 |
+| Promptmap                  | Évalue la sensibilité aux injections de prompt par analyse ciblée                        | [https://github.com/utkusen/promptmap](https://github.com/utkusen/promptmap)                         |
+| LLMmap                     | Cartographie et tests de sécurité pour LLM                                               | [https://github.com/pasquini-dario/LLMmap](https://github.com/pasquini-dario/LLMmap)                 |
+| Eiskard                    | Plateforme d’évaluation de la qualité et des risques des modèles IA                      | [https://github.com/Giskard-Al/eiskard](https://github.com/Giskard-Al/eiskard)                       |
+| PyRIT                      | Outil d’analyse statique et dynamique par Microsoft pour évaluer la robustesse des LLM   | [https://github.com/Azure/PyRIT](https://github.com/Azure/PyRIT)                                     |
+| MCP Scan                   | Framework d’analyse de vulnérabilités LLM                                                | [https://github.com/invariantlabs-ai/mcp-scan](https://github.com/invariantlabs-ai/mcp-scan)         |
 
 
 ## Programmes Bug Bounty dédiés à la sécurité des modèles IA
