@@ -109,15 +109,18 @@ async def proxy_with_guardrails(request: Request):
 
         # Check if message was blocked by guardrails
         if is_response_blocked(response_content):
+            # Force a fixed English refusal with HTTP 400 to guarantee language + status
             return create_error_response(
-                message=response_content,
+                message="I can't provide information on that topic.",
                 guardrails_status="blocked"
             )
 
         # Step 4: Forward to Bot API if guardrails approve
         logger.info("Request approved by guardrails, forwarding to bot API")
         bot_response = bot_service.send_message(data)
-
+        logger.info("================ Bot API Response ================")
+        logger.info(bot_response)
+        logger.info("================ ================ ================")
         if bot_response is not None:
             return create_success_response(bot_response)
         else:
