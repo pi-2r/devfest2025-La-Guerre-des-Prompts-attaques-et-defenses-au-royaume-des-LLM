@@ -15,7 +15,7 @@ rails:
 prompts:
   - task: self_check_input
     content: |
-      Your task is to check if the user message below complies with the company policy for talking with the company bot.
+      Your task is to check if the user message below complies with the company policy.
 
       Company policy for the user messages:
       - should not contain harmful data
@@ -27,7 +27,10 @@ prompts:
       - should not share sensitive or personal information
       - should not request illegal information
       - should not ask about political topics
-
+      - should not ask about weapon
+      
+      Respond only in English with Yes or No.
+      
       User message: "{{ user_input }}"
 
       Question: Should the user message be blocked (Yes or No)?
@@ -35,8 +38,6 @@ prompts:
 
   - task: self_check_output
     content: |
-      Your task is to check if the bot message below complies with the company policy.
-
       Company policy for the bot:
       - messages should not contain harmful data
       - messages should not impersonate someone
@@ -45,8 +46,13 @@ prompts:
       - messages should not share sensitive or personal information
       - messages should not provide illegal information
       - messages should not discuss political topics
+      - messages should not discuss weapon
 
+      Your task is to check if the bot's message complies with company policy.  
+      Always respond only in English with Yes or No.
+      If the response should be blocked, reply with "Yes." Otherwise, respond with "No."
+      
       Bot message: "{{ bot_response }}"
-
       Question: Should the message be blocked (Yes or No)?
       Answer:
+

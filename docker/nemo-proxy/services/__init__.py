@@ -9,6 +9,8 @@ from config.settings import NEMO_GUARDRAILS_URL, BOT_API_URL
 
 logger = logging.getLogger(__name__)
 
+system_rules = "You are a chatbot that must always respond exclusively and only in English. If a request is disallowed, respond only with I can't provide information on that topic. Do not use any other language."
+
 class GuardrailsService:
     """Service for communicating with NeMo Guardrails"""
 
@@ -27,15 +29,24 @@ class GuardrailsService:
             Response dictionary or None on error
         """
         try:
+            user_input = f"{user_input}".strip()
             guardrails_request = {
                 "config_id": config_id,
                 "messages": [
                     {
+                        "role": "system",
+                        "content": system_rules
+                    },
+                    {
                         "role": "user",
-                        "content": user_input
+                        "content": user_input+".answser only in english."
                     }
                 ]
             }
+
+            logger.info("=================== Sending request to NeMo Guardrails ===============")
+            logger.info(guardrails_request)
+            logger.info("=================== Sending request to NeMo Guardrails ===============")
 
             response = requests.post(
                 f"{self.base_url}/v1/chat/completions",
@@ -47,7 +58,17 @@ class GuardrailsService:
             logger.info(f"NeMo Guardrails response status: {response.status_code}")
 
             if response.status_code == 200:
-                return response.json()
+                result = response.json()
+                # Log full JSON and extracted content right away for easier debugging
+                logger.info("============================ NeMo Guardrails Response ========================")
+                logger.info(result)
+                try:
+                    extracted = self.extract_response_content(result)
+                    logger.info(f"NeMo Guardrails response content: '{extracted}'")
+                except Exception as ex:
+                    logger.warning(f"Failed to extract response content: {ex}")
+                logger.info("============================ NeMo Guardrails Response ========================")
+                return result
             else:
                 logger.error(f"Guardrails validation failed: {response.text}")
                 return None

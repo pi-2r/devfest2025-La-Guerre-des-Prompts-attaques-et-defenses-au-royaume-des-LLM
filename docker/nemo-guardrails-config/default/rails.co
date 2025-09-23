@@ -20,13 +20,17 @@ define bot refuse to respond
 define flow self check input
   $allowed = execute self_check_input
 
-  if not $allowed
-    bot refuse to respond
+  # If input should be blocked, always refuse with a fixed English sentence
+  if $allowed == "Yes"
+    bot refuse to respond with "I can't provide information on that topic."
     stop
 
-define flow self check output  
+define flow self check output
+  # Correction du nom de la tâche (self_check_output au lieu de self_check_output_prompt)
   $allowed = execute self_check_output
 
-  if not $allowed
-    bot refuse to respond
+  if $allowed == "Yes"
+    bot refuse to respond with "I can't provide information on that topic."
     stop
+
+  continue
