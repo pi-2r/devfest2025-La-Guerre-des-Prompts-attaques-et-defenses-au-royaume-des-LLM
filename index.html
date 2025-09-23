@@ -129,6 +129,21 @@
         #sendBtn:hover {
             background: #ff003c;
         }
+        #clearBtn {
+            background: #ccc;
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            transition: background 0.2s;
+        }
+        #clearBtn:hover {
+            background: #ff003c;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -144,6 +159,7 @@
             </span>
         </label>
         <button id="sendBtn">Envoyer</button>
+        <button id="clearBtn">Supprimer l'historique</button>
     </div>
 </div>
 <script>
@@ -220,6 +236,11 @@
             history.push({ question: userInput, response: { text: 'Erreur: ' + e, meta: '' } });
             renderHistory();
         }
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', function() {
+        history = [];
+        renderHistory();
     });
 </script>
 </body>
