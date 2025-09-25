@@ -21,6 +21,8 @@ Ce tutorial est proposé en amont de la session [La Guerre des Prompts : attaque
 
 
 - [Les images Docker](#les-images-docker)
+  - [Nemo Guardrails](#nemo-guardrails)
+  - [Tock](#tock)
 
 
 - [Installation des outils de tests de robustesse](#installation-des-outils-de-tests-de-robustesse)
@@ -80,13 +82,42 @@ Pour vérifier que nous avons les modèles sur notre machine, il suffit de taper
 
 ### Les images Docker
 
-Rendez-vous dans le dossier **docker** de ce dossier et renommez le fichier **template-internet.env** en **.env**.
-Toujours depuis ce dossier, lancez les commandes suivantes dans votre terminal :
+#### Nemo Guardrails
+
+Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
+puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
+
+```bash
+git clone https://github.com/NVIDIA-NeMo/Guardrails.git && cd NeMo-Guardrails
+pwd
+```
+
+#### Tock
+
+Rendez-vous dans le dossier **lab/tock** .
+Renseignez vos variables d'environnement dans le fichier **template-internet.env**, notement :
+
+- la variable `OPENAI_API_KEY` avec la clé que vous avez récupérée précédemment.
+
+Renommez le fichier **template-internet.env** en **.env**.
+
+
+Dans le fichier **docker-compose-genai.yml**, en ligne 198 changer **YOUR_PATH** par le chemin absolu vers le 
+dossier **NeMo-Guardrails**.
+
+<img src="img/nemo-guardrails-change-context.jpg" alt="Nemo-guardrails" width="600" style="transition:0.3s;">
+
+
+Toujours depuis ce dossier (**lab/tock**), lancez les commandes suivantes dans votre terminal :
 
 ```bash
 source .env
 docker compose -f docker-compose-genai.yml pull
 ```
+Vous devriez obtenir un rendu similaire à celui-ci :
+
+<img src="img/tock-docker-compose.png" alt="tock-docker-compose" width="600" style="transition:0.3s;">
+
 
 ### Installation de Garak
 Todo
