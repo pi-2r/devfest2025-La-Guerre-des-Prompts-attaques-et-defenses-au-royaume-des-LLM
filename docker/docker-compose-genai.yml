@@ -94,19 +94,20 @@ services:
       - mongo
       - mongo2
       - mongo3
+      - nemo-proxy
       # - duckling
       # - kotlin_compiler
     environment:
-      - no_proxy=duckling,bot_api,kotlin_compiler
-      - NO_PROXY=duckling,bot_api,kotlin_compiler
+      - no_proxy=duckling,nemo-proxy,kotlin_compiler
+      - NO_PROXY=duckling,nemo-proxy,kotlin_compiler
       - tock_mongo_url=mongodb://mongo:27017,mongo2:27018,mongo3:27019/?replicaSet=tock
       - nlp_duckling_url=http://duckling:8080
       - tock_env=prod
       - tock_file_upload_directory=file-uploads # custom directory for vert.x upload file system
       - tock_namespace_open_access=true # Enabling/Disabling bot synchronization feature
-      - tock_bot_admin_rest_default_base_url=http://bot_api:8080
+      - tock_bot_admin_rest_default_base_url=http://nemo-proxy:8002
       - tock_bot_compiler_service_url=http://kotlin_compiler:8080
-      - tock_configuration_bot_default_base_url=http://bot_api:8080
+      - tock_configuration_bot_default_base_url=http://nemo-proxy:8002
       - tock_gen_ai_orchestrator_server_url=http://gen_ai_orchestrator-server:8000
       - tock_gen_ai_orchestrator_client_request_timeout_ms=55000
       - tock_gen_ai_orchestrator_technical_error=Technical error :( sorry!
@@ -191,6 +192,32 @@ services:
      volumes:
        - pgvector-postgres-vl:/var/lib/postgresql/data
        - ./scripts/init-pgvect.sql:/docker-entrypoint-initdb.d/init.sql
+
+  nemo-guardrails:
+     build:
+       context: ./nemoguardrails
+       dockerfile: Dockerfile
+     ports:
+       - "8001:8000"
+     environment:
+       - OPENAI_API_KEY=${OPENAI_API_KEY}
+     volumes:
+       - ./nemo-guardrails-config/default:/app/config:ro
+     command: ["server", "--config=/app/config", "--port=8000", "--verbose"]
+     restart: unless-stopped
+
+  nemo-proxy:
+     build:
+       context: ./nemo-proxy
+     ports:
+       - "8002:8002"
+     depends_on:
+       - nemo-guardrails
+       - bot_api
+     environment:
+       - NEMO_GUARDRAILS_URL=http://nemo-guardrails:8000
+       - BOT_API_URL=http://bot_api:8080
+     restart: unless-stopped
 
   gen_ai_orchestrator-server:
      image: "${PLATFORM}tock/gen-ai-orchestrator-server:${TAG}"

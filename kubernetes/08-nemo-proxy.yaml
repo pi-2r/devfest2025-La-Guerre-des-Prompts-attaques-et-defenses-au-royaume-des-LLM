@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nemo-proxy
+  namespace: tock-genai
+spec:
+  selector:
+    app: nemo-proxy
+  ports:
+    - port: 8002
+      targetPort: 8002
+  type: LoadBalancer  # Pour exposer le service vers l'extérieur
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nemo-proxy
+  namespace: tock-genai
+spec:
+  replicas: 2  # Pour la haute disponibilité
+  selector:
+    matchLabels:
+      app: nemo-proxy
+  template:
+    metadata:
+      labels:
+        app: nemo-proxy
+    spec:
+      containers:
+      - name: nemo-proxy
+        # Utiliser l'image buildée ou une image registry
+        image: nemo-proxy:latest
+        imagePullPolicy: Never  # Pour utiliser l'image locale
+        ports:
+        - containerPort: 8002
+        env:
+        - name: NEMO_GUARDRAILS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: NEMO_GUARDRAILS_URL
+        - name: BOT_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: tock-config
+              key: BOT_API_URL
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8002
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"

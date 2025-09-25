@@ -1,0 +1,90 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: mongo-network-policy
+  namespace: tock-genai
+spec:
+  podSelector:
+    matchLabels:
+      app: mongo
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: nlp-api
+    - podSelector:
+        matchLabels:
+          app: bot-api
+    - podSelector:
+        matchLabels:
+          app: admin-web
+    - podSelector:
+        matchLabels:
+          app: build-worker
+    - podSelector:
+        matchLabels:
+          app: mongo-setup
+    ports:
+    - protocol: TCP
+      port: 27017
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: postgres-network-policy
+  namespace: tock-genai
+spec:
+  podSelector:
+    matchLabels:
+      app: postgres-db
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: gen-ai-orchestrator-server
+    - podSelector:
+        matchLabels:
+          app: langfuse-server
+    ports:
+    - protocol: TCP
+      port: 5432
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: nemo-proxy-network-policy
+  namespace: tock-genai
+spec:
+  podSelector:
+    matchLabels:
+      app: nemo-proxy
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - {} # Allow all ingress (external traffic)
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: nemo-guardrails
+    ports:
+    - protocol: TCP
+      port: 8000
+  - to:
+    - podSelector:
+        matchLabels:
+          app: bot-api
+    ports:
+    - protocol: TCP
+      port: 8080
+  - to: {} # Allow DNS and other necessary outbound traffic
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
