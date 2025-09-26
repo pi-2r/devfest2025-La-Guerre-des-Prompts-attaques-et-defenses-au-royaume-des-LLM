@@ -52,7 +52,8 @@
 
 ## Ressources
 
-| Information                               | Lien                                                                                                                          |
-|-------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| Prompt Hacking                            | [https://learnprompting.org/docs/prompt_hacking/introduction](https://learnprompting.org/docs/prompt_hacking/introduction)    |
-| Prompt Injection Taxonomy                 | [https://github.com/Arcanum-Sec/arc_pi_taxonomy/](https://github.com/Arcanum-Sec/arc_pi_taxonomy/)                            |
+| Information                               | Lien                                                                                                                       |
+|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| L1B3RT4S - elder-plinius                  | [https://github.com/elder-plinius/L1B3RT4S](https://github.com/elder-plinius/L1B3RT4S)                                     |                                                |
+| Prompt Hacking                            | [https://learnprompting.org/docs/prompt_hacking/introduction](https://learnprompting.org/docs/prompt_hacking/introduction) |
+| Prompt Injection Taxonomy                 | [https://github.com/Arcanum-Sec/arc_pi_taxonomy/](https://github.com/Arcanum-Sec/arc_pi_taxonomy/)                         |
