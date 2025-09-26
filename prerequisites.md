@@ -61,6 +61,8 @@ Puis cliquez sur le bouton **Create new secret key** pour générer une nouvelle
 
 ### L'outil Ollama
 - Avoir installé [Ollama](https://ollama.com/download) sur votre machine
+
+
   <img src="img/ollama.png"  alt="ollama">
 
 
