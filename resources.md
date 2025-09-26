@@ -85,16 +85,19 @@
 
 ## Vidéos et conférences
 
-| Titre                                                                         | Intervenant(s)                      | Événement                            | Lien                                                |
-|-------------------------------------------------------------------------------|-------------------------------------|--------------------------------------|-----------------------------------------------------|
-| Hijacking AI Memory: Inside Johann Rehberger's Chat GPT Security Breakthrough | Strike Graph                        | Vidéo Youtube                        | https://www.youtube.com/watch?v=_wFNroN9g_0         |  
-| jhaddix                                                                       | jhaddix                             | Vidéo Youtube                        | https://www.youtube.com/c/jhaddix                   |
-| Hacking AI is TOO EASY (it should be illegal)                                 | NetworkChuck                        | Vidéo Youtube                        | https://www.youtube.com/watch?v=Qvx2sVgQ-u0s        |
-| Attacking AI Version 1.1 w/ Jason Haddix                                      | Antisyphon Training                 | Vidéo Youtube                        | https://www.youtube.com/watch?v=0MDfKTJQQyE         |
-| MITRE ATLAS™ Introduction                                                     | mitrecorp (The MITRE Corporation)   | Vidéo Youtube                        | https://www.youtube.com/watch?v=3FN9v-y-C-w         |
-| Anatomy of an AI ATTACK: MITRE ATLAS                                          | IBM Technology                      | Vidéo Youtube                        | https://www.youtube.com/watch?v=QhoG74PDFyc         |
-| LLM Hacking Defense: Strategies for Secure AI                                 | IBM Technology                      | Vidéo Youtube                        | https://www.youtube.com/watch?v=y8iDGA4Y650         |
-| What Is a Prompt Injection Attack?                                            | IBM Technology                      | Vidéo Youtube                        | https://www.youtube.com/watch?v=jrHRe9lSqqA         |
+| Titre                                                                          | Intervenant(s)                    | Événement                            | Lien                                                |
+|--------------------------------------------------------------------------------|-----------------------------------|--------------------------------------|-----------------------------------------------------|
+| Hijacking AI Memory: Inside Johann Rehberger's Chat GPT Security Breakthrough  | Strike Graph                      | Vidéo Youtube                        | https://www.youtube.com/watch?v=_wFNroN9g_0         |  
+| jhaddix                                                                        | jhaddix                           | Vidéo Youtube                        | https://www.youtube.com/c/jhaddix                   |
+| Hacking AI is TOO EASY (it should be illegal)                                  | NetworkChuck                      | Vidéo Youtube                        | https://www.youtube.com/watch?v=Qvx2sVgQ-u0s        |
+| Attacking AI Version 1.1 w/ Jason Haddix                                       | Antisyphon Training               | Vidéo Youtube                        | https://www.youtube.com/watch?v=0MDfKTJQQyE         |
+| MITRE ATLAS™ Introduction                                                      | mitrecorp (The MITRE Corporation) | Vidéo Youtube                        | https://www.youtube.com/watch?v=3FN9v-y-C-w         |
+| Anatomy of an AI ATTACK: MITRE ATLAS                                           | IBM Technology                    | Vidéo Youtube                        | https://www.youtube.com/watch?v=QhoG74PDFyc         |
+| LLM Hacking Defense: Strategies for Secure AI                                  | IBM Technology                    | Vidéo Youtube                        | https://www.youtube.com/watch?v=y8iDGA4Y650         |
+| What Is a Prompt Injection Attack?                                             | IBM Technology                    | Vidéo Youtube                        | https://www.youtube.com/watch?v=jrHRe9lSqqA         |
+| [DevLille 2025] Je malmène ton LLM en direct avec 10 failles de sécurités      | DevLille                          | Vidéo Youtube                        | https://www.youtube.com/watch?v=un50L6Kdszg         |
+
+
 
 
 ## Lecture académique
