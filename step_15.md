@@ -1,4 +1,7 @@
-#  Red Teaming
+#  AI Red Teaming
+
+[<img src="img/step15.jpg" alt="gandalf" width="800">](https://www.youtube.com/watch?v=lKSKJZ-XdAk)
+> "Fight for us... and regain your honor", Aragorn, LOTR - The Return of the King
 
 
 ## 🎯 Objectifs de cette étape
@@ -63,7 +66,7 @@ face aux protections classiques comme la limitation de débit (rate limiting).
 
 ## Étape suivante
 
-- todo
+- [Étape 16](step_16.md)
 
 ## Ressources
 

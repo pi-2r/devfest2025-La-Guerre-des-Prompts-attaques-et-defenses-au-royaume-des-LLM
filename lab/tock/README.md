@@ -83,11 +83,11 @@ Once all services are running:
 - **Roles**: Various roles available (admin, user, technical admin)
 
 ### Database Access
-- **PostgreSQL**: 
-  - Host: `localhost:5433`
-  - User: `postgres`
-  - Password: `ChangeMe`
-  - Database: `postgres`
+- **PostgreSQL**:
+    - Host: `localhost:5433`
+    - User: `postgres`
+    - Password: `ChangeMe`
+    - Database: `postgres`
 
 ## 🛠️ Development with NeMo Proxy
 
@@ -208,8 +208,8 @@ Customize guardrails behavior by editing:
    ```
 
 2. **High disk watermark exceeded**:
-   - Ensure you have at least 40GB free space
-   - Clean up Docker images/containers: `docker system prune -a`
+    - Ensure you have at least 40GB free space
+    - Clean up Docker images/containers: `docker system prune -a`
 
 3. **MongoDB replica set not ready**:
    ```bash
