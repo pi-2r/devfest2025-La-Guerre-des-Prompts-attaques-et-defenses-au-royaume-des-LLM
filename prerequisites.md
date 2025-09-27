@@ -108,7 +108,7 @@ Dans le fichier **template-internet.env**, complétez ensuite la variable d'envi
 
 Une fois modifié, renommez ce fichier **template-internet.env** en **.env**.
 
-Dans le fichier **docker-compose-genai.yml**, remplacez à la **ligne 198** la valeur **YOUR_PATH** par le chemin 
+Dans le fichier **prerequisites-docker-compose-genai.yml**, remplacez à la **ligne 198** la valeur **YOUR_PATH** par le chemin 
 absolu du dossier **NeMo-Guardrails**.
 
 <img src="img/nemo-guardrails-change-context.jpg" alt="Nemo-guardrails" width="600" style="transition:0.3s;">
@@ -117,17 +117,29 @@ Depuis le dossier **lab/tock**, exécutez les commandes suivantes dans votre ter
 
 ```bash
 source .env
-docker compose -f docker-compose-genai.yml pull
+docker compose -f prerequisites-docker-compose-genai.yml pull
 ```
 
 Vous devriez voir un affichage similaire à celui-ci :
 
 <img src="img/tock-docker-compose.png" alt="tock-docker-compose" width="600" style="transition:0.3s;">
 
+Démarrez ensuite l’environnement avec la commande :
+
+```bash
+docker compose -f prerequisites-docker-compose-genai.yml up -d
+```
+Vous devriez voir un affichage similaire à celui-ci :
+<img src="img/tock-docker-up.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
+
+Après quelques instants, vous devriez pouvoir accéder à l’interface Tock Studio à l’adresse suivante : http://localhost/login
+
+<img src="img/tock-studio-login-page.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
+
 Enfin, pour arrêter l'environnement, utilisez la commande :
 
 ```bash
-docker compose -f docker-compose-genai.yml down
+docker compose -f prerequisites-docker-compose-genai.yml down
 ```
  
 ### Installation de Garak

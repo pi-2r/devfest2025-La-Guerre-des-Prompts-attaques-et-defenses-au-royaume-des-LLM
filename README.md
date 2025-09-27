@@ -41,14 +41,14 @@ préparer sereinement sa machine tout en se familiarisant progressivement avec l
 ### Contre-mesures et Stratégies de Défense
 
 - [11 - Mettre en place notre chatbot avec la solution Tock](step_11.md)
-- [13 - Mettre en place les premieres contre-mesures avec FastAPI](step_12.md)
-- [14 - Mettre en place de NeMo Guardrails](step_13.md)
+- [12 - Mettre en place les premieres contre-mesures avec FastAPI](step_12.md)
+- [13 - Mettre en place de NeMo Guardrails](step_13.md)
 
 
 ### Évaluation et Amélioration de la Robustesse
 
- - [15 - Red Teaming](step_15.md)
- - [16 - Benchmarking avec Promptfoo](benchmarking.md)
+ - [14 - Red Teaming](step_14.md)
+ - [15 - Benchmarking avec Promptfoo](step15.md)
 
 
 ## Pour aller plus loin

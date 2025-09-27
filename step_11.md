@@ -58,6 +58,39 @@ A noter : c'est notamment grâce à des contributions ambitieuses des équipes C
 Tock depuis plusieurs années) que Tock a intégré ces dernières années des fonctionnalités autour des LLM et du RAG.
 Cela montre toute la force de l'opensource et l'effet levier de la communauté pour une innovation qui profite à tous.
 </a>
+</details>
+
+
+### Installation de Tock
+
+
+Accédez au dossier **lab/tock**.
+
+
+Une fois modifié, renommez ce fichier **template-internet.env** en **.env**.
+
+Depuis le dossier **lab/tock**, exécutez les commandes suivantes dans votre terminal :
+
+```bash
+source .env
+docker compose -f during-the-lab-docker-compose-genai.yml pull
+```
+
+Vous devriez voir un affichage similaire à celui-ci :
+
+<img src="img/during-the-lab-docker-compose-genai-pull.png" alt="during-the-lab-docker-compose-genai-pull" width="600" style="transition:0.3s;" >
+
+Démarrez ensuite l’environnement avec la commande :
+
+```bash
+docker compose -f during-the-lab-docker-compose-genai.yml up -d
+```
+Vous devriez voir un affichage similaire à celui-ci :
+<img src="img/during-the-lab-docker-compose-up.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
+
+Après quelques instants, vous devriez pouvoir accéder à l’interface Tock Studio à l’adresse suivante : http://localhost/login
+
+<img src="img/tock-studio-login-page.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
 
 
 ## Ressources
