@@ -33,11 +33,13 @@ Ce tutorial est proposé en amont de la session [La Guerre des Prompts : attaque
 
     
 ### Récupérer l'atelier
-- Récupérez le projet depuis votre terminal en faisant une git clone du projet
+
+Depuis votre terminal, récupérez le projet en clonant le dépôt :
   ```bash
   git clone git@github.com:pi-2r/devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM.git
   ```
-- Ou bien téléchargez le projet en zip et dézippez-le sur votre machine : https://github.com/pi-2r/devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/archive/refs/heads/main.zip
+  
+Vous pouvez également télécharger l’archive .zip du projet, puis la décompresser sur votre machine : https://github.com/pi-2r/devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/archive/refs/heads/main.zip
 
 ### Python
 
@@ -46,8 +48,9 @@ Installer Python 3.10 ou supérieur sur votre machine: https://www.python.org/do
 
 
 ### L'outil Docker
-- Avoir installé [Docker Desktop](https://www.docker.com/products/docker-desktop/) sur votre machine
-  <img src="img/docker-desktop-install.png" alt="docker-desktop" >
+
+Assurez-vous d’avoir installé  [Docker Desktop](https://www.docker.com/products/docker-desktop/) sur votre machine.
+<img src="img/docker-desktop-install.png" alt="docker-desktop" >
 
 
 ### Récupérer une clé OpenAi
@@ -60,24 +63,27 @@ Puis cliquez sur le bouton **Create new secret key** pour générer une nouvelle
 
 
 ### L'outil Ollama
-- Avoir installé [Ollama](https://ollama.com/download) sur votre machine
 
+Commencez par installer [Ollama](https://ollama.com/download) sur votre machine.
 
-  <img src="img/ollama.png"  alt="ollama">
+<img src="img/ollama.png" alt="ollama">
 
 
 ### Les modèles Ollama
-- Avoir installé les principaux modèles pour l'atelier, commande à renseigner dans le terminal :
-  ```bash
-    ollama pull tinyllama
-    ollama pull mistral
-    ollama pull nomic-embed-text
-  ```
-Pour vérifier que nous avons les modèles sur notre machine, il suffit de taper cette commande dans notre terminal pour avoir ce type de rendu :
 
+Pour préparer l’atelier, installez les modèles principaux en exécutant les commandes suivantes dans votre terminal :
+```bash
+ollama pull tinyllama
+ollama pull mistral
+ollama pull nomic-embed-text
+```
+
+Afin de confirmer que les modèles ont bien été téléchargés, lancez la commande :
 ```bash
  ollama list
  ```
+
+Vous devriez obtenir un affichage similaire à l’exemple suivant :
 
 <img src="img/ollama_list.png" alt="ollama list">
 
@@ -86,8 +92,8 @@ Pour vérifier que nous avons les modèles sur notre machine, il suffit de taper
 
 #### Nemo Guardrails
 
-Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
-puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
+Dans votre terminal, placez-vous dans le répertoire où vous souhaitez installer le projet (par exemple **Documents**).
+Exécutez ensuite la commande suivante pour cloner le dépôt et accéder directement au dossier créé :
 
 ```bash
 git clone https://github.com/NVIDIA-NeMo/Guardrails.git && cd NeMo-Guardrails
@@ -96,31 +102,34 @@ pwd
 
 #### Tock
 
-Rendez-vous dans le dossier **lab/tock** .
-Renseignez vos variables d'environnement dans le fichier **template-internet.env**, notement :
+Accédez au dossier **lab/tock**.
 
-- la variable `OPENAI_API_KEY` avec la clé que vous avez récupérée précédemment.
+Dans le fichier **template-internet.env**, complétez ensuite la variable d'environnement **OPENAI_API_KEY** avec la clé obtenue précédemment.
 
-Renommez le fichier **template-internet.env** en **.env**.
+Une fois modifié, renommez ce fichier **template-internet.env** en **.env**.
 
-
-Dans le fichier **docker-compose-genai.yml**, en ligne 198 changer **YOUR_PATH** par le chemin absolu vers le 
-dossier **NeMo-Guardrails**.
+Dans le fichier **docker-compose-genai.yml**, remplacez à la **ligne 198** la valeur **YOUR_PATH** par le chemin 
+absolu du dossier **NeMo-Guardrails**.
 
 <img src="img/nemo-guardrails-change-context.jpg" alt="Nemo-guardrails" width="600" style="transition:0.3s;">
 
-
-Toujours depuis ce dossier (**lab/tock**), lancez les commandes suivantes dans votre terminal :
+Depuis le dossier **lab/tock**, exécutez les commandes suivantes dans votre terminal :
 
 ```bash
 source .env
 docker compose -f docker-compose-genai.yml pull
 ```
-Vous devriez obtenir un rendu similaire à celui-ci :
+
+Vous devriez voir un affichage similaire à celui-ci :
 
 <img src="img/tock-docker-compose.png" alt="tock-docker-compose" width="600" style="transition:0.3s;">
 
+Enfin, pour arrêter l'environnement, utilisez la commande :
 
+```bash
+docker compose -f docker-compose-genai.yml down
+```
+ 
 ### Installation de Garak
 Todo
 
