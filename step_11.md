@@ -23,6 +23,7 @@
 
 
 - [Création d'une FAQ](#création-dun-bot)
+  - [Tester la FAQ](#tester-la-faq)
 - [Connexion à l'IA](#connexion-à-lia)
 
 
@@ -192,6 +193,14 @@ Vous devriez avoir ce rendu :
 Puis cliquez sur le bouton **SAVE** pour enregistrer votre FAQ et ainsi avoir ce rendu :
 
 <img src="img/final-result-faqs.png" alt="final-result-faqs">
+
+
+### Tester la FAQ
+
+Depuis la page de test [index.html](index.html), si vous retester à nouveau en écrivant **Bonjour**, vous verrez que le
+bot vous répondra ce qu’il a appris.
+<img src="img/bot-step2.png" alt="bot-step2">
+
 
 ## Ressources
 
