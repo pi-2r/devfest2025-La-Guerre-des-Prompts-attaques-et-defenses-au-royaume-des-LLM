@@ -22,8 +22,7 @@
   - [Communiquer avec le bot](#communiquer-avec-le-bot)
 
 
-- [Création d'un bot](#création-dun-bot)
-- [Création d'une intention](#création-dune-intention)
+- [Création d'une FAQ](#création-dun-bot)
 - [Connexion à l'IA](#connexion-à-lia)
 
 
@@ -66,7 +65,7 @@ Cela montre toute la force de l'opensource et l'effet levier de la communauté p
 </details>
 
 
-### Installation de Tock
+## Installation de Tock
 
 Accédez au dossier **lab/tock**.
 
@@ -144,13 +143,55 @@ Votre bot sera alors accessible via l’URL suivante : **io/app/new_assistant/we
 
 <img src="img/tock-studio-create-new-assistant.png" alt="tock-studio-create-new-assistant">
 
-## Communiquer avec le bot
+### Communiquer avec le bot
 Dans le dossier lab/tock, ouvrez depuis votre navigateur web le fichier index.html, puis dite simplement bonjour au bot.
 
 Vous devriez avoir ce rendu.
 <img src="img/bot-step1.png" alt="bot-step1">
 
 Frustrant mais fonctionnel !
+
+
+### Création d'une FAQ
+
+Allez dans la partie **Stories & Answers** > **FAQs stories** pour créer notre première interaction avec le bot.
+
+<img src="img/creation-faqs-stories.png" alt="faq stories">
+
+
+Cliquez sur le bouton bleu **+NEW FAQ STORY** pour voir apparaitre cet écran
+
+<img src="img/step-1-faqs.png" alt="step1">
+
+Donnez un nom à votre FAQ, pour nous se sera : **demo faq codelab**
+
+<img src="img/title-faqs.png" alt="title">
+
+Cliquez ensuite sur l’onglet **QUESTION**
+
+Dans le champ **Question**, écrivez **bonjour** puis cliquer sur **ADD**
+
+<img src="img/add-question.png" alt="question">
+
+Vous devriez avoir ce rendu :
+
+<img src="img/resultat-add.png" alt= "resultat-add">
+
+Ensuite, cliquez sur **ANSWER** pour ajouter une réponse à la question **bonjour**.
+Copiez-collez le texte suivant dans le champ **Answer** :
+
+```
+Bonjour le Devfest 2025 !,
+Vous êtes au codelab: La Guerre des Prompts : attaques & défenses au royaume des LLM ⚔️🛡️🤖
+```
+
+Vous devriez avoir ce rendu :
+
+<img src="img/answer-faqs.png" alt="faqs">
+
+Puis cliquez sur le bouton **SAVE** pour enregistrer votre FAQ et ainsi avoir ce rendu :
+
+<img src="img/final-result-faqs.png" alt="final-result-faqs">
 
 ## Ressources
 
