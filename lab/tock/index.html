@@ -176,7 +176,7 @@
         <label id="switchLabel">
             <span>Utiliser NeMo Proxy</span>
             <span class="switch">
-                <input type="checkbox" id="proxySwitch" checked />
+                <input type="checkbox" id="proxySwitch" />
                 <span class="slider"></span>
             </span>
         </label>
@@ -187,7 +187,7 @@
 <script>
     const nemoProxyUrl = 'http://localhost:8002/io/app/new_assistant/web';
     const botDirectUrl = 'http://localhost:8080/io/app/new_assistant/web';
-    let currentUrl = nemoProxyUrl;
+    let currentUrl = botDirectUrl;
     let history = [];
 
     document.getElementById('proxySwitch').addEventListener('change', function(e) {

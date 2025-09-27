@@ -14,7 +14,12 @@
 
 ## Sommaire
 - [Présentation de Tock](#présentation-de-tock)
+
 - [Installation de Tock](#installation-de-tock)
+  - [Accéder à l'espace admin](#accéder-à-lespace-admin)
+  - [Configurer Tock Studio](#configurer-tock-studio)
+  - [Créer votre 1er Application](#créer-votre-1er-application)
+  - [Communiquer avec le bot](#communiquer-avec-le-bot)
 
 
 - [Création d'un bot](#création-dun-bot)
@@ -63,7 +68,6 @@ Cela montre toute la force de l'opensource et l'effet levier de la communauté p
 
 ### Installation de Tock
 
-
 Accédez au dossier **lab/tock**.
 
 
@@ -88,10 +92,65 @@ docker compose -f during-the-lab-docker-compose-genai.yml up -d
 Vous devriez voir un affichage similaire à celui-ci :
 <img src="img/during-the-lab-docker-compose-up.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
 
-Après quelques instants, vous devriez pouvoir accéder à l’interface Tock Studio à l’adresse suivante : http://localhost/login
 
-<img src="img/tock-studio-login-page.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
+### Accéder à l'espace admin
 
+Pour accéder à l'espace admin, ouvrez votre navigateur et tapez l'adresse suivante : http://localhost:80 et vous devriez arriver sur la page de login de Tock Studio.
+<img src="img/tock-studio-login-page.png" alt="tock-studio-login-page">
+
+Pour se connecter, utilisez les identifiants suivants :
+- username : admin@app.com
+- password : password
+
+> **Note 1** :
+> Les identifiants sont par défaut dans le code source: https://github.com/theopenconversationkit/tock/blob/master/shared/src/main/kotlin/security/auth/PropertyBasedAuthProvider.kt
+
+> **Note 2** :
+> Toutes les variables d'environnement sont définies par le mot clé "**tock_**" (ex: tock_user, tock_password, ..).
+
+
+
+### Configurer Tock Studio
+
+Au premier accès à Tock Studio, un assistant simplifié permet de créer un premier assistant (automatiquement nommé
+_new_assistant_).
+
+<img src="img/tock-studio-step1.png"  alt="Tock-Studio-example">
+
+- A l'étape 1,**Choose your language** sélectionnez la langue **English** et cliquer sur le bouton **Next**.
+
+- A l'étape 2, **Select a first Channel**, choisissez **Web** et cliquez sur le bouton **Next**.
+
+- A l'étape 3, **Create your Assitant**, cliquez sur le bouton **Create**.
+
+
+### Créer votre 1er Application
+
+Nous allons créer un premier endpoint pour permettre d’interagir avec le bot.
+Chaque endpoint correspond à une API avec un protocole spécifique, qui permet d’intégrer le bot à différents canaux 
+externes (Slack, WhatsApp, Messenger, etc.), chacun ayant son propre langage de communication.
+
+Il est possible d’ajouter ou de supprimer autant d’endpoints que souhaité sur un bot ; on les appelle également des 
+_configurations_ ou _connecteurs_.
+Le connecteur le plus simple pour interagir avec un bot Tock est le **connecteur Web**.
+
+
+Pour vérifier que votre bot est bien configuré avec ce connecteur, rendez-vous dans la section **Settings** > **Configurations**
+et assurez-vous que l’endpoint nommé **new_assistant🌎** est sélectionné.
+<img src="img/tock-studio-new-assistant.png" alt="create-web-connector">
+
+Si ce n’est pas le cas, cliquez sur **+ NEW CONFIGURATION**, choisissez le type **Web** puis validez avec Create.
+Votre bot sera alors accessible via l’URL suivante : **io/app/new_assistant/web**.
+
+<img src="img/tock-studio-create-new-assistant.png" alt="tock-studio-create-new-assistant">
+
+## Communiquer avec le bot
+Dans le dossier lab/tock, ouvrez depuis votre navigateur web le fichier index.html, puis dite simplement bonjour au bot.
+
+Vous devriez avoir ce rendu.
+<img src="img/bot-step1.png" alt="bot-step1">
+
+Frustrant mais fonctionnel !
 
 ## Ressources
 
