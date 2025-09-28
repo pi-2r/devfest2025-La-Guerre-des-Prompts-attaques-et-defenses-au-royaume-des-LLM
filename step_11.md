@@ -24,7 +24,11 @@
 
 - [Création d'une FAQ](#création-dun-bot)
   - [Tester la FAQ](#tester-la-faq)
+
+
 - [Connexion à l'IA](#connexion-à-lia)
+  - [Connexion à l'API OpenAI](#connexion-à-lapi-openai)
+  - [Connexion à Ollama](#connexion-à-ollama)
 
 
 - [Étape suivante](#étape-suivante)
