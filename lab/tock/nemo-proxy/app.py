@@ -4,6 +4,7 @@ Main FastAPI application refactored with modular architecture
 import logging
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
+import html
 from fastapi.middleware.cors import CORSMiddleware
 
 # Logging configuration
@@ -32,6 +33,8 @@ app.add_middleware(
     allow_methods=CORS_METHODS,
     allow_headers=CORS_HEADERS,
 )
+
+USE_GUARDRAILS = False  # Mettre à True pour passer par guardrails_service
 
 @app.get("/")
 async def root():
@@ -93,44 +96,73 @@ async def proxy_with_guardrails(request: Request):
                 matched_pattern=matched_pattern
             )
 
-        # Step 3: Validation with NeMo Guardrails
-        logger.info("Sending user input to NeMo Guardrails for validation")
-        guardrails_result = guardrails_service.validate_input(user_input)
+        if USE_GUARDRAILS:
+            # Step 3: Validation with NeMo Guardrails
+            logger.info("Sending user input to NeMo Guardrails for validation")
+            guardrails_result = guardrails_service.validate_input(user_input)
 
-        if guardrails_result is None:
-            logger.error("Guardrails validation failed")
-            return create_error_response(
-                message="I'm sorry, but I can't process your request due to security constraints. Please rephrase your message.",
-                guardrails_status="blocked"
-            )
+            if guardrails_result is None:
+                logger.error("Guardrails validation failed")
+                return create_error_response(
+                    message="I'm sorry, but I can't process your request due to security constraints. Please rephrase your message.",
+                    guardrails_status="blocked"
+                )
 
-        # Extract response content from guardrails
-        response_content = guardrails_service.extract_response_content(guardrails_result)
+            # Extract response content from guardrails
+            response_content = guardrails_service.extract_response_content(guardrails_result)
 
-        # Check if message was blocked by guardrails
-        if is_response_blocked(response_content):
-            # Force a fixed English refusal with HTTP 400 to guarantee language + status
-            return create_error_response(
-                message="I can't provide information on that topic.",
-                guardrails_status="blocked"
-            )
+            # Check if message was blocked by guardrails
+            if is_response_blocked(response_content):
+                # Force a fixed English refusal with HTTP 400 to guarantee language + status
+                return create_error_response(
+                    message="I can't provide information on that topic.",
+                    guardrails_status="blocked"
+                )
 
-        # Step 4: Forward to Bot API if guardrails approve
-        logger.info("Request approved by guardrails, forwarding to bot API")
-        bot_response = bot_service.send_message(data)
-        logger.info("================ Bot API Response ================")
-        logger.info(bot_response)
-        logger.info("================ ================ ================")
-        if bot_response is not None:
-            return create_success_response(bot_response)
+            # Step 4: Forward to Bot API if guardrails approve
+            logger.info("Request approved by guardrails, forwarding to bot API")
+            bot_response = bot_service.send_message(data)
+            logger.info("================ Bot API Response ================")
+            logger.info(bot_response)
+            logger.info("================ ================ ================")
+            if bot_response is not None:
+                return create_success_response(bot_response)
+            else:
+                # Fallback response if bot API is unavailable
+                logger.warning("Bot API unavailable, returning fallback response")
+                return create_fallback_response(user_input, "unavailable")
         else:
-            # Fallback response if bot API is unavailable
-            logger.warning("Bot API unavailable, returning fallback response")
-            return create_fallback_response(user_input, "unavailable")
+            # Guardrails désactivés, on passe directement au bot_service
+            logger.info("Guardrails désactivés, requête envoyée directement au bot API")
+            bot_response = bot_service.send_message(data)
+            logger.info("================ Bot API Response ================")
+            logger.info(bot_response)
+            logger.info("================ ================ ================")
+            if bot_response is not None:
+                return create_success_response(bot_response)
+            else:
+                logger.warning("Bot API unavailable, returning fallback response")
+                return create_fallback_response(user_input, "unavailable")
 
     except Exception as e:
         logger.error(f"Unexpected error in proxy_with_guardrails: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+def create_error_response(message, **kwargs):
+    # Correction : désencodage des caractères HTML pour le message d'erreur
+    safe_message = html.unescape(message)
+    response = {
+        "responses": [
+            {"text": safe_message}
+        ],
+        "proxy_status": "working",
+        "input_filter_status": kwargs.get("safety_reason", "blocked" if "safety_reason" in kwargs else "not_reached"),
+        "jailbreak_filter_status": kwargs.get("jailbreak_filter_status", "not_reached"),
+        "guardrails_status": kwargs.get("guardrails_status", "not_reached"),
+        "bot_api_status": kwargs.get("bot_api_status", "not_reached"),
+        "matched_pattern": kwargs.get("matched_pattern", None)
+    }
+    return JSONResponse(content=response, status_code=400)
 
 if __name__ == "__main__":
     import uvicorn
