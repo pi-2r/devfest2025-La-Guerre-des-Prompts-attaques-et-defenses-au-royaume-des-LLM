@@ -24,12 +24,7 @@
 
 - [Création d'une FAQ](#création-dun-bot)
   - [Tester la FAQ](#tester-la-faq)
-
-
-- [Connexion à l'IA](#connexion-à-lia)
-  - [Connexion à l'API OpenAI](#connexion-à-lapi-openai)
-  - [Connexion à Ollama](#connexion-à-ollama)
-
+ 
 
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
@@ -63,12 +58,22 @@ de la stack technique et des données. Certaines de ses fonctionnalités ont enc
 - Mécanismes pour activer/désactiver le RAG, exclure certains sujets, reconfigurer les prompts, etc.
 
 
-A noter : c'est notamment grâce à des contributions ambitieuses des équipes Crédit Mutuel Arkéa (qui utilisent également
+**A noter** : c'est notamment grâce à des contributions ambitieuses des équipes Crédit Mutuel Arkéa (qui utilisent également
 Tock depuis plusieurs années) que Tock a intégré ces dernières années des fonctionnalités autour des LLM et du RAG.
 Cela montre toute la force de l'opensource et l'effet levier de la communauté pour une innovation qui profite à tous.
 </a>
 </details>
 
+
+> ⚠️ Pour cette section, nous allons nous appuyer sur un chatbot orienté NLP qui servira de "chatbot intelligent".
+>
+> En effet, ce codelab est centré sur la sécurité et les risques liés au prompt-injection, mais il ne couvre pas 
+> l’intégration des fonctionnalités LLM et RAG dans Tock.
+> L’accent sera donc mis sur la compréhension et la mise en place des mécanismes de sécurité en amont.
+> 
+> À la fin de l’atelier et après avoir expérimenté les différentes mesures de défense pour sécuriser votre bot, 
+> si le sujet vous intéresse de mettre en pratique un chatbot open source qui allie NLP et LLM, vous pourrez poursuivre
+> avec un codelab complémentaire présenté lors du Devoxx 2025 : [A la recherche du RAG perdu 🤠🧭🤖 : créez votre IA Générative sans Internet](https://github.com/pi-2r/devoxxfr2025-tock-studio-IA-Gen)
 
 ## Installation de Tock
 
@@ -204,6 +209,8 @@ Puis cliquez sur le bouton **SAVE** pour enregistrer votre FAQ et ainsi avoir ce
 Depuis la page de test [index.html](index.html), si vous retester à nouveau en écrivant **Bonjour**, vous verrez que le
 bot vous répondra ce qu’il a appris.
 <img src="img/bot-step2.png" alt="bot-step2">
+
+
 
 
 ## Ressources
