@@ -91,19 +91,13 @@ def sanitize_output(llm_output: str) -> str:
     logger.info(f"Sanitizing LLM output: '{llm_output[:50]}...'")
 
     # 1. First remove potentially dangerous patterns before HTML escaping
-    dangerous_output_patterns = [
-        r'<script[^>]*>.*?</script>',
-        r'javascript:',
-        r'data:text/html',
-        r'vbscript:',
-        r'on\w+\s*=',
-    ]
-
     sanitized = llm_output
-    for pattern in dangerous_output_patterns:
+    for pattern in DANGEROUS_INJECTION_PATTERNS:
         sanitized = re.sub(pattern, '[CONTENT_FILTERED]', sanitized, flags=re.IGNORECASE)
 
     # 2. HTML escape all content
+    if '[CONTENT_FILTERED]' in sanitized:
+        return '[CONTENT_FILTERED]'
     sanitized = html.escape(sanitized, quote=True)
 
     # 3. Advanced sanitization with bleach if available

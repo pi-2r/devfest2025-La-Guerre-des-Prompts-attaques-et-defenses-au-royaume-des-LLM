@@ -87,12 +87,12 @@ DANGEROUS_INJECTION_PATTERNS = [
     r'javascript:',                # JavaScript protocol
     r'data:text/html',            # Data URLs
     r'vbscript:',                 # VBScript protocol
-    r'on\w+\s*=',                 # Event handlers (onclick, onload, etc.)
-    r'expression\s*\(',           # CSS expressions
-    r'url\s*\(',                  # CSS url()
+    r'on\w+\s*=',               # Event handlers (onclick, onload, etc.)
+    r'expression\s*\(',         # CSS expressions
+    r'url\s*\(',                # CSS url()
     r'@import',                   # CSS imports
-    r'SELECT\s+.*\s+FROM',        # SQL SELECT
-    r'INSERT\s+INTO',             # SQL INSERT
+    r'SELECT\s+.*\s+FROM',      # SQL SELECT
+    r'INSERT\s+INTO',            # SQL INSERT
     r'UPDATE\s+.*\s+SET',         # SQL UPDATE
     r'DELETE\s+FROM',             # SQL DELETE
     r'DROP\s+(TABLE|DATABASE)',   # SQL DROP
@@ -119,6 +119,11 @@ DANGEROUS_INJECTION_PATTERNS = [
     r'/etc/passwd',               # Linux password file
     r'/etc/shadow',               # Linux shadow file
     r'C:\\Windows\\',             # Windows system directory
+    r'catch\s*\(e\)',          # catch(e) JS
+    r'alert\s*\(',              # alert(
+    r'prompt\s*\(',             # prompt(
+    r'confirm\s*\(',            # confirm(
+    r'window.location.'         # window.location
 ]
 
 # Patterns that indicate a refusal/blocking by guardrails
