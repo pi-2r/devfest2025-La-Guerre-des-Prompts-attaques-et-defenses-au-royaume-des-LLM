@@ -6,10 +6,11 @@
 
 
 ## 🎯 Objectifs de cette étape
+
 - Découvrir la solution Tock.
 - Mettre en place un chatbot avec Tock.
 - Créer une premiere intention
-- Le connecter à l'IA
+- Discuter avec le bot
 
 
 ## Sommaire
@@ -67,8 +68,8 @@ Cela montre toute la force de l'opensource et l'effet levier de la communauté p
 
 > ⚠️ Pour cette section, nous allons nous appuyer sur un chatbot orienté NLP qui servira de "chatbot intelligent".
 >
-> En effet, ce codelab est centré sur la sécurité et les risques liés au prompt-injection, mais il ne couvre pas 
-> l’intégration des fonctionnalités LLM et RAG dans Tock.
+> En effet, ce codelab est centré sur la sécurité et les risques liés au prompt-injection (et jailbreak), mais il ne
+> couvre pas l’intégration des fonctionnalités LLM et RAG dans Tock.
 > L’accent sera donc mis sur la compréhension et la mise en place des mécanismes de sécurité en amont.
 > 
 > À la fin de l’atelier et après avoir expérimenté les différentes mesures de défense pour sécuriser votre bot, 
@@ -211,11 +212,15 @@ bot vous répondra ce qu’il a appris.
 <img src="img/bot-step2.png" alt="bot-step2">
 
 
+## Étape suivante
 
+- [Étape 12](step_12.md)
 
 ## Ressources
 
 
-| Information                                                                                     | Lien                                                                                                                            |
-|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| [Devoxx 2025] A la recherche du RAG perdu 🤠🧭🤖 : créez votre IA Générative sans Internet      | [https://github.com/pi-2r/devoxxfr2025-tock-studio-IA-Gen](https://github.com/pi-2r/devoxxfr2025-tock-studio-IA-Gen)            |
+| Information                                                                                 | Lien                                                                                                                 |
+|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| [Devoxx 2025] A la recherche du RAG perdu 🤠🧭🤖 : créez votre IA Générative sans Internet  | [https://github.com/pi-2r/devoxxfr2025-tock-studio-IA-Gen](https://github.com/pi-2r/devoxxfr2025-tock-studio-IA-Gen) |
+| Tock Documentation                                                                          | [https://doc.tock.ai/](https://doc.tock.ai/)                                                                         |
+| [Nuit des Meetups] Mettons un peu d’IA Générative dans un bot classique 🤖🚀                | [https://github.com/pi-2r/Nuit-des-Meetups-2024](https://github.com/pi-2r/Nuit-des-Meetups-2024)                     |
