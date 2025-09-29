@@ -101,6 +101,8 @@ Démarrez ensuite l’environnement avec la commande :
 docker compose -f during-the-lab-docker-compose-genai.yml up -d
 ```
 Vous devriez voir un affichage similaire à celui-ci :
+
+
 <img src="img/during-the-lab-docker-compose-up.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
 
 
