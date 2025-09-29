@@ -26,6 +26,7 @@
 - [Création d'une FAQ](#création-dun-bot)
   - [Tester la FAQ](#tester-la-faq)
  
+- [Schema d'architecture](#schema-darchitecture)
 
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
@@ -210,6 +211,18 @@ Puis cliquez sur le bouton **SAVE** pour enregistrer votre FAQ et ainsi avoir ce
 Depuis la page de test [index.html](index.html), si vous retester à nouveau en écrivant **Bonjour**, vous verrez que le
 bot vous répondra ce qu’il a appris.
 <img src="img/bot-step2.png" alt="bot-step2">
+
+
+## Schema d'architecture
+
+    +-------------+        +-------+      +------------------------------+
+    |             | --->   |       | ---> |                              |
+    | Utilisateur |        | Bot   |      | Base de données (Tock Studio)|
+    |             | <---   |       | <--- |                              |
+    +-------------+        +-------+      +------------------------------+
+
+
+
 
 
 ## Étape suivante
