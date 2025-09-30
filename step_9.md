@@ -14,6 +14,9 @@
 - [Garak](#présentation-de-garak)
 
     - [Présentation de Garak](#présentation-de-garak)
+    - [Les generators](#les-generators)
+
+- [Mise en pratique de Garak](#mise-en-pratique-de-garak)
 
 
 ## Garak
@@ -52,5 +55,29 @@ python -m garak --model_type huggingface --model_name gpt2 --probes divergence
 Pour lancer une probe inactive comme `divergence.RepeatExtended`, il suffit d'exécuter la commande suivante :
 ```bash
 
-python -m garak --model_type huggingface --probes divergence.RepeatExtended
+python -m garak --model_type huggingface --model_name gpt2  --probes divergence.RepeatExtended
 ```
+
+### Les generators
+
+Les generators sont des abstractions (LLMs, APIs, fonction Python) répondant un texte en fonction d'un input.
+Les generators prennent les valeurs, dont :
+- `huggingface` : pour les modèles hébergés sur HuggingFace.
+- `openai` : pour les modèles OpenAI.
+- `function` : pour les fonctions Python.
+
+Par exemple, si on souhaite évaluer un modèle `gpt2` de `Huggingface` lors d'un scan, on renseigne les options : `--model_type huggingface --model_name gpt2`.
+Si c'est une API d'HuggingFace, on renseigne les options : `--model_name huggingface.InferenceAPI --model_type "mosaicml/mpt-7b-instruct"`.
+
+Pour plus de détails, vous pouvez consulter la documentation officielle de Garak : [Garak Documentation](https://docs.garak.ai/garak/garak-components/using-generators)
+
+### Les detectors et les Harnesses
+
+Comme, une probe va être lancée plusieurs fois pour tester la robustesse du LLM et que l'on teste plusieurs probes, Garak utilise des detectors pour reconnaitre si la réponse du LLM défaillante.
+Ce sont des détecteurs de mots-clés ou des classifiers jugeant si la réponse d'un LLM est OK ou non.
+
+Les Harnesses désignent quel détector est utilisé avec quelle probe. Les Harnesses prennent la valeur : `probewise` si on utilise les détectors récommandés à la probe ou `pxd` pour tester tous les détecteurs.
+
+
+## Mise en pratique de Garak
+
