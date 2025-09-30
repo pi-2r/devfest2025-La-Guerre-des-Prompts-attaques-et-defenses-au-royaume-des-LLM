@@ -225,7 +225,7 @@
             card.appendChild(user);
             const bot = document.createElement('div');
             bot.className = 'bot';
-            bot.textContent = 'Bot : ' + item.response.text;
+            bot.innerHTML = 'Bot : ' + item.response.text;
             card.appendChild(bot);
             if (item.response.meta) {
                 const meta = document.createElement('div');

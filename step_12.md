@@ -24,7 +24,9 @@
 - [Simuler une attaque](#simuler-une-attaque)
   - [web](#web)
     - [filtrage entrant](#filtrage-entrant)
+      - [but du jeu](#but-du-jeu)
     - [filtrage sortant](#filtrage-sortant)
+      - [but du jeu](#but-du-jeu)
   - [DDOS](#ddos)
   - [Jailbreak](#jailbreak)
 
@@ -131,18 +133,60 @@ nemo-proxy/
     └── test_security_functions.py
 ```
 
-Pour le reste de cette étape, nous allons nous concentrer sur le fichier **patterns.py**, **sanitizer.py** et **jailbreak_detector.py**.
+Pour le reste de cette étape, nous allons nous concentrer sur le fichier **patterns.py**.
 
 
 ## Simuler une attaque
-### web
 
+### web
+Dans cette section web, nous allons simuler une attaque XSS sur le bot, à la fois en entrée et en sortie. 
+L’objectif sera de sécuriser le bot en appliquant des règles de filtrage basées sur des regex.
+
+#### filtrage entrant
+Nous allons commencer par une attaque XSS en entrée. Pour cela, fait cette requête dans le chat du bot :
+
+
+### filtrage sortant
+
+Ensuite, nous allons faire une attaque XSS en sortie. Pour cela, allez sur l'interface [Tock Studio]( http://localhost:80 ),
+puis dans **Stories & Answers** > **+New Story**. Là sur cette nouvelle story, dans le champ renseigner **xss**, puis 
+vous devriez voir apparaître cet écran :
+
+<img src="img/new-story-xss.jpg" alt="new-story-xss" width="600" style="transition:0.3s;">
+
+Dans le champ _Add new answer_, renseigner le code suivant puis cliquez sur **+ Create Story**
+```
+html<img src=x onerror=alert(42)>
+```
+Coté bot, faites la requête **xss** dans le chat sans **passer par le proxy**, vous devriez voir apparaître une alerte XSS.
+
+<img src="img/bot-xss.jpg" alt="bot-xss" width="600" style="transition:0.3s;">
+
+> 💡 Note : Le fichier index.html contient volontairement un rendu HTML permettant l’exécution de scripts ;)
+> Vous pourrez essayer de corriger ce comportement à la fin de cette étape si vous le souhaitez.
+
+##### but du jeu
+
+Appliquez un filtrage sur ce type de requête XSS afin d’afficher un message de protection similaire à celui du rendu.
+
+<img src="img/CONTENT_FILTERED.png" alt="CONTENT_FILTERED" width="600" style="transition:0.3s;">
+
+> Tips: si vous avez besoin de redémarrer le proxy, apres une modification du code, utilisez la commande suivante :
+>  ```bash
+>  docker compose -f during-the-lab-docker-compose-genai.yml up --no-deps --build nemo-proxy -d
+>  ```
+
+<details>
+  <summary>Solutions</summary>
+
+[solutions/step12.md](solutions/step12.md) contient des exemples de regex pour filtrer les attaques XSS. 
+</details>
 
 
 ```bash
 docker compose -f during-the-lab-docker-compose-genai.yml up --no-deps --build nemo-proxy -d
 ```
-
+<img src="img/nemo-proxy-rebuild.png" alt="nemo-proxy-rebuild" width="600" style="transition:0.3s;">
 
 
 
