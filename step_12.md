@@ -19,9 +19,12 @@
 - [C'est quoi FastAPI ?](#cest-quoi-fastapi-)
 
 - [Mettre en place le proxy](#mettre-en-place-le-proxy)
+  - [Tester le proxy](#tester-le-proxy) 
   - [Explication du code](#explication-du-code)
 - [Simuler une attaque](#simuler-une-attaque)
   - [web](#web)
+    - [filtrage entrant](#filtrage-entrant)
+    - [filtrage sortant](#filtrage-sortant)
   - [DDOS](#ddos)
   - [Jailbreak](#jailbreak)
 
@@ -97,9 +100,54 @@ docker compose -f during-the-lab-docker-compose-genai.yml up -d
 <img src="img/during-the-lab-docker-compose-genai-up-nemo-proxy.jpg" alt="during-the-lab-docker-compose-genai-up-nemo-proxy" width="600" style="transition:0.3s;">
 
 
+### Tester le proxy
+Pour tester l'utilisation du proxy, rien de plus simple, dans la page index.html, il suffit d'activer le switch "**Utiliser NeMo Proxy**".
+<img src="img/nemo-proxy-4.jpg" alt="nemo-proxy-4" width="600" style="transition:0.3s;">
+
+Lorsque vous passer par le proxy, la réponse contient des configurations tels que _Proxy: working_
+
+
+### Explication du code
+
+Le code du proxy a été développé spécialement pour ce codelab. Il se trouve dans le dossier **nemo-proxy** et voici son
+architecture :
+
+```
+nemo-proxy/
+├── app.py                     # Main FastAPI application
+├── config/
+│   └── settings.py           # Configuration settings
+├── security/
+│   ├── patterns.py           # Security patterns and regex
+│   ├── sanitizer.py          # Input/output sanitization
+│   └── jailbreak_detector.py # Jailbreak detection logic
+├── services/
+│   └── __init__.py           # External API communication
+├── utils/
+│   └── responses.py          # Response utilities
+└── tests/
+    ├── demo_security.py      # Security demonstration
+    ├── test_jailbreak_detection.py
+    └── test_security_functions.py
+```
+
+Pour le reste de cette étape, nous allons nous concentrer sur le fichier **patterns.py**, **sanitizer.py** et **jailbreak_detector.py**.
+
+
+## Simuler une attaque
+### web
+
+
+
 ```bash
 docker compose -f during-the-lab-docker-compose-genai.yml up --no-deps --build nemo-proxy -d
 ```
+
+
+
+
+
+
 
 ## Les limites de FastAPI
 
