@@ -13,11 +13,13 @@
 
 ## Sommaire
 
-- [C'est quoi FastAPI ?](#cest-quoi-fastapi-)
 - [Schema d'architecture](#schema-darchitecture)
-- [Mettre en place des premières contre-mesures](#mettre-en-place-des-premières-contre-mesures)
 
 
+- [C'est quoi FastAPI ?](#cest-quoi-fastapi-)
+
+- [Mettre en place le proxy](#mettre-en-place-le-proxy)
+  - [Explication du code](#explication-du-code)
 - [Simuler une attaque](#simuler-une-attaque)
   - [web](#web)
   - [DDOS](#ddos)
@@ -29,6 +31,19 @@
 
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
+
+
+
+## Schema d'architecture
+
+Nous allons insérer un proxy entre l'utilisateur et le bot, pour filtrer les requêtes entrantes et sortantes.
+
+    +-------------+      +----------------------------+      +-------+      +------------------------------+
+    |             | ---> |                            | ---> |       | ---> |                              |
+    | Utilisateur |      | Proxy (FastAPI - Filtrage) |      | Bot   |      | Base de données (Tock Studio)|
+    |             | <--- |                            | <--- |       | <--- |                              |
+    +-------------+      +----------------------------+      +-------+      +------------------------------+
+
 
 
 
@@ -51,35 +66,40 @@ Utilisation de FastAPI dans le contexte de l'IA générative :
 > gestion de la concurrence, l’authentification et la sécurisation des workflows.
 
 
-## Schema d'architecture
 
-Nous allons insérer un proxy entre l'utilisateur et le bot, pour filtrer les requêtes entrantes et sortantes.
-
-    +-------------+      +----------------------------+      +-------+      +------------------------------+
-    |             | ---> |                            | ---> |       | ---> |                              |
-    | Utilisateur |      | Proxy (FastAPI - Filtrage) |      | Bot   |      | Base de données (Tock Studio)|
-    |             | <--- |                            | <--- |       | <--- |                              |
-    +-------------+      +----------------------------+      +-------+      +------------------------------+
-
-
-
-## Mettre en place des premières contre-mesures
+## Mettre en place le proxy
 
 Dans cette section, nous allons mettre en place des premières contre-mesures avec FastAPI pour sécuriser notre bot.
 
 Dans le fichier **during-the-lab-docker-compose-genai.yml**, effectuer les modifications suivantes :
 
 - À la ligne 97, dé-commenter la ligne contenant "- nemo-proxy".
+ <img src="img/nemo-proxy-1.jpg" alt="nemo-proxy-1" width="600" style="transition:0.3s;">
 
 - Aux lignes 108 et 110, remplacer les valeurs actuelles par "http://nemo-proxy:8002".
+<img src="img/nemo-proxy-2.jpg" alt="nemo-proxy-2" width="600" style="transition:0.3s;">
+
 
 - Dé-commenter la section de la ligne 209 à la ligne 220 correspondant à "nemo-proxy".
+<img src="img/nemo-proxy-3.jpg" alt="nemo-proxy-3" width="600" style="transition:0.3s;">
+
+ETeignnez l'environnement si il est en cours d'exécution avec la commande :
+```bash
+docker compose -f during-the-lab-docker-compose-genai.yml down
+```
+<img src="img/during-the-lab-docker-compose-genai-down-nemo-proxy.jpg" alt="during-the-lab-docker-compose-genai-down-nemo-proxy" width="600" style="transition:0.3s;">
+
+
+puis relancer l'environnement avec la commande :
+```bash
+docker compose -f during-the-lab-docker-compose-genai.yml up -d
+```
+<img src="img/during-the-lab-docker-compose-genai-up-nemo-proxy.jpg" alt="during-the-lab-docker-compose-genai-up-nemo-proxy" width="600" style="transition:0.3s;">
 
 
 ```bash
 docker compose -f during-the-lab-docker-compose-genai.yml up --no-deps --build nemo-proxy -d
 ```
-
 
 ## Les limites de FastAPI
 
