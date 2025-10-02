@@ -1,32 +1,9 @@
-# FastAPI and web framework dependencies
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.8.2
-
-# HTTP client for external API calls
 requests==2.31.0
-
-# Security and sanitization
+openai>=1.0.0
+nemoguardrails==0.7.1
 bleach==6.1.0
-
-# CORS middleware (included with FastAPI but explicit for clarity)
 python-multipart==0.0.6
-
-# Testing dependencies
-pytest==7.4.3
-pytest-asyncio==0.21.1
-pytest-cov==4.1.0
-httpx==0.25.2
-
-# Development dependencies
-black==23.11.0
-flake8==6.1.0
-mypy==1.7.1
-
-# Logging and utilities
 python-dotenv==1.0.0
-
-# Alternative minimal requirements for older Python/systems
-# Uncomment these lines if you still have issues:
-# pydantic==1.10.13
-# fastapi==0.104.1

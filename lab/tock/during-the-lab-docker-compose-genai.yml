@@ -206,18 +206,23 @@ services:
  #    command: ["server", "--config=/app/config", "--port=8000", "--verbose"]
  #    restart: unless-stopped
 
-  #nemo-proxy:
-  #   build:
-  #     context: ./nemo-proxy
-  #   ports:
-  #     - "8002:8002"
-  #   depends_on:
-  #     #- nemo-guardrails
-  #     - bot_api
-  #   environment:
-  #     #- NEMO_GUARDRAILS_URL=http://nemo-guardrails:8000
-  #     - BOT_API_URL=http://bot_api:8080
-  #   restart: unless-stopped
+  nemo-proxy:
+     build:
+       context: ./nemo-proxy
+     ports:
+       - "8002:8002"
+     depends_on:
+       #- nemo-guardrails
+       - bot_api
+     env_file:
+       - .env
+     environment:
+       #- NEMO_GUARDRAILS_URL=http://nemo-guardrails:8000
+       - BOT_API_URL=http://bot_api:8080
+       - OPENAI_API_KEY=${OPENAI_API_KEY}
+     volumes:
+       - ./nemo-guardrails-config:/app/nemo-guardrails-config:ro
+     restart: unless-stopped
 
   gen_ai_orchestrator-server:
      image: "${PLATFORM}tock/gen-ai-orchestrator-server:${TAG}"
