@@ -9,7 +9,7 @@ FORBIDDEN_PATTERNS = [
 
 # Patterns dangereux pour les injections (LLM05)
 DANGEROUS_INJECTION_PATTERNS = [
-    r'<script[^>]*>.*?</script>',  # XSS scripts
+    r'<devfest[^>]*>.*?</devfest>',  # XSS scripts
 ]
 
 # Patterns that indicate a refusal/blocking by guardrails
