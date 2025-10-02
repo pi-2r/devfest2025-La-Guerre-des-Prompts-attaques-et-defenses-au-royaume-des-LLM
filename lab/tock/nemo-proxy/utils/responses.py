@@ -123,3 +123,21 @@ def create_fallback_response(
     }
 
     return JSONResponse(content=validate_json_response(fallback_response))
+
+def create_bot_response_blocked_response() -> JSONResponse:
+    """
+    Create a response when the bot's response is blocked by guardrails
+
+    Returns:
+        JSONResponse with blocked message
+    """
+    blocked_response = {
+        "responses": [{"text": "I can't provide information on that topic."}],
+        "proxy_status": "working",
+        "input_filter_status": "passed",
+        "jailbreak_filter_status": "passed",
+        "guardrails_status": "response_blocked",
+        "bot_api_status": "success"
+    }
+
+    return JSONResponse(content=validate_json_response(blocked_response), status_code=400)

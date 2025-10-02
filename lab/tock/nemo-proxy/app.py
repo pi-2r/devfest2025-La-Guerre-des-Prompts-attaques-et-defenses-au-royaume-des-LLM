@@ -2,6 +2,8 @@
 Main FastAPI application refactored with modular architecture
 """
 import logging
+from langchain_community.llms import HuggingFacePipeline
+from langchain_community.chat_models import ChatDatabricks, ChatMlflow
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 import html
@@ -34,7 +36,7 @@ app.add_middleware(
     allow_headers=CORS_HEADERS,
 )
 
-USE_GUARDRAILS = False  # Mettre à True pour passer par guardrails_service
+USE_GUARDRAILS = True  # Activer pour passer par guardrails_service avant d'envoyer au bot
 
 @app.get("/")
 async def root():
@@ -102,34 +104,57 @@ async def proxy_with_guardrails(request: Request):
             guardrails_result = guardrails_service.validate_input(user_input)
 
             if guardrails_result is None:
-                logger.error("Guardrails validation failed")
-                return create_error_response(
-                    message="I'm sorry, but I can't process your request due to security constraints. Please rephrase your message.",
-                    guardrails_status="blocked"
-                )
-
-            # Extract response content from guardrails
-            response_content = guardrails_service.extract_response_content(guardrails_result)
-
-            # Check if message was blocked by guardrails
-            if is_response_blocked(response_content):
-                # Force a fixed English refusal with HTTP 400 to guarantee language + status
+                logger.error("Guardrails validation failed - input blocked")
                 return create_error_response(
                     message="I can't provide information on that topic.",
                     guardrails_status="blocked"
                 )
 
-            # Step 4: Forward to Bot API if guardrails approve
+            # Si la validation passe, on continue vers le bot_api
             logger.info("Request approved by guardrails, forwarding to bot API")
+
+            # Step 4: Forward to Bot API if guardrails approve
             bot_response = bot_service.send_message(data)
             logger.info("================ Bot API Response ================")
             logger.info(bot_response)
             logger.info("================ ================ ================")
+
             if bot_response is not None:
+                logger.info("=== BOT API RESPONDED SUCCESSFULLY ===")
+                logger.info(f"Bot response type: {type(bot_response)}")
+                logger.info(f"Bot response keys: {list(bot_response.keys()) if isinstance(bot_response, dict) else 'Not a dict'}")
+
+                # TEMPORARY DEBUG: Skip bot response validation to test if bot_api works
+                # Comment this section to bypass response validation temporarily
+
+                # NEW STEP 5: Validate bot response with NeMo Guardrails
+                logger.info("Validating bot response with NeMo Guardrails")
+                bot_response_text = bot_service.extract_bot_response_text(bot_response)
+                logger.info(f"Extracted bot response text: '{bot_response_text[:100]}...'")
+
+                if bot_response_text:
+                    # Validate the bot's response through guardrails
+                    response_validation = guardrails_service.validate_bot_response(
+                        bot_response_text,
+                        user_input
+                    )
+
+                    if response_validation is None:
+                        # Bot response was blocked by guardrails
+                        logger.warning("Bot response blocked by guardrails validation")
+                        return create_error_response(
+                            message="I can't provide information on that topic.",
+                            guardrails_status="response_blocked",
+                            bot_api_status="success"
+                        )
+                    else:
+                        logger.info("Bot response approved by guardrails")
+
+                logger.info("=== RETURNING SUCCESSFUL BOT RESPONSE ===")
                 return create_success_response(bot_response)
             else:
                 # Fallback response if bot API is unavailable
-                logger.warning("Bot API unavailable, returning fallback response")
+                logger.error("=== BOT API RETURNED NULL - SERVICE UNAVAILABLE ===")
                 return create_fallback_response(user_input, "unavailable")
         else:
             # Guardrails désactivés, on passe directement au bot_service
