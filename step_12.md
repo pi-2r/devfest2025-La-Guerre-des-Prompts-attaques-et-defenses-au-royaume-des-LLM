@@ -27,7 +27,6 @@
       - [but du jeu](#but-du-jeu)
     - [filtrage sortant](#filtrage-sortant)
       - [but du jeu](#but-du-jeu)
-  - [DDOS](#ddos)
   - [Jailbreak](#jailbreak)
 
 
@@ -143,8 +142,10 @@ Dans cette section web, nous allons simuler une attaque XSS sur le bot, à la fo
 L’objectif sera de sécuriser le bot en appliquant des règles de filtrage basées sur des regex.
 
 #### filtrage entrant
-Nous allons commencer par une attaque XSS en entrée. Pour cela, fait cette requête dans le chat du bot :
-
+Nous allons commencer par une attaque XSS en entrée. Pour cela, fait cette requête dans le chat du bot : 
+```
+<script>alert(42)</script>
+```
 
 ### filtrage sortant
 
@@ -183,15 +184,7 @@ Appliquez un filtrage sur ce type de requête XSS afin d’afficher un message d
 </details>
 
 
-```bash
-docker compose -f during-the-lab-docker-compose-genai.yml up --no-deps --build nemo-proxy -d
-```
-<img src="img/nemo-proxy-rebuild.png" alt="nemo-proxy-rebuild" width="600" style="transition:0.3s;">
-
-
-
-
-
+#### Jailbreak
 
 ## Les limites de FastAPI
 
