@@ -23,7 +23,7 @@
 - [Intégration dans le Cycle de Vie de l'IA](#intégration-dans-le-cycle-de-vie-de-lia)
 
 
-- [Red teaming: Garak vs PyRIT](#red-teaming-garak-vs-pyrit)
+- [AI Red Teaming: Garak vs PyRIT](#ai-red-teaming-garak-vs-pyrit)
   - [Garak](#garak)
   - [PyRIT](#pyrit)
   - [Tableau comparatif](#tableau-comparatif)
@@ -97,7 +97,7 @@ du modèle.
 - **Benchmarking** : Ils complètent les benchmarks de sécurité et d'éthique pour les LLM (comme DecodingTrust) en 
 fournissant une évaluation spécifique de la résistance aux attaques.
 
-## Red teaming: Garak vs PyRIT
+## AI Red Teaming: Garak vs PyRIT
 Deux outils open source populaires pour effectuer des tests de robustesse sur les modèles d'IA générative 
 sont **Garak** et **PyRIT**.
 
