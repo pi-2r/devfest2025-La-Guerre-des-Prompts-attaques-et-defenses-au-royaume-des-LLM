@@ -19,6 +19,7 @@ from security.sanitizer import sanitize_input
 from security.jailbreak_detector import detect_jailbreak_attempt, is_response_blocked
 from services import GuardrailsService, BotApiService
 from utils.responses import create_error_response, create_success_response, create_fallback_response
+from nemoguardrails import RailsConfig, LLMRails
 
 # Service initialization
 guardrails_service = GuardrailsService()

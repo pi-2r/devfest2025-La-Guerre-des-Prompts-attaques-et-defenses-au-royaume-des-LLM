@@ -6,20 +6,24 @@ import logging
 import warnings
 from typing import Dict, Any, Optional, List
 from pathlib import Path
+import os
+
+# Set up logger first
+logger = logging.getLogger(__name__)
 
 # Suppress Pydantic warnings about model_ namespace conflicts
 warnings.filterwarnings("ignore", message=".*Field.*has conflict with protected namespace.*model_.*")
 
 try:
-    from nemoguardrails import LLMGuardrails
-    from nemoguardrails.rails.llm.config import RailsConfig
+    # Import the correct classes for the current nemoguardrails version
+    from nemoguardrails import RailsConfig, LLMRails
     NEMO_AVAILABLE = True
-except ImportError:
+except ImportError as e:
+    logger.error("❌ ImportError: Failed to import nemoguardrails. Ensure it is installed.")
+    logger.error(f"Error details: {str(e)}")
     NEMO_AVAILABLE = False
-    LLMGuardrails = None
+    LLMRails = None
     RailsConfig = None
-
-logger = logging.getLogger(__name__)
 
 class DirectGuardrailsService:
     """Direct NeMo Guardrails service using Python API instead of HTTP calls"""
@@ -43,8 +47,10 @@ class DirectGuardrailsService:
             # Force using OpenAI-based NeMo Guardrails configuration
             if config_path and Path(config_path).exists():
                 logger.info(f"Loading NeMo Guardrails config from: {config_path}")
-                # Use existing config with OpenAI
-                self.rails = LLMGuardrails.from_path(config_path)
+                # Charger la configuration à partir du chemin
+                config = RailsConfig.from_path(config_path)
+                # Initialiser LLMRails avec la configuration chargée
+                self.rails = LLMRails(config)
                 logger.info(f"Successfully loaded NeMo Guardrails config with OpenAI from: {config_path}")
             else:
                 logger.info("Creating OpenAI-based NeMo Guardrails configuration")
@@ -58,7 +64,7 @@ class DirectGuardrailsService:
             # Don't fallback to simple validation - force OpenAI approach
             self.rails = None
 
-    def _create_openai_config(self) -> Optional[LLMGuardrails]:
+    def _create_openai_config(self) -> Optional[LLMRails]:
         """Create a guardrails configuration that works with OpenAI"""
         try:
             # Create a configuration that requires OpenAI
@@ -106,14 +112,15 @@ class DirectGuardrailsService:
                       - allow_capabilities_question
                 """
             )
-            return LLMGuardrails(config=config)
+            return LLMRails(config=config)
+
         except Exception as e:
-            logger.error(f"Failed to create OpenAI config: {str(e)}")
+            logger.error(f"Failed to create dynamic config: {str(e)}")
             return None
 
     def validate_input(self, user_input: str) -> tuple[bool, Optional[str], Optional[str]]:
         """
-        Validate user input with NeMo Guardrails and OpenAI
+        Validate user input with NeMo Guardrails (OpenAI or Ollama)
 
         Args:
             user_input: User input to validate
@@ -121,7 +128,7 @@ class DirectGuardrailsService:
         Returns:
             Tuple of (is_safe, response_text, block_reason)
         """
-        logger.info(f"DirectGuardrails validating input with OpenAI: '{user_input[:50]}...'")
+        logger.info(f"DirectGuardrails validating input with multi-provider: '{user_input[:50]}...'")
 
         if not self.rails:
             logger.warning("NeMo Guardrails not initialized, allowing input by default")
