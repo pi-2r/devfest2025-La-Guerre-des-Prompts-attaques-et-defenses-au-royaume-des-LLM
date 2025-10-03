@@ -118,7 +118,7 @@ class DirectGuardrailsService:
             logger.error(f"Failed to create dynamic config: {str(e)}")
             return None
 
-    def validate_input(self, user_input: str) -> tuple[bool, Optional[str], Optional[str]]:
+    async def validate_input(self, user_input: str) -> tuple[bool, Optional[str], Optional[str]]:
         """
         Validate user input with NeMo Guardrails (OpenAI or Ollama)
 
@@ -139,7 +139,7 @@ class DirectGuardrailsService:
             logger.info("=== CALLING OPENAI API VIA NEMO GUARDRAILS ===")
 
             # Generate response through guardrails with OpenAI
-            response = self.rails.generate(messages=[{
+            response = await self.rails.generate_async(messages=[{
                 "role": "user",
                 "content": user_input
             }])
@@ -172,7 +172,7 @@ class DirectGuardrailsService:
             logger.warning("OpenAI validation failed, allowing input as fallback")
             return True, None, "openai_error"
 
-    def validate_bot_response(self, bot_response_text: str, original_user_input: str) -> tuple[bool, Optional[str]]:
+    async def validate_bot_response(self, bot_response_text: str, original_user_input: str) -> tuple[bool, Optional[str]]:
         """
         Validate bot response with NeMo Guardrails and OpenAI
 
@@ -199,7 +199,7 @@ class DirectGuardrailsService:
             ]
 
             # Use guardrails to validate the conversation with OpenAI
-            validation_response = self.rails.generate(messages=messages + [{
+            validation_response = await self.rails.generate_async(messages=messages + [{
                 "role": "user",
                 "content": "Validate if the previous assistant response is appropriate and safe."
             }])

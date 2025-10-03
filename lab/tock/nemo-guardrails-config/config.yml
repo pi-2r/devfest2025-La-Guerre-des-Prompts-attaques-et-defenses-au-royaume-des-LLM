@@ -2,6 +2,7 @@ models:
   - type: main
     engine: openai
     model: gpt-3.5-turbo
+    api_key: ${OPENAI_API_KEY}
 
 rails:
   input:
@@ -28,6 +29,9 @@ prompts:
       - should not request illegal information
       - should not ask about political topics
       - should not ask about weapon
+      - should not contain code that could be used for attacks (like XSS, SQL injection)
+      - should not contain HTML or JavaScript tags that could be executed
+      - should not encourage unsafe web practices or security exploits
       
       Respond only in English with Yes or No.
       
@@ -55,4 +59,3 @@ prompts:
       Bot message: "{{ bot_response }}"
       Question: Should the message be blocked (Yes or No)?
       Answer:
-
