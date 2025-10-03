@@ -102,7 +102,8 @@ async def proxy_with_guardrails(request: Request):
         if USE_GUARDRAILS:
             # Step 3: Validation with NeMo Guardrails
             logger.info("Sending user input to NeMo Guardrails for validation")
-            guardrails_result = guardrails_service.validate_input(user_input)
+            # Utiliser await pour appeler la méthode asynchrone
+            guardrails_result = await guardrails_service.validate_input(user_input)
 
             if guardrails_result is None:
                 logger.error("Guardrails validation failed - input blocked")
@@ -125,17 +126,14 @@ async def proxy_with_guardrails(request: Request):
                 logger.info(f"Bot response type: {type(bot_response)}")
                 logger.info(f"Bot response keys: {list(bot_response.keys()) if isinstance(bot_response, dict) else 'Not a dict'}")
 
-                # TEMPORARY DEBUG: Skip bot response validation to test if bot_api works
-                # Comment this section to bypass response validation temporarily
-
                 # NEW STEP 5: Validate bot response with NeMo Guardrails
                 logger.info("Validating bot response with NeMo Guardrails")
                 bot_response_text = bot_service.extract_bot_response_text(bot_response)
                 logger.info(f"Extracted bot response text: '{bot_response_text[:100]}...'")
 
                 if bot_response_text:
-                    # Validate the bot's response through guardrails
-                    response_validation = guardrails_service.validate_bot_response(
+                    # Validate the bot's response through guardrails - avec await
+                    response_validation = await guardrails_service.validate_bot_response(
                         bot_response_text,
                         user_input
                     )

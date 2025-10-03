@@ -20,9 +20,6 @@ class OptimizedGuardrailsService:
         # Utiliser le chemin de configuration défini dans settings.py
         actual_config_path = config_path or GUARDRAILS_CONFIG_PATH
 
-        logger.info("=== INITIALIZING GUARDRAILS SERVICE ===")
-        logger.info(f"Config path: {actual_config_path}")
-
         self.direct_service = DirectGuardrailsService(actual_config_path)
 
         # Use direct service if available, otherwise fall back to simple rules
@@ -36,10 +33,10 @@ class OptimizedGuardrailsService:
             logger.error("This means OpenAI API calls will NOT be made")
             logger.warning("Using simple rule-based validation instead")
 
-    def validate_input(self, user_input: str, config_id: str = "config") -> Optional[Dict[str, Any]]:
+    async def validate_input(self, user_input: str, config_id: str = "config") -> Optional[Dict[str, Any]]:
         """Validate user input using optimized approach"""
         if self.use_direct:
-            return self._validate_input_direct(user_input)
+            return await self._validate_input_direct(user_input)
         else:
             # Fallback to simple rule-based validation
             return self._validate_input_simple(user_input)
@@ -92,10 +89,10 @@ class OptimizedGuardrailsService:
         logger.info("Input approved by simple validation: default allow")
         return {"messages": [{"content": "Input validated"}], "status": "approved"}
 
-    def validate_bot_response(self, bot_response_text: str, original_user_input: str, config_id: str = "config") -> Optional[Dict[str, Any]]:
+    async def validate_bot_response(self, bot_response_text: str, original_user_input: str, config_id: str = "config") -> Optional[Dict[str, Any]]:
         """Validate bot response using optimized approach"""
         if self.use_direct:
-            return self._validate_bot_response_direct(bot_response_text, original_user_input)
+            return await self._validate_bot_response_direct(bot_response_text, original_user_input)
         else:
             # Simple validation for bot responses
             return self._validate_bot_response_simple(bot_response_text, original_user_input)
@@ -125,12 +122,13 @@ class OptimizedGuardrailsService:
         logger.info("Bot response approved by simple validation")
         return {"messages": [{"content": "Response validated"}], "status": "approved"}
 
-    def _validate_input_direct(self, user_input: str) -> Optional[Dict[str, Any]]:
+    async def _validate_input_direct(self, user_input: str) -> Optional[Dict[str, Any]]:
         """Direct validation using Python API with OpenAI"""
         try:
             logger.info("🔄 Using DIRECT NeMo Guardrails validation (with OpenAI)")
 
-            is_safe, response_text, block_reason = self.direct_service.validate_input(user_input)
+            # Appel à la méthode asynchrone avec await
+            is_safe, response_text, block_reason = await self.direct_service.validate_input(user_input)
 
             if not is_safe:
                 logger.warning(f"Input blocked by OpenAI validation: {block_reason}")
@@ -148,12 +146,13 @@ class OptimizedGuardrailsService:
             logger.exception("Full error traceback:")
             return None
 
-    def _validate_bot_response_direct(self, bot_response_text: str, original_user_input: str) -> Optional[Dict[str, Any]]:
+    async def _validate_bot_response_direct(self, bot_response_text: str, original_user_input: str) -> Optional[Dict[str, Any]]:
         """Direct bot response validation using Python API with OpenAI"""
         try:
             logger.info("🔄 Using DIRECT bot response validation (with OpenAI)")
 
-            is_safe, validation_message = self.direct_service.validate_bot_response(
+            # Appel à la méthode asynchrone avec await
+            is_safe, validation_message = await self.direct_service.validate_bot_response(
                 bot_response_text, original_user_input
             )
 
