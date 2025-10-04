@@ -11,12 +11,15 @@
 ## Sommaire
 
 
-- [Garak](#présentation-de-garak)
+- [Garak](#garak)
 
-    - [Présentation de Garak](#présentation-de-garak)
-    - [Les generators](#les-generators)
+    - [Les Probes](#les-probes)
+    - [Les Generators](#les-generators)
+    - [Les Detectors et les Harnesses](#les-detectors-et-les-harnesses)
+    - [L'Auto-Red-Team](#lauto-red-team)
 
-- [Mise en pratique de Garak](#mise-en-pratique-de-garak)
+- [Mise en pratique de Garak sur le Playground de Microsoft](#mise-en-pratique-de-garak-sur-le-playground-de-microsoft)
+
 
 
 ## Garak
@@ -24,10 +27,11 @@
 Garak est un outil open-source développé par NVIDIA pour scanner les vulnérabilités des modèles de langage (LLM).
 Il est conçu pour identifier les failles de sécurité potentielles dans les systèmes utilisant les LLMs.
 
-### Présentation de Garak
-
 **Garak** se fonde sur une base de connaissances de jailbreaks prompts connus et constamment mis à jour par la communauté.
-Garak permet de faire un scanning automatisé des LLM en utilisant un certain nombre de sondes (probes).
+
+### Les Probes
+
+Garak permet de faire un scanning automatisé des LLMs en utilisant un certain nombre de sondes (probes).
 Vous pouvez voir la liste des probes disponibles en exécutant la commande suivante :
 
 ```bash
@@ -41,7 +45,7 @@ probes: divergence 🌟
 probes: divergence.Repeat
 probes: divergence.RepeatExtended 💤
 ```
-En fait, il existe plusieurs variantes de probes pour un même jailbreak prompt.
+En fait, il existe plusieurs variantes de probes pour un même type de jailbreak.
 Ces symboles ont la signification suivante :
 - 🌟 : indique qu'on passe à un nouveau module de jailbreak ici `divergence`.
 - 💤 : indique que la probe `divergence.RepeatExtended` est inactive par défaut, car son lancement serait long. C'est la version `divergence.Repeat` qui sera lancée en cas de scan automatique.
@@ -58,7 +62,7 @@ Pour lancer une probe inactive comme `divergence.RepeatExtended`, il suffit d'ex
 python -m garak --model_type huggingface --model_name gpt2  --probes divergence.RepeatExtended
 ```
 
-### Les generators
+### Les Generators 
 
 Les generators sont des abstractions (LLMs, APIs, fonction Python) répondant un texte en fonction d'un input.
 Les generators prennent les valeurs, dont :
@@ -71,13 +75,28 @@ Si c'est une API d'HuggingFace, on renseigne les options : `--model_name hugging
 
 Pour plus de détails, vous pouvez consulter la documentation officielle de Garak : [Garak Documentation](https://docs.garak.ai/garak/garak-components/using-generators)
 
-### Les detectors et les Harnesses
+### Les Detectors et les Harnesses
 
 Comme, une probe va être lancée plusieurs fois pour tester la robustesse du LLM et que l'on teste plusieurs probes, Garak utilise des detectors pour reconnaitre si la réponse du LLM défaillante.
 Ce sont des détecteurs de mots-clés ou des classifiers jugeant si la réponse d'un LLM est OK ou non.
 
-Les Harnesses désignent quel détector est utilisé avec quelle probe. Les Harnesses prennent la valeur : `probewise` si on utilise les détectors récommandés à la probe ou `pxd` pour tester tous les détecteurs.
+Les détecteurs ont parfois un paramètre `doc_uri` permettant de trouver de la documentation sur la faille testée. Par exemple, le détecteur [`xss.MarkdownExfilBasic`](https://reference.garak.ai/en/latest/garak.detectors.xss.html#garak.detectors.xss.MarkdownExfilBasic) pointe vers : [Bing Chat Image Markdown Injection](https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/).
 
+Les Harnesses gèrent :
+- le lancement des probes sur le generator cible. 
+- le lancement des detectors à utiliser sur les outputs qu'ont produit les probes.
+- l'évaluation des résultats des detectors faite avec les Evaluator.
 
-## Mise en pratique de Garak
+Les Harnesses prennent la valeur : `probewise` si on utilise les détectors récommandés pour la probe ou `pxd` pour tester tous les détecteurs.
 
+### L'auto Red-Team
+
+Garak propose un système d'auto Red-Team sur certain sujet avec la librarie `art`. Cette brique ne peut cependant pas de faire un scan poussé.
+
+## Mise en pratique de Garak sur le Playground de Microsoft
+
+Pour lancer un scan garak sur une étape du Playground :
+```bash
+
+python -m garak --target_type function --target_name lab/Garak/ai-playground-microsoft#main  --probes divergence
+```
