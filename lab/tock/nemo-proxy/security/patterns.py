@@ -4,12 +4,12 @@ Security patterns and constants for injection detection and jailbreak prevention
 
 # List of regex patterns to identify suspicious or injection-related content
 FORBIDDEN_PATTERNS = [
-    r"\[START\s+OUTPUT\]",          # Output control patterns
+    r"\[CHANGE_IT\s+CHANGE_IT\]", # Output control patterns
 ]
 
 # Patterns dangereux pour les injections (LLM05)
 DANGEROUS_INJECTION_PATTERNS = [
-    r'<devfest[^>]*>.*?</devfest>',  # XSS scripts
+    r'<CHANGE_IT.*?>.*?</CHANGE_IT>',  # XSS scripts
 ]
 
 # Patterns that indicate a refusal/blocking by guardrails

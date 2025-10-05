@@ -14,11 +14,14 @@
 
 
 
+## Étape suivante
 
+- [Étape 14](step_14.md)
 
 ## Ressources
 
 
-| Information                                                                                     | Lien                                                                                                                            |
-|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| [Devoxx 2025] A la recherche du RAG perdu 🤠🧭🤖 : créez votre IA Générative sans Internet      | [https://github.com/pi-2r/devoxxfr2025-tock-studio-IA-Gen](https://github.com/pi-2r/devoxxfr2025-tock-studio-IA-Gen)            |
+| Information                   | Lien                                                                                                                   |
+|-------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| NVIDIA-NeMo                   | [https://github.com/NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)                                 |
+| NeMo Guardrails documentation | [https://docs.nvidia.com/nemo/guardrails/latest/index.html](https://docs.nvidia.com/nemo/guardrails/latest/index.html) |

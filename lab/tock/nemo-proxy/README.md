@@ -9,20 +9,28 @@ The application uses a modular architecture with the following components:
 ```
 nemo-proxy/
 ├── app.py                     # Main FastAPI application
+├── Dockerfile                 # Docker image for the service
+├── install_nemoguardrails.sh  # NeMo Guardrails installation script
+├── requirements.txt           # Python dependencies
 ├── config/
+│   ├── __init__.py           # Module initialization
 │   └── settings.py           # Configuration settings
 ├── security/
+│   ├── __init__.py           # Module initialization
 │   ├── patterns.py           # Security patterns and regex
 │   ├── sanitizer.py          # Input/output sanitization
 │   └── jailbreak_detector.py # Jailbreak detection logic
 ├── services/
-│   └── __init__.py           # External API communication
+│   ├── __init__.py           # External API communication
+│   └── guardrails_direct.py  # Direct Guardrails service
 ├── utils/
+│   ├── __init__.py           # Module initialization
 │   └── responses.py          # Response utilities
 └── tests/
     ├── demo_security.py      # Security demonstration
-    ├── test_jailbreak_detection.py
-    └── test_security_functions.py
+    ├── demo_pyrit_detection.py # Pyrit demonstration
+    ├── test_jailbreak_detection.py # Jailbreak detection tests
+    └── test_security_functions.py  # Security function tests
 ```
 
 ## 🚀 Quick Start

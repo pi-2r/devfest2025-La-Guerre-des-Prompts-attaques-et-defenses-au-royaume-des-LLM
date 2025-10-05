@@ -271,7 +271,8 @@
 | CoSAI                           | Coalition for Secure AI (CoSAI) OASIS Open Project                                      | [https://github.com/cosai-oasis/oasis-open-project](https://github.com/cosai-oasis/oasis-open-project) |
 | AGNTCY                          | réferencecement de standards                                                            | [https://github.com/agntcy](https://github.com/agntcy)                                                 |
 | oss-fuzz-gen                    | Outil de sécurité pour LLM par Google                                                   | [https://github.com/google/oss-fuzz-gen](https://github.com/google/oss-fuzz-gen)                       |
- 
+| CAI (Cybersecurity AI Index)    | Référentiel de vulnérabilités et menaces liées à l’IA maintenu par Alias Robotics       | [https://github.com/aliasrobotics/cai](https://github.com/aliasrobotics/cai)                           |
+
 
 ## Programmes Bug Bounty dédiés à la sécurité des modèles IA
 

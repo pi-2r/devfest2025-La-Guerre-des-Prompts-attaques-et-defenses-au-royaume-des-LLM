@@ -44,6 +44,11 @@ FORBIDDEN_PATTERNS:
     r"causes\s+me\s+trauma\s+and\s+ptsd",  # Emotional manipulation patterns
     r"<\|vq_\d+\|>",               # Special version query tokens
     r"\[END\s+OF\s+INPUT\]\s*\[START\s+OF\s+INPUT\]",  # Input reset patterns
+    r"\[END\s+OF\s+INPUT\]\s*\[START\s+OF\s+INPUT\]",  # Input reset patterns
+    r"\[END\s+OF\s+OUTPUT\]\s*\[START\s+OF\s+INPUT\]", # Output/Input reset
+    r"\[END\s+OF\s+OUTPUT\]\s*\[START\s+OF\s+OUTPUT\]", # Output reset patterns
+    r"\[START\s+OF\s+OUTPUT\]", # Output start
+    r"\[START\s+OF\s+INPUT\]",  # Input start
     r"from\s+now\s+on.*write\s+the\s+real\s+response",  # Response modification instructions
     r"oppositely\s+semantically\s+fully",  # Semantic inversion techniques
     r"godmode\s+is\s+active",       # Godmode activation patterns
@@ -80,7 +85,7 @@ FORBIDDEN_PATTERNS:
 
 DANGEROUS_INJECTION_PATTERNS:
 ```
-    r'<script[^>]*>.*?</script>',  # XSS scripts
+    r'<script.*?>.*?</script>',  # XSS scripts
     r'<img[^>]*onerror[^>]*>',     # XSS via img onerror
     r'javascript:',                # JavaScript protocol
     r'data:text/html',            # Data URLs
