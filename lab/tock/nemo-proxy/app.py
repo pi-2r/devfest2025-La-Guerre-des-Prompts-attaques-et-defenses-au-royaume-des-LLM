@@ -37,7 +37,7 @@ app.add_middleware(
     allow_headers=CORS_HEADERS,
 )
 
-USE_GUARDRAILS = True  # Activer pour passer par guardrails_service avant d'envoyer au bot
+USE_GUARDRAILS = False  # Activer pour passer par guardrails_service avant d'envoyer au bot
 
 @app.get("/")
 async def root():
