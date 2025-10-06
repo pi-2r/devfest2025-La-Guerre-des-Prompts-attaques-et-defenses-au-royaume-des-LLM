@@ -1,4 +1,4 @@
-# Mettre en place de NeMo Guardrails
+# Mettre en place NeMo Guardrails
 
 [<img src="img/step11.png" alt="tock" width="800">]()
 > "..", X, LOTR - The Return of the King

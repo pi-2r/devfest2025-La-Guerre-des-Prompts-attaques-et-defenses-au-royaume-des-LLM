@@ -42,7 +42,7 @@ préparer sereinement sa machine tout en se familiarisant progressivement avec l
 
 - [11 - Mettre en place notre chatbot avec la solution Tock](step_11.md)
 - [12 - Mettre en place les premieres contre-mesures avec FastAPI](step_12.md)
-- [13 - Mettre en place de NeMo Guardrails](step_13.md)
+- [13 - Mettre en place NeMo Guardrails](step_13.md)
 
 
 ### [BONUS] Évaluation et Amélioration de la Robustesse

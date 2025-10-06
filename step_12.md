@@ -8,7 +8,8 @@
 ## 🎯 Objectifs de cette étape
 - comprendre comment fonctionne FastAPI
 - Mettre en place des premières contre-mesures avec FastAPI.
-- tester/simuler quelques attaques (web, DDOS, jailbreak)
+- Tester/Simuler quelques attaques (web, jailbreak)
+- Comprendre les limites de FastAPI
 
 
 ## Sommaire
