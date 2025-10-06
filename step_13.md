@@ -99,7 +99,10 @@ Vous devriez alors obtenir un affichage similaire à celui-ci :
 
 
 ### Tester le guardrail
-Pour tester le guardrail, vous pouvez utiliser le même jailbreak que celui utilisé précédemment dans l’étape 12.
+
+Pour vérifier le fonctionnement du guardrail, vous pouvez réutiliser la même requête illégale employée précédemment à 
+l’étape 12.
+
 Envoyez la requête suivante via l’interface utilisateur :
 
 ```
