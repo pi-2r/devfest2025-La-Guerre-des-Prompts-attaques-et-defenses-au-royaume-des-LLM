@@ -51,7 +51,7 @@ préparer sereinement sa machine tout en se familiarisant progressivement avec l
  - [15 - Benchmarking avec Promptfoo](step15.md)
 
 
-## [CONCLUSION] Pour aller plus loin (5 min)
+### [CONCLUSION] Pour aller plus loin (5 min)
 
 - [Remerciements](thanks-you.md)
 - [En savoir plus / ressources](resources.md)
