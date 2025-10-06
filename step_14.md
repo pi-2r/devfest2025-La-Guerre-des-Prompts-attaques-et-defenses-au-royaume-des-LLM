@@ -66,7 +66,7 @@ face aux protections classiques comme la limitation de débit (rate limiting).
 
 ## Étape suivante
 
-- [Étape 16](step_15.md)
+- [Étape 15](step_15.md)
 
 ## Ressources
 
