@@ -78,8 +78,7 @@ Some manipulations may appear harmless—e.g., diverting a technical support cha
 
 In some cases, prompt injection may also allow an attacker to extract sensitive data previously provided to the model, thus compromising the confidentiality of the processed information.
 </details>
-<br/>
-<br/>
+
 <details>
   <summary>Sensitive Information Disclosure (LLM02)</summary>
 
@@ -227,3 +226,217 @@ In short, unbounded consumption is a major risk since it directly impacts availa
 </details>
 
 ## Be SAIF with the Secure AI Framework
+
+### Google's Secure AI Framework (SAIF)
+
+The **Secure AI Framework (SAIF)** from **Google** is a conceptual framework developed to ensure security throughout the lifecycle of artificial intelligence systems, from data collection to model deployment. It was designed to address major risk management, security, and privacy challenges specific to AI and machine learning models. **SAIF** aims to make these systems "secure by default" from their initial implementation by integrating essential protective measures from the design phase and throughout the development process until deployment in production.
+
+**SAIF** aligns with **Google**’s broader approach to responsible AI, guided by principles such as:
+ - security
+ - fairness
+ - interpretability
+ - privacy protection. 
+
+The framework provides concrete standards and controls for building, evaluating, and deploying AI systems, embedding security in a cross-cutting manner.
+
+### The Four Main Categories of SAIF
+
+SAIF structures AI secure development around four major axes, each associated with several key technical components:
+
+ - **Data**: concerns data sources, filtering, and preparation processes, as well as the datasets used for model training.
+ - **Infrastructure**: includes hardware, hosting security, frameworks and code necessary for training, data and model storage, as well as deployment (Model Serving).
+ - **Model**: includes the model itself (code and weights), input handling to protect against malicious inputs, and output handling to prevent data exposure or unexpected behaviors.
+ - **Application**: relates to the application suite interacting with the model, including agents or plugins that can present additional risks.
+
+### The Six Fundamental Elements of SAIF
+
+SAIF is built around six fundamental elements that must be continuously implemented:
+
+1. **Establish strong security foundations for the AI ecosystem**: apply traditional security principles to the entire AI ecosystem, notably for infrastructure, source codes, and software supply chain.
+2. **Extend detection and response to include AI in the organization's threat landscape**: monitor AI system inputs/outputs and integrate AI into traditional incident detection and response systems.
+3. **Automate defenses to keep up with evolving threats**: leverage AI innovations to counter large-scale attacks and automate protection.
+4. **Harmonize controls at the platform level**: ensure consistency of security policies and controls across all AI services and platforms.
+5. **Adapt controls to create rapid feedback loops**: quickly adjust and evolve security mechanisms during AI deployment or evolution.
+6. **Contextualize risks within business processes**: integrate AI risk analysis into the organization's overall risk management.
+
+### SAIF Risk and Control Mapping
+
+SAIF provides access to a detailed mapping of AI-specific risks, such as:
+
+- data poisoning,
+- unauthorized data use,
+- code or model weight alteration,
+- model exfiltration,
+- denial of service attacks,
+- sensitive data disclosure or inference, etc.
+
+<a href="https://saif.google/secure-ai-framework/saif-map" target="_blank">
+  <img src="img/saif-map.png" alt="SAIF">
+</a>
+
+<a href="https://saif.google/secure-ai-framework/saif-map" target="_blank"><em>source: saif.google</em></a>
+
+For each risk, controls and mitigation measures are proposed, along with designation of responsibility (model creator or model consumer). Examples include:
+
+- Input/output validation and sanitization
+- Adversarial training and testing
+- Access management, logging, continuous monitoring
+
+The SAIF mapping allows identifying where each risk arises (introduction), where it can be exploited (exposure), and at which level it can be mitigated (associated element or control).
+
+### SAIF Implementation and Community
+
+**Google** provides **SAIF** as a reference point for enterprises, governments, and organizations with a resource center (saif.google) offering self-assessment guides, security controls, and a community space. Google works in coalition ([The Coalition for Secure AI](https://www.coalitionforsecureai.org/)) with major industry players such as **Amazon**, **Cisco**, **IBM**, **Intel**, **Microsoft**, **NVIDIA**, **OpenAI**,... to advance adoption of this framework, aiming to secure AI for the benefit of all.
+
+<details>
+  <summary>The Coalition for Secure AI</summary>
+<a href="https://www.coalitionforsecureai.org/" target="_blank">
+  <img src="img/CoSAI.png" alt="image" width="450" style="transition:0.3s;">
+</a>
+</details>
+
+## MITRE ATLAS, the Ariadne’s Thread of AI Attack Techniques
+
+<a href="https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/" target="_blank">
+  <img src="https://www.riskinsight-wavestone.com/wp-content/uploads/2024/11/MITRE-Figure-1.png" alt="MITRE ATLAS" >
+</a>
+
+<a href="https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/" target="_blank"><em>source: riskinsight-wavestone.com</em></a>
+
+### Objective of MITRE ATLAS
+
+The **MITRE ATLAS** (Adversarial Tactics, Techniques, and Common Knowledge for AI Systems) is an international reference framework designed to identify, classify, and mitigate adversarial threats targeting AI and machine learning systems.
+
+The objective of ATLAS is to provide a structured knowledge base on tactics and techniques employed by attackers against AI, thus facilitating proactive protection of these systems and optimizing their security within the enterprise ecosystem.
+
+### Reference Framework
+
+The [**MITRE ATLAS**](https://atlas.mitre.org/) heavily draws from the well-known [**MITRE ATT&CK**](https://attack.mitre.org/), used in traditional cybersecurity to map threats and adversarial actions on information systems. ATLAS applies this approach to AI, focusing on risks, vulnerabilities, and attack techniques specific to AI and machine learning technologies.
+
+### Fundamental Elements of MITRE ATLAS
+
+ATLAS is structured around several key elements:
+
+- **Tactics**: The high-level goals pursued by attackers (e.g., evasion, training data compromise, initial access).
+
+- **Techniques**: Concrete methods to achieve these goals (e.g., data poisoning, model extraction, prompt injection).
+
+- **Procedures**: Real-world examples and use cases illustrating how these techniques have been applied in practice.
+
+- **Case Studies**: Documentation of effective attacks on AI systems to continuously enrich the knowledge base.
+
+### How to Use It
+
+**MITRE ATLAS** is designed for use by security professionals, researchers, and developers. It should be seen as a structured dashboard for AI security teams.
+
+Users can navigate the repository to identify threats relevant to their context, such as:
+
+- **Threat Mapping**: Security teams model risks and threats weighing on their AI system using the ATLAS matrix to anticipate possible attack techniques.
+
+- **Defensive Coverage Assessment**: Using tools like **ATLAS Navigator**, it is possible to visualize which attack techniques are already covered by existing controls, which require adjustments, or where new AI-specific controls need to be created.
+
+- **Incident Detection and Response**: When an incident involving an AI system occurs, ATLAS allows tracing the attack flow, identifying used tactics and techniques, and targeting technical and organizational response.
+
+- **Training and Awareness**: **ATLAS** serves as a support to train data scientists, AI engineers, and SOC (Security Operations Center) teams on emerging AI threats, paving the way for close interfunctional collaboration between business and security.
+
+- **Development of Defensive Use Cases**: The techniques documented in ATLAS serve as a basis for creating detection rules, penetration test scenarios, and mitigation plans specific to AI systems.
+
+## Legislative Regulation of Large Language Models (LLMs)
+
+Between 2013 and 2023, American companies attracted a volume of private capital more than six times greater than that invested in European companies, thereby fostering an unparalleled ecosystem of innovation in the field of artificial intelligence.
+
+For comparison, **American** companies raised approximately **$486.1 billion** in private funding during this period, compared to only **$75.7 billion** for their **European** counterparts.
+
+<details>
+  <summary>Graph comparison: 10 years of AI investments in the United States and the European Union.</summary>
+
+<a href="https://actonline.org/2025/06/02/to-win-the-ai-race-congress-must-learn-from-europes-missteps/" target="_blank">
+  <img src="https://actonline.org/wp-content/uploads/AI-blog-.png" alt="image" width="450" style="transition:0.3s;">
+</a>
+</details>
+
+Thus, in recent years, many countries have implemented new regulations to address issues related to AI technologies, particularly to curb the spread of disinformation and hate speech. Here is an overview of the approaches adopted by the United States and the European Union regarding the regulation of large language models (LLMs).
+
+### Challenges and Principles
+
+- **Balance of responsibility/innovation:** Regulating LLMs requires maintaining a proper balance between holding actors (developers, deployers, users) accountable and preserving innovation. LLMs offer major benefits (education, accessibility, creativity) but also entail risks, such as generating harmful content.
+
+- **Responsibility definition:** Identifying those responsible for content generated by LLMs remains a challenge. Can responsibility be assigned to the developer, the deployer, or the user?
+
+- **Respect for fundamental rights:** Combating abuse should not compromise human rights such as freedom of expression. Regulations should aim to protect without imposing excessive censorship.
+
+## United States: Sectoral Regulation Focused on Freedom of Expression
+
+- **Freedom of Expression:** In the U.S., the dissemination of false or controversial information, except in cases of defamation, incitement to violence, or fraud, remains protected by the First Amendment, making it difficult to implement substantial measures against disinformation.
+
+- **Take It Down Act:** This recent federal legislation targets the spread of abusive content on the internet, especially deepfakes and non-consensual intimate images, including if generated by AI. It requires platforms to implement rapid reporting and removal obligations under penalty of administrative sanctions. The law fills a significant legal gap concerning deepfakes.
+
+- **Platform obligations:** Social networks and hosting sites must remove reported illegal content quickly. Non-compliance can lead to significant sanctions.
+
+- **Best practices and self-regulation:** Public organizations such as [NIST (National Institute of Standards and Technology)](https://www.nist.gov/) recommend risk management practices (AI RMF). Additionally, the [Federal Trade Commission (FTC)](https://www.ftc.gov/) can act against deceptive commercial practices involving AI.
+
+## European Union: Structured and Risk-Based Regulation
+
+European regulation revolves around two main texts:
+
+### Digital Services Act (DSA)
+
+- **General obligations:** Mechanisms for reporting and removing illegal content; right of appeal for users in case of wrongful removal.
+
+- **Broad scope:** Applies to all digital service providers operating in the EU, even if they are based abroad.
+
+- **Recurring risk assessments:** For major players, the DSA imposes regular assessments on issues such as disinformation. Platforms must act effectively to mitigate these risks (algorithm modifications, increased transparency, etc.).
+
+- **Enhanced transparency and fundamental rights:** Protection against harmful content, respect for privacy and freedom of expression, clear publication of moderation and advertising policies.
+
+### AI Act
+
+- An approach based on 4 risk levels:
+
+  - **Unacceptable risk:** Prohibited systems (e.g., social scoring, mass manipulation).
+  - **High risk:** Critical sectors (health, education, security). Strict obligations include risk management, data governance, and human oversight.
+  - **Limited risk:** Systems interacting with the public or generating content, like LLMs. Requirements include transparency (disclose if content is AI-generated), documentation, and measures to prevent misuse.
+  - **Minimal risk:** Simple applications such as anti-spam filters, largely unregulated.
+
+- **Specific innovations:** The AI Act includes particular obligations for general-purpose AI models posing significant systemic risks (massive computational capacities).
+
+- **Penalties and controls:** Violators face increased oversight and substantial financial sanctions.
+
+### Convergences and Divergences
+
+The following table summarizes the differences and similarities between the regulatory approaches of the U.S. and the EU regarding LLMs:
+
+| Points                          | United States                                                                              | European Union                                                                                                   |
+|---------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **Core Priority**               | Freedom of expression preserved, targeted interventions on specific issues (deepfakes, fraud). | Whole lifecycle approach based on risk level.                                                                  |
+| **Regulation Philosophy**         | Case-by-case focus and defense of the First Amendment.                                       | Preventive and systemic, with transparency, documentation, and risk management at every stage.                |
+| **Responsibility**                 | Targeted obligations on certain platforms; variable sanctions and standards across states and cases. | Clear and harmonized responsibility for platforms and providers, structured sanctions regime.                |
+| **Transparency and Documentation**| Limited requirements in specific cases (deepfakes, fraud); no comprehensive framework.   | Strong transparency, documentation, public access to information for high-risk systems.                     |
+| **Sanction Harmonization**        | Fragmented, with significant variations across federal states and occasional federal interventions. | Harmonized sanctions, regularly strengthened and unified at the EU level.                                  |
+
+This opposition illustrates the diversity of regulatory strategies, oscillating between respect for freedoms and effective prevention of technological misuse.
+
+## Next Step
+
+- [Step 5](step_5.md)
+
+## Resources
+
+| Information                                                                                      | Link                                                                                                                                                                                                                                                                                                                                                         |
+|--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OWASP Top 10 for LLM Applications  2025                                                          | [https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-v2025.pdf)                                                                                                              |
+| Explained: The OWASP Top 10 for Large Language Model Applications                                | [https://www.youtube.com/watch?v=cYuesqIKf9A](https://www.youtube.com/watch?v=cYuesqIKf9A)                                                                                                                                                                                                                                                                   |
+| Model theft: Meta LLaMA leak                                                                     | [https://learn.snyk.io/lesson/model-theft-llm/](https://learn.snyk.io/lesson/model-theft-llm/)                                                                                                                                                                                                                                                               |
+| Secure AI Framework (SAIF)                                                                       | [https://saif.google/](https://saif.google/)                                                                                                                                                                                                                                                                                                                 |
+| Google launches a framework to secure AI models                                                      | [https://www.lemondeinformatique.fr/actualites/lire-google-lance-un-framework-pour-securiser-les-modeles-d-ia-90694.html](https://www.lemondeinformatique.fr/actualites/lire-google-lance-un-framework-pour-securiser-les-modeles-d-ia-90694.html)                                                                                                           |
+| Presentation on security in the AI world                                                          | [https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr](https://www.cloudskillsboost.google/paths/1283/course_templates/1147?locale=fr)                                                                                                                                                                                             |
+| What Is Google's Secure AI Framework (SAIF)?                                                          | [https://www.paloaltonetworks.com/cyberpedia/google-secure-ai-framework](https://www.paloaltonetworks.com/cyberpedia/google-secure-ai-framework)                                                                                                                                                                                                 |
+| Secure AI Framework Approach                                                                       | [https://kstatic.googleusercontent.com/files/00e270b1cccb1f37302462a162c171d86f293a84de54036e0021e2fe0253cf05623bae2a62751b0840667bc6c8412fd70f45c9485972dc370be8394fae922d31](https://kstatic.googleusercontent.com/files/00e270b1cccb1f37302462a162c171d86f293a84de54036e0021e2fe0253cf05623bae2a62751b0840667bc6c8412fd70f45c9485972dc370be8394fae922d31) |
+| Securing the AI pipeline                                                                            | [https://cloud.google.com/blog/topics/threat-intelligence/securing-ai-pipeline/?hl=en](https://cloud.google.com/blog/topics/threat-intelligence/securing-ai-pipeline/?hl=en)                                                                                                                                                                                 |
+| Announcing the Coalition for Secure AI (CoSAI) and founding organizations                                  | [https://blog.google/technology/safety-security/google-coalition-for-secure-ai/](https://blog.google/technology/safety-security/google-coalition-for-secure-ai/)                                                                                                                                                                                         |
+| MITRE ATLAS                                                                                         | [https://atlas.mitre.org/](https://atlas.mitre.org/)                                                                                                                                                                                                                                                                                                         |
+| Anatomy of an AI Attack: MITRE ATLAS                                                                | [https://www.youtube.com/watch?v=QhoG74PDFyc](https://www.youtube.com/watch?v=QhoG74PDFyc)                                                                                                                                                                                                                                                                   |
+| Introduction to MITRE ATLAS                                                                          | [https://www.youtube.com/watch?v=3FN9v-y-C-w](https://www.youtube.com/watch?v=3FN9v-y-C-w)                                                                                                                                                                                                                                                                   |
+| Practical use of the MITRE ATLAS framework for security teams                                         | [https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/](https://www.riskinsight-wavestone.com/2024/11/lutilisation-pratique-du-cadre-atlas-de-mitre-pour-les-equipes-du-rssi/)                                                                                                              |
+
+
