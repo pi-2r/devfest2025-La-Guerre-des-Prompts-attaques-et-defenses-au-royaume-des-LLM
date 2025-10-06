@@ -36,8 +36,8 @@ Promptfoo peut lancer les tests plusieurs fois pour tester la robustesse des ré
 Promptfoo se veut **modulaire** et **extensible**. Il met à disposition des utilisateurs plusieurs outils et plugins pour évaluer la sécurité de leur application et des modèles de langage.
 Promptfoo se met régulièrement à jour concernant les dernières évolutions des vulnérabilités des LLMs et suit notamment les recommandations OWASPs LLM Top 10.
 
-##### Schema de l'architecture de Promptfoo pour le Red Teaming
-[<img src="img/architecture_promptfoo_red_teaming.png" width="800">](https://www.promptfoo.dev/docs/red-team/architecture/)
+#### Architecture de Promptfoo pour le Red Teaming
+
 
 Promptfoo fonctionne avec des **plugins**, **strategies**, et des **targets**.
 
@@ -56,6 +56,11 @@ Les targets disponibles sont, notamment :
   - [**API HTTP**](https://www.promptfoo.dev/docs/providers/http/) : qui teste les points de terminaison REST via des requêtes configurables
   - [**Modèle direct**](https://www.promptfoo.dev/docs/red-team/configuration/#custom-providerstargets) : qui s'interface avec des fournisseurs LLM tels que OpenAI ou des modèles locaux.
   - [**Custom Provider**](https://www.promptfoo.dev/docs/red-team/configuration/#providers) : qui permet de tester des endpoints via des scripts Python/JavaScript
+
+[<img src="img/architecture_promptfoo_red_teaming.png" width="800">](https://www.promptfoo.dev/docs/red-team/architecture/)
+##### Schema de l'architecture de Promptfoo pour le Red Teaming
+
+#### Recommandations sur comment utiliser Promptfoo pour le Red Teaming
 
 
 ## Mise en pratique d'un scan d'un modèle
