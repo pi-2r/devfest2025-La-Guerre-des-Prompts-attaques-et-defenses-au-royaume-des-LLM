@@ -1,4 +1,4 @@
-<title>Devoxx 2025</title>
+<title>Devfest 2025</title>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -283,7 +283,17 @@
             if (item.response.meta) {
                 const meta = document.createElement('div');
                 meta.className = 'meta';
-                meta.textContent = item.response.meta;
+                let metaHtml = item.response.meta;
+                // Mise en forme spéciale pour Guardrails: blocked
+                if (item.response.meta.includes('Guardrails: blocked')) {
+                    // Remplacer Guardrails: blocked par une version stylée
+                    meta.innerHTML = item.response.meta.replace(
+                        /Guardrails: blocked/g,
+                        '<span style="color:#c00;font-weight:bold;">Guardrails: blocked</span>'
+                    );
+                } else {
+                    meta.textContent = item.response.meta;
+                }
                 card.appendChild(meta);
             }
             historyDiv.appendChild(card);

@@ -120,7 +120,6 @@ architecture :
 nemo-proxy/
 ├── app.py                     # Main FastAPI application
 ├── Dockerfile                 # Docker image for the service
-├── install_nemoguardrails.sh  # NeMo Guardrails installation script
 ├── requirements.txt           # Python dependencies
 ├── config/
 │   ├── __init__.py           # Module initialization
