@@ -7,6 +7,10 @@ import warnings
 from typing import Dict, Any, Optional, List
 from pathlib import Path
 import os
+import sys
+
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+from security.patterns import REFUSAL_PATTERNS
 
 # Set up logger first
 logger = logging.getLogger(__name__)
@@ -142,7 +146,11 @@ class DirectGuardrailsService:
             response = await self.rails.generate_async(messages=[
                 {
                     "role": "user",
-                    "content": user_input
+                    "content": user_input + ". translate in English if not in English"
+                },
+                {
+                    "role": "system",
+                    "content": "Always answer in English, even if the question is in another language."
                 }
             ])
 
@@ -237,19 +245,9 @@ class DirectGuardrailsService:
         if not response_text:
             return False
 
-        blocked_indicators = [
-            "I can't provide information on that topic",
-            "I can't assist with that",
-            "I cannot help with",
-            "I'm not able to provide",
-            "I can't comply with",
-            "I refuse to",
-            "I'm sorry, but I cannot",
-            "I apologize, but I cannot"
-        ]
 
         response_lower = response_text.lower()
-        return any(indicator.lower() in response_lower for indicator in blocked_indicators)
+        return any(indicator.lower() in response_lower for indicator in REFUSAL_PATTERNS)
 
     def _is_validation_negative(self, validation_text: str) -> bool:
         """Check if validation response indicates content should be blocked"""
