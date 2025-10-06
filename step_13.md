@@ -11,6 +11,17 @@
 
 
 ## Sommaire
+- [Schema d'architecture](#schema-darchitecture)
+
+
+- [C'est quoi NeMo Guardrails ?](#cest-quoi-nemo-guardrails-)
+- [Mise en place de NeMo Guardrails](#mise-en-place-de-nemo-guardrails)
+
+- [Pourquoi avoir mis en place un proxy avant NeMo Guardrails ?](#pourquoi-avoir-mis-en-place-un-proxy-avant-nemo-guardrails-)
+  - [Exemple sur un cas d'utilisation](#exemple-sur-un-cas-dutilisation)
+
+- [Étape suivante](#étape-suivante)
+- [Ressources](#ressources)
 
 
 ## Schema d'architecture
@@ -52,6 +63,53 @@ d’environnements existants comme FastAPI.
 
 
 ## Mise en place de NeMo Guardrails
+
+
+
+
+
+## Pourquoi avoir mis en place un proxy avant NeMo Guardrails ?
+
+Plusieurs raisons stratégiques et techniques motivent l'utilisation d'un proxy avant d'acheminer les requêtes vers 
+NeMo Guardrails :
+
+-  **Filtrage préliminaire** : Le proxy sert de première barrière en interceptant les requêtes entrantes pour éliminer 
+d’emblée les contenus manifestement inappropriés ou malveillants. Ce pré-filtrage réduit la charge de travail de 
+**NeMo Guardrails** et optimise l’efficacité globale du système.
+
+- **Séparation des fonctions** : En déléguant au proxy les tâches de filtrage simples et rapides, **NeMo Guardrails** 
+peut se concentrer sur des analyses plus pointues et spécifiques aux modèles de langage, ce qui améliore 
+la qualité des contrôles.
+
+- **Modularité et évolutivité** : L’utilisation d’un proxy permet d’adapter ou d’ajouter des règles de filtrage sans 
+impacter directement **NeMo Guardrails**. Cette modularité facilite la maintenance et l’adaptation du système face à des 
+besoins évolutifs.
+
+- **Optimisation des performances** : En traitant rapidement certaines requêtes au niveau du proxy, le volume de 
+données envoyé à **NeMo Guardrails** est réduit, ce qui améliore la réactivité et la scalabilité, notamment en 
+contexte de trafic élevé.
+
+
+Cette architecture en deux temps favorise une meilleure robustesse dans la détection des contenus problématiques tout 
+en préservant efficacité et rapidité dans le traitement des interactions IA.
+
+
+## Exemple sur un cas d'utilisation
+
+L'exemple ci-dessous illustre un cas simple de jailbreak qui n'a pas été intercepté (bloqué) par le proxy. 
+En laissant passer cette requête, NeMo Guardrails s'est activé pour analyser la demande et déterminer si elle était 
+légitime ou non.
+
+<img src="img/price_jailbreak_guardrails.jpg" alt="price_jailbreak_guardrails" width="600" style="transition:0.3s;">
+
+Dans ce scénario, le travail d'analyse effectué par Guardrails aurait pu être évité, car il a consommé 966 tokens 
+inutilement. **Avec un modèle comme gpt-3.5-turbo-0125, cela représente un coût d'environ 0,00193 €**. 
+
+
+Rapporté au nombre de visiteurs, cette dépense peut rapidement s'accumuler sans toutefois apporter de réelle valeur 
+ajoutée au service client.
+
+
 
 ## Étape suivante
 

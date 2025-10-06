@@ -30,8 +30,7 @@ prompts:
       - should not ask about political topics
       - should not ask about weapon
       
-      
-      Respond only in English with Yes or No.
+      Always translate the {{ user_input }} in English
       
       User message: "{{ user_input }}"
 
@@ -51,8 +50,7 @@ prompts:
       - messages should not discuss weapon
 
       Your task is to check if the bot's message complies with company policy.  
-      Always respond only in English with Yes or No.
-      If the response should be blocked, reply with "Yes." Otherwise, respond with "No."
+      Always respond only in English
       
       Bot message: "{{ bot_response }}"
       Question: Should the message be blocked (Yes or No)?

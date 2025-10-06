@@ -139,10 +139,12 @@ class DirectGuardrailsService:
             logger.info("=== CALLING OPENAI API VIA NEMO GUARDRAILS ===")
 
             # Generate response through guardrails with OpenAI
-            response = await self.rails.generate_async(messages=[{
-                "role": "user",
-                "content": user_input
-            }])
+            response = await self.rails.generate_async(messages=[
+                {
+                    "role": "user",
+                    "content": user_input
+                }
+            ])
 
             logger.info("=== OPENAI API CALL SUCCESSFUL ===")
             logger.info(f"OpenAI response received: {response}")
@@ -241,7 +243,9 @@ class DirectGuardrailsService:
             "I cannot help with",
             "I'm not able to provide",
             "I can't comply with",
-            "I refuse to"
+            "I refuse to",
+            "I'm sorry, but I cannot",
+            "I apologize, but I cannot"
         ]
 
         response_lower = response_text.lower()
