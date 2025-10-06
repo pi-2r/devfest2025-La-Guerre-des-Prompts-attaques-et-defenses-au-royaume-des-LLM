@@ -1,40 +1,32 @@
-#  Pourquoi la sécurité des LLM est-elle cruciale ?
+# Why LLM Security is Crucial?
 
 [<img src="img/step2.png" alt="gandalf" >](https://www.youtube.com/watch?v=whF2na8AIbw)
-> "The year 3434 of the Second Age. Here follows the account of Isildur, High King of Gondor, and the finding of the ring 
-> of power. It has come to me. The One Ring", Gandalf, LOTR - The Followship of the Ring
+> "The year 3434 of the Second Age. Here follows the account of Isildur, High King of Gondor, and the finding of the ring of power. It has come to me. The One Ring", Gandalf, LOTR - The Fellowship of the Ring
 
-## 🎯 Objectifs de cette étape
+## 🎯 Objectives of this step
 
-- Avoir une vue d'ensemble sur la nouvelle ère technologique de l'IA générative.
-- Comprendre l'importance de la sécurité des LLM dans le contexte de l'IA générative.
+- Get an overview of the new technological era of generative AI.
+- Understand the importance of LLM security in the context of generative AI.
 
-## Sommaire
+## Table of contents
 
-- [L'émergence de l'IA, une nouvelle ère technologique](#lémergence-de-lia-une-nouvelle-ère-technologique)
-- [Le LLM, un cerveau connecté à vos programmes](#le-llm-un-cerveau-connecté-à-vos-programmes)
-- [Les différents points de contrôle](#les-différents-points-de-contrôle)
-  - [Interaction avec l'utilisateur](#interaction-avec-lutilisateur)
-  - [Données d'entraînement publique](#données-dentraînement-publique)
-  - [Données d'entraînement interne](#données-dentraînement-interne)
-  - [Services internes](#services-internes)
-  - [Accès aux données publiques](#accès-aux-données-publiques)
+- [The emergence of AI, a new technological era](#the-emergence-of-ai-a-new-technological-era)
+- [The LLM, a brain connected to your programs](#the-llm-a-brain-connected-to-your-programs)
+- [The different control points](#the-different-control-points)
+  - [User interaction](#user-interaction)
+  - [Public training data](#public-training-data)
+  - [Internal training data](#internal-training-data)
+  - [Internal services](#internal-services)
+  - [Access to public data](#access-to-public-data)
+- [The LLM model](#the-llm-model)
+  - [API model](#api-model)
+  - [Hosted model](#hosted-model)
+- [Next step](#next-step)
+- [Resources](#resources)
 
-- [Le modèle LLM](#le-modèle-llm)
-  - [Modèle par API](#modèle-par-api)
-  - [Modèle hébergé](#modèle-hébergé)
+## The emergence of AI, a new technological era
 
-
-- [Étape suivante](#étape-suivante)
-- [Ressources](#ressources)
-
-## L'émergence de l'IA, une nouvelle ère technologique
-
-L’essor fulgurant de l’intelligence artificielle, porté notamment par ChatGPT, a propulsé cette technologie sur le 
-devant de la scène. Son adoption massive ne se limite plus au grand public: les entreprises, séduites par l’efficacité 
-des grands modèles de langage (LLM) dans les applications d’IA générative, en font désormais un levier incontournable 
-de productivité.
-
+The rapid rise of artificial intelligence, notably driven by ChatGPT, has pushed this technology into the spotlight. Its massive adoption is no longer limited to the general public: companies, attracted by the efficiency of large language models (LLM) in generative AI applications, now make it an essential lever of productivity.
 
 <a href="https://www.visualcapitalist.com/charted-top-10-companies-leading-the-new-era-of-ai/" target="_blank">
   <img src="https://www.visualcapitalist.com/wp-content/uploads/2025/06/Companies-Leading-the-New-Era-of-AI_WEB-1.jpg" alt="image" width="450" style="transition:0.3s;">
@@ -42,65 +34,43 @@ de productivité.
 
 <a href="https://www.visualcapitalist.com/charted-top-10-companies-leading-the-new-era-of-ai/" target="_blank"><em>source: visualcapitalist.com</em></a>
 
+However, this popularity comes with major new security challenges. LLMs introduce specific risks, different from classic cyber threats such as DDoS attacks, SQL/XSS injections, or ransomware. Their ability to interpret and generate natural language via prompts opens the way to novel vulnerabilities: query manipulation, generation of malicious or inappropriate content, exfiltration of sensitive information, or actions unforeseen by system designers. Let's look at this in more detail.
 
-Cependant, cette popularité s’accompagne de nouveaux enjeux majeurs en matière de sécurité. Les LLM introduisent des 
-risques spécifiques, différents des menaces cyber classiques telles que les attaques DDoS, les injections SQL/XSS ou 
-les ransomwares. Leurs capacités à interpréter et générer du langage naturel via des prompts ouvre la voie à des 
-vulnérabilités inédites : manipulation des requêtes, génération de contenus malveillants ou inappropriés, exfiltration 
-d’informations sensibles, ou encore actions non prévues par les concepteurs du système. Voyons cela plus en détails.
+# The LLM, a brain connected to your programs
 
+Developers, as well as the companies that employ them, often perceive large language models (LLM) as autonomous systems capable of remarkable feats in understanding and content generation. Yet, in software engineering reality, LLMs rarely operate in isolation: they generally integrate into complex decision-making architectures designed to increase application autonomy.
 
-# Le LLM, un cerveau connecté à vos programmes
+These architectures rely on the interconnection of multiple components, each playing a specific role in the processing chain. This modular organization is essential to guarantee coherence, robustness, and overall performance of generative AI-based solutions. Thus, the LLM acts as a central link but depends closely on the whole system to deliver reliable and relevant results. It is therefore essential to have an overview of the architecture surrounding the deployed LLM.
 
-Les développeurs, tout comme les entreprises qui les emploient, perçoivent fréquemment les grands modèles de langage (LLM)
-comme des systèmes autonomes, capables d’exploits remarquables en matière de compréhension et de génération de contenus. 
-Pourtant, dans la réalité de l’ingénierie logicielle, les LLM ne fonctionnent que rarement de manière isolé: 
-ils s’intègrent généralement au cœur d’architectures décisionnelles complexes, conçues pour accroître l’autonomie des applications.
-
-Ces architectures reposent sur l’interconnexion de multiples composants, chacun jouant un rôle spécifique dans la chaîne
-de traitement. Cette organisation modulaire est essentielle pour garantir la cohérence, la robustesse et la performance 
-globale des solutions basées sur l’IA générative. Ainsi, le LLM agit comme un maillon central, mais il dépend étroitement
-de l’ensemble du système pour délivrer des résultats fiables et pertinents. Il est donc essentiel d’avoir une vision 
-d’ensemble de l’architecture qui entoure le LLM déployé.
-
-Le schéma ci-dessous présente une version simplifiée de l’intégration d’un LLM dans un environnement d’entreprise.
-
+The diagram below presents a simplified version of LLM integration in an enterprise environment.
 
  <img src="img/llm-inside.png" alt="llm-inside" width="450" style="transition:0.3s;">
 
-En soi, la démarche reste relativement simple. Cependant, il est indispensable de mettre en place des points de contrôle
-sur les connexions auxquelles le LLM a accès. Ces contrôles peuvent prendre différentes formes, telles que l’authentification, 
-la validation des données ou encore la gestion des autorisations d’accès.
+In itself, the approach remains relatively simple. However, it is essential to implement control points on the connections the LLM can access. These controls can take various forms, such as authentication, data validation, or access permission management.
 
-Le schéma ci-dessous propose une vue simplifiée des principaux points de contrôle à considérer.
+The diagram below offers a simplified view of the main control points to consider.
 
  <img src="img/llm-inside-secure.png" alt="llm-inside" width="450" style="transition:0.3s;">
 
-## Les différents points de contrôle
+## The different control points
 
-### Interaction avec l'utilisateur
-Il est important de considérer que les utilisateurs peuvent, intentionnellement ou non, introduire des erreurs. Il est 
-donc essentiel de mettre en place des dispositifs visant à protéger le modèle LLM contre des entrées potentiellement 
-contradictoires ou trompeuses, qu’elles proviennent des utilisateurs ou d’autres systèmes. Une vigilance particulière 
-doit également être accordée aux contenus toxiques, inexacts ou sensibles que le modèle pourrait générer et transmettre 
-à l’utilisateur.
+### User interaction
+It is important to consider that users may, intentionally or not, introduce errors. It is therefore essential to set up mechanisms to protect the LLM model against potentially contradictory or misleading inputs, whether they come from users or other systems. Particular vigilance must also be paid to toxic, inaccurate, or sensitive content that the model could generate and transmit to the user.
+
 <details>
-  <summary>Exemple</summary>
+  <summary>Example</summary>
 <a href="https://twitter.com/MathisHammel/status/1600413492636307456?s=20&t=fPcFwvq05Oe8JHkvVi95xw" target="_blank">
   <img src="https://pbs.twimg.com/media/FjXOpGiWYAAG-9r?format=jpg&name=small" alt="image" width="450" style="transition:0.3s;">
 </a>
 
-<a href="https://twitter.com/MathisHammel/status/1600413492636307456?s=20&t=fPcFwvq05Oe8JHkvVi95xw" target="_blank">
-<em>source: twitter.com</em></a>
+<a href="https://twitter.com/MathisHammel/status/1600413492636307456?s=20&t=fPcFwvq05Oe8JHkvVi95xw" target="_blank"><em>source: twitter.com</em></a>
 </details>
 
-### Données d'entraînement publique
-Les LLM sont généralement entraînés à partir d’immenses ensembles de données issues d’Internet. Il est donc essentiel de 
-considérer ces sources comme potentiellement peu fiables et de rester vigilant face aux risques de toxicité, de biais 
-ou d’empoisonnement des données provenant d’informations contradictoires. Exemple Grok avec son modèle issue de la 
-plateforme X (anciennement Twitter) qui se base essentiellement sur les commentaires (trolls ?) des utilisateurs.
+### Public training data
+LLMs are generally trained on vast datasets sourced from the internet. It is therefore essential to consider these sources as potentially unreliable and to remain vigilant against the risks of toxicity, bias, or data poisoning from contradictory information. Example: Grok and its model from platform X (formerly Twitter), which relies mainly on users' comments (Troll?).
+
 <details>
-  <summary>Exemple</summary>
+  <summary>Example</summary>
 <a href="https://bsky.app/profile/epyon.bsky.social/post/3ltcxxxv22s2k" target="_blank">
   <img src="https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:ltgm2ysjnysy4hnpxjdwuwn3/bafkreicd5bm65vhtvn47ykkzfnzrunqyqjgsu6whkcgdaowhacspg2gzzm@jpeg" alt="image" width="450" style="transition:0.3s;">
 </a>
@@ -108,14 +78,13 @@ plateforme X (anciennement Twitter) qui se base essentiellement sur les commenta
 <a href="https://bsky.app/profile/epyon.bsky.social/post/3ltcxxxv22s2k" target="_blank"><em>source: bsky.app</em></a>
 </details>
 
-### Données d'entraînement interne
+### Internal training data
 
-Il est possible d’utiliser des données internes pour optimiser le modèle, ce qui peut sensiblement accroître sa précision. 
-Toutefois, il est impératif de s’assurer que les informations sensibles, confidentielles ou à caractère personnel ne 
-soient ni intégrées ni exposées lors de ce processus.
+It is possible to use internal data to optimize the model, which can significantly increase its accuracy.
+However, it is imperative to ensure that sensitive, confidential, or personal information is neither integrated nor exposed during this process.
 
 <details>
-  <summary>Exemple</summary>
+  <summary>Example</summary>
 <a href="https://neuraltrust.ai/fr/blog/ai-model-data-leakage-prevention" target="_blank">
   <img src="https://a.storyblok.com/f/322249/900x507/4a8eae1fdb/why-your-ai-model-might-be-leaking-sensitive-data-and-how-to-stop-it.png" alt="image" width="450" style="transition:0.3s;">
 </a>
@@ -123,12 +92,11 @@ soient ni intégrées ni exposées lors de ce processus.
 <a href="https://neuraltrust.ai/fr/blog/ai-model-data-leakage-prevention" target="_blank"><em>source: neuraltrust.ai</em></a>
 </details>
 
-### Services internes
-Il est indispensable de maîtriser la manière dont le LLM interagit avec les services connectés de l’entreprise, tels 
-que les bases de données ou les API, afin de prévenir toute interaction non autorisée ou fuite de données, comme des 
-injections SQL ou des requêtes abusives sur les API.
+### Internal services
+It is essential to control how the LLM interacts with the company's connected services, such as databases or APIs, to prevent unauthorized interactions or data leakage, such as SQL injections or abusive API requests.
+
 <details>
-  <summary>Exemple</summary>
+  <summary>Example</summary>
 
 <a href="https://snyk.io/fr/articles/llm-weaponized-via-prompt-injection-to-generate-sql-injection-payloads/" target="_blank">
   <img src="img/sql-injection-llm.png" alt="image" width="450" style="transition:0.3s;">
@@ -137,15 +105,11 @@ injections SQL ou des requêtes abusives sur les API.
 <a href="https://snyk.io/fr/articles/llm-weaponized-via-prompt-injection-to-generate-sql-injection-payloads/" target="_blank"><em>source: snyk.io</em></a>
 </details>
 
+### Access to public data
+Real-time data extraction from the Web, notably via scraping techniques, can be an effective lever to enrich your application's functionality. However, it is essential to consider this information as potentially unreliable and stay aware of risks such as indirect prompt injection. This vigilance must be strengthened if you allow users to suggest websites to explore or upload potentially compromised documents.
 
-### Accès aux données publiques
-L’extraction de données en temps réel depuis le Web, notamment par le biais de techniques de scraping, peut constituer 
-un levier efficace pour enrichir les fonctionnalités de votre application. Toutefois, il est essentiel de considérer 
-ces informations comme potentiellement peu fiables et de rester attentif à des risques tels que l’injection indirecte 
-d’invites. Cette vigilance doit être renforcée si vous permettez aux utilisateurs de proposer des sites web à explorer 
-ou de téléverser des documents susceptibles d’être compromis.
 <details>
-  <summary>Exemple</summary>
+  <summary>Example</summary>
 <a href="https://arxiv.org/html/2505.22998v1" target="_blank">
   <img src="img/arxiv-faill-injection.png" alt="image" width="450" style="transition:0.3s;">
 </a>
@@ -153,62 +117,43 @@ ou de téléverser des documents susceptibles d’être compromis.
 <a href="https://arxiv.org/html/2505.22998v1" target="_blank"><em>source: arxiv.org</em></a>
 </details>
 
-# Le modèle LLM
+# The LLM Model
 
-Le modèle de langage constitue le cœur de toute application basée sur un LLM. Il joue un rôle central en collectant et 
-en interprétant les informations afin de permettre l’exécution d’actions au sein d’un environnement informatique.
+The language model is the core of any application based on an LLM. It plays a central role in gathering and interpreting information to allow action execution within a computing environment.
 
-Selon la configuration de votre infrastructure et vos besoins spécifiques, deux options s’offrent à vous pour permettre 
-à votre écosystème d’interagir avec le modèle :
-- **Modèle par API** : Par le biais d’une API publique, hébergée par un prestataire externe (ex. OpenAI, Google, Amazon 
-    Bedrock, etc.), qui permet d’accéder à un modèle pré-entraîné et de l’utiliser pour générer des réponses ou des actions.
+Depending on the configuration of your infrastructure and your specific needs, two options are available to let your ecosystem interact with the model:
+- **API model**: Through a public API, hosted by an external provider (e.g., OpenAI, Google, Amazon Bedrock, etc.), which allows access to a pre-trained model and use it to generate responses or actions.
 
+- **Hosted model**: By deploying a model hosted locally, within your own installations (on-premises) or in the cloud, which allows full control of the model and adaptation to your specific needs.
 
-- **Modèle hébergé** : En déployant un modèle hébergé localement, au sein de vos propres installations (on-premises) ou 
-    dans le cloud, ce qui vous permet de contrôler entièrement le modèle et de l’adapter à vos besoins spécifiques.
+## API Model
+Using public APIs to connect to one or several models has the advantage of great ease of use and generally lower costs. Moreover, model management and updates are handled by the service provider, considerably reducing maintenance for the user company (usually only a model name change is required in your application code).
 
+**However, this choice implies an important trade-off:** the risk of exposure of sensitive data transmitted via the API.
+Indeed, every request sent to a third-party model crosses your secure environment's boundary to be processed by an external system.
 
-## Modèle par API
+> This transfer potentially exposes your information to confidentiality issues and, depending on the security level implemented by the provider, may increase vulnerability to possible data breaches.
 
-Recourir à des API publiques pour se connecter à un ou plusieurs modèles présente l’avantage d’une grande simplicité 
-d’utilisation et de coûts généralement plus faibles. De plus, la gestion et la mise à jour des modèles sont assurées 
-par le fournisseur du service, ce qui allège considérablement la charge de maintenance pour l’entreprise
-utilisatrice (on parle généralement d'un changement de nom de modèle à faire dans le code de votre application).
+## Hosted Model
+Choosing private hosting of a model, especially in sensitive sectors such as banking or healthcare, offers increased control over your data and allows the establishment of clearly defined security barriers. This solution also facilitates adapting the model to the specifics of your business domain.
 
-**Cependant, ce choix implique un compromis important :** le risque d’exposition de données sensibles transmises via l’API. 
-En effet, chaque requête envoyée à un modèle tiers franchit la frontière de votre environnement sécurisé pour être 
-traitée par un système externe. 
+**However, this choice implies an important trade-off:** hosting the model internally means you are responsible for its maintenance, updates, and management of potential vulnerabilities.
 
-> Ce transfert expose potentiellement vos informations à des problèmes de confidentialité et, selon le niveau de sécurité 
-appliqué par le prestataire, cela peut accroître la vulnérabilité face à d’éventuelles violations de données.
+> If you choose an open-source model, it becomes essential to ensure its reliability and integrity to prevent any security breach or inherent bias risk.
 
-## Modèle hébergé
-Opter pour l’hébergement privé d’un modèle, en particulier dans des secteurs sensibles comme la banque ou la santé, 
-offre un contrôle accru sur vos données et permet de mettre en place des barrières de sécurité clairement définies. 
-Cette solution facilite également l’adaptation du modèle aux spécificités de votre domaine d’activité.
+## Next Step
 
-**Cependant, ce choix implique un compromis important:** héberger le modèle en interne implique que vous êtes responsable 
-de sa maintenance, de ses mises à jour et de la gestion des vulnérabilités potentielles.
+- [Step 3](step_3.md)
 
->Si vous choisissez un modèle open source, il devient essentiel de veiller 
-à sa fiabilité et à son intégrité afin de prévenir tout risque de faille de sécurité ou de biais intégré.
+## Resources
 
-## Étape suivante
-
-- [Étape 3](step_3.md)
-
-
-## Ressources
-
-
-| Information                                                                                         | Lien                                                                                                                                                                                                                                                                                                                               |
+| Information                                                                                         | Link                                                                                                                                                                                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | How AI can move from hype to global solutions                                                       | [https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/](https://www.weforum.org/stories/2025/01/ai-transformation-industries-responsible-innovation/)                                                                                                                                       |
-| ChatGPT séduit les pros : 32 % des entreprises US utilisent OpenAI, loin devant Google et Anthropic | [https://siecledigital.fr/2025/05/12/chatgpt-seduit-les-pros-32-des-entreprises-us-utilisent-openai-loin-devant-google-et-anthropic/](https://siecledigital.fr/2025/05/12/chatgpt-seduit-les-pros-32-des-entreprises-us-utilisent-openai-loin-devant-google-et-anthropic/)                                                         |
-| Large language models : les nouveaux enjeux à venir dans la cybersécurité                           | [https://www.journaldunet.com/intelligence-artificielle/1542135-large-language-models-les-nouveaux-enjeux-a-venir-dans-la-cybersecurite/](https://www.journaldunet.com/intelligence-artificielle/1542135-large-language-models-les-nouveaux-enjeux-a-venir-dans-la-cybersecurite/)                                                 |
-| Vulnérabilités LLM et sécurité des IA génératives                                                   | [https://www.vaadata.com/blog/fr/vulnerabilites-llm-et-securite-des-ia-generatives/](https://www.vaadata.com/blog/fr/vulnerabilites-llm-et-securite-des-ia-generatives/)                                                                                                                                                           |
-| L'IA en cybersécurité : comprendre les risques                                                      | [https://www.malwarebytes.com/fr/cybersecurity/basics/risks-of-ai-in-cyber-security](https://www.malwarebytes.com/fr/cybersecurity/basics/risks-of-ai-in-cyber-security)                                                                                                                                                           | 
-| Pièges des LLM                                                                                      | [https://learnprompting.org/fr/docs/basics/pitfalls](https://learnprompting.org/fr/docs/basics/pitfalls)                                                                                                                                                                                                                           | 
-| Grok : l’IA d’Elon Musk se fait appeler “MechaHitler”, prône le viol et les théories du complot     | [https://www.lesnumeriques.com/intelligence-artificielle/grok-l-ia-d-elon-musk-se-fait-appeler-mechahitler-prone-le-viol-et-les-theories-du-complot-n239464.html](https://www.lesnumeriques.com/intelligence-artificielle/grok-l-ia-d-elon-musk-se-fait-appeler-mechahitler-prone-le-viol-et-les-theories-du-complot-n239464.html) | 
-| LLM en entreprise : allier puissance de l’IA et confidentialité des données                         | [https://www.linkedin.com/pulse/llm-en-entreprise-allier-puissance-de-lia-et-des-donn%C3%A9es-leprince-fkpte/](https://www.linkedin.com/pulse/llm-en-entreprise-allier-puissance-de-lia-et-des-donn%C3%A9es-leprince-fkpte/)                                                                                                       | 
-
+| ChatGPT wins over professionals: 32% of US companies use OpenAI, far ahead of Google and Anthropic | [https://siecledigital.fr/2025/05/12/chatgpt-seduit-les-pros-32-des-entreprises-us-utilisent-openai-loin-devant-google-et-anthropic/](https://siecledigital.fr/2025/05/12/chatgpt-seduit-les-pros-32-des-entreprises-us-utilisent-openai-loin-devant-google-et-anthropic/)                                                         |
+| Large language models: upcoming cybersecurity challenges                                            | [https://www.journaldunet.com/intelligence-artificielle/1542135-large-language-models-les-nouveaux-enjeux-a-venir-dans-la-cybersecurite/](https://www.journaldunet.com/intelligence-artificielle/1542135-large-language-models-les-nouveaux-enjeux-a-venir-dans-la-cybersecurite/)                                                 |
+| LLM vulnerabilities and generative AI security                                                     | [https://www.vaadata.com/blog/fr/vulnerabilites-llm-et-securite-des-ia-generatives/](https://www.vaadata.com/blog/fr/vulnerabilites-llm-et-securite-des-ia-generatives/)                                                                                                                                                           |
+| AI in cybersecurity: understanding risks                                                          | [https://www.malwarebytes.com/fr/cybersecurity/basics/risks-of-ai-in-cyber-security](https://www.malwarebytes.com/fr/cybersecurity/basics/risks-of-ai-in-cyber-security)                                                                                                                                                           |
+| LLM pitfalls                                                                                      | [https://learnprompting.org/fr/docs/basics/pitfalls](https://learnprompting.org/fr/docs/basics/pitfalls)                                                                                                                                                                                                                           |
+| Grok: Elon Musk’s AI calls itself “MechaHitler,” promotes rape and conspiracy theories             | [https://www.lesnumeriques.com/intelligence-artificielle/grok-l-ia-d-elon-musk-se-fait-appeler-mechahitler-prone-le-viol-et-les-theories-du-complot-n239464.html](https://www.lesnumeriques.com/intelligence-artificielle/grok-l-ia-d-elon-musk-se-fait-appeler-mechahitler-prone-le-viol-et-les-theories-du-complot-n239464.html) |
+| LLM in enterprise: combining AI power and data privacy                                             | [https://www.linkedin.com/pulse/llm-en-entreprise-allier-puissance-de-lia-et-des-donn%C3%A9es-leprince-fkpte/](https://www.linkedin.com/pulse/llm-en-entreprise-allier-puissance-de-lia-et-des-donn%C3%A9es-leprince-fkpte/)                                                                                                       |
