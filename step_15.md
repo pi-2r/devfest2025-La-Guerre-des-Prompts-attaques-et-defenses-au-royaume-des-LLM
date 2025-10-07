@@ -17,6 +17,8 @@
       - [Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)](#méthode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-à-préférer-si-vous-navez-pas-de-compte-entreprise)
 
 - [Mise en pratique d'un scan d'un modèle](#mise-en-pratique-dun-scan-dun-modèle)
+
+- [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
 
 
@@ -164,6 +166,10 @@ Une fois le scan réalisé, vous pourrez consulter les résultats dans l'onglet 
 
 <img src="img/promptfoo_result_security_audit.png" width="800">
 
+
+## Étape suivante
+
+- [Remerciements](thanks-you.md)
 
 ## Ressources
 
