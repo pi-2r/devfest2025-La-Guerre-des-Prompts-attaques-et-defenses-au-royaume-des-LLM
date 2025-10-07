@@ -149,7 +149,7 @@ Puis suivez les instructions des différents onglets :
 Promptfoo intègre aussi un module de scan de modèle.
 Ce module permet d'analyser des modèles au format `pickle`, `h5`, `pb` (TensorFlow SavedModel) et `onnx` pour détecter des vulnérabilités de sécurité potentielles, comme :
 - Des codes malveillants intégrés dans des modèles [pickle](https://arxiv.org/html/2508.19774v1). 
-- Des opérations TensorFlow frauduleuse comme l'ajout d'une couche superficielle forçant un output donné selon un pattern d'input.
+- Des opérations TensorFlow ou Keras frauduleuses comme l'ajout d'une `layers.Lambda` en [dernière couche](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
 - Des couches Keras Lambda potentiellement dangereuses.
 
 
