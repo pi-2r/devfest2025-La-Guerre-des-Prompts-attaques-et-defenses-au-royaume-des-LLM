@@ -78,5 +78,8 @@ REFUSAL_PATTERNS = [
     "I can't comply with",
     "I refuse to",
     "I'm sorry, but I cannot",
-    "I apologize, but I cannot"
+    "I apologize, but I cannot",
+    "decline to",
+    "personal opinion",
+    "emotion"
 ]
