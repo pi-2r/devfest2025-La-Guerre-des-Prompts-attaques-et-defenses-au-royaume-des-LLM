@@ -8,15 +8,21 @@
 ## Sommaire
 
 - [Promptfoo](#promptfoo)
+    - [Installation des packages nécessaires](#installation-des-packages-nécessaires)
     - [L'évaluation de la qualité des réponses d'un LLM](#lévaluation-de-la-qualité-des-réponses-dun-llm)
     - [L'audit de sécurité de modèles de langage](#laudit-de-sécurité-de-modèles-de-langage)
-
+      - [Architecture de Promptfoo pour le Red Teaming](#architecture-de-promptfoo-pour-le-red-teaming)
+      - [Recommandations sur comment utiliser Promptfoo pour le Red Teaming](#recommandations-sur-comment-utiliser-promptfoo-pour-le-red-teaming)
+      - [Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main](#méthode-1--construction-du-red-teaming-dans-le-fichier-promptfooconfigyaml-à-la-main)
+      - [Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)](#méthode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-à-préférer-si-vous-navez-pas-de-compte-entreprise)
 
 - [Mise en pratique d'un scan d'un modèle](#mise-en-pratique-dun-scan-dun-modèle)
+- [Ressources](#ressources)
+
 
 ## Promptfoo
 
-### Installation des package nécessaire
+### Installation des packages nécessaires
 
 Pour cela, il faut installer `promptfoo` et une librairie complémentaire `modelaudit` :
 
@@ -71,7 +77,7 @@ Les targets disponibles sont, notamment :
 -  Un **Purpose** décrit le but de ce système de test. Il est utilisé pour guider la génération des adversarial inputs.
 
 [<img src="img/architecture_promptfoo_red_teaming.png" width="800">](https://www.promptfoo.dev/docs/red-team/architecture/)
-##### Schema de l'architecture de Promptfoo pour le Red Teaming
+###### Schema de l'architecture de Promptfoo pour le Red Teaming
 
 #### Recommandations sur comment utiliser Promptfoo pour le Red Teaming
 Si vous disposez d'un compte entreprise sur [Promptfoo](https://www.promptfoo.dev/pricing/), vous pouvez bénéficier de fonctionnalités avancées comme tester des vulnérabilités évoluées spécifiques à votre application.
@@ -154,7 +160,25 @@ Puis aller dans la section **Model Audit**
 Indiquer le chemin absolu du modèle à scanner dans le champ **Model Path**.
 <img src="img/promptfoo_scan_entry_page.png" width="800">
 
-
+Une fois le scan réalisé, vous pourrez consulter les résultats dans l'onglet `Results`.
 
 <img src="img/promptfoo_result_security_audit.png" width="800">
+
+
+## Ressources
+
+| Information                                | Lien                                                                                                                                                                                                                                         |
+|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OWASP Top 10 for LLM Applications  2025    | [https://www.promptfoo.dev/docs/red-team/owasp-llm-top-10/](https://www.promptfoo.dev/docs/red-team/owasp-llm-top-10/)                                                                                                                       |
+| Promptfoo: Présentation des vulnérabilités | [https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/)                                                                                                         |
+| MITRE ATLAS                                | [https://atlas.mitre.org/](https://atlas.mitre.org/)                                                                                                                                                                                         |
+| Promptfoo: Stratégies                      | [https://www.promptfoo.dev/docs/red-team/strategies/base64/](https://www.promptfoo.dev/docs/red-team/strategies/base64/)                                                                                                                     |
+| Promptfoo: Providers                       | [https://www.promptfoo.dev/docs/red-team/configuration/#provider](https://www.promptfoo.dev/docs/red-team/configuration/#provider)                                                                                                           |
+| Promptfoo: Pricing                         | [https://www.promptfoo.dev/pricing/)](https://www.promptfoo.dev/pricing/)                                                                                                                                                                    |
+| Promptfoo: Plugin PII                      | [https://www.promptfoo.dev/docs/red-team/plugins/pii/](https://www.promptfoo.dev/docs/red-team/plugins/pii/)                                                                                                                                 |
+| Promptfoo: Configuration d'un Red Team     | [https://www.promptfoo.dev/docs/red-team/configuration/](https://www.promptfoo.dev/docs/red-team/configuration/)                                                                                                                             |
+| HuggingFace SafeTensors github             | [https://github.com/huggingface/safetensors](https://github.com/huggingface/safetensors)                                                                                                                                                     |
+| Manipulation d'une tesla par des Hackers   | [https://www.technologyreview.com/2020/02/19/868188/hackers-can-trick-a-tesla-into-accelerating-by-50-miles-per-hour/](https://www.technologyreview.com/2020/02/19/868188/hackers-can-trick-a-tesla-into-accelerating-by-50-miles-per-hour/) |
+| Nist: taxonomy of attacks and mitigations  | [https://www.nist.gov/publications/adversarial-machine-learning-taxonomy-and-terminology-attacks-and-mitigations](https://www.nist.gov/publications/adversarial-machine-learning-taxonomy-and-terminology-attacks-and-mitigations)           |
+| The Art of Hide and Seek: Making Pickle-Based Model Supply Chain Poisoning Stealthy Again                   | [https://arxiv.org/html/2508.19774v1](hhttps://arxiv.org/html/2508.19774v1)                                                                                                                                                                  |
 
