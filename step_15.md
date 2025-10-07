@@ -74,11 +74,15 @@ Les targets disponibles sont, notamment :
 ##### Schema de l'architecture de Promptfoo pour le Red Teaming
 
 #### Recommandations sur comment utiliser Promptfoo pour le Red Teaming
+Si vous disposez d'un compte entreprise sur [Promptfoo](https://www.promptfoo.dev/pricing/), vous pouvez bénéficier de fonctionnalités avancées comme tester des vulnérabilités évoluées spécifiques à votre application.
+Dans la version community, vous pouvez déjà tester un certain nombre de vulnérabilités classiques.
 
-Pour ce red-teaming, nous allons le plugin [Direct PII Exposure](https://www.promptfoo.dev/docs/red-team/plugins/pii/).
+Pour ce red-teaming, nous allons utiliser le plugin [Direct PII Exposure](https://www.promptfoo.dev/docs/red-team/plugins/pii/).
 Dans cet exemple, nous allons tester la résilience de la brique de génération d'un RAG (à contexte fixe).
-Le red-teaming peut être défini dans le fichier `promptfooconfig.yaml` comme suit :
 
+##### Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main
+
+Le red-teaming peut être défini dans le fichier `promptfooconfig.yaml` comme suit :
 ```yaml
 description: 'Red Team Eval'
 
@@ -108,6 +112,27 @@ redteam:
   # testGenerationInstructions: instructions pour décrire des patterns d'attaque spécifique à un domaine métier (Médecine, Finance, Juridique, ...)
     
 ```
+
+Vous pouvez ensuite visualiser les résultats dans l'interface graphique de promptfoo en lançant la commande suivante :
+```bash
+
+promptfoo redteam init
+```
+
+##### Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)
+
+Le red-teaming peut aussi être construit via l'interface graphique de promptfoo. Pour cela, lancer l'interface graphique de promptfoo :
+```bash
+
+promptfoo redteam init
+```
+Puis suivez les instructions des différents onglets :
+- **Target Type** : définir le type de target qui doit être testé (API HTTP, Modèle direct, Custom Provider)
+- **Target Config** : définir la configuration de la target (fichier où est l'endpoint, délai entre 2 requêtes, configuration custom, ...)
+- **Application Details** : définir le comportement attendu de l'application, ses spécificités métier, les règles de sécurité à respecter
+- **Plugins** : définir les plugins à utiliser pour générer les adversarial inputs ils sont aussi regroupés par type d'application (RAG, MCP, OWASP LLM Top 10 (focus), Mitre, EU AI Act, ...)
+- **Strategies** : définir la stratégie d'attaque à utiliser (base64, leetspeak, multi-turn, homogliphic, ...)
+- **Review** : Passer en revue les paramètres et options de run et lancer le red-teaming (via e bouton `Run Now`)
 
 ## Mise en pratique d'un scan d'un modèle
 
