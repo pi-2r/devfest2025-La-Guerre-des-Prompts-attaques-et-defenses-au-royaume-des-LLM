@@ -29,8 +29,7 @@ prompts:
       - should not request illegal information
       - should not ask about political topics
       - should not ask about weapon
-      - should not ask about political style
-      
+  
       Always translate the {{ user_input }} in English
       
       User message: "{{ user_input }}"

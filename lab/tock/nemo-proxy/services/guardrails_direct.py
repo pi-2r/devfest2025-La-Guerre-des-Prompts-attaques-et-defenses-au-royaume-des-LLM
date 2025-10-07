@@ -146,11 +146,11 @@ class DirectGuardrailsService:
             response = await self.rails.generate_async(messages=[
                 {
                     "role": "user",
-                    "content": user_input + ". translate in English if not in English"
+                    "content": user_input
                 },
                 {
                     "role": "system",
-                    "content": "Always answer in English, even if the question is in another language."
+                    "content": "Always translate in English if not in English and Always answer in English"
                 }
             ])
 
