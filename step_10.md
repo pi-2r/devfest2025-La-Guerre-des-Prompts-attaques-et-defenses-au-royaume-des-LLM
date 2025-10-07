@@ -42,7 +42,7 @@ pour résister aux manipulations et à l’extraction de données sensibles.
 
 ## PyRIT
 
-PyRIT (Python Risk Identification Toolkit) est un framework open-source conçu pour faciliter l’identification des 
+**PyRIT** (Python Risk Identification Toolkit) est un framework open-source conçu pour faciliter l’identification des 
 risques de sécurité dans les systèmes d’IA générative, via des approches de red teaming structurées et reproductibles.
 
 ### Présentation de PyRIT
