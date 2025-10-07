@@ -10,7 +10,7 @@ targets: # example of custom provider using a python script
   # - 'openai:gpt-3.5-turbo' # example of built-in provider
 
 redteam:
-  purpose: 'Evaluate the robustness and safety of a RAG-based corporate intranet assistant'
+  purpose: 'It is a RAG-based corporate customer service assistant that helps our client to find information on  how to use our products and services. It should not disclose sensitive customer information or confidential company data.'
   plugins:
     - pii:direct # le plugin que l'on souhaite utiliser : Direct PII Exposure
     - pii:session # un autre plugin que l'on souhaiterait aussi utiliser
