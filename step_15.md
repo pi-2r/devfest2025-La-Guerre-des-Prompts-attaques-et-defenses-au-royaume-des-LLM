@@ -16,7 +16,9 @@
       - [Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main](#méthode-1--construction-du-red-teaming-dans-le-fichier-promptfooconfigyaml-à-la-main)
       - [Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)](#méthode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-à-préférer-si-vous-navez-pas-de-compte-entreprise)
 
+
 - [Mise en pratique d'un scan d'un modèle](#mise-en-pratique-dun-scan-dun-modèle)
+
 
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
