@@ -44,7 +44,18 @@
 
 
 ## C'est quoi Promptfoo ?
-TODO
+
+**Promptfoo** est un outil open-source destiné aux développeurs pour tester, évaluer et sécuriser les applications basées 
+sur les modèles de langage (LLM). 
+
+Il permet de comparer différentes variantes de prompts, de définir des critères d'évaluation personnalisés, d'intégrer 
+des scénarios de red teaming pour détecter des vulnérabilités, et de s'intégrer facilement dans des pipelines CI/CD 
+pour automatiser les tests. 
+
+Promptfoo facilite ainsi le développement d'applications d'IA fiables et robustes en automatisant l'évaluation des 
+réponses, la comparaison de modèles et la détection de faiblesses ou risques liés à la sécurité et à la conformité. 
+
+Il fonctionne localement, rapide et flexible, il supporte plusieurs langages de programmation et APIs LLM.
 
 ## Installer Promptfoo
 
