@@ -13,7 +13,7 @@
 ## Sommaire
 - [Schema d'architecture](#schema-darchitecture)
 
-
+- [NeMo Guardrails](#nemo-guardrails)
 - [C'est quoi NeMo Guardrails ?](#cest-quoi-nemo-guardrails-)
 - [Mise en place de NeMo Guardrails](#mise-en-place-de-nemo-guardrails)
   - [Tester le guardrail](#tester-le-guardrail)
@@ -42,7 +42,10 @@ Nous allons insérer la brique Nemo Guardrails entre le proxy et le bot, pour fi
     +-------------+      +----------------------------+      +-----------------+      +-----+      +------------------------------+
 
 
+## NeMo Guardrails
 
+![GitHub stars](https://img.shields.io/github/stars/NVIDIA-NeMo/Guardrails?style=flat-square)
+[![Downloads](https://static.pepy.tech/badge/nemoguardrails/month)](https://pepy.tech/project/nemoguardrails)
 ## C'est quoi NeMo Guardrails ?
 
 **NeMo Guardrails** est un framework open-source développé par **NVIDIA**, conçu pour renforcer la sécurité et la 
