@@ -26,13 +26,23 @@
 
 ## Promptfoo
 
+![GitHub stars](https://img.shields.io/github/stars/promptfoo/promptfoo?style=flat-square)
+[![Downloads](https://static.pepy.tech/badge/promptfoo/month)](https://pepy.tech/project/promptfoo)
+
 ### Installation des packages nécessaires
 
 Pour cela, il faut installer `promptfoo` et une librairie complémentaire `modelaudit` :
 
 ```bash
+# 1. Créer un environnement virtuel dans le répertoire courant
+python3 -m venv .venv
 
+# 2. Activer l’environnement virtuel
+source .venv/bin/activate
+
+# 3. Installer le package promptfoo
 pip install promptfoo
+# 4. Installer le package modelaudit
 pip install modelaudit
 ```
 

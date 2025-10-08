@@ -12,7 +12,7 @@
 
 
 - [Garak](#garak)
-
+    - [Installation de Garak](#installation-de-garak)
     - [Les Probes](#les-probes)
     - [Les Generators](#les-generators)
     - [Les Detectors et les Harnesses](#les-detectors-et-les-harnesses)
@@ -20,14 +20,35 @@
 
 - [Mise en pratique de Garak sur le Playground de Microsoft](#mise-en-pratique-de-garak-sur-le-playground-de-microsoft)
 
+- [Étape suivante](#étape-suivante)
+- [Ressources](#ressources)
+
 
 
 ## Garak
 
-Garak est un outil open-source développé par NVIDIA pour scanner les vulnérabilités des modèles de langage (LLM).
+![GitHub stars](https://img.shields.io/github/stars/NVIDIA/garak?style=flat-square)
+[![Downloads](https://static.pepy.tech/badge/garak/month)](https://pepy.tech/project/garak)
+
+**Garak** est un outil open-source développé par **NVIDIA** pour scanner les vulnérabilités des modèles de langage (LLM).
 Il est conçu pour identifier les failles de sécurité potentielles dans les systèmes utilisant les LLMs.
 
 **Garak** se fonde sur une base de connaissances de jailbreaks prompts connus et constamment mis à jour par la communauté.
+
+### Installation de Garak
+Pour installer Garak, vous pouvez utiliser pip. Exécutez la commande suivante dans votre terminal :
+
+```bash
+# 1. Créer un environnement virtuel dans le répertoire courant
+python3 -m venv .venv
+
+# 2. Activer l’environnement virtuel
+source .venv/bin/activate
+
+# 3. Installer garak
+python -m pip install -U garak
+```
+
 
 ### Les Probes
 
@@ -38,6 +59,9 @@ Vous pouvez voir la liste des probes disponibles en exécutant la commande suiva
 
 python -m garak --list_probes
 ```
+
+Vous devriez voir un affichage similaire à celui-ci :
+<img src="img/list_probes.png" alt="garak-list-probes" width="600" style="transition:0.3s;">
 
 Certaines probes sont suivies de symboles 🌟 ou 💤 comme ceci :
 ```plaintext
@@ -100,3 +124,16 @@ Pour lancer un scan garak sur une étape du Playground :
 
 python -m garak --target_type function --target_name lab/Garak/ai-playground-microsoft#main  --probes divergence
 ```
+
+
+## Étape suivante
+- [Étape 10](step_10.md)
+
+## Ressources
+
+
+| Information                               | Lien                                                                           |
+|-------------------------------------------|--------------------------------------------------------------------------------|
+| [Github] garak, LLM vulnerability scanner | [https://github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)             |
+| Documentation garak                       | [https://docs.garak.ai/](https://docs.garak.ai/)                               |
+| Garak, DEF CON slides                     | [https://garak.ai/garak_aiv_slides.pdf](https://garak.ai/garak_aiv_slides.pdf) |
