@@ -1,4 +1,4 @@
-#  Pourquoi la Sécurité des LLM est-elle Cruciale ?
+#  Pourquoi la sécurité des LLM est-elle Cruciale ?
 
 [<img src="img/step2.png" alt="gandalf" >](https://www.youtube.com/watch?v=whF2na8AIbw)
 > "The year 3434 of the Second Age. Here follows the account of Isildur, High King of Gondor, and the finding of the ring 
@@ -45,8 +45,8 @@ de productivité.
 
 Cependant, cette popularité s’accompagne de nouveaux enjeux majeurs en matière de sécurité. Les LLM introduisent des 
 risques spécifiques, différents des menaces cyber classiques telles que les attaques DDoS, les injections SQL/XSS ou 
-les ransomwares. Leur capacité à interpréter et générer du langage naturel via des prompts ouvre la voie à des 
-vulnérabilités inédite : manipulation des requêtes, génération de contenus malveillants ou inappropriés, exfiltration 
+les ransomwares. Leurs capacités à interpréter et générer du langage naturel via des prompts ouvre la voie à des 
+vulnérabilités inédites : manipulation des requêtes, génération de contenus malveillants ou inappropriés, exfiltration 
 d’informations sensibles, ou encore actions non prévues par les concepteurs du système. Voyons cela plus en détails.
 
 
@@ -98,7 +98,7 @@ doit également être accordée aux contenus toxiques, inexacts ou sensibles que
 Les LLM sont généralement entraînés à partir d’immenses ensembles de données issues d’Internet. Il est donc essentiel de 
 considérer ces sources comme potentiellement peu fiables et de rester vigilant face aux risques de toxicité, de biais 
 ou d’empoisonnement des données provenant d’informations contradictoires. Exemple Grok avec son modèle issue de la 
-plateforme X (anciennement Twitter) qui se base essentiellement sur les commentaires (Troll ?) des utilisateurs.
+plateforme X (anciennement Twitter) qui se base essentiellement sur les commentaires (trolls ?) des utilisateurs.
 <details>
   <summary>Exemple</summary>
 <a href="https://bsky.app/profile/epyon.bsky.social/post/3ltcxxxv22s2k" target="_blank">
@@ -169,12 +169,13 @@ Selon la configuration de votre infrastructure et vos besoins spécifiques, deux
 
 
 ## Modèle par API
+
 Recourir à des API publiques pour se connecter à un ou plusieurs modèles présente l’avantage d’une grande simplicité 
 d’utilisation et de coûts généralement plus faibles. De plus, la gestion et la mise à jour des modèles sont assurées 
-par le fournisseur du service, ce qui allège considérablement la charge de maintenance pour l’entreprise utilisatrice (
-on parle généralement d'un changement de nom de modéle à faire dans le code de votre application)
+par le fournisseur du service, ce qui allège considérablement la charge de maintenance pour l’entreprise
+utilisatrice (on parle généralement d'un changement de nom de modèle à faire dans le code de votre application).
 
-**Cependant, ce choix implique un compromis important:** le risque d’exposition de données sensibles transmises via l’API. 
+**Cependant, ce choix implique un compromis important :** le risque d’exposition de données sensibles transmises via l’API. 
 En effet, chaque requête envoyée à un modèle tiers franchit la frontière de votre environnement sécurisé pour être 
 traitée par un système externe. 
 

@@ -93,7 +93,7 @@ Amazon à abandonner le projet afin d’éviter de perpétuer des pratiques de r
 ### ITutorGroup
 
 <a href="https://www.reuters.com/legal/tutoring-firm-settles-us-agencys-first-bias-lawsuit-involving-ai-software-2023-08-10/" target="_blank">
-  <img src="https://media.licdn.com/dms/image/v2/C560BAQFd5_V0ejcWjw/company-logo_200_200/company-logo_200_200/0/1631380400405?e=1758153600&v=beta&t=FGvvgeubSHf0bD7She9AfplrE0zBTUHbu2k_3nzbCiE" alt="tay " width="150" style="transition:0.3s;">
+  <img src="img/itutor.jpg" alt="tay " width="150" style="transition:0.3s;">
 </a>
 
 <a href="https://www.reuters.com/legal/tutoring-firm-settles-us-agencys-first-bias-lawsuit-involving-ai-software-2023-08-10/" target="_blank"><em>source: reuters.com</em></a>
