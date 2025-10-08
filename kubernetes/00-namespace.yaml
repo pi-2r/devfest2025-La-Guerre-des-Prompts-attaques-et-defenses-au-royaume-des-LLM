@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: tock-genai
-  labels:
-    app: tock-genai
-    environment: dev
