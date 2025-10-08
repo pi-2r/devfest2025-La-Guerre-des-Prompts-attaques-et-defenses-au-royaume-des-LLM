@@ -94,7 +94,7 @@ services:
       - mongo
       - mongo2
       - mongo3
-      - nemo-proxy
+      # - nemo-proxy
       # - duckling
       # - kotlin_compiler
     environment:
@@ -193,30 +193,21 @@ services:
        - pgvector-postgres-vl:/var/lib/postgresql/data
        - ./scripts/init-pgvect.sql:/docker-entrypoint-initdb.d/init.sql
 
-  nemo-guardrails:
-     build:
-       context: /YOUR_PATH/NeMo-Guardrails
-       dockerfile: Dockerfile
-     ports:
-       - "8001:8000"
-     environment:
-       - OPENAI_API_KEY=${OPENAI_API_KEY}
-     volumes:
-       - ./nemo-guardrails-config/default/:/app/config:ro
-     command: ["server", "--config=/app/config", "--port=8000", "--verbose"]
-     restart: unless-stopped
-
   nemo-proxy:
      build:
        context: ./nemo-proxy
      ports:
        - "8002:8002"
      depends_on:
-       - nemo-guardrails
        - bot_api
+     env_file:
+       - .env
      environment:
-       - NEMO_GUARDRAILS_URL=http://nemo-guardrails:8000
        - BOT_API_URL=http://bot_api:8080
+       - OPENAI_API_KEY=${OPENAI_API_KEY}
+       - GUARDRAILS_CONFIG_PATH=/app/nemo-guardrails-config
+     volumes:
+       - ./nemo-guardrails-config:/app/nemo-guardrails-config:ro
      restart: unless-stopped
 
   gen_ai_orchestrator-server:
@@ -269,4 +260,3 @@ volumes:
 
   pgvector-postgres-vl:
     driver: local
-

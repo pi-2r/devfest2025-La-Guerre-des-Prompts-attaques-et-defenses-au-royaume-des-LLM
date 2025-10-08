@@ -257,10 +257,13 @@ class DirectGuardrailsService:
         negative_indicators = [
             "inappropriate", "unsafe", "not appropriate", "should be blocked",
             "not safe", "problematic", "concerning", "blocked",
-            "I can't", "I cannot", "not suitable"
+            "I can't", "I cannot", "not suitable", "no"
         ]
 
-        validation_lower = validation_text.lower()
+        validation_lower = validation_text.strip().lower()
+        # Vérifie si la réponse est exactement "no" ou contient un indicateur négatif
+        if validation_lower == "no":
+            return True
         return any(indicator in validation_lower for indicator in negative_indicators)
 
     def is_available(self) -> bool:
