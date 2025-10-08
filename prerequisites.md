@@ -173,7 +173,20 @@ docker compose -f prerequisites-docker-compose-genai.yml down
 ```
  
 ### Installation de Garak
-Todo
+
+Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
+puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
+
+```bash
+# 1. Créer un environnement virtuel dans le répertoire courant
+python3 -m venv .venv
+
+# 2. Activer l’environnement virtuel
+source .venv/bin/activate
+
+# 3. Installer garak
+python -m pip install -U garak
+```
 
 ### Installation de PyRIT
 
@@ -210,5 +223,20 @@ des dépendances du projet. Par exemple :
 <img src="img/pyrit-install.png" alt="Pyrit install" width="600" style="transition:0.3s;">
 
 ### Installation de Promptfoo
-Todo
+
+Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
+puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
+
+```bash
+# 1. Créer un environnement virtuel dans le répertoire courant
+python3 -m venv .venv
+
+# 2. Activer l’environnement virtuel
+source .venv/bin/activate
+
+# 3. Installer le package promptfoo
+pip install promptfoo
+# 4. Installer le package modelaudit
+pip install modelaudit
+```
 

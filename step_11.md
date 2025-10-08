@@ -35,6 +35,10 @@
 
 ## Présentation de Tock
 
+![GitHub stars](https://img.shields.io/github/stars/theopenconversationkit/tock?style=flat-square)
+[![Downloads](https://static.pepy.tech/badge/tock/month)](https://pepy.tech/project/tock)
+
+
 <details>
   <summary>Présentation de Tock lors du Devoxx 2025</summary>
 
