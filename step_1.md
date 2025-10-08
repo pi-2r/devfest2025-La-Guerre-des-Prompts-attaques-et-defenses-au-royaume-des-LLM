@@ -81,16 +81,16 @@ Tentons d'appliquer une distinction sur chacun de ces 3 termes:
 
 
 **IA:**
-L'intelligence artificielle (ou Intelligence Augmentée pour certains) est, par essence, un domaine multidisciplinaire 
-visant à créer des systèmes capables d'effectuer des tâches qui nécessiteraient normalement l'intelligence humaine. 
-Dans ces taches ont retrouve la résolution de problèmes, la perception ainsi que la compréhension du langage.
+L’intelligence artificielle, ou intelligence augmentée pour certains, est un domaine qui réunit plusieurs disciplines et 
+qui cherche à créer des systèmes capables de réaliser des tâches habituellement réservées aux humains, comme résoudre 
+des problèmes, percevoir leur environnement ou comprendre le langage.
 L'IA correspond à un large éventail de technologies, de méthodologies et des systèmes basés sur des règles aux 
 algorithmes d'apprentissage automatique, servant de terme générique à de multiples approches pour parvenir à l'intelligence artificielle.
 
 **Réseaux Neuronaux:**
 Cette partie de l'intelligence artificielle s'inspire du fonctionnement du cerveau humain. Les réseaux neuronaux, 
 sont des modèles informatiques conçu pour reconnaitre des schémas et d'appliquer des décisions suivant les données 
-qu'ils traitent. Ils peuvent parfois être simple (on parlera alors de réseaux neurones superficiels)ou d'autre fois 
+qu'ils traitent. Ils peuvent parfois être simple (on parlera alors de réseaux neurones superficiels) ou d'autres fois 
 complexes (là on dira que se sont des réseaux neuronaux profonds).
 Dans tous les cas, les réseaux neuronaux forment la base essentielle de nombreuses applications contemporaines 
 d’intelligence artificielle, telles que la reconnaissance d’images, le traitement automatique du langage naturel et la 
@@ -99,8 +99,8 @@ conduite autonome de véhicules.
 **LLM:**
 Pour faire simple, les LLM (ou grand modèles de langage) sont un type spécifique de réseau neuronal. Ils se basent sur 
 des formes avancées de réseaux neurones, comme les modèles transformateurs, pour comprendre et produire du textes a 
-partir des données d'entraînement. Leur force résident dans la gestion des taches linguistiques, allant de la simple 
-saisie de texte, à la synthèse rédactionnel d'un document de centaines de pages sans dénaturer l'idée principal.
+partir des données d'entraînement. Leurs forces résident dans la gestion des taches linguistiques, allant de la simple 
+saisie de texte, à la synthèse rédactionnelle d'un document de centaines de pages sans dénaturer l'idée principale.
 
 <img src="https://i0.wp.com/www.phdata.io/wp-content/uploads/2024/10/article-image1-6.png" alt="image" width="450" style="transition:0.3s;">
 
@@ -108,7 +108,8 @@ saisie de texte, à la synthèse rédactionnel d'un document de centaines de pag
 
 
 ## Les Transformers: origines et architecture:
-Là on ne va pas parler des films de Michael Bay, mais on va continuer à parler d'IA.
+
+Là, on ne va pas parler des films de Michael Bay, mais on va continuer à parler d'IA.
 
 L'architecture du transformateur a été introduite dans un article scientifique intitulé "**Attention is All You Need**",
 publié en 2017 par une équipe de Google Brain.
@@ -127,7 +128,7 @@ Le **transformateur** a apporté une avancée majeure : **le mécanisme d’auto
 
 Grâce à ce procédé, le modèle peut 
 déterminer l’importance relative de chaque mot dans une phrase, ce qui améliore considérablement sa compréhension du 
-contexte (et c'est ou se trouve l'angle de l'attaque par prompt injection).
+contexte (et c'est où se trouve l'angle de l'attaque par prompt injection).
 
 
 Il faut comprendre qu'avant l’arrivée des transformateurs, **les réseaux neuronaux traditionnels** comme les **RNN** et 
@@ -135,7 +136,7 @@ les **CNN** montraient des limites importantes dans la compréhension du langage
 leur difficulté à saisir le contexte sur de longues séquences. Incapables d’appréhender l’ensemble d’un texte, ils 
 peinaient à restituer le sens global et les nuances. 
 
-L’architecture du transformateur a comblé cette lacune, révolutionnant ainsi le traitement du langage par l’IA.
+L’architecture du Transformer a comblé cette lacune, révolutionnant ainsi le traitement du langage par l’IA.
 
 
 Dés lors,L’architecture Transformer a représenté un véritable tournant dans l’IA. 
@@ -178,10 +179,10 @@ variés comme le jeux vidéo, ou dans des narrations interactives.
 
 ### Les copilotes
 
-Copilots sont des logiciels conçues pour aider à la rédaction, au codage et à la recherche. Elles génèrent des idées, détectent
+Les copilots sont des logiciels conçus pour aider à la rédaction, au codage et à la recherche. Elles génèrent des idées, détectent
 les erreurs et optimisent le travail des utilisateurs.
 
-Bien qu’encore en développement, elles pourraient transformer nos  méthodes de travail et d’apprentissage.
+Bien qu’encore en développement, ils pourraient transformer nos méthodes de travail et d’apprentissage.
 
 #### Quelques exemples de copilotes
 
