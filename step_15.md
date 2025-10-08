@@ -54,7 +54,8 @@ https://www.promptfoo.dev/docs/red-team/quickstart/#initialize-the-project
 
 ### Installation des packages nécessaires
 
-Pour cela, il faut installer `promptfoo` et une librairie complémentaire `modelaudit` :
+Pour cela, il faut installer `promptfoo` et une librairie complémentaire `modelaudit`, comme stipulé dans la 
+documentation officielle : https://www.promptfoo.dev/docs/model-audit/
 
 ```bash
 pip install promptfoo
@@ -62,19 +63,25 @@ pip install modelaudit
 ```
 
 
-Promptfoo est un outil en partie open-source qui se veut être la brique permettant un passage en production d'une application avec des LLMs.
+Promptfoo est un outil en partie open-source qui se veut être la brique permettant un passage en production d'une 
+application avec des LLMs.
 
 ## Évaluation
 
 ### LLMs as a Judge:  évaluation de la qualité
 
-Promptfoo est un outil permettant de faire des évaluations de la qualité des **RAGs** (Retrieval-Augmented Generation), des **Agents IA** et des **LLMs** avec métriques allant de la recherche de mots-clés à des métriques utilisant des _LLMs-as-a-Judge_, comme :
+Promptfoo est un outil permettant de faire des évaluations de la qualité des **RAGs** (Retrieval-Augmented Generation), 
+des **Agents IA** et des **LLMs** avec métriques allant de la recherche de mots-clés à des métriques utilisant 
+des _LLMs-as-a-Judge_, comme :
+
+
 - le **contains-json** (vérifiant si la réponse contient un JSON valide),
 - l'**Answer Relevancy** (vérifiant la pertinence de la réponse vis-a-vis de la question posée),
 - la **Context Faithfulness** (vérifiant si la réponse du LLM se fonde uniquement sur des éléments du contexte).
 - la **Factuality** (évaluant la réponse du LLM vis-à-vis de la réponse de référence).
 - la **LLM-rubric**, une métrique custom, permettant, par exemple, d'évaluer des éléments de **Tone-of-Voice**, de Style, de Grammaires, etc.
 - la **G-eval**, une métrique custom, utilisant un LLM et leur CoT (Chain-of-Thought) pour évaluer des réponses sur des critères complexes.
+
 
 Promptfoo peut lancer les tests plusieurs fois pour tester la robustesse des réponses.
 
