@@ -224,19 +224,5 @@ des dépendances du projet. Par exemple :
 
 ### Installation de Promptfoo
 
-Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
-puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
-
-```bash
-# 1. Créer un environnement virtuel dans le répertoire courant
-python3 -m venv .venv
-
-# 2. Activer l’environnement virtuel
-source .venv/bin/activate
-
-# 3. Installer le package promptfoo
-pip install promptfoo
-# 4. Installer le package modelaudit
-pip install modelaudit
-```
-
+Nous vous invitons à suivre la documentation officielle pour l’installation de Promptfoo :
+https://www.promptfoo.dev/docs/red-team/quickstart/#initialize-the-project

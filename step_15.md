@@ -8,13 +8,22 @@
 ## Sommaire
 
 - [Promptfoo](#promptfoo)
-    - [Installation des packages nécessaires](#installation-des-packages-nécessaires)
-    - [L'évaluation de la qualité des réponses d'un LLM](#lévaluation-de-la-qualité-des-réponses-dun-llm)
-    - [L'audit de sécurité de modèles de langage](#laudit-de-sécurité-de-modèles-de-langage)
-      - [Architecture de Promptfoo pour le Red Teaming](#architecture-de-promptfoo-pour-le-red-teaming)
-      - [Recommandations sur comment utiliser Promptfoo pour le Red Teaming](#recommandations-sur-comment-utiliser-promptfoo-pour-le-red-teaming)
-      - [Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main](#méthode-1--construction-du-red-teaming-dans-le-fichier-promptfooconfigyaml-à-la-main)
-      - [Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)](#méthode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-à-préférer-si-vous-navez-pas-de-compte-entreprise)
+
+  - [C'est quoi Promptfoo ?](#cest-quoi-promptfoo-)
+  - [Installer Promptfoo](#installer-promptfoo)
+  - [Installation des packages nécessaires](#installation-des-packages-nécessaires)
+
+
+- [Évaluation](#évaluation)
+  - [LLMs as a Judge:  évaluation de la qualité](#llms-as-a-judge--évaluation-de-la-qualité)
+  
+
+- [Audit](#audit)
+  - [Audit de sécurité de modèles de langage](#laudit-de-sécurité-de-modèles-de-langage)
+  - [Architecture de Promptfoo pour le Red Teaming](#architecture-de-promptfoo-pour-le-red-teaming)
+  - [Recommandations sur comment utiliser Promptfoo pour le Red Teaming](#recommandations-sur-comment-utiliser-promptfoo-pour-le-red-teaming)
+  - [Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main](#méthode-1--construction-du-red-teaming-dans-le-fichier-promptfooconfigyaml-à-la-main)
+  - [Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)](#méthode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-à-préférer-si-vous-navez-pas-de-compte-entreprise)
 
 
 - [Mise en pratique d'un scan d'un modèle](#mise-en-pratique-dun-scan-dun-modèle)
@@ -29,27 +38,31 @@
 ![GitHub stars](https://img.shields.io/github/stars/promptfoo/promptfoo?style=flat-square)
 [![Downloads](https://static.pepy.tech/badge/promptfoo/month)](https://pepy.tech/project/promptfoo)
 
+
+## C'est quoi Promptfoo ?
+TODO
+
+## Installer Promptfoo
+
+Nous vous invitons à suivre la documentation officielle pour l’installation de Promptfoo : 
+https://www.promptfoo.dev/docs/red-team/quickstart/#initialize-the-project
+
+
 ### Installation des packages nécessaires
 
 Pour cela, il faut installer `promptfoo` et une librairie complémentaire `modelaudit` :
 
 ```bash
-# 1. Créer un environnement virtuel dans le répertoire courant
-python3 -m venv .venv
-
-# 2. Activer l’environnement virtuel
-source .venv/bin/activate
-
-# 3. Installer le package promptfoo
 pip install promptfoo
-# 4. Installer le package modelaudit
 pip install modelaudit
 ```
 
 
 Promptfoo est un outil en partie open-source qui se veut être la brique permettant un passage en production d'une application avec des LLMs.
 
-### L'évaluation de la qualité des réponses d'un LLM
+## Évaluation
+
+### LLMs as a Judge:  évaluation de la qualité
 
 Promptfoo est un outil permettant de faire des évaluations de la qualité des **RAGs** (Retrieval-Augmented Generation), des **Agents IA** et des **LLMs** avec métriques allant de la recherche de mots-clés à des métriques utilisant des _LLMs-as-a-Judge_, comme :
 - le **contains-json** (vérifiant si la réponse contient un JSON valide),
@@ -62,12 +75,14 @@ Promptfoo est un outil permettant de faire des évaluations de la qualité des *
 Promptfoo peut lancer les tests plusieurs fois pour tester la robustesse des réponses.
 
 
-### L'audit de sécurité de modèles de langage
+## Audit
+
+## Audit de sécurité de modèles de langage
 
 Promptfoo se veut **modulaire** et **extensible**. Il met à disposition des utilisateurs plusieurs outils et plugins pour évaluer la sécurité de leur application et des modèles de langage.
 Promptfoo se met régulièrement à jour concernant les dernières évolutions des vulnérabilités des LLMs et suit notamment les recommandations OWASPs LLM Top 10.
 
-#### Architecture de Promptfoo pour le Red Teaming
+## Architecture de Promptfoo pour le Red Teaming
 
 
 Promptfoo fonctionne avec des **plugins**, **strategies**, et des **targets**.
