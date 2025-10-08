@@ -20,14 +20,18 @@
 
 - [Audit](#audit)
   - [Audit de sécurité de modèles de langage](#laudit-de-sécurité-de-modèles-de-langage)
+  - [Mise en pratique d'un scan d'un modèle](#mise-en-pratique-dun-scan-dun-modèle)
+
+
+- [Architecture ](#architecture)
   - [Architecture de Promptfoo pour le Red Teaming](#architecture-de-promptfoo-pour-le-red-teaming)
+
+
+- [Recommandations](#recommandations)
   - [Recommandations sur comment utiliser Promptfoo pour le Red Teaming](#recommandations-sur-comment-utiliser-promptfoo-pour-le-red-teaming)
   - [Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main](#méthode-1--construction-du-red-teaming-dans-le-fichier-promptfooconfigyaml-à-la-main)
   - [Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)](#méthode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-à-préférer-si-vous-navez-pas-de-compte-entreprise)
-
-
-- [Mise en pratique d'un scan d'un modèle](#mise-en-pratique-dun-scan-dun-modèle)
-
+ 
 
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
@@ -82,7 +86,34 @@ Promptfoo peut lancer les tests plusieurs fois pour tester la robustesse des ré
 Promptfoo se veut **modulaire** et **extensible**. Il met à disposition des utilisateurs plusieurs outils et plugins pour évaluer la sécurité de leur application et des modèles de langage.
 Promptfoo se met régulièrement à jour concernant les dernières évolutions des vulnérabilités des LLMs et suit notamment les recommandations OWASPs LLM Top 10.
 
-## Architecture de Promptfoo pour le Red Teaming
+## Mise en pratique d'un scan d'un modèle
+
+Promptfoo intègre aussi un module de scan de modèle.
+Ce module permet d'analyser des modèles au format `pickle`, `h5`, `pb` (TensorFlow SavedModel) et `onnx` pour détecter des vulnérabilités de sécurité potentielles, comme :
+- Des codes malveillants intégrés dans des modèles [pickle](https://arxiv.org/html/2508.19774v1).
+- Des opérations TensorFlow ou Keras frauduleuses comme l'ajout d'une `layers.Lambda` en [dernière couche](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
+- Des couches Keras Lambda potentiellement dangereuses.
+
+
+Commencez par afficher l'interface graphique de promptfoo en lançant la commande suivante :
+```bash
+
+promptfoo view
+```
+
+Puis aller dans la section **Model Audit**
+
+Indiquer le chemin absolu du modèle à scanner dans le champ **Model Path**.
+<img src="img/promptfoo_scan_entry_page.png" width="800">
+
+Une fois le scan réalisé, vous pourrez consulter les résultats dans l'onglet `Results`.
+
+<img src="img/promptfoo_result_security_audit.png" width="800">
+
+
+## Architecture
+
+### Architecture de Promptfoo pour le Red Teaming
 
 
 Promptfoo fonctionne avec des **plugins**, **strategies**, et des **targets**.
@@ -108,14 +139,17 @@ Les targets disponibles sont, notamment :
 [<img src="img/architecture_promptfoo_red_teaming.png" width="800">](https://www.promptfoo.dev/docs/red-team/architecture/)
 ###### Schema de l'architecture de Promptfoo pour le Red Teaming
 
-#### Recommandations sur comment utiliser Promptfoo pour le Red Teaming
+
+## Recommandations
+
+### Recommandations sur comment utiliser Promptfoo pour le Red Teaming
 Si vous disposez d'un compte entreprise sur [Promptfoo](https://www.promptfoo.dev/pricing/), vous pouvez bénéficier de fonctionnalités avancées comme tester des vulnérabilités évoluées spécifiques à votre application.
 Dans la version community, vous pouvez déjà tester un certain nombre de vulnérabilités classiques.
 
 Pour ce red-teaming, nous allons utiliser le plugin [Direct PII Exposure](https://www.promptfoo.dev/docs/red-team/plugins/pii/).
 Dans cet exemple, nous allons tester la résilience de la brique de génération d'un RAG (à contexte fixe).
 
-##### Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main
+### Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main
 
 Le red-teaming peut être défini dans le fichier `promptfooconfig.yaml` comme suit :
 ```yaml
@@ -154,7 +188,7 @@ Vous pouvez ensuite visualiser les résultats dans l'interface graphique de prom
 promptfoo redteam init
 ```
 
-##### Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)
+### Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)
 
 Le red-teaming peut aussi être construit via l'interface graphique de promptfoo. Pour cela, lancer l'interface graphique de promptfoo :
 ```bash
@@ -168,30 +202,6 @@ Puis suivez les instructions des différents onglets :
 - **Plugins** : définir les plugins à utiliser pour générer les adversarial inputs ils sont aussi regroupés par type d'application (RAG, MCP, OWASP LLM Top 10 (focus), Mitre, EU AI Act, ...)
 - **Strategies** : définir la stratégie d'attaque à utiliser (base64, leetspeak, multi-turn, homogliphic, ...)
 - **Review** : Passer en revue les paramètres et options de run et lancer le red-teaming (via e bouton `Run Now`)
-
-## Mise en pratique d'un scan d'un modèle
-
-Promptfoo intègre aussi un module de scan de modèle.
-Ce module permet d'analyser des modèles au format `pickle`, `h5`, `pb` (TensorFlow SavedModel) et `onnx` pour détecter des vulnérabilités de sécurité potentielles, comme :
-- Des codes malveillants intégrés dans des modèles [pickle](https://arxiv.org/html/2508.19774v1). 
-- Des opérations TensorFlow ou Keras frauduleuses comme l'ajout d'une `layers.Lambda` en [dernière couche](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
-- Des couches Keras Lambda potentiellement dangereuses.
-
-
-Commencez par afficher l'interface graphique de promptfoo en lançant la commande suivante :
-```bash
-
-promptfoo view
-```
-
-Puis aller dans la section **Model Audit**
-
-Indiquer le chemin absolu du modèle à scanner dans le champ **Model Path**.
-<img src="img/promptfoo_scan_entry_page.png" width="800">
-
-Une fois le scan réalisé, vous pourrez consulter les résultats dans l'onglet `Results`.
-
-<img src="img/promptfoo_result_security_audit.png" width="800">
 
 
 ## Étape suivante
