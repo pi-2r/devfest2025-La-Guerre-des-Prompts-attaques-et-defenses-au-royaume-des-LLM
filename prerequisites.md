@@ -21,6 +21,7 @@ Ce tutorial est proposé en amont de la session [La Guerre des Prompts : attaque
 
 
 - [Les images Docker](#les-images-docker)
+  - [AI Red Teaming Playground Labs](#ai-red-teaming-playground-labs)
   - [Nemo Guardrails](#nemo-guardrails)
   - [Tock](#tock)
 
@@ -90,6 +91,37 @@ Vous devriez obtenir un affichage similaire à l’exemple suivant :
 
 ### Les images Docker
 
+### AI Red Teaming Playground Labs
+
+Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
+puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
+
+```bash
+git clone https://github.com/microsoft/AI-Red-Teaming-Playground-Labs.git && cd AI-Red-Teaming-Playground-Labs
+```
+
+Renommez le fichier **.env.example** en **.env**, puis commentez toutes les variables relatives à Microsoft OpenAI et
+décommentez celles concernant OpenAI "classique". 
+
+Ensuite, renseignez les valeurs attendues, comme la clé **OPENAI_API_KEY**, en lui attribuant votre clé d’API OpenAI à la place indiquée, selon l’exemple suivant :
+
+<img src="img/apply_microsoft_playground.jpg" alt="apply_microsoft_playground" width="600" style="transition:0.3s;">
+
+Commentez les champs concernant Azure ou Microsoft, et assurez-vous que seules les variables nécessaires au 
+service OpenAI "standard" restent actives dans le fichier **.env**.
+
+Depuis le dossier **AI-Red-Teaming-Playground-Labs**, exécutez les commandes suivantes dans votre terminal :
+
+```bash
+source .env
+docker compose -f docker-compose-openai.yaml up
+```
+
+Si tout est correctement configuré, vous devriez voir un affichage similaire à celui-ci :
+
+<img src="img/microsoft_playground_docker_up.png" alt="microsoft_playground_docker_up" width="600" style="transition:0.3s;">
+
+Pour accéder à l’interface web, ouvrez votre navigateur et allez à l’adresse suivante :  http://localhost:5000/login?auth=YOUR_AUTH_KEY (la valeur de **YOUR_AUTH_KEY** est indiquée dans le fichier **.env**).
 #### Nemo Guardrails
 
 Dans votre terminal, placez-vous dans le répertoire où vous souhaitez installer le projet (par exemple **Documents**).
@@ -100,6 +132,7 @@ git clone https://github.com/NVIDIA-NeMo/Guardrails.git && cd NeMo-Guardrails
 pwd
 ```
 
+
 #### Tock
 
 Accédez au dossier **lab/tock**.
@@ -108,10 +141,6 @@ Dans le fichier **template-internet.env**, complétez ensuite la variable d'envi
 
 Une fois modifié, renommez ce fichier **template-internet.env** en **.env**.
 
-Dans le fichier **prerequisites-docker-compose-genai.yml**, remplacez à la **ligne 198** la valeur **YOUR_PATH** par le chemin 
-absolu du dossier **NeMo-Guardrails**.
-
-<img src="img/nemo-guardrails-change-context.jpg" alt="Nemo-guardrails" width="600" style="transition:0.3s;">
 
 Depuis le dossier **lab/tock**, exécutez les commandes suivantes dans votre terminal :
 
@@ -130,6 +159,7 @@ Démarrez ensuite l’environnement avec la commande :
 docker compose -f prerequisites-docker-compose-genai.yml up -d
 ```
 Vous devriez voir un affichage similaire à celui-ci :
+
 <img src="img/tock-docker-up.png" alt="tock-docker-up" width="600" style="transition:0.3s;">
 
 Après quelques instants, vous devriez pouvoir accéder à l’interface Tock Studio à l’adresse suivante : http://localhost/login

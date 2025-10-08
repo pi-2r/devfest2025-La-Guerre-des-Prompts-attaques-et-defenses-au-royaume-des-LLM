@@ -193,6 +193,7 @@ l’initialisation de NeMo Guardrails, que ce soit depuis un script Python ou vi
 utiliser, les consignes de base (similaires à un "system prompt"), des exemples de conversation, l’activation de 
 certains rails, et d’autres paramètres spécifiques. C'est point d’entrée de la config globale !
 
+
 - Rails (**rails.co**) : Les rails sont des flux implémentés en Colang, qui définissent les comportements et contrôles 
 de la logique applicative (par exemple, la gestion des entrées/sorties ou les scénarios conversationnels)
 
