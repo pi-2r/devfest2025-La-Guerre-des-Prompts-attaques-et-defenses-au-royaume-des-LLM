@@ -21,7 +21,7 @@ préparer sereinement sa machine tout en se familiarisant progressivement avec l
 ### Introduction aux Menaces de l'IA Générative (10 min)
  
 - [1 - Il était une fois dans un monde numérique ...](step_1.md)
-- [2 - Pourquoi la Sécurité des LLM est-elle Cruciale ?](step_2.md)
+- [2 - Pourquoi la sécurité des LLM est-elle cruciale ?](step_2.md)
 - [3 - Des écarts sous contrôle relatif](step_3.md)
 - [4 - Cadres de Sécurité Référents](step_4.md)
 
