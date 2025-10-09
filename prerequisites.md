@@ -69,11 +69,12 @@ pour continuer à utiliser les services d'OpenAI. Assurez-vous de surveiller vot
 
 
 <details>
-  <summary>🚧 💡 🚧 Combien ça va me couter ? moins de 1 $ 🚧 💡 🚧</summary>
+  <summary>🚧 💡 🚧 Combien ça va me couter ? moins de 5 $ 🚧 💡 🚧</summary>
 
-De notre côté durant la realisation du workshop, et avec l'utilisation de la version **gpt-3.5-turbo** nous n'avons pas dépassé les 1$ de consommation.
+De notre côté, lors de la réalisation du workshop, avec une **utilisation régulière** de **gpt-3.5-turbo** et 
+une **utilisation modérée** de **gpt-5-nano**, n’avons pas dépassé 5 $ de consommation.
 
-<img src="img/openai-3-5-price.png">
+<img src="img/openai-price.jpg">
 
 </details>
 
