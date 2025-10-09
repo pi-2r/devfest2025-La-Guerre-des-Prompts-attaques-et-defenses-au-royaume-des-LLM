@@ -8,7 +8,7 @@
 ## 🎯 Objectifs de cette étape
 - comprendre comment fonctionne FastAPI
 - Mettre en place des premières contre-mesures avec FastAPI.
-- Tester/Simuler quelques attaques (web, jailbreak)
+- Tester/simuler quelques attaques (web, jailbreak)
 - Comprendre les limites de FastAPI
 
 
@@ -16,8 +16,8 @@
 
 - [Schema d'architecture](#schema-darchitecture)
 
-
-- [C'est quoi FastAPI ?](#cest-quoi-fastapi-)
+- [FastAPI](#cest-quoi-fastapi-)
+  - [C'est quoi FastAPI ?](#cest-quoi-fastapi-)
 
 - [Mettre en place le proxy](#mettre-en-place-le-proxy)
   - [Tester le proxy](#tester-le-proxy) 
@@ -53,10 +53,15 @@ Nous allons insérer un proxy entre l'utilisateur et le bot, pour filtrer les re
 
 
 
+## FastAPI
 
-## C'est quoi FastAPI ?
+![GitHub stars](https://img.shields.io/github/stars/tiangolo/fastapi?style=flat-square)
+[![Downloads](https://static.pepy.tech/badge/fastapi/month)](https://pepy.tech/project/fastapi)
 
-FastAPI est un framework web moderne et rapide pour Python, conçu pour développer des API performantes et fiables en 
+
+### C'est quoi FastAPI ?
+
+**FastAPI** est un framework web moderne et rapide pour Python, conçu pour développer des API performantes et fiables en 
 utilisant les annotations de type standard du langage Python. Il permet de créer des services web professionnels tout 
 en favorisant la rapidité de développement, la robustesse grâce à la validation automatique, et une documentation 
 interactive générée instantanément.
@@ -83,11 +88,11 @@ Dans le fichier **during-the-lab-docker-compose-genai.yml**, effectuer les modif
 - À la ligne 97, dé-commenter la ligne contenant "- nemo-proxy".
  <img src="img/nemo-proxy-1.jpg" alt="nemo-proxy-1" width="600" style="transition:0.3s;">
 
-- Aux lignes 108 et 110, remplacer les valeurs actuelles par "http://nemo-proxy:8002".
+- Aux lignes 196 et 211, remplacer les valeurs actuelles par "http://nemo-proxy:8002".
 <img src="img/nemo-proxy-2.jpg" alt="nemo-proxy-2" width="600" style="transition:0.3s;">
 
 
-- Dé-commenter la section de la ligne 209 à la ligne 220 correspondant à "nemo-proxy".
+- Dé-commenter la section de la ligne 196 à la ligne 211 correspondant à "nemo-proxy".
 <img src="img/nemo-proxy-3.jpg" alt="nemo-proxy-3" width="600" style="transition:0.3s;">
 
 ETeignnez l'environnement si il est en cours d'exécution avec la commande :
@@ -120,6 +125,7 @@ architecture :
 nemo-proxy/
 ├── app.py                     # Main FastAPI application
 ├── Dockerfile                 # Docker image for the service
+├── install_nemoguardrails.sh  # NeMo Guardrails installation script
 ├── requirements.txt           # Python dependencies
 ├── config/
 │   ├── __init__.py           # Module initialization

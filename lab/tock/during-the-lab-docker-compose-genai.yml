@@ -193,22 +193,22 @@ services:
        - pgvector-postgres-vl:/var/lib/postgresql/data
        - ./scripts/init-pgvect.sql:/docker-entrypoint-initdb.d/init.sql
 
-  nemo-proxy:
-     build:
-       context: ./nemo-proxy
-     ports:
-       - "8002:8002"
-     depends_on:
-       - bot_api
-     env_file:
-       - .env
-     environment:
-       - BOT_API_URL=http://bot_api:8080
-       - OPENAI_API_KEY=${OPENAI_API_KEY}
-       - GUARDRAILS_CONFIG_PATH=/app/nemo-guardrails-config
-     volumes:
-       - ./nemo-guardrails-config:/app/nemo-guardrails-config:ro
-     restart: unless-stopped
+  #nemo-proxy:
+  #   build:
+  #     context: ./nemo-proxy
+  #   ports:
+  #     - "8002:8002"
+  #   depends_on:
+  #     - bot_api
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - BOT_API_URL=http://bot_api:8080
+  #     - OPENAI_API_KEY=${OPENAI_API_KEY}
+  #     - GUARDRAILS_CONFIG_PATH=/app/nemo-guardrails-config
+  #   volumes:
+  #     - ./nemo-guardrails-config:/app/nemo-guardrails-config:ro
+  #   restart: unless-stopped
 
   gen_ai_orchestrator-server:
      image: "${PLATFORM}tock/gen-ai-orchestrator-server:${TAG}"
