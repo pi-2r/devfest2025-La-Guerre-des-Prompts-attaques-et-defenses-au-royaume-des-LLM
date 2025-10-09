@@ -1,4 +1,4 @@
-#  Pourquoi la sécurité des LLM est-elle Cruciale ?
+#  Pourquoi la sécurité des LLM est-elle cruciale ?
 
 [<img src="img/step2.png" alt="gandalf" >](https://www.youtube.com/watch?v=whF2na8AIbw)
 > "The year 3434 of the Second Age. Here follows the account of Isildur, High King of Gondor, and the finding of the ring 

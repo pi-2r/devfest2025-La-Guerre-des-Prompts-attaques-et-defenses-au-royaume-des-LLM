@@ -1,4 +1,4 @@
-# PyRIT: Framework for Security Risk Identification and Red Teaming in Generative AI System
+# PyRIT: framework for security risk Identification and Red Teaming in Generative AI System
 
 [<img src="img/step10.jpg" alt="gandalf" width="800">](https://www.youtube.com/watch?v=__m75rCcusM)
 > "They broke our defenses. They've taken the bridge and the West bank. Battalions of orcs are crossing the river", Gandalf, LOTR - The Return of the King
@@ -43,7 +43,7 @@ pour résister aux manipulations et à l’extraction de données sensibles.
 ## PyRIT
 
 ![GitHub stars](https://img.shields.io/github/stars/Azure/PyRIT?style=flat-square)
-[![Downloads](https://static.pepy.tech/badge/PyRIT/month)](https://pepy.tech/project/PyRIT)
+[![Downloads](https://static.pepy.tech/badge/garak/month)](https://pepy.tech/project/garak)
 
 **PyRIT** (Python Risk Identification Toolkit) est un framework open-source conçu pour faciliter l’identification des 
 risques de sécurité dans les systèmes d’IA générative, via des approches de red teaming structurées et reproductibles.
