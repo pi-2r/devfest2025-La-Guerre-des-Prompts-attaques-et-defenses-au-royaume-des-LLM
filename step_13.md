@@ -208,7 +208,7 @@ etc.). On peut regrouper toutes les actions dans un fichier unique ou dans un so
 
 ### Tester et rajouter des règles
 
---> TODO
+--> TODO (voir pour tester et améliorer les règles)
 
 ## Étape suivante
 
