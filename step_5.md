@@ -27,7 +27,17 @@
 Les prochaines étapes du lab s’appuient sur un playground développé par Microsoft lors de l'événement [Black Hat USA 2024](https://www.blackhat.com/us-24/training/schedule/index.html#ai-red-teaming-in-practice-37464). 
 Le dépôt officiel est accessible ici : https://github.com/microsoft/AI-Red-Teaming-Playground-Labs. 
 
-Vous pourrez ainsi vous exercer aux attaques de prompt injection sur l’environnement spécialement configuré pour ce codelab à l’adresse suivante : **TODO ==> METTRE_IP**.
+
+Pour utiliser le playground, deux options s’offrent à vous :
+
+- Si vous avez suivi les prérequis et installé le playground, rendez-vous à l’adresse suivante :  
+http://localhost:5000/login?auth=YOUR_AUTH_KEY (la valeur de **YOUR_AUTH_KEY** se trouve dans le fichier **.env**) 
+afin de vous connecter en local.
+
+- Si vous n’avez pas installé le playground sur votre machine, vous pouvez y accéder directement via cette URL du 
+codelab : **TODO ==> METTRE_IP**.
+
+Voici à quoi ressemble l’interface du playground :
 
 <img src="img/microsoft-ai-red-teaming-playground-labs.png" alt="Microsoft AI Red Teaming Playground Labs" width="800" >
 
