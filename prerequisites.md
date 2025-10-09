@@ -62,6 +62,21 @@ allez dans la section [API Keys](https://platform.openai.com/api-keys) pour cré
 
 Puis cliquez sur le bouton **Create new secret key** pour générer une nouvelle clé au moment voulu dans le lab.
 
+> **Note** : OpenAI offre un crédit gratuit de 5$ pour les nouveaux utilisateurs, ce qui est suffisant pour réaliser 
+les exercices de ce workshop. Cependant, une fois ce crédit épuisé, vous devrez fournir des informations de paiement 
+pour continuer à utiliser les services d'OpenAI. Assurez-vous de surveiller votre utilisation pour
+éviter des frais inattendus : https://termsoup.crisp.help/en-us/article/openai-free-trial-payment-token-limits-wds3wd/
+
+
+<details>
+  <summary>🚧 💡 🚧 Combien ça va me couter ? moins de 1 $ 🚧 💡 🚧</summary>
+
+De notre côté durant la realisation du workshop, et avec l'utilisation de la version **gpt-3.5-turbo** nous n'avons pas dépassé les 1$ de consommation.
+
+<img src="img/openai-3-5-price.png">
+
+</details>
+
 
 ### L'outil Ollama
 
