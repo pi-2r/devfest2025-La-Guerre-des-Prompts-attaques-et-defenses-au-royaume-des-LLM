@@ -1,4 +1,4 @@
-# Techniques d'Attaque par Prompt Injection
+# Techniques d'attaque par Prompt Injection
 
 [<img src="img/step6.png" alt="hobbiton" width="800" >](https://www.youtube.com/watch?v=Afw8e-abVa8)
 > "Helm's Deep has one weakness. It's outer wall is solid rock but for a small culvert at its base, which is little more than a drain.", Saruman, LOTR - The Two Towers
