@@ -47,7 +47,7 @@ préparer sereinement sa machine tout en se familiarisant progressivement avec l
 
 ### [BONUS] Évaluation et Amélioration de la Robustesse
 
- - [14 - Red Teaming](step_14.md)
+ - [14 - AI Red Teaming](step_14.md)
  - [15 - Benchmarking avec Promptfoo](step15.md)
 
 
