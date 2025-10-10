@@ -118,11 +118,25 @@ Les Harnesses prennent la valeur : `probewise` si on utilise les détectors réc
 Garak propose un système d'auto Red-Team sur certain sujet avec la librarie `art`. Cette brique ne peut cependant pas de faire un scan poussé.
 
 ## Mise en pratique de Garak sur le Playground de Microsoft
+Nous allons mettre en pratique Garak sur le Playground de Microsoft.
+Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser différentes sondes (`promptinject.DAN`,`smuggling.HypotheticalResponse`) que nous allons configurer pour trouver le mot de passe protégé par le bot.
+
+
+1 - Pour setter le REST Generator, lancer une inspection de la page HTML du bot que vous voulez tester :
+<img src="img/lancer_inspection_chatbot.png" alt="garak-inspection-chatbot" width="600" style="transition:0.3s;">
+
+2 - Aller dans l'onglet `Network` :
+<img src="img/network_chatbot.png" alt="garak-network-chatbot" width="600" style="transition:0.3s;">
+
+3 - Lancer un premier message (ex: "Hello") dans le playground et récupérer les éléments nécessaires comme l'url de la requête POST `messages` et les cookies nécessaires.
+<img src="img/elements_requete_post.png" alt="request-post-chatbot" width="600" style="transition:0.3s;">
 
 Pour lancer un scan garak sur une étape du Playground :
 ```bash
+#python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes lab.Garak.probe_config.my_smuggling_probe.MyHypotheticalResponse
 
-python -m garak --target_type function --target_name lab/Garak/ai-playground-microsoft#main  --probes divergence
+python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes promptinject.DAN --probe_option_file lab/Garak/probe_config/dan_probe_setting.json --generation 2
+python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes smuggling.HypotheticalResponse --probe_option_file lab/Garak/probe_config/dan_probe_setting.json --generation 2
 ```
 
 
