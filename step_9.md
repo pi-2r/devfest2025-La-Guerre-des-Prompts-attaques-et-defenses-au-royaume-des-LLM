@@ -61,6 +61,7 @@ python -m garak --list_probes
 ```
 
 Vous devriez voir un affichage similaire à celui-ci :
+
 <img src="img/list_probes.png" alt="garak-list-probes" width="600" style="transition:0.3s;">
 
 Certaines probes sont suivies de symboles 🌟 ou 💤 comme ceci :
@@ -72,9 +73,11 @@ probes: divergence.RepeatExtended 💤
 En fait, il existe plusieurs variantes de probes pour un même type de jailbreak.
 Ces symboles ont la signification suivante :
 - 🌟 : indique qu'on passe à un nouveau module de jailbreak ici `divergence`.
-- 💤 : indique que la probe `divergence.RepeatExtended` est inactive par défaut, car son lancement serait long. C'est la version `divergence.Repeat` qui sera lancée en cas de scan automatique.
+- 💤 : indique que la probe `divergence.RepeatExtended` est inactive par défaut, car son lancement serait long. 
+C'est la version `divergence.Repeat` qui sera lancée en cas de scan automatique.
 
 Pour lancer un scan automatique d'un module en particulier comme `divergence`, il suffit d'exécuter la commande suivante :
+
 ```bash
 
 python -m garak --model_type huggingface --model_name gpt2 --probes divergence
@@ -94,44 +97,56 @@ Les generators prennent les valeurs, dont :
 - `openai` : pour les modèles OpenAI.
 - `function` : pour les fonctions Python.
 
-Par exemple, si on souhaite évaluer un modèle `gpt2` de `Huggingface` lors d'un scan, on renseigne les options : `--model_type huggingface --model_name gpt2`.
+Par exemple, si on souhaite évaluer un modèle `gpt2` de `Huggingface` lors d'un scan, on renseigne les options : 
+`--model_type huggingface --model_name gpt2`.
 Si c'est une API d'HuggingFace, on renseigne les options : `--model_name huggingface.InferenceAPI --model_type "mosaicml/mpt-7b-instruct"`.
 
 Pour plus de détails, vous pouvez consulter la documentation officielle de Garak : [Garak Documentation](https://docs.garak.ai/garak/garak-components/using-generators)
 
 ### Les Detectors et les Harnesses
 
-Comme, une probe va être lancée plusieurs fois pour tester la robustesse du LLM et que l'on teste plusieurs probes, Garak utilise des detectors pour reconnaitre si la réponse du LLM défaillante.
+Comme, une probe va être lancée plusieurs fois pour tester la robustesse du LLM et que l'on teste plusieurs probes, 
+Garak utilise des detectors pour reconnaitre si la réponse du LLM défaillante.
 Ce sont des détecteurs de mots-clés ou des classifiers jugeant si la réponse d'un LLM est OK ou non.
 
-Les détecteurs ont parfois un paramètre `doc_uri` permettant de trouver de la documentation sur la faille testée. Par exemple, le détecteur [`xss.MarkdownExfilBasic`](https://reference.garak.ai/en/latest/garak.detectors.xss.html#garak.detectors.xss.MarkdownExfilBasic) pointe vers : [Bing Chat Image Markdown Injection](https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/).
+Les détecteurs ont parfois un paramètre `doc_uri` permettant de trouver de la documentation sur la faille testée. Par 
+exemple, le détecteur [`xss.MarkdownExfilBasic`](https://reference.garak.ai/en/latest/garak.detectors.xss.html#garak.detectors.xss.MarkdownExfilBasic) pointe vers : [Bing Chat Image Markdown Injection](https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/).
 
 Les Harnesses gèrent :
 - le lancement des probes sur le generator cible. 
 - le lancement des detectors à utiliser sur les outputs qu'ont produit les probes.
 - l'évaluation des résultats des detectors faite avec les Evaluator.
 
-Les Harnesses prennent la valeur : `probewise` si on utilise les détectors récommandés pour la probe ou `pxd` pour tester tous les détecteurs.
+Les Harnesses prennent la valeur : `probewise` si on utilise les détectors récommandés pour la probe ou `pxd` pour 
+tester tous les détecteurs.
 
 ### L'auto Red-Team
 
-Garak propose un système d'auto Red-Team sur certain sujet avec la librarie `art`. Cette brique ne peut cependant pas de faire un scan poussé.
+Garak propose un système d'auto Red-Team sur certain sujet avec la librarie `art`. Cette brique ne peut cependant pas de
+faire un scan poussé.
 
 ## Mise en pratique de Garak sur le Playground de Microsoft
 Nous allons mettre en pratique Garak sur le Playground de Microsoft.
-Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser différentes sondes (`promptinject.DAN`,`smuggling.HypotheticalResponse`) que nous allons configurer pour trouver le mot de passe protégé par le bot.
+Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser différentes sondes 
+(`promptinject.DAN`,`smuggling.HypotheticalResponse`) que nous allons configurer pour trouver le mot de passe protégé 
+par le bot.
 
 
 1 - Pour setter le REST Generator, lancer une inspection de la page HTML du bot que vous voulez tester :
+
 <img src="img/lancer_inspection_chatbot.png" alt="garak-inspection-chatbot" width="600" style="transition:0.3s;">
 
 2 - Aller dans l'onglet `Network` :
+
 <img src="img/network_chatbot.png" alt="garak-network-chatbot" width="600" style="transition:0.3s;">
 
-3 - Lancer un premier message (ex: "Hello") dans le playground et récupérer les éléments nécessaires comme l'url de la requête POST `messages` et les cookies nécessaires.
+3 - Lancer un premier message (ex: "Hello") dans le playground et récupérer les éléments nécessaires comme l'url de la 
+requête POST `messages` et les cookies nécessaires.
+
 <img src="img/elements_requete_post.png" alt="request-post-chatbot" width="600" style="transition:0.3s;">
 
 Pour lancer un scan garak sur une étape du Playground :
+
 ```bash
 #python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes lab.Garak.probe_config.my_smuggling_probe.MyHypotheticalResponse
 
