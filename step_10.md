@@ -270,6 +270,7 @@ python gandalf.py
 ```
 
 Vous devriez avoir ce type de rendu :
+
 <img src="img/gandalf_level_1_example.jpg" alt="Pyrit gandalf level 1" width="600" style="transition:0.3s;">
 
 
