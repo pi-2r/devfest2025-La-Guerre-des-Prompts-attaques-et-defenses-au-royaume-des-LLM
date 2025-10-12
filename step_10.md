@@ -23,7 +23,12 @@
 - [Let's play with PyRIT !](#Let's-play-with-PyRIT-)
   - [Installation de PyRIT](#installation-de-pyrit)
   - [Stratégies d'attaque](#stratégies-dattaque)
-  - [Utilisation de PyRIT](#utilisation-de-pyrit)
+  - [Jouer avec PyRIT](#jouer-avec-pyrit)
+    - [Configurer les paramètres](#configurer-les-paramètres)
+    - [Comprendre le code](#comprendre-le-code)
+    - [Lancer l'attaque](#lancer-lattaque)
+    - [Ça bloque déjà ?!](#ça-bloque-déjà-)
+    - [Solutions](#solutions)
 
 
 - [Étape suivante](#étape-suivante)
@@ -37,8 +42,7 @@ Dans cette partie, nous allons exploitez les fonctionnalités d’attaque automa
 L’objectif est de franchir progressivement les barrières de chaque niveau, en surmontant les défis croissants conçus 
 pour résister aux manipulations et à l’extraction de données sensibles.
 
-<img src="img/gandalf_level_7.png" alt="image" width="450" style="transition:0.3s;">
-
+<img src="img/gandalf_target_level_7.jpg" alt="gandalf levels" width="600" style="transition:0.3s;">
 
 ## PyRIT
 
@@ -222,10 +226,73 @@ des dépendances du projet. Par exemple :
                 |    Score & logs          |
                 +--------------------------+
 
-## Utilisation de PyRIT
-let's play with PyRIT !
+## Jouer avec PyRIT
 
---> TODO (voir dossier labs/PyRIT)
+Dans cette section, nous allons utiliser PyRIT pour mener des attaques sur la plateforme Gandalf. Comme mentionné 
+précédemment, l’objectif est de progresser à travers les niveaux pour atteindre le niveau 7 !
+
+Commencez par accéder au dossier **lab/Pyrit**, puis copiez les deux fichiers gandalf.py et settings.yml dans le 
+dossier Pyrit que vous avez cloné et où le projet est déjà installé.
+
+### Configurer les paramètres
+
+Ouvrez le fichier **settings.yml** et renseignez votre clé OpenAI ainsi que le modèle à utiliser.
+
+> Il est recommandé de débuter avec un modèle léger, tel que gpt-3.5-turbo. Ensuite, à mesure que la difficulté 
+> augmente et que vous maîtrisez mieux le code, vous pouvez passer à un modèle plus performant — donc plus coûteux — 
+> comme gpt-4o-mini, que nous avons utilisé pour les exercices les plus complexes.
+
+
+### Comprendre le code
+
+
+Le code de base de cet exercice s’appuie sur la documentation officielle de PyRIT :
+https://azure.github.io/PyRIT/code/targets/2_custom_targets.html#gandalf-target.
+
+Nous avons toutefois adapté ce code à nos besoins. En vous inspirant de l’exemple fourni dans la documentation, 
+n’hésitez pas à le modifier pour mieux comprendre son fonctionnement.
+
+Points à personnaliser dans le code en vous aidant de la documentation :
+
+- Ligne 52 : définir le niveau de Gandalf à attaquer (commencez par le niveau 1).
+
+- Ligne 85 : préciser la stratégie à utiliser, RedTeamingAttack.
+
+- Ligne 113 : compléter la fonction chargée de lancer l’attaque.
+
+
+### Lancer l'attaque
+
+Pour exécuter le script, utilisez la commande suivante dans votre terminal :
+
+```bash
+python gandalf.py
+```
+
+Vous devriez avoir ce type de rendu :
+<img src="img/gandalf_level_1_example.jpg" alt="Pyrit gandalf level 1" width="600" style="transition:0.3s;">
+
+
+### Ça bloque déjà ?!
+
+Comme évoquer dans la documentation, cet exemple de code fonctionne pour les premiers niveaux :
+
+> Gandalf contains 7 different levels. In this demo, we will show how to automatically bypass (at least) the first 
+> couple. It uses the RedTeamingAttack as a strategy to solve these challenges.
+Each level gets progressively more difficult. Before continuing, it may be beneficial to manually try the Gandalf 
+> challenges to get a feel for how they are solved.
+
+
+Comment resoudre les niveaux supérieurs ? Voici quelques pistes :
+
+- La compréhension du code et de la logique d'attaque est expliqué dans ce document : https://arxiv.org/abs/2410.02828
+- Tout se passe dans **Stratégie d'attaque**
+- Il y a une reférence à l'étape 6
+
+
+### Solutions
+
+[solutions/step10.md](solutions/step10.md)
 
 ## Étape suivante
 
