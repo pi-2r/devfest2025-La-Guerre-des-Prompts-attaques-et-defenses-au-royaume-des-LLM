@@ -161,8 +161,9 @@ python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --p
 ## Ressources
 
 
-| Information                               | Lien                                                                           |
-|-------------------------------------------|--------------------------------------------------------------------------------|
-| [Github] garak, LLM vulnerability scanner | [https://github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)             |
-| Documentation garak                       | [https://docs.garak.ai/](https://docs.garak.ai/)                               |
-| Garak, DEF CON slides                     | [https://garak.ai/garak_aiv_slides.pdf](https://garak.ai/garak_aiv_slides.pdf) |
+| Information                                   | Lien                                                                                                                                                           |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Github] garak, LLM vulnerability scanner     | [https://github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)                                                                                             |
+| Documentation garak                           | [https://docs.garak.ai/](https://docs.garak.ai/)                                                                                                               |
+| Garak, DEF CON slides                         | [https://garak.ai/garak_aiv_slides.pdf](https://garak.ai/garak_aiv_slides.pdf)                                                                                 |
+| Garak - A Generative AI Red-teaming Tool      | [https://wiki.hackerium.io/llm-security/garak-a-generative-ai-red-teaming-tool](https://wiki.hackerium.io/llm-security/garak-a-generative-ai-red-teaming-tool) |
