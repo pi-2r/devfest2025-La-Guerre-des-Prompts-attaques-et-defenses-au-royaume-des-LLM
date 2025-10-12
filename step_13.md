@@ -24,7 +24,10 @@
 
 - [Comment fonctionne NeMo Guardrails ?](#comment-fonctionne-nemo-guardrails-)
   - [configuration](#configuration)
-  - [Tester et rajouter des règles](#tester-et-rajouter-des-règles)
+  - [Le fichier config.yml](#le-fichier-configyml)
+  - [Le fichier rails.co](#le-fichier-railsco)
+
+- [À vous de jouer !](#a-vous-de-jouer-)
 
 
 - [Étape suivante](#étape-suivante)
@@ -206,9 +209,73 @@ intervenir dans les rails pour répondre à des besoins sur mesure (consultation
 etc.). On peut regrouper toutes les actions dans un fichier unique ou dans un sous-dossier détaillant chaque action.
 
 
-### Tester et rajouter des règles
+NeMo Guardrails utilise donc deux fichiers principaux — **config.yml** et **rails.co** — pour mettre en place un système
+de filtrage et de contrôle des interactions avec un modèle de langage (LLM), comme GPT‑3.5‑turbo d’OpenAI.
 
---> TODO (voir pour tester et améliorer les règles)
+Ils permettent de vérifier les messages entrants et sortants, et d’appliquer des règles internes ou de sécurité.
+
+### Le fichier config.yml
+
+Ce fichier est au cœur de la configuration. Il précise le modèle utilisé et les règles de contrôle appliquées aux
+messages.
+
+ - **models** : définit le modèle de langage à utiliser.
+
+ - **rails** : décrit les flux de contrôle qui s’exécutent sur les messages entrants et sortants.
+
+ - **input** : applique le flux self check input à chaque message utilisateur.
+
+ - **output** : applique le flux self check output à chaque réponse du bot.
+
+<u>Les prompts</u>
+
+Les prompts sont des instructions données au LLM pour effectuer les vérifications :
+
+- **self_check_input** :
+    Le modèle vérifie si le message utilisateur respecte la politique interne (pas de contenu nuisible, pas d’opinions personnelles).
+    Il traduit le message en anglais et répond par "Yes" ou "No" à la question : faut-il bloquer ce message ?
+
+
+- **self_check_output** :
+    Le modèle vérifie si la réponse du bot respecte la politique interne.
+    Il répond également par "Yes" ou "No" pour indiquer si la réponse doit être bloquée.
+
+<u>Résumé du fonctionnement</u> :
+À chaque message ou réponse, le modèle analyse le contenu, applique les règles, et indique s’il faut bloquer ou 
+autoriser. Cela permet d’automatiser la modération et de garantir le respect des règles internes lors des échanges.
+
+
+### Le fichier rails.co
+
+Ce fichier définit la logique de contrôle (flows) et les comportements du chatbot selon différents scénarios.
+
+- **define bot refuse to respond** : Liste de réponses standard que le bot utilisera lorsqu’il doit refuser une requête.
+
+
+- **define flow self check input**
+    Déclenché pour chaque message utilisateur.
+    Exécute le prompt self_check_input pour savoir si le message doit être bloqué.
+    Si la réponse est "Yes", le bot répond par une phrase standard ("I can't provide information on that topic.") et arrête le flux.
+
+
+- **define flow self check output**
+    Déclenché pour chaque réponse générée par le bot.
+    Exécute le prompt self_check_output pour savoir si la réponse doit être bloquée.
+    Si la réponse est "Yes", le bot affiche la même phrase standard et arrête le flux.
+
+<u>Résumé du fonctionnement</u> :
+
+Lors de chaque interaction (entrée ou sortie), le système évalue la conformité du contenu aux règles internes de sécurité ou d’éthique.
+Si le contenu est non conforme, la réponse est bloquée et le bot affiche un message de refus, empêchant ainsi la transmission de données sensibles ou interdites.
+
+
+## À vous de jouer
+
+
+À vous de jouer ! Modifiez les fichiers **config.yml** et **rails.co** pour personnaliser les règles de filtrage.
+
+--> TODO EXEMPLE
+
 
 ## Étape suivante
 
@@ -217,11 +284,15 @@ etc.). On peut regrouper toutes les actions dans un fichier unique ou dans un so
 ## Ressources
 
 
-| Information                                         | Lien                                                                                                                                                                                                         |
-|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| NVIDIA-NeMo                                         | [https://github.com/NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)                                                                                                                       |
-| NeMo Guardrails documentation                       | [https://docs.nvidia.com/nemo/guardrails/latest/index.html](https://docs.nvidia.com/nemo/guardrails/latest/index.html)                                                                                       |
-| NeMo Guardrails: A Toolkit [...] Programmable Rails | [https://arxiv.org/abs/2310.10501](https://arxiv.org/abs/2310.10501)                                                                                                                                         |
-| Colang Guide                                        | [https://docs.nvidia.com/nemo/guardrails/latest/user-guides/colang-language-syntax-guide.html](https://docs.nvidia.com/nemo/guardrails/latest/user-guides/colang-language-syntax-guide.html)                 |
-| NeMo Guardrails Configuration Guide                 | [https://docs.nvidia.com/nemo/guardrails/latest/user-guides/configuration-guide/index.html(https://docs.nvidia.com/nemo/guardrails/latest/user-guides/configuration-guide/index.html)                        |
-| NeMo Guardrails Jailbreak Detection Heuristics      | [https://docs.nvidia.com/nemo/guardrails/latest/user-guides/jailbreak-detection-heuristics/index.html](https://docs.nvidia.com/nemo/guardrails/latest/user-guides/jailbreak-detection-heuristics/index.html) |
+| Information                                                          | Lien                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NVIDIA-NeMo                                                          | [https://github.com/NVIDIA-NeMo/Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| NeMo Guardrails documentation                                        | [https://docs.nvidia.com/nemo/guardrails/latest/index.html](https://docs.nvidia.com/nemo/guardrails/latest/index.html)                                                                                                                                                                                                                                                                                                                                                                                             |
+| NeMo Guardrails: A Toolkit [...] Programmable Rails                  | [https://arxiv.org/abs/2310.10501](https://arxiv.org/abs/2310.10501)                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Colang Guide                                                         | [https://docs.nvidia.com/nemo/guardrails/latest/user-guides/colang-language-syntax-guide.html](https://docs.nvidia.com/nemo/guardrails/latest/user-guides/colang-language-syntax-guide.html)                                                                                                                                                                                                                                                                                                                       |
+| NeMo Guardrails Configuration Guide                                  | [https://docs.nvidia.com/nemo/guardrails/latest/user-guides/configuration-guide/index.html(https://docs.nvidia.com/nemo/guardrails/latest/user-guides/configuration-guide/index.html)                                                                                                                                                                                                                                                                                                                              |
+| NeMo Guardrails Jailbreak Detection Heuristics                       | [https://docs.nvidia.com/nemo/guardrails/latest/user-guides/jailbreak-detection-heuristics/index.html](https://docs.nvidia.com/nemo/guardrails/latest/user-guides/jailbreak-detection-heuristics/index.html)                                                                                                                                                                                                                                                                                                       |
+| NVIDIA NeMo Guardrails: Full Walkthrough for Chatbots / AI           | [https://www.youtube.com/watch?v=SwqusllMCnE](https://www.youtube.com/watch?v=SwqusllMCnE)                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Guardrails Crash Course for Beginners 🛡️                            | [https://www.youtube.com/watch?v=XbriX2aYgqw](https://www.youtube.com/watch?v=XbriX2aYgqw)                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 🔧Building an Industrial RAG with NeMo Guardrails and LlamaIndex🏭   | [https://blog.stackademic.com/building-an-industrial-rag-with-nemo-guardrails-and-llamaindex-996cf074c3d4](https://blog.stackademic.com/building-an-industrial-rag-with-nemo-guardrails-and-llamaindex-996cf074c3d4)                                                                                                                                                                                                                                                                                               |
+| Nvidia publie [...] rendre l'IA générative plus sûre                 | [https://intelligence-artificielle.developpez.com/actu/344041/Nvidia-publie-une-boite-a-outils-open-source-appelee-NeMo-Guardrails-concue-pour-rendre-l-IA-generative-plus-sure-elle-vise-a-ameliorer-les-performances-et-la-securite-des-chatbots-d-IA/](https://intelligence-artificielle.developpez.com/actu/344041/Nvidia-publie-une-boite-a-outils-open-source-appelee-NeMo-Guardrails-concue-pour-rendre-l-IA-generative-plus-sure-elle-vise-a-ameliorer-les-performances-et-la-securite-des-chatbots-d-IA/) |
