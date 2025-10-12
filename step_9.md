@@ -133,25 +133,25 @@ par le bot.
 
 
 1 - Pour setter le REST Generator, lancer une inspection de la page HTML du bot que vous voulez tester :
-
+<br/>
 <img src="img/lancer_inspection_chatbot.png" alt="garak-inspection-chatbot" width="600" style="transition:0.3s;">
-
+<br/>
+<br/>
 2 - Aller dans l'onglet `Network` :
-
+<br/>
 <img src="img/network_chatbot.png" alt="garak-network-chatbot" width="600" style="transition:0.3s;">
-
+<br/>
+<br/>
 3 - Lancer un premier message (ex: "Hello") dans le playground et récupérer les éléments nécessaires comme l'url de la 
 requête POST `messages` et les cookies nécessaires.
-
+<br/>
 <img src="img/elements_requete_post.png" alt="request-post-chatbot" width="600" style="transition:0.3s;">
 
 Pour lancer un scan garak sur une étape du Playground :
 
 ```bash
 #python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes lab.Garak.probe_config.my_smuggling_probe.MyHypotheticalResponse
-
-python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes promptinject.DAN --probe_option_file lab/Garak/probe_config/dan_probe_setting.json --generation 2
-python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes smuggling.HypotheticalResponse --probe_option_file lab/Garak/probe_config/dan_probe_setting.json --generation 2
+python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes my_smuggling_probe.MyHypotheticalResponse --generation 2
 ```
 
 
