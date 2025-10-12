@@ -19,6 +19,8 @@
     - [L'Auto-Red-Team](#lauto-red-team)
 
 - [Mise en pratique de Garak sur le Playground de Microsoft](#mise-en-pratique-de-garak-sur-le-playground-de-microsoft)
+    - [Initialisation du REST Generator](#initialisation-du-rest-generator)
+    - [Initialisation d'une sonde custom Garak](#initialisation-dune-sonde-custom-garak)
 
 - [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
@@ -127,6 +129,9 @@ faire un scan poussé.
 
 ## Mise en pratique de Garak sur le Playground de Microsoft
 Nous allons mettre en pratique Garak sur le Playground de Microsoft.
+
+### Initialisation du REST Generator
+
 Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser différentes sondes 
 (`promptinject.DAN`,`smuggling.HypotheticalResponse`) que nous allons configurer pour trouver le mot de passe protégé 
 par le bot.
@@ -147,10 +152,26 @@ requête POST `messages` et les cookies nécessaires.
 <br/>
 <img src="img/elements_requete_post.png" alt="request-post-chatbot" width="600" style="transition:0.3s;">
 
-Pour lancer un scan garak sur une étape du Playground :
+### Initialisation d'une sonde custom Garak
+
+Pour lancer un scan garak d'une sonde custom sur une étape du Playground :
+<br/>
+<br/>
+1 - Copier le fichier `my_smuggling_probe` qui contient un exemple de sonde custom `my_smuggling_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre venv).
+<br/>
+<br/>
+2 - Lancer la commande listant les probes disponibles pour voir si nos probes custom sont apparues :
+<br/>
+```bash
+
+python -m garak --list_probes
+```
+<br/>
+3 - Si oui, lancer la commande suivante pour tester la vulnérabilité du chatbot. Sinon, assurez-vous que le fichier sonde est copié au bon endroit :
+<br/>
 
 ```bash
-#python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes lab.Garak.probe_config.my_smuggling_probe.MyHypotheticalResponse
+
 python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes my_smuggling_probe.MyHypotheticalResponse --generation 2
 ```
 
