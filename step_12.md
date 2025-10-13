@@ -1,7 +1,7 @@
 # Mettre en place les premieres contre-mesures avec FastAPI
 
-[<img src="img/step11.png" alt="tock" width="800">]()
-> "..", X, LOTR - The Return of the King
+[<img src="img/on_minas_tirith_wall.png" alt="tock" width="800">](https://www.youtube.com/watch?v=UCyqwsoISMs)
+> "To all men ! To the wall ! Defend the wall !", Gandalf, LOTR - The Return of the King
 
 
 

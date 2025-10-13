@@ -1,7 +1,7 @@
 # Mettre en place notre chatbot avec la solution Tock
 
-[<img src="img/step11.png" alt="tock" width="800">]()
-> "..", X, LOTR - The Return of the King
+[<img src="img/prepare_for_battle.png" alt="tock" width="800">](https://www.youtube.com/watch?v=UCyqwsoISMs)
+> "Prepare for battle !", Gandalf, LOTR - The Return of the King
 
 
 

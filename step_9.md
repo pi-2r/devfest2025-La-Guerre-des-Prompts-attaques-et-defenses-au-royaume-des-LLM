@@ -36,8 +36,8 @@
 **Garak** se fonde sur une base de connaissances de jailbreaks et de variantes connus et constamment mis à jour par la communauté.
 
 Lors d'un audit avec **Garak** lance des attaques prédéfinies, non-adaptatives et sauvegarde les résultats sous format JSON et HTML.
-La recommendation est d'utiliser **Garak** périodiquement ou avant une mise à jour majeure pour dresser un état des lieux des principales vulnérabilités auquel votre application est sensible.
-On peut ensuite mettre en place des guardrails plus spécifiques avec NEMO Guardrails (cf. étape 13).
+La recommandation est d'utiliser **Garak** périodiquement ou avant une mise à jour majeure pour dresser un état des lieux des principales vulnérabilités auxquelles votre application est sensible.
+On peut ensuite mettre en place des guardrails plus spécifiques avec **NEMO Guardrails** (cf. [étape 13](step_13.md))).
 
 ### Installation de Garak
 Pour installer Garak, vous pouvez utiliser pip. Exécutez la commande suivante dans votre terminal :
