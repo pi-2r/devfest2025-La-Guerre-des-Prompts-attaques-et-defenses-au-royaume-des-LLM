@@ -272,10 +272,15 @@ Si le contenu est non conforme, la réponse est bloquée et le bot affiche un me
 ## À vous de jouer
 
 
-À vous de jouer ! Modifiez les fichiers **config.yml** et **rails.co** pour personnaliser les règles de filtrage.
+À vous de jouer ! Modifiez les fichiers **config.yml** pour personnaliser vos règles de filtrage.
 
---> TODO EXEMPLE
+<img src="img/nemo-guardrails-tock.jpg" width="600" style="transition:0.3s;">
 
+<details>
+  <summary>Solutions</summary>
+
+[solutions/step13](solutions/nemo-guardrails-config/config.yml) contient des exemples
+</details>
 
 ## Étape suivante
 
