@@ -8,7 +8,7 @@ Voici le JSON type pour le REST Generator, vous devrez adapter les champs "uri" 
 {
   "rest": {
     "RestGenerator": {
-      "name": "AI-Playground-API", // Nom que vous souhaitez donnner à ce generator
+      "name": "AI-Playground-API", // Nom que vous souhaitez donner à ce generator
       "uri": "http://localhost:4002/chats/139fb918-8201-4889-ab29-33d961d0cfcc/messages", // URL de l'API du playground
       "method": "post",
       "headers": {
