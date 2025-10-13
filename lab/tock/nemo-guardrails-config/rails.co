@@ -5,7 +5,6 @@ define bot refuse to respond
 
 define flow self check input
   $should_block = execute self_check_input
-
   # If input should be blocked (Yes means block), refuse
   if $should_block == "Yes"
     bot refuse to respond with "I can't provide information on that topic."
@@ -13,7 +12,6 @@ define flow self check input
 
 define flow self check output
   $should_block = execute self_check_output
-
   # If output should be blocked (Yes means block), refuse
   if $should_block == "Yes"
     bot refuse to respond with "I can't provide information on that topic."
