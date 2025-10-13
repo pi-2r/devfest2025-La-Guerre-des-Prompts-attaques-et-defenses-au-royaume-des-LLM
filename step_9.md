@@ -35,8 +35,9 @@
 **Garak** est un outil open-source développé par **NVIDIA** pour scanner les vulnérabilités des modèles de langage (LLM).
 **Garak** se fonde sur une base de connaissances de jailbreaks et de variantes connus et constamment mis à jour par la communauté.
 
-Lors d'un audit avec **Garak** lance des attaques prédéfinies, non-adaptatives et sauvegarde les résultats sous format JSON et HTML.
-La recommandation est d'utiliser **Garak** périodiquement ou avant une mise à jour majeure pour dresser un état des lieux des principales vulnérabilités auxquelles votre application est sensible.
+Lors d'un audit, **Garak** lance des attaques prédéfinies, non-adaptatives, et sauvegarde les résultats sous format JSON et HTML.
+
+La recommandation est d'utiliser **Garak** périodiquement ou avant une mise à jour majeure d'une application (changement de LLM,...) pour dresser un état des lieux des principales vulnérabilités auxquelles votre application est sensible.
 On peut ensuite mettre en place des guardrails plus spécifiques avec **NEMO Guardrails** (cf. [étape 13](step_13.md))).
 
 ### Installation de Garak
@@ -50,7 +51,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # 3. Installer garak
-python -m pip install -U garak
+python -m pip install -U garak==0.13.1
 ```
 
 
@@ -96,7 +97,7 @@ python -m garak --model_type huggingface --model_name gpt2  --probes divergence.
 ### Les Generators 
 
 Les generators sont des abstractions (LLMs, APIs, fonction Python) répondant un texte en fonction d'un input.
-Les generators prennent les valeurs, dont :
+Les generators prennent des valeurs, dont :
 - `huggingface` : pour les modèles hébergés sur HuggingFace.
 - `openai` : pour les modèles OpenAI.
 - `function` : pour les fonctions Python.
@@ -105,21 +106,21 @@ Par exemple, si on souhaite évaluer un modèle `gpt2` de `Huggingface` lors d'u
 `--model_type huggingface --model_name gpt2`.
 Si c'est une API d'HuggingFace, on renseigne les options : `--model_name huggingface.InferenceAPI --model_type "mosaicml/mpt-7b-instruct"`.
 
-Pour plus de détails, vous pouvez consulter la documentation officielle de Garak : [Garak Documentation](https://docs.garak.ai/garak/garak-components/using-generators)
+Pour plus de détails, vous pouvez consulter la documentation officielle de Garak : [Garak Documentation](https://docs.garak.ai/garak/garak-components/using-generators).
 
 ### Les Detectors et les Harnesses
 
 Comme, une probe va être lancée plusieurs fois pour tester la robustesse du LLM et que l'on teste plusieurs probes, 
 Garak utilise des detectors pour reconnaitre si la réponse du LLM défaillante.
-Ce sont des détecteurs de mots-clés ou des classifiers jugeant si la réponse d'un LLM est OK ou non.
+Ce sont des détecteurs de mots-clés ou des classifiers jugeant si la réponse d'un LLM est OK ou non selon l'objectif de la probe.
 
 Les détecteurs ont parfois un paramètre `doc_uri` permettant de trouver de la documentation sur la faille testée. Par 
 exemple, le détecteur [`xss.MarkdownExfilBasic`](https://reference.garak.ai/en/latest/garak.detectors.xss.html#garak.detectors.xss.MarkdownExfilBasic) pointe vers : [Bing Chat Image Markdown Injection](https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/).
 
 Les Harnesses gèrent :
 - le lancement des probes sur le generator cible. 
-- le lancement des detectors à utiliser sur les outputs qu'ont produit les probes.
-- l'évaluation des résultats des detectors faite avec les Evaluator.
+- le lancement des detectors à utiliser sur les outputs produits par le generator selon les probes.
+- les évaluations des résultats des detectors faites avec les evaluators.
 
 Les Harnesses prennent la valeur : `probewise` si on utilise les détectors récommandés pour la probe ou `pxd` pour 
 tester tous les détecteurs.
@@ -135,8 +136,8 @@ Nous allons mettre en pratique Garak sur le Playground de Microsoft.
 ### Initialisation du REST Generator
 
 Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser des variantes des sondes 
-(`promptinject.DAN`,`smuggling.HypotheticalResponse`) que nous allons configurer pour trouver le mot de passe protégé 
-par le bot.
+(`smuggling.HypotheticalResponse` et `promptinject.DAN`) que nous allons configurer pour trouver le mot de passe protégé 
+par le bot (la modification de `promptinject.DAN` est laissée en exercice).
 
 
 1 - Pour setter le REST Generator, lancer une inspection de la page HTML du bot que vous voulez tester :
@@ -150,13 +151,13 @@ par le bot.
 <br/>
 <br/>
 3 - Lancer un premier message (ex: "Hello") dans le playground et récupérer les éléments nécessaires comme l'url de la 
-requête POST `messages` et les cookies nécessaires.
+requête POST `messages` et les cookies.
 <br/>
 <img src="img/elements_requete_post.png" alt="request-post-chatbot" width="600" style="transition:0.3s;">
 
 ### Initialisation d'une sonde custom Garak
 
-Pour lancer un scan garak d'une sonde custom sur une étape du Playground :
+Pour lancer le scan d'une sonde custom sur une étape du Playground :
 <br/>
 <br/>
 1 - Copier le fichier `my_smuggling_probe` qui contient un exemple de sonde custom `my_smuggling_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre venv).
