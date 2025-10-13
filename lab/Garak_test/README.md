@@ -1,8 +1,14 @@
-# Garak : Utilisation du REST Generator pour les API du playground 
+# Garak : Conseil d'utilisation
 
 
+## Utilisation du REST Generator pour les API du playground 
 
-Voici le JSON type pour le REST Generator, vous devrez adapter les champs "uri" et "headers" selon le playground que vous souhaitez tester:
+Voici le JSON type pour le REST Generator, vous devrez adapter :
+- le champ "uri",
+- le sous-champ "Cookie" dans "headers" et
+- la variable "chatId" 
+
+selon le playground que vous souhaitez tester.
 
 ```json
 {
@@ -39,9 +45,11 @@ Voici le JSON type pour le REST Generator, vous devrez adapter les champs "uri" 
 }
 ```
 
-Pour récupérer l'URI :
-- Pour récupérer l'id de la conversation aller dans inspecter la page HTML de la conversation, puis aller dans "Network".
-- Lancer un premier message (ex: "Hello") dans le playground et récupérer l'id dans l'url de la requête POST intitulée "messages".
-  
- 
-  
+
+## Utilisation d'une Custom Probe
+
+Une probe, pour être reconnue par Garak, doit  hériter de `garak.probes.base.Probe` et implémenter ou hériter d'une méthode `probe`.
+
+Il est recommandé lors de l'édit d'une custom probe, de :
+- modifier en priorité les paramètres comme `prompts`, `recommended_detector` pour les modifications métier et de
+- ne modifier la fonction `probe` qu'en cas de nécessité technique (comme avoir un prompt dépendant du generator).
