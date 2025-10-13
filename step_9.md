@@ -33,9 +33,11 @@
 [![Downloads](https://static.pepy.tech/badge/garak/month)](https://pepy.tech/project/garak)
 
 **Garak** est un outil open-source développé par **NVIDIA** pour scanner les vulnérabilités des modèles de langage (LLM).
-Il est conçu pour identifier les failles de sécurité potentielles dans les systèmes utilisant les LLMs.
+**Garak** se fonde sur une base de connaissances de jailbreaks et de variantes connus et constamment mis à jour par la communauté.
 
-**Garak** se fonde sur une base de connaissances de jailbreaks prompts connus et constamment mis à jour par la communauté.
+Lors d'un audit avec **Garak** lance des attaques prédéfinies, non-adaptatives et sauvegarde les résultats sous format JSON et HTML.
+La recommendation est d'utiliser **Garak** périodiquement ou avant une mise à jour majeure pour dresser un état des lieux des principales vulnérabilités auquel votre application est sensible.
+On peut ensuite mettre en place des guardrails plus spécifiques avec NEMO Guardrails (cf. étape 13).
 
 ### Installation de Garak
 Pour installer Garak, vous pouvez utiliser pip. Exécutez la commande suivante dans votre terminal :
@@ -132,7 +134,7 @@ Nous allons mettre en pratique Garak sur le Playground de Microsoft.
 
 ### Initialisation du REST Generator
 
-Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser différentes sondes 
+Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser des variantes des sondes 
 (`promptinject.DAN`,`smuggling.HypotheticalResponse`) que nous allons configurer pour trouver le mot de passe protégé 
 par le bot.
 
@@ -158,6 +160,8 @@ Pour lancer un scan garak d'une sonde custom sur une étape du Playground :
 <br/>
 <br/>
 1 - Copier le fichier `my_smuggling_probe` qui contient un exemple de sonde custom `my_smuggling_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre venv).
+<br/>
+<img src="img/ajout_probe_custom_garak.png" alt="ajout_probe_custom_garak" width="200" style="transition:0.3s;">
 <br/>
 <br/>
 2 - Lancer la commande listant les probes disponibles pour voir si nos probes custom sont apparues :
