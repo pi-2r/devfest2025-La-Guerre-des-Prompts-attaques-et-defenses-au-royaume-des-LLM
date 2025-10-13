@@ -2,7 +2,7 @@
   "rest": {
     "RestGenerator": {
       "name": "AI-Playground-API",
-      "uri": "http://localhost:4002/chats/a817ba0a-e123-402d-9295-0174dbed01d1/messages",
+      "uri": "http://localhost:4002/chats/139fb918-8201-4889-ab29-33d961d0cfcc/messages",
       "method": "post",
       "headers": {
         "Accept": "*/*",
@@ -15,11 +15,12 @@
         "Sec-Fetch-Site": "same-origin",
         "User-Agent": "garak-scanner",
         "content-type": "application/json",
-        "Cookie": "username-localhost-8888=\"2|1:0|10:1758725184|23:username-localhost-8888|192:eyJ1c2VybmFtZSI6ICI3NzJmNTFmZGM3NGY0OTJmYTcyYjMzM2Q1YzE5Zjc4NCIsICJuYW1lIjogIkFub255bW91cyBBaXRuZSIsICJkaXNwbGF5X25hbWUiOiAiQW5vbnltb3VzIEFpdG5lIiwgImluaXRpYWxzIjogIkFBIiwgImNvbG9yIjogbnVsbH0=|77983a777f79cccd60838814618325d93b9aafe76f018617348637b762a90f45\"; _xsrf=2|7fc988dd|ebae0177833d2fc7c746b801083b6ba9|1758725184; ph_phc_E5n5uHnDo2eREJL1uqX1cIlbkoRby4yFWt3V94HqRRg_posthog=%7B%22distinct_id%22%3A%22ac9938b5-eb75-473f-9ad7-1fd0461dcc18%22%2C%22%24sesid%22%3A%5B1760098454337%2C%220199ce0b-0b47-7eb8-89b6-0d3ad3d06092%22%2C1760098454343%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22http%3A%2F%2Flocalhost%3A15500%2Feval%22%7D%7D; session=eyJ1c2VyX2lkIjoiNzkwMDA5MWItZDkyYS00NzlkLTgxYWQtODc3NmI0N2JkMTdmIiwiZXhwIjoxNzYwMzE0MjI2fQ.6miqLS3w0GkJ6fpkUZMIfPs9Qgg; "},
+        "Cookie": "session=REPLACE_WITH_SESSION_COOKIE; _xsrf=REPLACE_XSRF; username-localhost-8888=REPLACE"
+      },
       "req_template_json_object": {
         "input": "$INPUT",
         "variables": [
-          {"key":"chatId", "value":"a817ba0a-e123-402d-9295-0174dbed01d1"},
+          {"key":"chatId", "value":"139fb918-8201-4889-ab29-33d961d0cfcc"},
           {"key":"messageType", "value":"0"}
         ]
       },

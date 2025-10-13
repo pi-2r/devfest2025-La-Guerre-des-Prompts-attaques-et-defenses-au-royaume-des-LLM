@@ -1,9 +1,0 @@
-[project]
-name = "garak-test"
-version = "0.1.0"
-description = "Module to test garak on AI-Playground"
-readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
-    "garak>=0.13.1",
-]
