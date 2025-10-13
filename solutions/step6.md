@@ -1,35 +1,35 @@
 <details>
   <summary>Lab 1</summary>
 
-<img src="img/Lab-1-solution.png" alt="solution" width="800" style="transition:0.3s;">
+<img src="../img/Lab-1-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 3</summary>
 
-<img src="img/Lab-3-solution.png" alt="solution" width="800" style="transition:0.3s;">
+<img src="../img/Lab-3-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 6</summary>
 
-<img src="img/Lab-6-solution.png" alt="solution" width="800" style="transition:0.3s;">
+<img src="../img/Lab-6-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 7</summary>
 
-<img src="img/Lab-7-solution.png" alt="solution" width="800" style="transition:0.3s;">
+<img src="../img/Lab-7-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 <br/>
 <details>
   <summary>Lab 9</summary>
 
-<img src="img/Lab-9-solution.png" alt="solution" width="800" style="transition:0.3s;">
+<img src="../img/Lab-9-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 
@@ -40,7 +40,7 @@
 <details>
   <summary>Lab 10</summary>
 
-<img src="img/Lab-10-solution.png" alt="solution" width="800" style="transition:0.3s;">
+<img src="../img/Lab-10-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 
@@ -54,7 +54,7 @@
 <details>
   <summary>Lab 11 et 12</summary>
 
-<img src="img/Lab-11-solution.png" alt="solution" width="800" style="transition:0.3s;">
+<img src="../img/Lab-11-solution.png" alt="solution" width="800" style="transition:0.3s;">
 
 </details>
 
