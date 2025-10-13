@@ -13,7 +13,7 @@
 
 ## Merci pour les encouragements
 
-| [<img src="img/NVIDIA-logo.jpg"  alt="NVIDIA AI Red Team" weight="" height="120" >](https://nvidia.com/)		 | [<img src="img/microsoft-logo.jpg"  alt="Microsoft AI Red Team" weight="" height="120" >](https://learn.microsoft.com/fr-fr/security/ai-red-team/)	 | [<img src="img/ads.png"  alt="Ads Dawson" weight="" height="120" >](https://www.linkedin.com/in/adamdawson0/) |
+| [<img src="img/NVIDIA-logo.jpg"  alt="NVIDIA AI Red Team" weight="" height="120" >](https://nvidia.com/)		 | [<img src="img/microsoft-logo.jpg"  alt="Microsoft AI Red Team" weight="" height="120" >](https://learn.microsoft.com/fr-fr/security/ai-red-team/)	 | [<img src="https://avatars.githubusercontent.com/u/104169244?v=4"  alt="Ads Dawson" weight="" height="120" >](https://www.linkedin.com/in/adamdawson0/) |
 |:----------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------:|
 |                                           **NVIDIA AI Red Team**                                           |                                                              **Microsoft AI Red Team**                                                              |                               **Ads Dawson**,  AI/ML Staff Security Researcher                                |
 
