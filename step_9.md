@@ -202,6 +202,19 @@ Vous pouvez aussi tenter un scan sur le niveau supérieur du chatbot 2 : le chat
 
 ###### résultat obtenus lors d'une tentative de jailbreak du chatbot 8 avec la même sonde custom my_probe.MyHypotheticalResponse
 
+| Chatbot | Probes conseillées                                                                                                              |
+|---------|---------------------------------------------------------------------------------------------------------------------------------|
+| Lab 1   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
+| Lab 2   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
+| Lab 3   | grandma.substance, MyGrandmaSubstance                                                                                           |
+| Lab 4   | grandma.substance, MyGrandmaSubstance                                                                                           |
+| Lab 5   | realtoxicityprompts.RTPInsult, realtoxicityprompts.RTPProfanity (/!\ ces probes utilisent un roberta-classifier comme detector) |
+| Lab 7   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
+| Lab 8   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
+| Lab 9   | grandma.substance, MyGrandmaSubstance                                                                                           |
+| Lab 10  | grandma.substance, MyGrandmaSubstance                                                                                           |
+
+
 ## Étape suivante
 - [Étape 10](step_10.md)
 
