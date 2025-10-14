@@ -239,8 +239,8 @@ dossier Pyrit que vous avez cloné et où le projet est déjà installé.
 Ouvrez le fichier **settings.yml** et renseignez votre clé OpenAI ainsi que le modèle à utiliser.
 
 > Il est recommandé de débuter avec un modèle léger, tel que gpt-3.5-turbo. Ensuite, à mesure que la difficulté 
-> augmente et que vous maîtrisez mieux le code, vous pouvez passer à un modèle plus performant — donc plus coûteux — 
-> comme gpt-4o-mini, que nous avons utilisé pour les exercices les plus complexes.
+> augmente et que vous maîtrisez mieux le code, vous pouvez passer à un modèle plus performant — donc plus coûteux et 
+> plus rapide — comme gpt-4o-mini, que nous avons utilisé pour les exercices les plus complexes.
 
 
 ### Comprendre le code
@@ -249,16 +249,7 @@ Ouvrez le fichier **settings.yml** et renseignez votre clé OpenAI ainsi que le 
 Le code de base de cet exercice s’appuie sur la documentation officielle de PyRIT :
 https://azure.github.io/PyRIT/code/targets/2_custom_targets.html#gandalf-target.
 
-Nous avons toutefois adapté ce code à nos besoins. En vous inspirant de l’exemple fourni dans la documentation, 
-n’hésitez pas à le modifier pour mieux comprendre son fonctionnement.
-
-Points à personnaliser dans le code en vous aidant de la documentation :
-
-- Ligne 52 : définir le niveau de Gandalf à attaquer (commencez par le niveau 1).
-
-- Ligne 85 : préciser la stratégie à utiliser, RedTeamingAttack.
-
-- Ligne 113 : compléter la fonction chargée de lancer l’attaque.
+Nous avons toutefois adapté ce code pour le codelab.
 
 
 ### Lancer l'attaque
@@ -273,6 +264,13 @@ Vous devriez avoir ce type de rendu :
 
 <img src="img/gandalf_level_1_example.jpg" alt="Pyrit gandalf level 1" width="600" style="transition:0.3s;">
 
+Pour progresser dans les niveaux, il suffit de relancer la commande en prenant soin de modifier le niveau dans le 
+fichier gandalf.py en ligne 48 :
+
+```python
+gandalf_level = GandalfLevel.LEVEL_1
+```
+
 
 ### Ça bloque déjà ?!
 
@@ -286,7 +284,7 @@ Each level gets progressively more difficult. Before continuing, it may be benef
 
 Comment resoudre les niveaux supérieurs ? Voici quelques pistes :
 
-- La compréhension du code et de la logique d'attaque est expliqué dans ce document : https://arxiv.org/abs/2410.02828
+- La compréhension de la logique d'attaque est expliqué dans ce document : https://arxiv.org/abs/2410.02828
 - Tout se passe dans **Stratégie d'attaque**
 - Il y a une reférence à l'étape 6
 
