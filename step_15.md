@@ -113,10 +113,9 @@ Promptfoo se met régulièrement à jour concernant les dernières évolutions d
 ## Mise en pratique d'un scan d'un modèle
 
 Promptfoo intègre aussi un module de scan de modèle.
-Ce module permet d'analyser des modèles au format `pickle`, `h5`, `pb` (TensorFlow SavedModel) et `onnx` pour détecter des vulnérabilités de sécurité potentielles, comme :
+Ce module permet d'analyser des modèles au format `pickle`, `h5`, `pb` (TensorFlow SavedModel) et `onnx` pour détecter des vulnérabilités de sécurité potentielles, notamment :
 - Des codes malveillants intégrés dans des modèles [pickle](https://arxiv.org/html/2508.19774v1).
-- Des opérations TensorFlow ou Keras frauduleuses comme l'ajout d'une `layers.Lambda` en [dernière couche](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
-- Des couches Keras Lambda potentiellement dangereuses.
+- Des opérations TensorFlow ou Keras potentiellement frauduleuses comme l'ajout d'une `layers.Lambda` en [dernière couche](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
 
 
 Commencez par afficher l'interface graphique de promptfoo en lançant la commande suivante :
@@ -144,7 +143,7 @@ Promptfoo fonctionne avec des **plugins**, **strategies**, et des **targets**.
 
 - Les **plugins** génèrent des adversarial inputs pour des types de vulnérabilités spécifiques. Chaque plugin est un module **autonome** qui peut être activé ou désactivé via la configuration.
 On peut trouver un plugin, par exemple, pour : [**MCP (Model Context Protocol)**](https://www.promptfoo.dev/docs/red-team/plugins/mcp/), [**PII leakage**](https://www.promptfoo.dev/docs/red-team/plugins/pii/) ou encore les [**Pliny**](https://www.promptfoo.dev/docs/red-team/plugins/pliny/) Jailbreaks.
-La liste des vulnérabilités et leur plugin associé, sont accessibles ici : https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/
+La liste des vulnérabilités et leur plugin associé, sont accessibles ici : https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/.
 
 
 - Les **stratégies** sont des patterns permettant de délivrer les adversarial inputs générés au LLM.
@@ -152,11 +151,11 @@ Il existe plusieurs stratégies allant d'encodage comme [**base64**](https://www
 
 - **Attack Probes** sont les prompts d'attaque générés par la combinaison des plugins et des strategies.
 
-- La **Target Interface** définit la manière dont les Probes de test interagissent avec le système testé. 
+- La **Target Interface** définit la manière dont les Probes interagissent avec le système testé. 
 Les targets disponibles sont, notamment : 
-  - [**API HTTP**](https://www.promptfoo.dev/docs/providers/http/) : qui teste les points de terminaison REST via des requêtes configurables
-  - [**Modèle direct**](https://www.promptfoo.dev/docs/red-team/configuration/#custom-providerstargets) : qui s'interface avec des fournisseurs LLM tels que OpenAI ou des modèles locaux.
-  - [**Custom Provider**](https://www.promptfoo.dev/docs/red-team/configuration/#providers) : qui permet de tester des endpoints via des scripts Python/JavaScript
+  - [**API HTTP**](https://www.promptfoo.dev/docs/providers/http/) : qui teste les points de terminaison REST via des requêtes configurables,
+  - [**Modèle direct**](https://www.promptfoo.dev/docs/red-team/configuration/#custom-providerstargets) : qui s'interface avec des fournisseurs LLM tels que OpenAI ou des modèles locaux,
+  - [**Custom Provider**](https://www.promptfoo.dev/docs/red-team/configuration/#providers) : qui permet de tester des endpoints via des scripts Python/JavaScript.
 
 -  Un **Purpose** décrit le but de ce système de test. Il est utilisé pour guider la génération des adversarial inputs.
 
