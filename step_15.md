@@ -69,7 +69,13 @@ Pour cela, il faut installer `promptfoo` et une librairie complémentaire `model
 documentation officielle : https://www.promptfoo.dev/docs/model-audit/
 
 ```bash
+
+# Pour avoir une commande universelle, nous présentons une installation via pip (privilégier une installation en global de promptfoo). 
 pip install promptfoo
+# Cependant, les commandes privilégiées par Promptfoo sont :
+# brew install promptfoo
+# npm install -g promptfoo
+
 pip install modelaudit
 ```
 
