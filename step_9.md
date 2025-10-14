@@ -85,12 +85,14 @@ Pour lancer un scan automatique d'un module en particulier comme `divergence`, i
 
 ```bash
 
+# Commande mise en illustration, ne pas la lancer
 python -m garak --model_type huggingface --model_name gpt2 --probes divergence
 ```
 
 Pour lancer une probe inactive comme `divergence.RepeatExtended`, il suffit d'exécuter la commande suivante :
 ```bash
 
+# Commande mise en illustration, ne pas la lancer
 python -m garak --model_type huggingface --model_name gpt2  --probes divergence.RepeatExtended
 ```
 
@@ -177,7 +179,8 @@ python -m garak --list_probes
 
 ```bash
 
-python -m garak --target_type rest -G lab/Garak/rest_ai_playground_api.json  --probes my_smuggling_probe.MyHypotheticalResponse --generation 2
+# Commande à adapter
+python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_smuggling_probe.MyHypotheticalResponse --generations 2
 ```
 
 

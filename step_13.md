@@ -1,7 +1,7 @@
 # Mettre en place NeMo Guardrails
 
 [<img src="img/anduril_flame_of_the_west.png" alt="tock" width="800">](https://www.youtube.com/watch?v=fsbDigj7w5c)
-> "I bring Hope to the Men", Elrond - speaking in Elven language, LOTR - The Return of the King
+> "I bring Hope to Mankind", Elrond - speaking in Elven language, LOTR - The Return of the King
 
 
 
