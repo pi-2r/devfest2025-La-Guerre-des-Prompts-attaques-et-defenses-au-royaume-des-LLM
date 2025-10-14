@@ -162,7 +162,7 @@ requête POST `messages` et les cookies.
 Pour lancer le scan d'une sonde custom sur une étape du Playground :
 <br/>
 <br/>
-1 - Copier le fichier `my_smuggling_probe` qui contient un exemple de sonde custom `my_smuggling_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre venv).
+1 - Copier le fichier `my_probe` qui contient un exemple de sonde custom `my_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre venv).
 <br/>
 <img src="img/ajout_probe_custom_garak.png" alt="ajout_probe_custom_garak" width="200" style="transition:0.3s;">
 <br/>
@@ -179,10 +179,28 @@ python -m garak --list_probes
 
 ```bash
 
-# Commande à adapter
-python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_smuggling_probe.MyHypotheticalResponse --generations 2
+# Commande type, à adapter selon la sonde et le chemin du fichier JSON. Le JSON rest_ai_playground_api.json est lui aussi à adapter.
+python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyHypotheticalResponse
 ```
 
+### Mise en pratique sur le chatbot 2 du Playground de Microsoft
+
+1 - setter le rest_ai_playground_api.json pour requêter le chatbot 2.
+
+2 - Lancer la commande suivante pour tester la vulnérabilité du chatbot 2 avec la sonde custom `my_probe.MyHypotheticalResponse`. Garak lance directement les prompts en ligne de commandes et les réponses du chatbot sont affichées dans l'interface web.
+
+*PS : n'hésitez pas à relancer une nouvelle conversation dans le playground entre chaque scan pour réinitialiser le contexte.*
+
+<img src="img/jailbreak_by_custom_probe_chatbot_2.png" alt="garak-jailbreak-chatbot-2" width="600" style="transition:0.3s;">
+
+###### résultat obtenus lors du jailbreak réussi du chatbot 2 avec la sonde custom my_probe.MyHypotheticalResponse
+
+3 - Une fois un scan ayant mené à un jailbreak réussi, vous pouvez retrouver le rapport HTML dans le répertoire indiqué dans le log de Garak.
+Vous pouvez aussi tenter un scan sur le niveau supérieur du chatbot 2 : le chatbot 8 et modifier la sonde custom ou bien en tenter d'autres (une grandma ou un DAN custom).
+
+<img src="img/jailbreak_failed_by_custom_probe_chatbot_8.png" alt="jailbreak-failed-chatbot-9" width="600" style="transition:0.3s;">
+
+###### résultat obtenus lors d'une tentative de jailbreak du chatbot 8 avec la même sonde custom my_probe.MyHypotheticalResponse
 
 ## Étape suivante
 - [Étape 10](step_10.md)
