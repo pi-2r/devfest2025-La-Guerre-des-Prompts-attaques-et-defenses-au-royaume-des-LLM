@@ -1,67 +1,50 @@
-# [DevFest 2025] La Guerre des Prompts : attaques & défenses au royaume des LLM ⚔️🛡️🤖
+# [DevFest 2025] The Prompt War: Attacks & Defenses in the Realm of LLMs ⚔️🛡️🤖
 
-Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.linkedin.com/in/benvii/), [Xavier Charef](https://www.linkedin.com/in/xavier-charef-6b843497/), [François Nollen](https://www.linkedin.com/in/francois-nollen/) et [Pierre Therrode](https://www.linkedin.com/in/ptherrode/), pour le Devfest 2025, avec comme sujet : [La Guerre des Prompts : attaques & défenses au royaume des LLM ⚔️🛡️🤖](https://devfest2025.gdgnantes.com/en/sessions/la_guerre_des_prompts___attaques___defenses_au_royaume_des_llm________)
+This GitHub project stems from the workshop by [Benjamin Bernard](https://www.linkedin.com/in/benvii/), [Xavier Charef](https://www.linkedin.com/in/xavier-charef-6b843497/), [François Nollen](https://www.linkedin.com/in/francois-nollen/), and [Pierre Therrode](https://www.linkedin.com/in/ptherrode/), for DevFest 2025, on the topic: [The Prompt War: Attacks & Defenses in the Realm of LLMs ⚔️🛡️🤖](https://devfest2025.gdgnantes.com/en/sessions/la_guerre_des_prompts___attaques___defenses_au_royaume_des_llm________)
 
-<img src="img/la-guerre-des-prompts-attaques-et-defenses-au-royaume-des-llm.png"  alt="La Guerre des Prompts : attaques & défenses au royaume des LLM">
+![The Prompt War: Attacks & Defenses in the Realm of LLMs](img/la-guerre-des-prompts-attaques-et-defenses-au-royaume-des-llm.png)
 
-
-## Info réseau
-
-Point d'accès wifi :
-* SSID: LLM_ATTACK
-* Mot de passe: password
-
-Lab AI Red Team partagé disponible ici : http://192.168.20.2:5000/login?auth=YOUR_AUTH_KEY
-
-Instance partagée de Tock disponible ici : http://192.168.20.2/
-
-## Sommaire
+## Table of Contents
 
 <details>
-  <summary>🚧 💡 🚧 note sur La section “Introduction aux menaces de l’IA générative” 🚧 💡 🚧</summary>
-    
-La section “**Introduction aux menaces de l’IA générative**” vise avant tout à donner des repères pour comprendre les enjeux
-et prendre du recul sur le sujet, avant de se lancer pleinnement dans la pratique ("**Comprendre les Principes du Prompt Injection et leurs Impacts**"). 
+  <summary>🚧 💡 🚧 Note on the section “Introduction to Generative AI Threats” 🚧 💡 🚧</summary>
 
-Lors du codelab, cette introduction sera présentée sous forme de diaporama (environ 10min). Cela permettra à chacun de 
-préparer sereinement sa machine tout en se familiarisant progressivement avec la thématique abordée.
+The section “**Introduction to Generative AI Threats**” primarily aims to provide frameworks to understand the stakes and gain perspective on the topic before fully engaging in practice ("**Understanding the Principles of Prompt Injection and Their Impacts**").
+
+During the codelab, this introduction will be presented as a slideshow (around 10 minutes). This allows everyone to prepare their machine calmly while gradually familiarizing themselves with the subject.
 </details>
 
+### Introduction to Generative AI Threats (10 min)
 
-### Introduction aux menaces de l'IA générative (10 min)
- 
-- [1 - Il était une fois dans un monde numérique...](step_1.md)
-- [2 - Pourquoi la sécurité des LLM est-elle cruciale ?](step_2.md)
-- [3 - Des écarts sous contrôle relatif](step_3.md)
-- [4 - Cadres de sécurité référents](step_4.md)
+- [1 - Once Upon a Time in a Digital World...](step_1.md)
+- [2 - Why is LLM Security Crucial?](step_2.md)
+- [3 - Controlled Deviations](step_3.md)
+- [4 - Reference Security Frameworks](step_4.md)
 
-### Comprendre les principes du prompt injection (30 min)
- 
-- [5 - Introduction au playground et objectifs](step_5.md)
-- [6 - Techniques d'attaque par prompt injection](step_6.md)
-- [7 - Impacts réels et scénarios d'exploitation](step_7.md)
+### Understanding the Principles of Prompt Injection (30 min)
 
-### Test de robustesse (40 min)
+- [5 - Introduction to the Playground and Objectives](step_5.md)
+- [6 - Prompt Injection Attack Techniques](step_6.md)
+- [7 - Real Impacts and Exploitation Scenarios](step_7.md)
 
-- [8 - Test de robustesse ?](step_8.md)
+### Robustness Testing (40 min)
+
+- [8 - What is Robustness Testing?](step_8.md)
 - [9 - Garak: A Framework for Security Probing Large Language Models](step_9.md)
-- [10 - PyRIT: Framework for Security Risk Identification and Red Teaming in Generative AI System](step_10.md)
+- [10 - PyRIT: Framework for Security Risk Identification and Red Teaming in Generative AI Systems](step_10.md)
 
+### Countermeasures and Defense Strategies (35 min)
 
-### Contre-mesures et stratégies de défense (35 min)
+- [11 - Setting up Our Chatbot with the Tock Solution](step_11.md)
+- [12 - Implementing Initial Countermeasures with FastAPI](step_12.md)
+- [13 - Implementing NeMo Guardrails](step_13.md)
 
-- [11 - Mettre en place notre chatbot avec la solution Tock](step_11.md)
-- [12 - Mettre en place les premieres contre-mesures avec FastAPI](step_12.md)
-- [13 - Mettre en place NeMo Guardrails](step_13.md)
+### [BONUS] Evaluation and Improvement of Robustness
 
+- [14 - AI Red Teaming](step_14.md)
+- [15 - Benchmarking with Promptfoo](step15.md)
 
-### [BONUS] Évaluation et amélioration de la robustesse
+### [CONCLUSION] Going Further (5 min)
 
- - [14 - AI Red Teaming](step_14.md)
- - [15 - Benchmarking avec Promptfoo](step15.md)
-
-
-### [CONCLUSION] Pour aller plus loin (5 min)
-
-- [Remerciements](thanks-you.md)
-- [En savoir plus / ressources](resources.md)
+- [Acknowledgments](thanks-you.md)
+- [Learn More / Resources](resources.md)  
