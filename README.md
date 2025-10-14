@@ -18,34 +18,34 @@ préparer sereinement sa machine tout en se familiarisant progressivement avec l
 </details>
 
 
-### Introduction aux Menaces de l'IA Générative (10 min)
+### Introduction aux menaces de l'IA générative (10 min)
  
 - [1 - Il était une fois dans un monde numérique...](step_1.md)
 - [2 - Pourquoi la sécurité des LLM est-elle cruciale ?](step_2.md)
 - [3 - Des écarts sous contrôle relatif](step_3.md)
 - [4 - Cadres de sécurité référents](step_4.md)
 
-### Comprendre les Principes du Prompt Injection (30 min)
+### Comprendre les principes du prompt injection (30 min)
  
 - [5 - Introduction au playground et objectifs](step_5.md)
 - [6 - Techniques d'attaque par prompt injection](step_6.md)
 - [7 - Impacts réels et scénarios d'exploitation](step_7.md)
 
-### Test de Robustesse (40 min)
+### Test de robustesse (40 min)
 
 - [8 - Test de robustesse ?](step_8.md)
 - [9 - Garak: A Framework for Security Probing Large Language Models](step_9.md)
 - [10 - PyRIT: Framework for Security Risk Identification and Red Teaming in Generative AI System](step_10.md)
 
 
-### Contre-mesures et Stratégies de Défense (35 min)
+### Contre-mesures et stratégies de défense (35 min)
 
 - [11 - Mettre en place notre chatbot avec la solution Tock](step_11.md)
 - [12 - Mettre en place les premieres contre-mesures avec FastAPI](step_12.md)
 - [13 - Mettre en place NeMo Guardrails](step_13.md)
 
 
-### [BONUS] Évaluation et Amélioration de la Robustesse
+### [BONUS] Évaluation et amélioration de la robustesse
 
  - [14 - AI Red Teaming](step_14.md)
  - [15 - Benchmarking avec Promptfoo](step15.md)
