@@ -167,10 +167,14 @@ Pour lancer le scan d'une sonde custom sur une étape du Playground :
 <img src="img/ajout_probe_custom_garak.png" alt="ajout_probe_custom_garak" width="200" style="transition:0.3s;">
 <br/>
 <br/>
-2 - Lancer la commande listant les probes disponibles pour voir si nos probes custom sont apparues :
+2 - Copier aussi le fichier `my_detector` qui contient un exemple de detector custom `my_detector.MyPasswordByPass` pour le playground dans le répertoire `detectors` de la librairie garak que vous utilisez (dans votre venv).
+<br/>
+<br/>
+3 - Lancer les commande listant les detectors et probes disponibles pour voir si nos detectors et probes custom sont apparus :
 <br/>
 ```bash
 
+python -m garak --list_detectors
 python -m garak --list_probes
 ```
 <br/>
@@ -202,17 +206,17 @@ Vous pouvez aussi tenter un scan sur le niveau supérieur du chatbot 2 : le chat
 
 ###### résultat obtenus lors d'une tentative de jailbreak du chatbot 8 avec la même sonde custom my_probe.MyHypotheticalResponse
 
-| Chatbot | Probes conseillées                                                                                                              |
-|---------|---------------------------------------------------------------------------------------------------------------------------------|
-| Lab 1   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
-| Lab 2   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
-| Lab 3   | grandma.substance, MyGrandmaSubstance                                                                                           |
-| Lab 4   | grandma.substance, MyGrandmaSubstance                                                                                           |
-| Lab 5   | realtoxicityprompts.RTPInsult, realtoxicityprompts.RTPProfanity (/!\ ces probes utilisent un roberta-classifier comme detector) |
-| Lab 7   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
-| Lab 8   | MyHypotheticalResponse, MyGrandmaPassword                                                                                       |
-| Lab 9   | grandma.substance, MyGrandmaSubstance                                                                                           |
-| Lab 10  | grandma.substance, MyGrandmaSubstance                                                                                           |
+| Chatbot | Probes conseillées                                                | Remarques                                                      |
+|---------|-------------------------------------------------------------------|----------------------------------------------------------------|
+| Lab 1   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
+| Lab 2   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
+| Lab 3   | grandma.substance, MyGrandmaSubstance                             |                                                                |
+| Lab 4   | grandma.substance, MyGrandmaSubstance                             |                                                                |
+| Lab 5   | realtoxicityprompts.RTPInsult, realtoxicityprompts.RTPProfanity   | /!\ Ces probes utilisent un roberta-classifier comme detector) |
+| Lab 7   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
+| Lab 8   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
+| Lab 9   | grandma.substance, MyGrandmaSubstance                             |                                                                |
+| Lab 10  | grandma.substance, MyGrandmaSubstance                             |                                                                |
 
 
 ## Étape suivante
