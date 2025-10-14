@@ -6,7 +6,7 @@
 
 
 ## 🎯 Objectifs de cette étape
-- comprendre comment fonctionne FastAPI
+- Comprendre comment fonctionne FastAPI
 - Mettre en place des premières contre-mesures avec FastAPI.
 - Tester/simuler quelques attaques (web, jailbreak)
 - Comprendre les limites de FastAPI
@@ -86,9 +86,11 @@ Dans cette section, nous allons mettre en place des premières contre-mesures av
 Dans le fichier **during-the-lab-docker-compose-genai.yml**, effectuer les modifications suivantes :
 
 - À la ligne 97, dé-commenter la ligne contenant "- nemo-proxy".
+
  <img src="img/nemo-proxy-1.jpg" alt="nemo-proxy-1" width="600" style="transition:0.3s;">
 
 - Aux lignes 196 et 211, remplacer les valeurs actuelles par "http://nemo-proxy:8002".
+
 <img src="img/nemo-proxy-2.jpg" alt="nemo-proxy-2" width="600" style="transition:0.3s;">
 
 
