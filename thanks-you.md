@@ -1,36 +1,30 @@
-#  Merci !
-[<img src="img/the_grey_havens.png" alt="openfeedback-devfest-2025">](https://www.youtube.com/watch?v=l-5U_ZM-vkA)
-> "It is time. Frodo", Gandalf, LOTR - The Return of the King
+# Thank you!
+[![openfeedback-devfest-2025](img/the_grey_havens.png)](https://www.youtube.com/watch?v=l-5U_ZM-vkA)
 
+> "It is time. Frodo" — Gandalf, LOTR – The Return of the King
 
-## Merci à
+---
+
+## Thanks to
 
 | [<img src="img/devfest-nantes-2025.png"  alt="devfest" weight="" height="260">](https://devfest2025.gdgnantes.com/)		  | [<img src="img/tock-studio.png"  alt="Tock Studio" weight="" height="260">](https://doc.tock.ai/)		  |
 |:----------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------:|
 |                                                      **Devfest**                                                       |                                       **La communautée Tock**                                        |
 
 
-
-## Merci pour les encouragements
+## Thank you for the encouragement
 
 | [<img src="img/NVIDIA-logo.jpg"  alt="NVIDIA AI Red Team" weight="" height="120" >](https://nvidia.com/)		 | [<img src="img/microsoft-logo.jpg"  alt="Microsoft AI Red Team" weight="" height="120" >](https://learn.microsoft.com/fr-fr/security/ai-red-team/)	 | [<img src="https://avatars.githubusercontent.com/u/104169244?v=4"  alt="Ads Dawson" weight="" height="120" >](https://www.linkedin.com/in/adamdawson0/) |
 |:----------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------:|
 |                                           **NVIDIA AI Red Team**                                           |                                                              **Microsoft AI Red Team**                                                              |                               **Ads Dawson**,  AI/ML Staff Security Researcher                                |
 
 
-## Votre avis compte
+## Your feedback matters
 
-Nous espérons que ce workshop vous a plu et qu'il vous a permis de mieux comprendre les enjeux de la sécurité des LLMs.
+We hope you enjoyed this workshop and that it helped you better understand the challenges of LLM security.
 
-N'hésitez pas à nous laisser un commentaire sur [openfeedback](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm).
+Please leave a comment on [openfeedback](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm).
 
+[![openfeedback-devfest-2025](img/fantastic.png)](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm)
 
-[<img src="img/fantastic.png" alt="openfeedback-devfest-2025">](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm)
-
-
-Merci à toutes et à tous ! Et merci au Devfest Nantes 2025 de nous avoir permis d'animer ce codelab !
-
-
-## Merci à vous !! 
-
-[<img src="img/thanks.png" alt="thanks-devfest-2025">](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm)
+Thank you all! Special thanks to Devfest Nantes 2025 for the opportunity to run this codelab!

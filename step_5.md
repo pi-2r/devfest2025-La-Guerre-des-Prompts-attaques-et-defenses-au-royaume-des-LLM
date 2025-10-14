@@ -1,54 +1,45 @@
-# Introduction au playground et objectifs
+# Introduction to the Playground and Objectives
 
-[<img src="img/step5.jpg" alt="The Council of Elrond">](https://www.youtube.com/watch?v=-k3ABfmCr2I)
-> "Middle-Earth stands upon the brink of destruction. None can escape it. You will unite or you will fall.", Elrond, 
-> LOTR - The Followship of the Ring
+[![The Council of Elrond](img/step5.jpg)](https://www.youtube.com/watch?v=-k3ABfmCr2I)
+> "Middle-Earth stands upon the brink of destruction. None can escape it. You will unite or you will fall." — Elrond,  
+> LOTR – The Fellowship of the Ring
 
+## 🎯 Objectives of this Step
 
-## 🎯 Objectifs de cette étape
+- Discover how the Microsoft AI Red Teaming playground works
+- Practice manipulating and testing prompts in a secure environment
+- Learn to identify potential vulnerabilities of LLMs to attacks
 
-- Découvrir le fonctionnement du playground Microsoft AI Red Teaming
-- S’exercer à manipuler et tester des prompts dans un environnement sécurisé
-- Apprendre à identifier les vulnérabilités potentielles des LLM face aux attaques
+## Table of Contents
 
+- [Access to the Playground](#access-to-the-playground)
+- [Next Step](#next-step)
+- [Resources](#resources)
 
-## Sommaire
+## Access to the Playground
 
-- [Accès au playground](#accès-au-playground)
+The next steps of the lab rely on a playground developed by Microsoft during the [Black Hat USA 2024](https://www.blackhat.com/us-24/training/schedule/index.html#ai-red-teaming-in-practice-37464) event.  
+The official repository is available here: [https://github.com/microsoft/AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs).
 
+To use the playground, you have two options:
 
-- [Étape suivante](#étape-suivante)
-- [Ressources](#ressources)
+- If you have followed the prerequisites and installed the playground, go to:  
+  `http://localhost:5000/login?auth=YOUR_AUTH_KEY` (the value of **YOUR_AUTH_KEY** is found in the **.env** file)  
+  to log in locally.
 
+- If you have not installed the playground on your machine, you can access it directly via this codelab URL: **TODO ==> INSERT_IP**.
 
-## Accès au playground
+Here is what the playground interface looks like:
 
+![Microsoft AI Red Teaming Playground Labs](img/microsoft-ai-red-teaming-playground-labs.png)
 
-Les prochaines étapes du lab s’appuient sur un playground développé par Microsoft lors de l'événement [Black Hat USA 2024](https://www.blackhat.com/us-24/training/schedule/index.html#ai-red-teaming-in-practice-37464). 
-Le dépôt officiel est accessible ici : https://github.com/microsoft/AI-Red-Teaming-Playground-Labs. 
+## Next Step
 
+- [Step 6](step_6.md)
 
-Pour utiliser le playground, deux options s’offrent à vous :
+## Resources
 
-- Si vous avez suivi les prérequis et installé le playground, rendez-vous à l’adresse suivante :  
-http://localhost:5000/login?auth=YOUR_AUTH_KEY (la valeur de **YOUR_AUTH_KEY** se trouve dans le fichier **.env**) 
-afin de vous connecter en local.
-
-- Si vous n’avez pas installé le playground sur votre machine, vous pouvez y accéder directement via cette URL du 
-codelab : **TODO ==> METTRE_IP**.
-
-Voici à quoi ressemble l’interface du playground :
-
-<img src="img/microsoft-ai-red-teaming-playground-labs.png" alt="Microsoft AI Red Teaming Playground Labs" width="800" >
-
-
-## Étape suivante
-
-- [Étape 6](step_6.md)
-
-## Ressources
-
-| Information                                                                        | Lien                                                                                                                                                                 |
-|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AI Red Teaming 101 – Full Course (Episodes 1-10)                                   | [https://www.youtube.com/watch?v=DwFVhFdD2fs](https://www.youtube.com/watch?v=DwFVhFdD2fs)                                                                           |
-| AI Red Teaming Playground Labs - GitHub                                            | [https://github.com/microsoft/AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs)                                           |
+| Information                                        | Link                                                                                                    |
+|--------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| AI Red Teaming 101 – Full Course (Episodes 1-10) | [https://www.youtube.com/watch?v=DwFVhFdD2fs](https://www.youtube.com/watch?v=DwFVhFdD2fs)              |
+| AI Red Teaming Playground Labs - GitHub           | [https://github.com/microsoft/AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs) |
