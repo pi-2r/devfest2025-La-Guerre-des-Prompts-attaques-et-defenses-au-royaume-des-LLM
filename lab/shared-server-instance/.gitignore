@@ -1,0 +1,7 @@
+# Ollama local registry
+data/ollama_registry/*
+!data/ollama_registry/.gitkeep
+
+# Docker local registry
+data/docker_registry/*
+!data/docker_registry/.gitkeep
