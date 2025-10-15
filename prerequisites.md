@@ -198,7 +198,8 @@ Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer 
 puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
 
 ```bash
-# 1. Créer un environnement virtuel dans le répertoire courant
+# 1. Créer un environnement virtuel a la racine du repo
+# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
 python3 -m venv .venv
 
 # 2. Activer l’environnement virtuel
@@ -221,8 +222,10 @@ Ensuite, créez un environnement virtuel Python, activez-le, puis installez les 
 suivantes :
 
 ```bash
-# 1. Créer un environnement virtuel dans le répertoire courant
-python3 -m venv .venv
+# Assurez d'être dans le venv créé à la racine du projet du lab
+# 1. Créer un environnement virtuel a la racine du repo
+# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
+source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
 
 # 2. Activer l’environnement virtuel
 source .venv/bin/activate
