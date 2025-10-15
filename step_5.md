@@ -12,11 +12,11 @@
 
 ## Table of Contents
 
-- [Access to the Playground](#access-to-the-playground)
+- [Access to the playground](#access-to-the-playground)
 - [Next Step](#next-step)
 - [Resources](#resources)
 
-## Access to the Playground
+## Access to the playground
 
 The next steps of the lab rely on a playground developed by Microsoft during the [Black Hat USA 2024](https://www.blackhat.com/us-24/training/schedule/index.html#ai-red-teaming-in-practice-37464) event.  
 The official repository is available here: [https://github.com/microsoft/AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs).

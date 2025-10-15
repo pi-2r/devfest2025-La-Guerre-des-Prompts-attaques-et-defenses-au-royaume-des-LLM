@@ -11,7 +11,7 @@
 - Identify the most used generative AI applications, notably chatbots and copilots
 - Analyze the impact of LLMs on professional productivity
 
-## Table of Contents
+## Table of contents
 
 - [2022 The Launch](#2022-the-launch)
 - [Artificial Intelligence, Neural Networks, and LLMs](#artificial-intelligence-neural-networks-and-llms)

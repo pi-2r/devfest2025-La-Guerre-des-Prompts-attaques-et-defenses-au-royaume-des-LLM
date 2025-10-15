@@ -24,7 +24,7 @@
   - [Implementation and SAIF community](#implementation-and-saif-community)
 
 - [MITRE ATLAS, the Ariadne's thread of AI attack techniques](#mitre-atlas-the-ariadnes-thread-of-ai-attack-techniques)
-  - [Purpose of MITRE ATLAS](#purpose-of-mitre-atlas)
+  - [Objective of MITRE ATLAS](#objective-of-mitre-atlas)
   - [Framework](#framework)
   - [Fundamental elements of MITRE ATLAS](#fundamental-elements-of-mitre-atlas)
   - [How to use it](#how-to-use-it)
@@ -284,7 +284,7 @@ For each risk, controls and mitigation measures are proposed, along with designa
 
 The SAIF mapping allows identifying where each risk arises (introduction), where it can be exploited (exposure), and at which level it can be mitigated (associated element or control).
 
-### SAIF Implementation and Community
+### Implementation and SAIF community
 
 **Google** provides **SAIF** as a reference point for enterprises, governments, and organizations with a resource center (saif.google) offering self-assessment guides, security controls, and a community space. Google works in coalition ([The Coalition for Secure AI](https://www.coalitionforsecureai.org/)) with major industry players such as **Amazon**, **Cisco**, **IBM**, **Intel**, **Microsoft**, **NVIDIA**, **OpenAI**,... to advance adoption of this framework, aiming to secure AI for the benefit of all.
 
@@ -309,7 +309,7 @@ The **MITRE ATLAS** (Adversarial Tactics, Techniques, and Common Knowledge for A
 
 The objective of ATLAS is to provide a structured knowledge base on tactics and techniques employed by attackers against AI, thus facilitating proactive protection of these systems and optimizing their security within the enterprise ecosystem.
 
-### Reference Framework
+### Framework
 
 The [**MITRE ATLAS**](https://atlas.mitre.org/) heavily draws from the well-known [**MITRE ATT&CK**](https://attack.mitre.org/), used in traditional cybersecurity to map threats and adversarial actions on information systems. ATLAS applies this approach to AI, focusing on risks, vulnerabilities, and attack techniques specific to AI and machine learning technologies.
 
@@ -341,7 +341,7 @@ Users can navigate the repository to identify threats relevant to their context,
 
 - **Development of Defensive Use Cases**: The techniques documented in ATLAS serve as a basis for creating detection rules, penetration test scenarios, and mitigation plans specific to AI systems.
 
-## Legislative Regulation of Large Language Models (LLMs)
+## Legislative regulation of LLMs
 
 Between 2013 and 2023, American companies attracted a volume of private capital more than six times greater than that invested in European companies, thereby fostering an unparalleled ecosystem of innovation in the field of artificial intelligence.
 
@@ -357,7 +357,7 @@ For comparison, **American** companies raised approximately **$486.1 billion** i
 
 Thus, in recent years, many countries have implemented new regulations to address issues related to AI technologies, particularly to curb the spread of disinformation and hate speech. Here is an overview of the approaches adopted by the United States and the European Union regarding the regulation of large language models (LLMs).
 
-### Challenges and Principles
+### Issues and principles
 
 - **Balance of responsibility/innovation:** Regulating LLMs requires maintaining a proper balance between holding actors (developers, deployers, users) accountable and preserving innovation. LLMs offer major benefits (education, accessibility, creativity) but also entail risks, such as generating harmful content.
 
@@ -375,7 +375,7 @@ Thus, in recent years, many countries have implemented new regulations to addres
 
 - **Best practices and self-regulation:** Public organizations such as [NIST (National Institute of Standards and Technology)](https://www.nist.gov/) recommend risk management practices (AI RMF). Additionally, the [Federal Trade Commission (FTC)](https://www.ftc.gov/) can act against deceptive commercial practices involving AI.
 
-## European Union: Structured and Risk-Based Regulation
+## European Union: structured risk-based framework
 
 European regulation revolves around two main texts:
 
