@@ -5,6 +5,16 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.l
 <img src="img/la-guerre-des-prompts-attaques-et-defenses-au-royaume-des-llm.png"  alt="La Guerre des Prompts : attaques & défenses au royaume des LLM">
 
 
+## Info réseau
+
+Point d'accès wifi :
+* SSID: LLM_ATTACK
+* Mot de passe: password
+
+Lab AI Red Team partagé disponible ici : http://192.168.20.2:5000/login?auth=YOUR_AUTH_KEY
+
+Instance partagée de Tock disponible ici : http://192.168.20.2/
+
 ## Sommaire
 
 <details>
