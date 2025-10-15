@@ -1,8 +1,8 @@
 {
   "rest": {
     "RestGenerator": {
-      "name": "AI-Playground-API", // Nom que vous souhaitez donner à ce generator
-      "uri": "http://localhost:REPLACE_WITH_CHATBOT_PORT/chats/REPLACE_WITH_CHAT_ID/messages", // URL de l'API du playground
+      "name": "AI-Playground-API",
+      "uri": "http://localhost:REPLACE_WITH_CHATBOT_PORT/chats/REPLACE_WITH_CHAT_ID/messages", 
       "method": "post",
       "headers": {
         "Accept": "*/*",
@@ -25,7 +25,7 @@
         ]
       },
       "response_json": true,
-      "response_json_field": "value", // Champ de la réponse JSON contenant la réponse du modèle
+      "response_json_field": "value",
       "request_timeout": 30
     }
   }

@@ -44,7 +44,8 @@ On peut ensuite mettre en place des guardrails plus spécifiques avec **NEMO Gua
 Pour installer Garak, vous pouvez utiliser pip. Exécutez la commande suivante dans votre terminal :
 
 ```bash
-# 1. Créer un environnement virtuel dans le répertoire courant
+# 1. Créer un environnement virtuel a la racine du repo
+# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
 python3 -m venv .venv
 
 # 2. Activer l’environnement virtuel
@@ -169,6 +170,11 @@ Pour lancer le scan d'une sonde custom sur une étape du Playground :
 <br/>
 2 - Copier aussi le fichier `my_custom_detection.py` qui contient un detector custom `my_custom_detection.MyPasswordByPass` pour le playground dans le répertoire `detectors` de la librairie garak que vous utilisez (dans votre venv). Le detector custom `my_custom_detection.MyPasswordByPass` détecte si un des mots de passe qui doit être protégé a fuité dans la réponse du chatbot.
 <br/>
+```bash
+# Depuis la racine du repo vers votre .venv
+cp lab/Garak_test/my_custom_detection.py .venv/lib/python*/site-packages/garak/detectors/
+cp lab/Garak_test/my_probe.py  .venv/lib/python*/site-packages/garak/probes  
+```
 <br/>
 3 - Lancer les commande listant les detectors et probes disponibles pour voir si nos detectors et probes custom sont apparus :
 <br/>
