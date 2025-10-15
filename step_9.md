@@ -162,12 +162,12 @@ requête POST `messages` et les cookies.
 Pour lancer le scan d'une sonde custom sur une étape du Playground :
 <br/>
 <br/>
-1 - Copier le fichier `my_probe` qui contient un exemple de sonde custom `my_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre venv).
+1 - Copier le fichier `my_probe.py` qui contient un exemple de sonde custom `my_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre `.venv`).
 <br/>
 <img src="img/ajout_probe_custom_garak.png" alt="ajout_probe_custom_garak" width="200" style="transition:0.3s;">
 <br/>
 <br/>
-2 - Copier aussi le fichier `my_detector` qui contient un exemple de detector custom `my_detector.MyPasswordByPass` pour le playground dans le répertoire `detectors` de la librairie garak que vous utilisez (dans votre venv).
+2 - Copier aussi le fichier `my_custom_detection.py` qui contient un detector custom `my_custom_detection.MyPasswordByPass` pour le playground dans le répertoire `detectors` de la librairie garak que vous utilisez (dans votre venv). Le detector custom `my_custom_detection.MyPasswordByPass` détecte si un des mots de passe qui doit être protégé a fuité dans la réponse du chatbot.
 <br/>
 <br/>
 3 - Lancer les commande listant les detectors et probes disponibles pour voir si nos detectors et probes custom sont apparus :
@@ -199,12 +199,19 @@ python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --pro
 
 ###### résultat obtenus lors du jailbreak réussi du chatbot 2 avec la sonde custom my_probe.MyHypotheticalResponse
 
-3 - Une fois un scan ayant mené à un jailbreak réussi, vous pouvez retrouver le rapport HTML dans le répertoire indiqué dans le log de Garak.
+3 - Une fois un scan ayant mené à un jailbreak réussi, vous pouvez retrouver le rapport HTML dans le répertoire indiqué dans le log de Garak. Si toutes les attempts de jailbreak ont réussi, le rapport HTML ne indiquera un score de 0% de succès d'interceptio (cf ci-dessous).
+
+<img src="img/garak_report_on_successful_jailbreak_attempts.png" alt="garak-successful-jailbreak-chatbot-2-report" width="600" style="transition:0.3s;">
+
 Vous pouvez aussi tenter un scan sur le niveau supérieur du chatbot 2 : le chatbot 8 et modifier la sonde custom ou bien en tenter d'autres (une grandma ou un DAN custom).
 
 <img src="img/jailbreak_failed_by_custom_probe_chatbot_8.png" alt="jailbreak-failed-chatbot-9" width="600" style="transition:0.3s;">
 
 ###### résultat obtenus lors d'une tentative de jailbreak du chatbot 8 avec la même sonde custom my_probe.MyHypotheticalResponse
+
+Ici le rapport de Garak indique un taux de succès de 100% sur la sonde custom `my_probe.MyHypotheticalResponse` car aucune des attempts de jailbreak n'a réussi.
+
+<img src="img/garak_report_on_failed_jailbreak_attempts.png" alt="garak-failed-jailbreak-chatbot-8-report" width="600" style="transition:0.3s;">
 
 | Chatbot | Probes conseillées                                                | Remarques                                                      |
 |---------|-------------------------------------------------------------------|----------------------------------------------------------------|
