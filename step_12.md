@@ -89,7 +89,7 @@ Dans le fichier **during-the-lab-docker-compose-genai.yml**, effectuer les modif
 
  <img src="img/nemo-proxy-1.jpg" alt="nemo-proxy-1" width="600" style="transition:0.3s;">
 
-- Aux lignes 196 et 211, remplacer les valeurs actuelles par "http://nemo-proxy:8002".
+- Aux lignes 108 et 110, remplacer les valeurs actuelles par "http://nemo-proxy:8002".
 
 <img src="img/nemo-proxy-2.jpg" alt="nemo-proxy-2" width="600" style="transition:0.3s;">
 

@@ -82,6 +82,17 @@ une **utilisation modérée** de **gpt-5-nano**, n’avons pas dépassé 5 $ de 
 
 </details>
 
+Vous pouvez tester votre clef OpenAi par exemple avec une requête simple en curl :
+
+```bash
+curl https://api.openai.com/v1/responses \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $OPENAI_API_KEY" \
+-d '{
+"model": "gpt-3.5-turbo",
+"input": "Tell me a three sentence bedtime story about a unicorn."
+}'
+```
 
 ### L'outil Ollama
 
@@ -148,14 +159,19 @@ Dans votre terminal, placez-vous dans le répertoire où vous souhaitez installe
 Exécutez ensuite la commande suivante pour cloner le dépôt et accéder directement au dossier créé :
 
 ```bash
-git clone https://github.com/NVIDIA-NeMo/Guardrails.git && cd NeMo-Guardrails
+git clone https://github.com/NVIDIA-NeMo/Guardrails.git && cd Guardrails
 pwd
 ```
 
 
 #### Tock
 
-Accédez au dossier **lab/tock**.
+Retournez dans le dépôt du codelab et accédez au dossier **lab/tock** :
+
+```bash
+cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/lab/tock/
+pwd
+```
 
 Dans le fichier **template-internet.env**, complétez ensuite la variable d'environnement **OPENAI_API_KEY** avec la clé obtenue précédemment.
 
