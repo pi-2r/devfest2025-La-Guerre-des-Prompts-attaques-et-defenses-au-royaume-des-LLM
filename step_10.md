@@ -1,123 +1,111 @@
-# PyRIT: framework for security risk Identification and Red Teaming in Generative AI System
+# PyRIT: Framework for Security Risk Identification and Red Teaming in Generative AI Systems
 
 [<img src="img/step10.jpg" alt="gandalf" width="800">](https://www.youtube.com/watch?v=__m75rCcusM)
-> "They broke our defenses. They've taken the bridge and the West bank. Battalions of orcs are crossing the river", Gandalf, LOTR - The Return of the King
+> "They broke our defenses. They've taken the bridge and the West bank. Battalions of orcs are crossing the river," Gandalf, *LOTR - The Return of the King*
+
+## 🎯 Objectives of This Stage
+
+- Understand how PyRIT works and its main components.
+- Install and configure PyRIT to perform automated attacks.
+- Use PyRIT to test the security of the Gandalf playground up to level 7.
+- Analyze attack strategies and the results obtained.
 
 
-## 🎯 Objectifs de cette étape
+## Summary
+- [Main Objective](#main-objective)
 
-- Todo
+- [PyRIT](#pyrit)
+    - [Presentation of PyRIT](#presentation-of-pyrit)
+    - [What is PyRIT used for ?](#what-is-pyrit-used-for-)
+    - [How does it work ?](#how-does-it-work-)
+    - [What are the 5 components of PyRIT ?](#what-are-the-5-components-of-pyrit-)
+    - [PyRIT architecture diagram](#pyrit-architecture-diagram)
 
+- [Let's play with PyRIT!](#Lets-play-with-PyRIT-)
+    - [Installing PyRIT](#installing-pyrit)
+    - [Attack strategies](#attack-strategies)
+    - [Playing with PyRIT](#playing-with-pyrit)
+        - [Configure parameters](#configure-parameters)
+        - [Understand the code](#understand-the-code)
+        - [Launch the attack](#launch-the-attack)
+        - [Stuck already ?!](#stuck-already-)
+        - [Solutions](#solutions)
 
-## Sommaire
-- [Objectif principal](#objectif-principal)
+- [Next step](#next-step)
+- [Resources](#resources)
 
+## Main Objective
 
-- [PyRIT](#présentation-de-pyrit)
-  - [Présentation de PyRIT](#présentation-de-pyrit)
-  - [À quoi sert PyRIT ?](#à-quoi-sert-pyrit-)
-  - [Comment ça fonctionne ?](#comment-ça-fonctionne-)
-  - [Quels sont les 5 composants de PyRIT ?](#quels-sont-les-5-composants-de-pyrit-)
-  - [schema d'architecture PyRIT](#schema-darchitecture-pyrit)
+In this section, we will leverage PyRIT's automated attack functionalities to test the security of the [Gandalf playground](https://gandalf.lakera.ai/) up to level 7.
 
-- [Let's play with PyRIT !](#Let's-play-with-PyRIT-)
-  - [Installation de PyRIT](#installation-de-pyrit)
-  - [Stratégies d'attaque](#stratégies-dattaque)
-  - [Jouer avec PyRIT](#jouer-avec-pyrit)
-    - [Configurer les paramètres](#configurer-les-paramètres)
-    - [Comprendre le code](#comprendre-le-code)
-    - [Lancer l'attaque](#lancer-lattaque)
-    - [Ça bloque déjà ?!](#ça-bloque-déjà-)
-    - [Solutions](#solutions)
-
-
-- [Étape suivante](#étape-suivante)
-- [Ressources](#ressources)
-
-## Objectif principal
-
-Dans cette partie, nous allons exploitez les fonctionnalités d’attaque automatisée de PyRIT pour tester la sécurité du
-[playground Gandalf](https://gandalf.lakera.ai/) jusqu’au niveau 7.
-
-L’objectif est de franchir progressivement les barrières de chaque niveau, en surmontant les défis croissants conçus 
-pour résister aux manipulations et à l’extraction de données sensibles.
+The goal is to progressively bypass the barriers at each level, overcoming increasing challenges designed to resist manipulations and sensitive data extraction.
 
 <img src="img/gandalf_target_level_7.jpg" alt="gandalf levels" width="600" style="transition:0.3s;">
 
+
 ## PyRIT
 
-![GitHub stars](https://img.shields.io/github/stars/Azure/PyRIT?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/Azure/PyRIT?style=flat-square)  
 [![Downloads](https://static.pepy.tech/badge/garak/month)](https://pepy.tech/project/garak)
 
-**PyRIT** (Python Risk Identification Toolkit) est un framework open-source conçu pour faciliter l’identification des 
-risques de sécurité dans les systèmes d’IA générative, via des approches de red teaming structurées et reproductibles.
+**PyRIT** (Python Risk Identification Toolkit) is an open-source framework designed to facilitate the identification of security risks in generative AI systems through structured and reproducible red teaming approaches.
 
-### Présentation de PyRIT
+### Presentation of PyRIT
 
-**PyRIT** est un outil qui permet d’évaluer la robustesse et la sécurité des modèles d’IA générative (LLM, modèles 
-multimodaux, etc.) en simulant, automatisant et analysant différents types d’attaques et comportements risqués. 
+**PyRIT** is a tool that allows evaluating the robustness and security of generative AI models (LLMs, multimodal models, etc.) by simulating, automating, and analyzing different types of attacks and risky behaviors.
 
-Il se veut agnostique par rapport aux modèles et plateformes : il peut donc être utilisé pour tester une large variété 
-d’IA, quel que soit leur fournisseur ou leur type.
+It is model- and platform-agnostic, meaning it can be used to test a wide variety of AI systems regardless of their provider or type.
 
-### A quoi sert PyRIT ?
+### What is PyRIT used for ?
 
-- **Identifier les failles et vulnérabilités** dans les modèles d’IA générative (par exemple : jailbreaks, biais, contenus dangereux, attaques par injection de prompt, etc.).
+- **Identify flaws and vulnerabilities** in generative AI models (e.g., jailbreaks, biases, harmful content, prompt injection attacks, etc.).
 
+- **Structure and automate red teaming tests** (ethical hacking tests) to assess real risks of models before deployment.
 
-- **Structurer et automatiser les tests de red teaming** (tests d’attaque par des "gentils hackers") pour évaluer les risques réels des modèles avant leur mise en production.
+- **Establish baselines and metrics** to measure progress or compare different models or versions.
 
-
-- **Établir des bases de comparaison et des métriques** pour mesurer les progrès ou comparer différents modèles ou itérations.
+### How does it work ?
 
 
-### Comment ça fonctionne ?
+The framework is based on a modular architecture: each component (attack, target, transformer, scoring system) can be customized and assembled to create evaluation flows tailored to different scenarios.
 
-Le framework repose sur une architecture modulaire : chaque composant (attaque, cible, transformateur, système de 
-scoring) peut être personnalisé et assemblé pour créer des flux d’évaluation adaptés à différents scénarios.
+1. First, an *orchestrator* is chosen to determine the desired attack/scenario type (simple prompt, multi-turn attack, attack on external document, etc.).
 
-1.  On choisit d’abord un "orchestrateur" pour déterminer le type d’attaque/scénario souhaité (simple prompt, attaque 
-sur plusieurs tours, attaque sur document externe, etc.).
+2. The target is configured (the AI model or API to be tested).
 
+3. *Converters* are used to transform or modify prompts to test the model’s resistance to various variations (translations, substitutions, leetspeak, etc.).
 
-2.  On configure la cible (le modèle d’IA ou l’API à tester).
+4. The attack strategy is defined: simple prompts, templates to fill, or dynamically generated attacks by an attacking AI.
 
+5. The responses obtained are evaluated using scoring techniques: content classification, Likert scale, or customization based on needs.
 
-3. On utilise des "converters" pour transformer ou modifier les prompts afin de tester la résistance du modèle aux 
-différentes variations (traductions, substitutions, leetspeak, etc.).
-
-
-4. On définit la stratégie d’attaque : prompts simples, templates à compléter, ou attaque générée dynamiquement par une
-IA attaquante.
+This modularity allows composing these building blocks to cover very diverse and realistic scenarios.
 
 
-5. On évalue les réponses obtenues en utilisant des techniques de scoring : classification de contenu, échelle de 
-Likert, ou personnalisation selon les besoins.
 
-Dès lors, la modularité permet de composer ces briques pour couvrir des scénarios très variés et réalistes.
+### What are the 5 components of PyRIT ?
 
-
-### Quels sont les 5 composants de PyRIT ?
-
-
-| Module                | Description                                                                              | Exemples/Types                                                                                                                                                  |
-|-----------------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Orchestrators**     | Coordonnent le déroulement de l’attaque et la logique de dialogue                        | PromptSendingOrchestrator, RedTeamingOrchestrator, EndTokenRedTeamingOrchestrator, ScoringRedTeamingOrchestrator, XPIA Orchestrators                            |
-| **Converters**        | Transforment les prompts pour tenter de contourner les gardes fous                       | leetspeak, ROT13, unicode confusable, variation/translation, etc.                                                                                               |
-| **Targets**           | Interface vers le modèle à tester                                                        | API d’inférence, modèles chat, multimodal, stockage externe                                                                                                     |
-| **Attack Strategies** | Définissent les objectifs d’attaque et la génération des prompts                         | Manuel, automatisé via IA attaquante                                                                                                                            |
-| **Scoring**           | Analyse et évalue les réponses du modèle                                                 | Classificateurs de contenu (biais, thématique), échelles de Likert (graduation sur 5 niveaux), évaluations personnalisées (booléen, string, mot de passe, etc.) |
+| Module                | Description                                                              | Examples/Types                                                                                                                                  |
+|-----------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Orchestrators**     | Coordinate the attack flow and dialogue logic                            | PromptSendingOrchestrator, RedTeamingOrchestrator, EndTokenRedTeamingOrchestrator, ScoringRedTeamingOrchestrator, XPIA Orchestrators            |
+| **Converters**        | Transform prompts to try to bypass safeguards                            | leetspeak, ROT13, unicode confusable, variation/translation, etc.                                                                               |
+| **Targets**           | Interface to the model to be tested                                      | Inference API, chat models, multimodal, external storage                                                                                        |
+| **Attack Strategies** | Define attack objectives and prompt generation                           | Manual, automated via attacking AI                                                                                                              |
+| **Scoring**           | Analyze and evaluate model responses                                     | Content classifiers (bias, topics), Likert scales (5-level graduation), customized evaluations (boolean, string, password, etc.)                |
 
 
-Pour les orchestrateurs, voici quelques details supplémentaires :
-- **PromptSendingOrchestrator** : envoie un prompt simple au modèle et analyse la réponse.
-- **RedTeamingOrchestrator** : simule une attaque de red teaming sur plusieurs tours de dialogue.
-- **EndTokenRedTeamingOrchestrator** : similaire au précédent, mais s’arrête dès qu’un "end token" est détecté dans la réponse.
-- **ScoringRedTeamingOrchestrator** : intègre une étape de scoring pour évaluer la qualité ou le risque de la réponse.
-- **XPIA Orchestrators** : conçus pour tester les attaques par injection de prompt indirecte via données externes.
+Here are some additional details about the orchestrators:
+
+- **PromptSendingOrchestrator**: sends a simple prompt to the model and analyzes the response.
+- **RedTeamingOrchestrator**: simulates a red teaming attack over multiple dialogue turns.
+- **EndTokenRedTeamingOrchestrator**: similar to the previous one, but stops as soon as an "end token" is detected in the response.
+- **ScoringRedTeamingOrchestrator**: integrates a scoring step to evaluate the quality or risk of the response.
+- **XPIA Orchestrators**: designed to test indirect prompt injection attacks via external data.
+
+These orchestrators provide flexible and effective methods to control different attack scenarios and test the robustness of AI models.
 
 
-### schema d'architecture PyRIT
+### PyRIT architecture diagram
 
                         +---------------------+
                         |     Orchestrator    |
@@ -146,148 +134,125 @@ Pour les orchestrateurs, voici quelques details supplémentaires :
 
 ## Let's play with PyRIT !
 
-### Installation de PyRIT
+### Installing PyRIT
 
-Si vous n'avez pas déjà installé PyRIT, voici comment faire depuis votre terminal. Placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
-puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
+Since your terminal, navigate to the folder where you want to install the project, for example **Documents**,  
+then execute the following command to clone the repository and automatically enter the created folder:
 
 ```bash
-git clone https://github.com/Azure/PyRIT.git --depth 1 && cd PyRIT
+git clone https://github.com/Azure/PyRIT.git && cd PyRIT
 ```
 
-Ensuite, créez un environnement virtuel Python, activez-le, puis installez les dépendances du projet avec les commandes
-suivantes :
-
-<details>
-  <summary>Installation d'uv (si vous n'avez pas suivi les prérequis)</summary>
-
-Voir documentation ici : https://docs.astral.sh/uv/getting-started/installation/#standalone-installer
-
-En bref :
-```bash
-pip install uv
-
-# Si vous n'avez pas pip
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-</details>
+Next, create a Python virtual environment, activate it, then install the project dependencies with the following commands:
 
 
 ```bash
-# Assurez d'être dans le venv créé à la racine du projet du lab
-# Check que vous êtes dans le bon venv ;) On est jamais trop prudent
-# Celui à la racine du repo.
-[[ "${VIRTUAL_ENV-}" == *"devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM"* ]] || { echo "❌ Wrong/missing venv" >&2; return 1 2>/dev/null || exit 1; }
+# 1. Créer un environnement virtuel dans le répertoire courant
+python3 -m venv .venv
+
+# 2. Activer l’environnement virtuel
+source .venv/bin/activate
 
 # 3. Mettre à jour pip, setuptools et wheel dans l’environnement
-uv pip install --upgrade pip setuptools wheel
+pip install --upgrade pip setuptools wheel
 
 # 4. Installer la dépendance requise
-uv pip install IPython
+pip install IPython
 
 # 5. Installer ce projet localement en mode développement (utile pour développement/débogage)
-uv pip install -e .
+pip install -e .
 ```
 
-Après exécution, vous devriez obtenir des messages indiquant la création de l’environnement virtuel, puis l’installation
-des dépendances du projet. Par exemple :
+After running the commands, you should see messages indicating the creation of the virtual environment, followed by the 
+installation of the project dependencies. For example:
 
 <img src="img/pyrit-install.png" alt="Pyrit install" width="600" style="transition:0.3s;">
 
 
-### Stratégies d'attaque
+### Attack strategies
 
                 +--------------------------+
-                |   Définir l'Objectif     |
+                |   Define the Objective   |
                 +-----------+--------------+
                             |
                             v
                 +--------------------------+
-                |  Choisir AttackStrategy  |
+                |  Choose AttackStrategy   |
                 +-----------+--------------+
                             |
                             v
                 +--------------------------+
-                |  Générer ou choisir le   |
+                |  Generate or Choose the  |
                 |        prompt            |
                 +-----------+--------------+
                             |
                             v
                 +--------------------------+
-                |    Appliquer Converter   |
-                | (Transformation prompt)  |
+                |    Apply Converter       |
+                | (Prompt Transformation)  |
                 +-----------+--------------+
                             |
                             v
                 +--------------------------+
-                |   Envoyer au Target      |
-                |   (modèle testé)         |
+                |    Send to Target        |
+                |   (Model being tested)   |
                 +-----------+--------------+
                             |
                             v
                 +--------------------------+
-                |   Récupérer la réponse   |
+                |   Retrieve the Response  |
                 +-----------+--------------+
                             |
                             v
                 +--------------------------+
-                |     Scoring/Évaluation   |
+                |     Scoring/Evaluation   |
                 +-----------+--------------+
                             |
                             v
                 +--------------------------+
-                |      Enregistrer         |
-                |    Score & logs          |
+                |    Save Score & Logs     |
                 +--------------------------+
 
-## Jouer avec PyRIT
+## Playing with PyRIT
 
-Dans cette section, nous allons utiliser PyRIT pour mener des attaques sur la plateforme Gandalf. Comme mentionné 
-précédemment, l’objectif est de progresser à travers les niveaux pour atteindre le niveau 7 !
+In this section, we will use PyRIT to perform attacks on the Gandalf platform. As mentioned earlier,  
+the goal is to progress through the levels to reach level 7!
 
-Allez dans le  dossier **lab/PyRIT** de ce codelab.
+Start by navigating to the **lab/Pyrit** folder, then copy the two files `gandalf.py` and `settings.yml`  
+into the Pyrit folder you cloned where the project is already installed.
 
-### Configurer les paramètres
+### Configure parameters
 
-Ouvrez le fichier **settings.yml** et renseignez votre clé OpenAI ainsi que le modèle à utiliser.
+Open the **settings.yml** file and enter your OpenAI key as well as the model to use.
 
-> Il est recommandé de débuter avec un modèle léger, tel que gpt-3.5-turbo. Ensuite, à mesure que la difficulté 
-> augmente et que vous maîtrisez mieux le code, vous pouvez passer à un modèle plus performant — donc plus coûteux et 
-> plus rapide — comme gpt-4o-mini, que nous avons utilisé pour les exercices les plus complexes.
-
-
-### Comprendre le code
+> It is recommended to start with a lightweight model, such as gpt-3.5-turbo. Then, as the difficulty increases  
+> and you become more proficient with the code, you can switch to a more powerful — and therefore more costly — model  
+> like gpt-4o-mini, which we used for the more complex exercises.
 
 
-Le code de base de cet exercice s’appuie sur la documentation officielle de PyRIT :
-https://azure.github.io/PyRIT/code/targets/2_custom_targets.html#gandalf-target.
-
-Nous avons toutefois adapté ce code pour le codelab.
+### Understand the code
 
 
-### Lancer l'attaque
+The basic code for this exercise is based on the official PyRIT documentation: [https://azure.github.io/PyRIT/code/targets/2_custom_targets.html#gandalf-target](https://azure.github.io/PyRIT/code/targets/2_custom_targets.html#gandalf-target).  
+However, we have adapted this code specifically for the codelab.
 
-Pour exécuter le script, utilisez la commande suivante dans votre terminal :
+
+### Launch the attack
+
+To run the script, use the following command in your terminal:
 
 ```bash
 python gandalf.py
 ```
 
-Vous devriez avoir ce type de rendu :
+You should see an output like this:
 
 <img src="img/gandalf_level_1_example.jpg" alt="Pyrit gandalf level 1" width="600" style="transition:0.3s;">
 
-Pour progresser dans les niveaux, il suffit de relancer la commande en prenant soin de modifier le niveau dans le 
-fichier gandalf.py en ligne 48 :
 
-```python
-gandalf_level = GandalfLevel.LEVEL_1
-```
+### Stuck already ?!
 
-
-### Ça bloque déjà ?!
-
-Comme évoquer dans la documentation, cet exemple de code fonctionne pour les premiers niveaux :
+As mentioned in the documentation, this code example works for the first levels:
 
 > Gandalf contains 7 different levels. In this demo, we will show how to automatically bypass (at least) the first 
 > couple. It uses the RedTeamingAttack as a strategy to solve these challenges.
@@ -295,22 +260,23 @@ Each level gets progressively more difficult. Before continuing, it may be benef
 > challenges to get a feel for how they are solved.
 
 
-Comment resoudre les niveaux supérieurs ? Voici quelques pistes :
+How to solve the higher levels? Here are some clues:
 
-- La compréhension de la logique d'attaque est expliqué dans ce document : https://arxiv.org/abs/2410.02828
-- Tout se passe dans **Stratégie d'attaque**
-- Il y a une reférence à l'étape 6
+- The understanding of the code and attack logic is explained in this paper: [https://arxiv.org/abs/2410.02828](https://arxiv.org/abs/2410.02828)
+- Everything happens in the **Attack Strategy** section
+- There is a reference to step 6
+
 
 
 ### Solutions
 
 [solutions/step10.md](solutions/step10.md)
 
-## Étape suivante
+## Next step
 
 - [Étape 11](step_11.md)
 
-## Ressources
+## Resources
 
 
 | Information                                                                       | Lien                                                                                                                                                                                                           |

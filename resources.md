@@ -1,74 +1,68 @@
-# Des ressources pour aller plus loin sur le sujet de sécurité des LLMs et des chatbots
+# Resources to Go Further on LLM and Chatbot Security
 
-<img src="img/Cthulhu.png"  alt="resources">
+<img src="img/Cthulhu.png" alt="resources">
 
-> "Nous vivons sur une île paisible d'ignorance au milieu des mers noires de l'infini, et il n'était pas prévu que nous voyagions loin.", H.P. Lovecraft
+> "We live on a placid island of ignorance in the midst of black seas of infinity, and it was not meant that we should voyage far." — H.P. Lovecraft
 
+## Table of Contents
 
-## Sommaire
+- [Web Reading](#web-reading)
+- [Books](#books)
+- [Videos and Talks](#videos-and-talks)
+- [Academic Reading](#academic-reading)
 
-- [Lecture web](#lecture-web)
-- [Livres](#livres)
-- [Vidéos et conférences](#vidéos-et-conférences)
-- [Lecture académique](#lecture-académique)
+- [Courses and Certifications](#courses-and-certifications)
+    - [Courses](#courses)
+    - [Certifications](#certifications)
 
-
-- [Cours et certifications](#cours-et-certifications)
-  - [Cours](#cours)
-  - [Certifications](#certifications)
-
-
-- [Techniques d'attaques](#techniques-dattaques)
-  - [Prompt Injection](#prompt-injection)
-  - [Jailbreak](#jailbreak)
+- [Attack Techniques](#attack-techniques)
+    - [Prompt Injection](#prompt-injection)
+    - [Jailbreak](#jailbreak)
 
 - [Playgrounds](#playgrounds)
-  - [Top 5](#top-5)
-  - [Autres Playgrounds](#autres-playgrounds)
+    - [Top 5](#top-5)
+    - [Other Playgrounds](#other-playgrounds)
+
+- [Social Networks](#social-networks)
+    - [Twitter](#twitter)
+        - [Top 10 Twitter Accounts for AI Security and Prompt Injection](#top-10-twitter-accounts-for-ai-security-and-prompt-injection)
+        - [Other Twitter AI Security and Prompt Injection Accounts](#other-twitter-ai-security-and-prompt-injection-accounts)
+    - [LinkedIn](#linkedin)
+
+- [LLM Security Tools and Scanners](#llm-security-tools-and-scanners)
+- [AI Model Security Bug Bounty Programs](#ai-model-security-bug-bounty-programs)
+    - [Key Details about the Anthropic Program](#key-details-about-the-anthropic-program)
+    - [Key Details about the OpenAI Program](#key-details-about-the-openai-program)
 
 
-- [Réseaux sociaux](#réseaux-sociaux)
-  - [Twitter](#twitter)
-    - [Top 10 Twitter comptes AI Sécurité et Prompt Injection](#top-10-twitter-comptes-ai-sécurité-et-prompt-injection)
-    - [Autres Comptes Twitter AI Sécurité et Prompt Injection](#autres-comptes-twitter-ai-sécurité-et-prompt-injection)
-  - [LinkedIn](#linkedin)
+## Web Reading
 
-
-- [Outils et Scanners pour la Sécurité des LLM](#outils-et-scanners-pour-la-sécurité-des-llm)
-- [Programmes Bug Bounty dédiés à la sécurité des modèles IA](#programmes-bug-bounty-dédiés-à-la-sécurité-des-modèles-ia)
-  - [Détails clés sur le programme Anthropic](#détails-clés-sur-le-programme-anthropic)
-  - [Détails clés sur le programme OpenAI](#détails-clés-sur-le-programme-openai)
-
-
-
-## Lecture web
-
-| Information                                                                                                                                  | Lien                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Information                                                                                                                                  | Link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ChatGPT Jailbreak Prompts: How to Unchain ChatGPT                                                                                            | [https://docs.kanaries.net/articles/chatgpt-jailbreak-prompt](https://docs.kanaries.net/articles/chatgpt-jailbreak-prompt)                                                                                                                                                                                                                                                                                                                                                                                         |
 | ChatGPT jailbreak                                                                                                                            | [https://www.lebigdata.fr/chatgpt-dan](https://www.lebigdata.fr/chatgpt-dan)                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | How to Jailbreak ChatGPT 4 in 2024 (Prompt + Examples)                                                                                       | [https://weam.ai/blog/guide/jailbreak-chatgpt/](https://weam.ai/blog/guide/jailbreak-chatgpt/)                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Playing Language Game with LLMs Leads to Jailbreaking                                                                                        | [https://arxiv.org/pdf/2411.12762](https://arxiv.org/pdf/2411.12762)                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | Unleashing Worms and Extracting Data: Escalating the Outcome of Attacks against RAG-based Inference in Scale and Severity Using Jailbreaking | [https://arxiv.org/pdf/2409.08045](https://arxiv.org/pdf/2409.08045)                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| La méthode "Crescendo" permet de jailbreaker l'IA de type LLM, en utilisant des invites en apparence inoffensives                            | [https://intelligence-artificielle.developpez.com/actu/356562/La-methode-Crescendo-permet-de-jailbreaker-l-IA-de-type-LLM-en-utilisant-des-invites-en-apparence-inoffensives-afin-de-produire-des-resultats-qui-seraient-normalement-filtres-et-refuses/](https://intelligence-artificielle.developpez.com/actu/356562/La-methode-Crescendo-permet-de-jailbreaker-l-IA-de-type-LLM-en-utilisant-des-invites-en-apparence-inoffensives-afin-de-produire-des-resultats-qui-seraient-normalement-filtres-et-refuses/) |
+| The "Crescendo" Method Enables Jailbreaking LLM-type AI by Using Seemingly Harmless Prompts                                                  | [https://intelligence-artificielle.developpez.com/actu/356562/La-methode-Crescendo-permet-de-jailbreaker-l-IA-de-type-LLM-en-utilisant-des-invites-en-apparence-inoffensives-afin-de-produire-des-resultats-qui-seraient-normalement-filtres-et-refuses/](https://intelligence-artificielle.developpez.com/actu/356562/La-methode-Crescendo-permet-de-jailbreaker-l-IA-de-type-LLM-en-utilisant-des-invites-en-apparence-inoffensives-afin-de-produire-des-resultats-qui-seraient-normalement-filtres-et-refuses/) |
 | Jailbreaking LLMs: A Comprehensive Guide (With Examples)                                                                                     | [https://www.promptfoo.dev/blog/how-to-jailbreak-llms/](https://www.promptfoo.dev/blog/how-to-jailbreak-llms/)                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Récentes Avancées dans la Recherche sur le Jailbreak des LLM                                                                                 | [hhttps://docs.kanaries.net/fr/topics/ChatGPT/llm-jailbreak-papers](https://docs.kanaries.net/fr/topics/ChatGPT/llm-jailbreak-papers)                                                                                                                                                                                                                                                                                                                                                                              |
+| Recent Advances in Research on LLM Jailbreak                                                                                                 | [https://docs.kanaries.net/fr/topics/ChatGPT/llm-jailbreak-papers](https://docs.kanaries.net/fr/topics/ChatGPT/llm-jailbreak-papers)                                                                                                                                                                                                                                                                                                                                                                               |
 | Defining LLM Red Teaming                                                                                                                     | [https://developer.nvidia.com/blog/defining-llm-red-teaming/](https://developer.nvidia.com/blog/defining-llm-red-teaming/)                                                                                                                                                                                                                                                                                                                                                                                         |
 | Red Teaming LLMs: The Ultimate Step-by-Step LLM Red Teaming Guide                                                                            | [https://www.confident-ai.com/blog/red-teaming-llms-a-step-by-step-guide](https://www.confident-ai.com/blog/red-teaming-llms-a-step-by-step-guide)                                                                                                                                                                                                                                                                                                                                                                 |
-| Planification de la Red Team pour les modèles de langage volumineux (LLMs) et leurs applications                                             | [https://learn.microsoft.com/fr-fr/azure/ai-services/openai/concepts/red-teaming](https://learn.microsoft.com/fr-fr/azure/ai-services/openai/concepts/red-teaming)                                                                                                                                                                                                                                                                                                                                                 |
+| Planning Red Team for Large Language Models (LLMs) and their Applications                                                                    | [https://learn.microsoft.com/fr-fr/azure/ai-services/openai/concepts/red-teaming](https://learn.microsoft.com/fr-fr/azure/ai-services/openai/concepts/red-teaming)                                                                                                                                                                                                                                                                                                                                                 |
 | Red-Teaming Large Language Models                                                                                                            | [https://huggingface.co/blog/red-teaming](https://huggingface.co/blog/red-teaming)                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Multi-Chain Prompt Injection Attacks                                                                                                         | [https://labs.withsecure.com/publications/multi-chain-prompt-injection-attacks](https://labs.withsecure.com/publications/multi-chain-prompt-injection-attacks)                                                                                                                                                                                                                                                                                                                                                     |
 | The State of Attacks on GenAI                                                                                                                | [https://45700826.fs1.hubspotusercontent-na1.net/hubfs/45700826/The%20State%20of%20Attacks%20on%20GenAI%20-%20Pillar%20Security.pdf](https://45700826.fs1.hubspotusercontent-na1.net/hubfs/45700826/The%20State%20of%20Attacks%20on%20GenAI%20-%20Pillar%20Security.pdf)                                                                                                                                                                                                                                           |
 | Embrace The Red                                                                                                                              | [https://embracethered.com](https://embracethered.com)                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | LLM Security                                                                                                                                 | [https://llmsecurity.net/](https://llmsecurity.net/)                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | Offensive ML Playbook                                                                                                                        | [https://wiki.offsecml.com/](https://wiki.offsecml.com/)                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Intelligence Artificielle : les travaux de l’ANSSI                                                                                           | [https://cyber.gouv.fr/intelligence-artificielle-les-travaux-de-lanssi](https://cyber.gouv.fr/intelligence-artificielle-les-travaux-de-lanssi)                                                                                                                                                                                                                                                                                                                                                                     | 
+| Artificial Intelligence: Work by ANSSI                                                                                                       | [https://cyber.gouv.fr/intelligence-artificielle-les-travaux-de-lanssi](https://cyber.gouv.fr/intelligence-artificielle-les-travaux-de-lanssi)                                                                                                                                                                                                                                                                                                                                                                     | 
 | Arcanum AI Sec Resource Hub                                                                                                                  | [https://arcanum-sec.github.io/ai-sec-resources/](https://arcanum-sec.github.io/ai-sec-resources/)                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                         |
 | Announcing the OWASP Gen AI Red Teaming Guide                                                                                                | [https://genai.owasp.org/2025/01/22/announcing-the-owasp-gen-ai-red-teaming-guide/](https://genai.owasp.org/2025/01/22/announcing-the-owasp-gen-ai-red-teaming-guide/)                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                                         |
-| Impact of AI on cyber threat from now to 2027                                                                                                | [https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027](https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027)                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                         |
+| Impact of AI on cyber threat from now to 2027                                                                                                | [https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027](https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027)                                                                                                                                                                                                                                                                                                                                                                                   |
 
 
-## Livres
+## Books
 
 | Titre                                                                                                             | Auteur(s)                           | Partie concernée  | Lien                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------|-------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------|
@@ -82,7 +76,7 @@
 | Building Generative AI Services with FastAPI                                                                      | Alireza Parandeh                    | Tout le livre     | https://www.oreilly.com/library/view/building-generative-ai/9781098160296/                                     |
 
 
-## Vidéos et conférences
+## Videos and Talks
 
 | Titre                                                                          | Intervenant(s)                    | Événement                            | Lien                                                |
 |--------------------------------------------------------------------------------|-----------------------------------|--------------------------------------|-----------------------------------------------------|
@@ -99,7 +93,7 @@
 
 
 
-## Lecture académique
+## Academic Reading
 
 | Titre                                                                                  | Type                         | Auteur(s)        | Lien                                                                                                                  |
 |----------------------------------------------------------------------------------------|------------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -112,9 +106,9 @@
 | Papers on ArXiv                                                                        | Paper stack                  | Dreadnode        | http://dreadnode.notion.site/?v=74ab79ed1452441dab8a1fa02099fedb                                                      |
 
 
-## Cours et certifications
+## Courses and Certifications
 
-### Cours
+### Courses
 
 | Titre                                                                                 | Plateforme                     | Lien                                                                                                                              |
 |---------------------------------------------------------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -140,7 +134,7 @@
 | Red Teaming LLM Applications                                                          | DeepLearning.AI                | https://learn.deeplearning.ai/courses/red-teaming-llm-applications                                                                |
 | LLM Red Teaming                                                                       | OffSec                         | https://www.offsec.com/learning/paths/llm-red-teaming                                                                             |
 
-## Techniques d'attaques
+## Attack Techniques
 
 ### Prompt Injection
 
@@ -158,7 +152,7 @@
 | prompts.chat - f                             | Prompt Library      | [https://prompts.chat](https://prompts.chat) ([https://github.com/f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts))                                         |
 
 
-### Jailbreak
+### Jailbreaks
 
 | Titre / Description                         | Type                | Lien                                                                                                                                                   |
 |---------------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -186,7 +180,7 @@
 | TensorTrust.ai                            | Démo LLM Sécurité    | [https://tensortrust.ai/](https://tensortrust.ai/)                                                   |
 
 
-### Autres Playgrounds
+### Other Playgrounds
 
 | Titre / Description                              | Type                           | Lien                                                                                                                    |
 |--------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------|
@@ -202,11 +196,11 @@
 | Immersive Labs Prompting.ai                      | Formation en sécurité IA       | [https://prompting.ai.immersivelabs.com/](https://prompting.ai.immersivelabs.com/)                                      |
 
 
-## Réseaux sociaux
+## Social Networks
 
 ### Twitter
 
-#### Top 10 Twitter comptes AI Sécurité et Prompt Injection
+#### Top 10 Twitter Accounts for AI Security and Prompt Injection
 
 | Compte Twitter                       | Description courte                                             | Lien                                                           |
 |--------------------------------------|----------------------------------------------------------------|----------------------------------------------------------------|
@@ -222,7 +216,7 @@
 | sanderschulhoff                      | CEO HackAPrompt, expert prompt engineering et sécurité IA      | [https://x.com/sanderschulhoff](https://x.com/sanderschulhoff) |
 
 
-#### Autres Comptes Twitter AI Sécurité et Prompt Injection
+### Other Twitter AI Security and Prompt Injection Accounts
 
 | Compte Twitter    | Description courte                                                                            | Lien                                                         |
 |-------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -253,7 +247,7 @@
 | Dreadnode                   | Advancing the state of offensive security                                          | [https://www.linkedin.com/company/dreadnode/](https://www.linkedin.com/company/dreadnode/)                       |
 
 
-## Outils et Scanners pour la Sécurité des LLM
+## LLM Security Tools and Scanners
 
 | Outil / Projet                | Description                                                                                                 | Lien                                                                                                   |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -275,7 +269,7 @@
 | Arcanum-Sec/P4RS3LT0NGV3      | Projet de reconnaissance et d'outils pour la sécurité offensive, notamment en pentesting et recherche en IA | [https://github.com/Arcanum-Sec/P4RS3LT0NGV3](https://github.com/Arcanum-Sec/P4RS3LT0NGV3)             |
 | GangGreenTemperTatum          | Nombreux projets open source sur la sécurité des LLM                                                        | [https://github.com/GangGreenTemperTatum](https://github.com/GangGreenTemperTatum)                     |
 
-## Programmes Bug Bounty dédiés à la sécurité des modèles IA
+## AI Model Security Bug Bounty Programs
 
 | Programme                            | Description                                                                                                                                              | Lien                                                                                                             |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
@@ -284,7 +278,9 @@
 | OpenAI Bug Bounty Program            | Programme public récompensant la découverte de vulnérabilités dans les systèmes OpenAI, avec une gestion via Bugcrowd, récompenses jusqu'à 20 000 USD    | [https://openai.com/index/bug-bounty-program/](https://openai.com/index/bug-bounty-program/)                     |
 | RedArena AI                          | Plateforme proposant des challenges de sécurité et tests de red teaming IA                                                                               | [https://redarena.ai](https://redarena.ai)                                                                       |
 
-### Détails clés sur le programme Anthropic
+
+### Key Details about the Anthropic Program
+
 
 - Objectif : Identifier et corriger les failles permettant de contourner les protections de sécurité des modèles, notamment les attaques dites "universal jailbreak".
 - Récompenses : Jusqu'à 25 000 USD pour les découvertes majeures.
@@ -292,7 +288,7 @@
 - Format : Programme initialement sur invitation via HackerOne, avec accès anticipé aux systèmes de mitigation en test.
 - Collaboration : Souligne l'importance d'une collaboration étroite avec la communauté mondiale de chercheurs en sécurité IA.
 
-### Détails clés sur le programme OpenAI
+### Key Details about the OpenAI Program
 
 - Objectif : Encourager la communauté à signaler failles, bugs et vulnérabilités dans les systèmes OpenAI.
 - Récompenses : De 200 USD pour des problèmes mineurs à 20 000 USD pour failles majeures.
