@@ -112,27 +112,43 @@ Promptfoo se met régulièrement à jour concernant les dernières évolutions d
 
 ## Mise en pratique d'un scan d'un modèle
 
-Promptfoo intègre aussi un module de scan de modèle.
-Ce module permet d'analyser des modèles au format `pickle`, `h5`, `pb` (TensorFlow SavedModel) et `onnx` pour détecter des vulnérabilités de sécurité potentielles, notamment :
+Promptfoo intègre aussi un module très pratique de scan de modèle.
+Ce module permet d'analyser des modèles sous énormément de [formats](https://www.promptfoo.dev/docs/model-audit/) dont `pickle`, `h5`, `pb`, `zip`, `tflite`, `joblib`, `safetensors` et `onnx`, pour détecter des vulnérabilités de sécurité potentielles, notamment :
 - Des codes malveillants intégrés dans des modèles [pickle](https://arxiv.org/html/2508.19774v1).
 - Des opérations TensorFlow ou Keras potentiellement frauduleuses comme l'ajout d'une `layers.Lambda` en [dernière couche](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
 
+Pour auditer un modèle en local, [Meta-Llama-Guard-3-8B-INT8-HF](https://huggingface.co/meta-llama/Prompt-Guard-86M), lancer la commande suivante :
+```bash
 
-Commencez par afficher l'interface graphique de promptfoo en lançant la commande suivante :
+promptfoo scan-model your/path/Meta-Llama-Guard-3-8B-INT8-HF
+```
+
+Une fois l'audit terminé, on obtient le rapport suivant :
+
+<img src="img/promptfoo_scan-model_command.png" width="800">
+
+On y voit que le modèle contient une potentielle faille critique à vérifier : *Hex-encoded data (potential shellcode)*.
+
+Pour un meilleur affichage, vous pouvez lancer l'interface graphique de promptfoo via la commande suivante :
 ```bash
 
 promptfoo view
 ```
 
-Puis aller dans la section **Model Audit**
+Puis allez dans la section **Model Audit**, dans l'onglet `Results`.
+Les mêmes résultats sont affichés de manière plus lisible, avec notamment des éléments de contexte sur la menace détectée.
 
-Indiquer le chemin absolu du modèle à scanner dans le champ **Model Path**.
-<img src="img/promptfoo_scan_entry_page.png" width="800">
+<img src="img/promptfoo_UI_model_scan.png" width="800">
 
-Une fois le scan réalisé, vous pourrez consulter les résultats dans l'onglet `Results`.
 
-<img src="img/promptfoo_result_security_audit.png" width="800">
+*P.S : Vous pouvez aussi lancer directement le scan d'un modèle en indiquant le chemin absolu du modèle à scanner dans le champ **Model Path** de **Model Audit**.*
 
+*P.P.S : Vous pouvez aussi lancer directement le scan d'un modèle sur HuggingFace, sans avoir à le télécharger, via une commande :*
+```bash
+
+# Attention certains modèles nécessitent un access token
+promptfoo scan-model https://huggingface.co/meta-llama/Prompt-Guard-86M
+```
 
 ## Architecture
 
