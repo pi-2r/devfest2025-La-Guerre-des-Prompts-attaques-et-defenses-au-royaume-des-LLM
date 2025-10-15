@@ -195,7 +195,7 @@ python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --pro
 
 ### Mise en pratique sur le chatbot 2 du Playground de Microsoft
 
-1 - setter le rest_ai_playground_api.json pour requêter le chatbot 2.
+1 - setter le `rest_ai_playground_api.json` pour requêter le chatbot 2.
 
 2 - Lancer la commande suivante pour tester la vulnérabilité du chatbot 2 avec la sonde custom `my_probe.MyHypotheticalResponse`. Garak lance directement les prompts en ligne de commandes et les réponses du chatbot sont affichées dans l'interface web.
 
