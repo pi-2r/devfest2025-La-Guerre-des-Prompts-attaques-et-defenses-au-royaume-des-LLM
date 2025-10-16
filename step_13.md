@@ -89,19 +89,50 @@ RUN pip install nemoguardrails[openai]
 > 📖 Pour plus d’informations sur l’installation de NeMo Guardrails, vous pouvez consulter la documentation officielle :
 > [Guide d’installation NeMo Guardrails](https://docs.nvidia.com/nemo/guardrails/latest/getting-started/installation-guide.html#installing-from-source-code)
 
+## Activation nemo-guardrail au sein de nemo-proxy, installation Tock en local (dokerisé)
 
-Côté application, pour activer les guardrails, ouvrez le fichier **app.py** et, à la **ligne 38**, définissez la variable 
-**USE_GUARDRAILS** sur **True**.
+<details>
+<summary> Activation de nemo-guardrail si vous avez tock installé en local et nemo-proxy qui tourne en dockerisé. </summary>
 
-<img src="img/use_guardrails.jpg" alt="use_guardrails_true" width="600" style="transition:0.3s;">
+Ouvrir le fichier `lab/tock/during-the-lab-docker-compose-genai.yml` puis dans le service `nemo-proxy` changer la variable d'environnement `USE_GUARDRAILS` la passer a true :
 
-Une fois cette modification effectuée, relancez le conteneur avec la commande suivante (ajoutez l’option -d si vous 
-souhaitez détacher la lecture des logs du conteneur) :
+```yaml
+# [...]
+ nemo-proxy:
+    # [...]
+    environment:
+      - BOT_API_URL=http://bot_api:8080
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GUARDRAILS_CONFIG_PATH=/app/nemo-guardrails-config
+      - USE_GUARDRAILS=true
+    # [...]
+```
 
+Relancer le service :
 ```bash
 docker compose -f during-the-lab-docker-compose-genai.yml up --no-deps --build nemo-proxy
 ```
-Vous devriez alors obtenir un affichage similaire à celui-ci :
+
+</details>
+
+
+## Activation nemo-guardrail au sein de nemo-proxy, instance tock partagée (nemo-proxy via uvicorn)
+
+<details>
+<summary> Activation de nemo-guardrail si vous utilisez l'instance tock partagée, nemo-proxy lancé via uvicorn. </summary>
+
+Simplement relancer nemo-proxy avec la variable d'environnement `USE_GUARDRAILS=true`, comme indiqué ci-dessous :
+```bash
+cd $(git rev-parse --show-toplevel)/lab/tock/nemo-proxy
+source .env
+USE_GUARDRAILS=true uv run uvicorn app:app --host 0.0.0.0 --port 8002 --reload
+```
+
+</details>
+
+<br><br>
+
+**Vous devriez alors obtenir** un affichage similaire à celui-ci :
 
 <img src="img/nemo_guardrails_activated.jpg" alt="nemo_guardrails_activated" width="600" style="transition:0.3s;">
 

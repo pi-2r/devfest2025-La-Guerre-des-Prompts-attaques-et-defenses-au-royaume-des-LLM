@@ -206,6 +206,7 @@ services:
   #     - BOT_API_URL=http://bot_api:8080
   #     - OPENAI_API_KEY=${OPENAI_API_KEY}
   #     - GUARDRAILS_CONFIG_PATH=/app/nemo-guardrails-config
+  #     - USE_GUARDRAILS=false
   #   volumes:
   #     - ./nemo-guardrails-config:/app/nemo-guardrails-config:ro
   #   restart: unless-stopped

@@ -8,7 +8,7 @@ import html
 from fastapi.middleware.cors import CORSMiddleware
 
 # Logging configuration
-from config.settings import LOG_LEVEL, CORS_ORIGINS, CORS_METHODS, CORS_HEADERS
+from config.settings import LOG_LEVEL, CORS_ORIGINS, CORS_METHODS, CORS_HEADERS, USE_GUARDRAILS
 logging.basicConfig(level=getattr(logging, LOG_LEVEL))
 logger = logging.getLogger(__name__)
 
@@ -34,8 +34,6 @@ app.add_middleware(
     allow_methods=CORS_METHODS,
     allow_headers=CORS_HEADERS,
 )
-
-USE_GUARDRAILS = False  # Activer pour passer par guardrails_service avant d'envoyer au bot
 
 @app.get("/")
 async def root():
