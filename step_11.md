@@ -107,6 +107,7 @@ Vous devriez voir un affichage similaire à celui-ci :
 Démarrez ensuite l’environnement avec la commande :
 
 ```bash
+chmod a+r scripts/init-pgvect.sql
 docker compose -f during-the-lab-docker-compose-genai.yml up -d
 ```
 Vous devriez voir un affichage similaire à celui-ci :
