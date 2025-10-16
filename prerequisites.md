@@ -26,7 +26,6 @@ Ce tutorial est proposé en amont de la session [La Guerre des Prompts : attaque
 
 - [Les images Docker](#les-images-docker)
   - [AI Red Teaming Playground Labs](#ai-red-teaming-playground-labs)
-  - [Nemo Guardrails](#nemo-guardrails)
   - [Tock](#tock)
 
 
@@ -153,15 +152,6 @@ Si tout est correctement configuré, vous devriez voir un affichage similaire à
 <img src="img/microsoft_playground_docker_up.png" alt="microsoft_playground_docker_up" width="600" style="transition:0.3s;">
 
 Pour accéder à l’interface web, ouvrez votre navigateur et allez à l’adresse suivante :  http://localhost:5000/login?auth=YOUR_AUTH_KEY (la valeur de **YOUR_AUTH_KEY** est indiquée dans le fichier **.env**).
-#### Nemo Guardrails
-
-Dans votre terminal, placez-vous dans le répertoire où vous souhaitez installer le projet (par exemple **Documents**).
-Exécutez ensuite la commande suivante pour cloner le dépôt et accéder directement au dossier créé :
-
-```bash
-git clone https://github.com/NVIDIA-NeMo/Guardrails.git && cd Guardrails
-pwd
-```
 
 
 #### Tock
