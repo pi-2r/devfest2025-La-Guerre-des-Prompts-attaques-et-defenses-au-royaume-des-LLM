@@ -43,6 +43,18 @@ On peut ensuite mettre en place des guardrails plus spécifiques avec **NEMO Gua
 ### Installation de Garak
 Pour installer Garak, vous pouvez utiliser pip. Exécutez la commande suivante dans votre terminal :
 
+
+<details>
+  <summary>Installation d'uv (si vous n'avez pas suivi les prérequis)</summary>
+
+Voir documentation ici : https://docs.astral.sh/uv/getting-started/installation/#standalone-installer
+
+En bref :
+```bash
+pip install uv
+```
+</details>
+
 ```bash
 # 1. Créer un environnement virtuel a la racine du repo
 # cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
