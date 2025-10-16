@@ -216,6 +216,7 @@ puis exécutez la commande suivante pour cloner le dépôt et entrer automatique
 ```bash
 # 1. Créer un environnement virtuel a la racine du repo
 # cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
+cd ../.. # être au niveau de devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
 uv venv --python 3.13.2
 
 # 2. Activer l’environnement virtuel
