@@ -83,6 +83,11 @@ Cela montre toute la force de l'opensource et l'effet levier de la communauté p
 
 ## Installation de Tock
 
+
+> **Je n'ai pas fait les pré-requis** : Pour gagner du temps pendant le lab vous pouvez utiliser l'instanc de tock partagé avec le compte que vous avez reçu sur un papier en entrant dans la salle.
+> L'instant est accessible ici : http://192.168.20.2/
+> Tous les comptes ont pour mots de passe password utilisez l'adresse mail en @mythos.world comme user.
+
 Accédez au dossier **lab/tock**.
 
 
@@ -134,7 +139,7 @@ _new_assistant_).
 
 <img src="img/tock-studio-step1.png"  alt="Tock-Studio-example">
 
-- A l'étape 1,**Choose your language** sélectionnez la langue **English** et cliquer sur le bouton **Next**.
+- A l'étape 1,**Choose your language** sélectionnez la langue **French** et cliquer sur le bouton **Next**.
 
 - A l'étape 2, **Select a first Channel**, choisissez **Web** et cliquez sur le bouton **Next**.
 
@@ -163,6 +168,11 @@ Votre bot sera alors accessible via l’URL suivante : **io/app/new_assistant/we
 
 ### Communiquer avec le bot
 Dans le dossier lab/tock, ouvrez depuis votre navigateur web le fichier index.html, puis dite simplement bonjour au bot.
+
+> **Instance partagée** : Si vous utilisez l'instance partagée de tock pensez à adapter l'URL dans index.html.
+> Remplacez **const botDirectUrl = 'http://localhost:8080/io/app/new_assistant/web';**
+> Par **const botDirectUrl = 'http://192.168.20.2:8080/io/$$VOTRE_USER_CE_QUI_EST_AVANT_LE_@$$/new_assistant/web';**
+> Exemple pour le user medee@mythos.world par : **const botDirectUrl = 'http://192.168.20.2:8080/io/medee/new_assistant/web';**
 
 Vous devriez avoir ce rendu.
 <img src="img/bot-step1.png" alt="bot-step1">
