@@ -81,7 +81,10 @@ Utilisation de FastAPI dans le contexte de l'IA générative :
 
 ## Mettre en place le proxy
 
-Dans cette section, nous allons mettre en place des premières contre-mesures avec FastAPI pour sécuriser notre bot.
+### Si vous avez Tock en local
+
+<details>
+  <summary>Si vous avez TOCK en local. Dans cette section, nous allons mettre en place des premières contre-mesures avec FastAPI pour sécuriser notre bot.</summary>
 
 Dans le fichier **during-the-lab-docker-compose-genai.yml**, effectuer les modifications suivantes :
 
@@ -110,6 +113,71 @@ docker compose -f during-the-lab-docker-compose-genai.yml up -d
 ```
 <img src="img/during-the-lab-docker-compose-genai-up-nemo-proxy.jpg" alt="during-the-lab-docker-compose-genai-up-nemo-proxy" width="600" style="transition:0.3s;">
 
+</details>
+
+### Si vous utilisez le tock partagé
+
+<details>
+  <summary>Si vous n'avez pas TOCK en local. Dans cette section, nous allons mettre en place des premières contre-mesures avec FastAPI pour sécuriser notre bot.</summary>
+
+#### 1. Environment Setup
+
+```bash
+cd $(git rev-parse --show-toplevel)
+# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
+source .venv/bin/activate
+
+# Check que vous êtes dans le bon venv on sait jamais
+[[ "${VIRTUAL_ENV-}" == *"devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM"* ]] || { echo "❌ Wrong/missing venv" >&2; return 1 2>/dev/null || exit 1; }
+
+# Navigate to the project directory
+cd lab/tock/docker/nemo-proxy
+
+# Install dependencies
+uv pip install -r requirements.txt
+uv pip install "nemoguardrails[openai]"
+```
+
+#### 2. Environment Variables
+
+Créer un `.env` dans le dossier `nemo-proxy`:
+
+```bash
+# Required services
+NEMO_GUARDRAILS_URL=http://localhost:8000
+BOT_API_URL=http://192.168.20.2:8080
+
+# OpenAI Key
+OPENAI_API_KEY=YOUR-KEY
+
+# Optional settings
+LOG_LEVEL=DEBUG
+
+GUARDRAILS_CONFIG_PATH=../nemo-guardrails-config
+```
+
+#### 3. Lancer nemo proxy
+
+```bash
+# Source your env file
+source .env
+
+# Or run with uvicorn for development
+uv run uvicorn app:app --host 0.0.0.0 --port 8001 --reload
+```
+
+#### 4. Adapter index.html
+
+Dans l'index.html changer 
+```javascript
+const bot_api_host = 'localhost';
+```
+Par :
+```javascript
+const bot_api_host = '192.168.20.2';
+```
+
+</details>
 
 ### Tester le proxy
 Pour tester l'utilisation du proxy, rien de plus simple, dans la page index.html, il suffit d'activer le switch "**Utiliser NeMo Proxy**".
