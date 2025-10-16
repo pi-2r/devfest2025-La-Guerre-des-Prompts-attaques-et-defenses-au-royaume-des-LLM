@@ -242,8 +242,7 @@ des dépendances du projet. Par exemple :
 Dans cette section, nous allons utiliser PyRIT pour mener des attaques sur la plateforme Gandalf. Comme mentionné 
 précédemment, l’objectif est de progresser à travers les niveaux pour atteindre le niveau 7 !
 
-Commencez par accéder au dossier **lab/Pyrit**, puis copiez les deux fichiers gandalf.py et settings.yml dans le 
-dossier Pyrit que vous avez cloné et où le projet est déjà installé.
+Allez dans le  dossier **lab/PyRIT** de ce codelab.
 
 ### Configurer les paramètres
 
