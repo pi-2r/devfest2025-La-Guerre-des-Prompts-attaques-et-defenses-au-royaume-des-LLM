@@ -1,40 +1,33 @@
-#  Benchmarking avec Promptfoo
-
+# Benchmarking with Promptfoo
 
 [<img src="img/step16.png" alt="gimli" width="800">](https://www.youtube.com/watch?v=CAdkKQ6-6wo)
-> "That still only counts as one.", Gimli, LOTR - The Return of the King
+> "That still only counts as one." — Gimli, LOTR - The Return of the King
 
-
-## Sommaire
+## Summary
 
 - [Promptfoo](#promptfoo)
 
-  - [C'est quoi Promptfoo ?](#cest-quoi-promptfoo-)
-  - [Installer Promptfoo](#installer-promptfoo)
-  - [Installation des packages nécessaires](#installation-des-packages-nécessaires)
+    - [What is Promptfoo ?](#what-is-promptfoo-)
+    - [Installing Promptfoo](#installing-promptfoo)
+    - [Installing necessary packages](#installing-required-packages)
 
-
-- [Évaluation](#évaluation)
-  - [LLMs as a Judge:  évaluation de la qualité](#llms-as-a-judge--évaluation-de-la-qualité)
-  
+- [Evaluation](#evaluation)
+    - [LLMs as a Judge: quality assessment](#llms-as-a-judge-quality-assessment)
 
 - [Audit](#audit)
-  - [Audit de sécurité de modèles de langage](#laudit-de-sécurité-de-modèles-de-langage)
-  - [Mise en pratique d'un scan d'un modèle](#mise-en-pratique-dun-scan-dun-modèle)
+    - [Security audit of language models](#language-model-security-audit)
+    - [Practical scan of a model](#performing-a-model-scan)
 
+- [Architecture](#architecture)
+    - [Promptfoo architecture for Red Teaming](#architecture-de-promptfoo-pour-le-red-teaming)
 
-- [Architecture ](#architecture)
-  - [Architecture de Promptfoo pour le Red Teaming](#architecture-de-promptfoo-pour-le-red-teaming)
+- [Recommendations](#recommendations)
+    - [How to use Promptfoo for Red Teaming](#how-to-use-promptfoo-for-red-teaming)
+    - [Method 1: Red teaming construction in `promptfooconfig.yaml` manually](#methode-1--construction-du-red-teaming-dans-le-fichier-promptfooconfigyaml-manuellement)
+    - [Method 2: Red teaming construction via Promptfoo GUI (recommended if you do not have an enterprise account)](#methode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-recommandé-si-vous-navez-pas-de-compte-entreprise)
 
-
-- [Recommandations](#recommandations)
-  - [Recommandations sur comment utiliser Promptfoo pour le Red Teaming](#recommandations-sur-comment-utiliser-promptfoo-pour-le-red-teaming)
-  - [Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main](#méthode-1--construction-du-red-teaming-dans-le-fichier-promptfooconfigyaml-à-la-main)
-  - [Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)](#méthode-2--construction-du-red-teaming-via-linterface-graphique-de-promptfoo-à-préférer-si-vous-navez-pas-de-compte-entreprise)
- 
-
-- [Étape suivante](#étape-suivante)
-- [Ressources](#ressources)
+- [Next Step](#next-step)
+- [Resources](#resources)
 
 
 ## Promptfoo
@@ -43,30 +36,41 @@
 [![Downloads](https://static.pepy.tech/badge/promptfoo/month)](https://pepy.tech/project/promptfoo)
 
 
-## C'est quoi Promptfoo ?
+## What is Promptfoo ?
 
-**Promptfoo** est un outil open-source destiné aux développeurs pour tester, évaluer et sécuriser les applications basées 
-sur les modèles de langage (LLM). 
+**Promptfoo** is an open-source tool designed for developers to test, evaluate, and secure applications based on large language models (LLMs).
 
-Il permet de comparer différentes variantes de prompts, de définir des critères d'évaluation personnalisés, d'intégrer 
-des scénarios de red teaming pour détecter des vulnérabilités, et de s'intégrer facilement dans des pipelines CI/CD 
-pour automatiser les tests. 
+It allows comparison of different prompt variants, definition of custom evaluation criteria, integration of red teaming scenarios to detect vulnerabilities, and easy integration into CI/CD pipelines for automated testing.
 
-Promptfoo facilite ainsi le développement d'applications d'IA fiables et robustes en automatisant l'évaluation des 
-réponses, la comparaison de modèles et la détection de faiblesses ou risques liés à la sécurité et à la conformité. 
+Promptfoo helps build reliable and robust AI applications by automating response evaluation, model comparison, and detection of weaknesses or security and compliance risks.
 
-Il fonctionne localement, rapide et flexible, il supporte plusieurs langages de programmation et APIs LLM.
+The tool runs locally, is fast and flexible, and supports multiple programming languages and LLM APIs.
 
-## Installer Promptfoo
+Its key features include:
 
-Nous vous invitons à suivre la documentation officielle pour l’installation de Promptfoo : 
+- A/B prompt comparison to test multiple prompt versions side-by-side.
+- Customizable metrics and evaluations, including subjective assessments via model grading.
+- Support for complex contextual prompts including conversation history or document sets.
+- Integration of red teaming plugins and strategies to simulate adversarial attacks and identify vulnerabilities.
+- Seamless CI/CD integration to automate testing and catch regressions before production.
+- User-friendly visual interfaces to analyze results and identify weaknesses.
+- Support for multiple LLM providers such as OpenAI, HuggingFace, Anthropic, and custom APIs.
+
+Overall, Promptfoo streamlines the process of developing, benchmarking, and securing LLM-powered applications, providing a modular and customizable framework suitable for teams aiming to enhance AI solution quality and safety.
+
+## Installing Promptfoo
+
+It is recommended to follow the official documentation for installing Promptfoo:  
 https://www.promptfoo.dev/docs/red-team/quickstart/#initialize-the-project
 
 
-### Installation des packages nécessaires
 
-Pour cela, il faut installer `promptfoo` et une librairie complémentaire `modelaudit`, comme stipulé dans la 
-documentation officielle : https://www.promptfoo.dev/docs/model-audit/
+### Installing Required Packages
+
+To get started, you need to install `promptfoo` along with the complementary library `modelaudit`, as specified in the official documentation:  
+https://www.promptfoo.dev/docs/model-audit/
+
+You can install them using the following commands:
 
 ```bash
 
@@ -79,71 +83,69 @@ uv pip install promptfoo
 uv pip install modelaudit
 ```
 
+Promptfoo is a partly open-source tool that aims to serve as the building block for bringing an application with LLMs 
+into production.
 
-Promptfoo est un outil en partie open-source qui se veut être la brique permettant un passage en production d'une 
-application avec des LLMs.
+## Evaluation
 
-## Évaluation
+### LLMs as a Judge: quality assessment
 
-### LLMs as a Judge:  évaluation de la qualité
+Promptfoo is a tool that enables quality evaluations of **RAGs** (Retrieval-Augmented Generation),
+**AI Agents**, and **LLMs**, using metrics ranging from keyword search to metrics based on
+_LLMs-as-a-Judge_, such as:
 
-Promptfoo est un outil permettant de faire des évaluations de la qualité des **RAGs** (Retrieval-Augmented Generation), 
-des **Agents IA** et des **LLMs** avec métriques allant de la recherche de mots-clés à des métriques utilisant 
-des _LLMs-as-a-Judge_, comme :
-
-
-- le **contains-json** (vérifiant si la réponse contient un JSON valide),
-- l'**Answer Relevancy** (vérifiant la pertinence de la réponse vis-a-vis de la question posée),
-- la **Context Faithfulness** (vérifiant si la réponse du LLM se fonde uniquement sur des éléments du contexte).
-- la **Factuality** (évaluant la réponse du LLM vis-à-vis de la réponse de référence).
-- la **LLM-rubric**, une métrique custom, permettant, par exemple, d'évaluer des éléments de **Tone-of-Voice**, de Style, de Grammaires, etc.
-- la **G-eval**, une métrique custom, utilisant un LLM et leur CoT (Chain-of-Thought) pour évaluer des réponses sur des critères complexes.
+- **contains-json** (checks if the response contains valid JSON)
+- **Answer Relevancy** (checks the relevance of the response in relation to the question asked)
+- **Context Faithfulness** (checks whether the LLM’s response is based solely on elements from the context)
+- **Factuality** (evaluates the LLM’s response against the reference answer)
+- **LLM-rubric**, a custom metric that allows evaluation of aspects like **Tone-of-Voice**, style, grammar, etc.
+- **G-eval**, a custom metric using an LLM and its CoT (Chain-of-Thought) to assess responses based on complex criteria
 
 
-Promptfoo peut lancer les tests plusieurs fois pour tester la robustesse des réponses.
-
+Promptfoo can run tests multiple times to evaluate the robustness of responses.
 
 ## Audit
 
-## Audit de sécurité de modèles de langage
+## Language Model Security Audit
 
-Promptfoo se veut **modulaire** et **extensible**. Il met à disposition des utilisateurs plusieurs outils et plugins pour évaluer la sécurité de leur application et des modèles de langage.
-Promptfoo se met régulièrement à jour concernant les dernières évolutions des vulnérabilités des LLMs et suit notamment les recommandations OWASPs LLM Top 10.
+Promptfoo is designed to be **modular** and **extensible**. It provides users with several tools and plugins to assess the security of their applications and language models.  
+Promptfoo is regularly updated to reflect the latest developments in LLM vulnerabilities and closely follows the OWASP LLM Top 10 recommendations.
 
-## Mise en pratique d'un scan d'un modèle
+## Performing a Model Scan
 
-Promptfoo intègre aussi un module très pratique de scan de modèle.
-Ce module permet d'analyser des modèles sous énormément de [formats](https://www.promptfoo.dev/docs/model-audit/) dont `pickle`, `h5`, `pb`, `zip`, `tflite`, `joblib`, `safetensors` et `onnx`, pour détecter des vulnérabilités de sécurité potentielles, notamment :
-- Des codes malveillants intégrés dans des modèles [pickle](https://arxiv.org/html/2508.19774v1).
-- Des opérations TensorFlow ou Keras potentiellement frauduleuses comme l'ajout d'une `layers.Lambda` en [dernière couche](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
+Promptfoo also includes a very useful model scanning module.  
+This module allows analyzing models in a wide range of [formats](https://www.promptfoo.dev/docs/model-audit/), including `pickle`, `h5`, `pb`, `zip`, `tflite`, `joblib`, `safetensors`, and `onnx`, to detect potential security vulnerabilities, such as:
+- Malicious code embedded within [pickle](https://arxiv.org/html/2508.19774v1) models.
+- Potentially fraudulent TensorFlow or Keras operations, such as adding a `layers.Lambda` in the [final layer](https://github.com/PacktPublishing/Adversarial-AI---Attacks-Mitigations-and-Defense-Strategies/blob/main/ch5/notebooks/NeuralPayloadAttack.ipynb).
 
-Pour auditer un modèle en local, [Meta-Llama-Guard-3-8B-INT8-HF](https://huggingface.co/meta-llama/Prompt-Guard-86M), lancer la commande suivante :
+To audit a model locally, [Meta-Llama-Guard-3-8B-INT8-HF](https://huggingface.co/meta-llama/Prompt-Guard-86M), run the following command:
+
 ```bash
-
 promptfoo scan-model your/path/Meta-Llama-Guard-3-8B-INT8-HF
 ```
 
-Une fois l'audit terminé, on obtient le rapport suivant :
+Once the audit is complete, the following report is obtained:
 
 <img src="img/promptfoo_scan-model_command.png" width="800">
 
-On y voit que le modèle contient une potentielle faille critique à vérifier : *Hex-encoded data (potential shellcode)*.
+The report shows that the model contains a potential critical vulnerability to check: *Hex-encoded data (potential shellcode)*.
 
-Pour un meilleur affichage, vous pouvez lancer l'interface graphique de promptfoo via la commande suivante :
+For a better display, you can launch the Promptfoo graphical interface using the following command:
+
 ```bash
 
 promptfoo view
 ```
 
-Puis allez dans la section **Model Audit**, dans l'onglet `Results`.
-Les mêmes résultats sont affichés de manière plus lisible, avec notamment des éléments de contexte sur la menace détectée.
+Then go to the **Model Audit** section, in the `Results` tab.  
+The same results are displayed in a more readable format, including contextual information about the detected threat.
 
 <img src="img/promptfoo_UI_model_scan.png" width="800">
 
 
-*P.S : Vous pouvez aussi lancer directement le scan d'un modèle en indiquant le chemin absolu du modèle à scanner dans le champ **Model Path** de **Model Audit**.*
+**P.S** : You can also launch a model scan directly by specifying the absolute path of the model to scan in the **Model Path** field of **Model Audit**.*
+**P.P.S** : You can also directly scan a model on HuggingFace without downloading it, using a command
 
-*P.P.S : Vous pouvez aussi lancer directement le scan d'un modèle sur HuggingFace, sans avoir à le télécharger, via une commande :*
 ```bash
 
 # Attention certains modèles nécessitent un access token
@@ -154,43 +156,45 @@ promptfoo scan-model https://huggingface.co/meta-llama/Prompt-Guard-86M
 
 ### Architecture de Promptfoo pour le Red Teaming
 
+Promptfoo works with **plugins**, **strategies**, and **targets**.
 
-Promptfoo fonctionne avec des **plugins**, **strategies**, et des **targets**.
+- **Plugins** generate adversarial inputs for specific types of vulnerabilities. Each plugin is a **standalone** module that can be enabled or disabled via configuration.  
+  Examples include plugins for [**MCP (Model Context Protocol)**](https://www.promptfoo.dev/docs/red-team/plugins/mcp/), [**PII leakage**](https://www.promptfoo.dev/docs/red-team/plugins/pii/), and [**Pliny**](https://www.promptfoo.dev/docs/red-team/plugins/pliny/) Jailbreaks.  
+  The list of vulnerabilities and their associated plugins is available here: [https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/](https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/).
 
-- Les **plugins** génèrent des adversarial inputs pour des types de vulnérabilités spécifiques. Chaque plugin est un module **autonome** qui peut être activé ou désactivé via la configuration.
-On peut trouver un plugin, par exemple, pour : [**MCP (Model Context Protocol)**](https://www.promptfoo.dev/docs/red-team/plugins/mcp/), [**PII leakage**](https://www.promptfoo.dev/docs/red-team/plugins/pii/) ou encore les [**Pliny**](https://www.promptfoo.dev/docs/red-team/plugins/pliny/) Jailbreaks.
-La liste des vulnérabilités et leur plugin associé, sont accessibles ici : https://www.promptfoo.dev/docs/red-team/llm-vulnerability-types/.
+- **Strategies** are patterns for delivering the adversarial inputs generated to the LLM.  
+  There are several strategies ranging from encoding like [**base64**](https://www.promptfoo.dev/docs/red-team/strategies/base64/) or [**leetspeak**](https://www.promptfoo.dev/docs/red-team/strategies/leetspeak/) to more complex ones like [**Microsoft's multi-turn attacks**](https://www.promptfoo.dev/docs/red-team/strategies/multi-turn/) or [**Meta's GOAT framework**](https://www.promptfoo.dev/docs/red-team/strategies/goat/).
 
+- **Attack Probes** are the attack prompts generated by the combination of plugins and strategies.
 
-- Les **stratégies** sont des patterns permettant de délivrer les adversarial inputs générés au LLM.
-Il existe plusieurs stratégies allant d'encodage comme [**base64**](https://www.promptfoo.dev/docs/red-team/strategies/base64/) ou [**leetspeak**](https://www.promptfoo.dev/docs/red-team/strategies/leetspeak/) à des tournures plus complexes comme [**Microsoft's multi-turn attacks**](https://www.promptfoo.dev/docs/red-team/strategies/multi-turn/) ou le [**Meta's GOAT framework**](https://www.promptfoo.dev/docs/red-team/strategies/goat/).
+- The **Target Interface** defines how the Probes interact with the system under test. Available targets include, notably:
+    - [**HTTP API**](https://www.promptfoo.dev/docs/providers/http/): which tests REST endpoints via configurable requests,
+    - [**Direct Model**](https://www.promptfoo.dev/docs/red-team/configuration/#custom-providerstargets): which interfaces with LLM providers such as OpenAI or local models,
+    - [**Custom Provider**](https://www.promptfoo.dev/docs/red-team/configuration/#providers): which allows testing endpoints via Python/JavaScript scripts.
 
-- **Attack Probes** sont les prompts d'attaque générés par la combinaison des plugins et des strategies.
-
-- La **Target Interface** définit la manière dont les Probes interagissent avec le système testé. 
-Les targets disponibles sont, notamment : 
-  - [**API HTTP**](https://www.promptfoo.dev/docs/providers/http/) : qui teste les points de terminaison REST via des requêtes configurables,
-  - [**Modèle direct**](https://www.promptfoo.dev/docs/red-team/configuration/#custom-providerstargets) : qui s'interface avec des fournisseurs LLM tels que OpenAI ou des modèles locaux,
-  - [**Custom Provider**](https://www.promptfoo.dev/docs/red-team/configuration/#providers) : qui permet de tester des endpoints via des scripts Python/JavaScript.
-
--  Un **Purpose** décrit le but de ce système de test. Il est utilisé pour guider la génération des adversarial inputs.
+- A **Purpose** describes the goal of this testing system. It is used to guide the generation of adversarial inputs.
 
 [<img src="img/architecture_promptfoo_red_teaming.png" width="800">](https://www.promptfoo.dev/docs/red-team/architecture/)
 ###### Schema de l'architecture de Promptfoo pour le Red Teaming
 
 
-## Recommandations
+## Recommendations
 
-### Recommandations sur comment utiliser Promptfoo pour le Red Teaming
-Si vous disposez d'un compte entreprise sur [Promptfoo](https://www.promptfoo.dev/pricing/), vous pouvez bénéficier de fonctionnalités avancées comme tester des vulnérabilités évoluées spécifiques à votre application.
-Dans la version community, vous pouvez déjà tester un certain nombre de vulnérabilités classiques.
+### How to Use Promptfoo for Red Teaming
 
-Pour ce red-teaming, nous allons utiliser le plugin [Direct PII Exposure](https://www.promptfoo.dev/docs/red-team/plugins/pii/).
-Dans cet exemple, nous allons tester la résilience de la brique de génération d'un RAG (à contexte fixe).
+If you have an enterprise account on [Promptfoo](https://www.promptfoo.dev/pricing/), you can benefit from advanced features like testing sophisticated vulnerabilities specific to your application. The community version already allows testing a range of classic vulnerabilities.
 
-### Méthode 1 : Construction du red-teaming dans le fichier `promptfooconfig.yaml` à la main
+For this red-teaming, we will use the [Direct PII Exposure](https://www.promptfoo.dev/docs/red-team/plugins/pii/) plugin.  
+In this example, we will test the resilience of the generation component of a RAG (Retrieval-Augmented Generation) system with a fixed context.
 
-Le red-teaming peut être défini dans le fichier `promptfooconfig.yaml` comme suit :
+The Direct PII Exposure plugin helps verify whether the system inadvertently reveals personally identifiable information, assisting in ensuring compliance with privacy standards and protecting sensitive data.
+
+Using Promptfoo, you can configure and run adversarial tests to identify such leaks, improving the security and robustness of your AI applications.
+
+### Method 1: Building the red-teaming in the `promptfooconfig.yaml` file manually
+
+Red-teaming can be defined in the `promptfooconfig.yaml` file as follows:
+
 ```yaml
 description: 'Red Team Eval'
 
@@ -217,37 +221,40 @@ redteam:
     - base64 # la stratégie que l'on souhaite utiliser : encodage en base64
   numTests: 5 # nombre de tests à lancer par plugin
   provider: openai:gpt-5 # Le modèle qui va générer les attaques
-  # testGenerationInstructions: instructions pour décrire des patterns d'attaque spécifique à un domaine métier (Médecine, Finance, Juridique, ...)
-    
+    # testGenerationInstructions: instructions pour décrire des patterns d'attaque spécifique à un domaine métier (Médecine, Finance, Juridique, ...)
+
 ```
 
-Vous pouvez ensuite visualiser les résultats dans l'interface graphique de promptfoo en lançant la commande suivante :
+You can then visualize the results in the Promptfoo graphical interface by running the following command:
+
 ```bash
 
 promptfoo redteam init
 ```
 
-### Méthode 2 : Construction du red-teaming via l'interface graphique de promptfoo (à préférer si vous n'avez pas de compte entreprise)
+### Method 2: Building red-teaming via the Promptfoo graphical interface (recommended if you do not have an enterprise account)
 
-Le red-teaming peut aussi être construit via l'interface graphique de promptfoo. Pour cela, lancer l'interface graphique de promptfoo :
+Red-teaming can also be built through the Promptfoo graphical interface. To do so, start the Promptfoo graphical interface by running:
+
 ```bash
 
 promptfoo redteam init
 ```
-Puis suivez les instructions des différents onglets :
-- **Target Type** : définir le type de target qui doit être testé (API HTTP, Modèle direct, Custom Provider)
-- **Target Config** : définir la configuration de la target (fichier où est l'endpoint, délai entre 2 requêtes, configuration custom, ...)
-- **Application Details** : définir le comportement attendu de l'application, ses spécificités métier, les règles de sécurité à respecter
-- **Plugins** : définir les plugins à utiliser pour générer les adversarial inputs ils sont aussi regroupés par type d'application (RAG, MCP, OWASP LLM Top 10 (focus), Mitre, EU AI Act, ...)
-- **Strategies** : définir la stratégie d'attaque à utiliser (base64, leetspeak, multi-turn, homogliphic, ...)
-- **Review** : Passer en revue les paramètres et options de run et lancer le red-teaming (via e bouton `Run Now`)
+
+Then follow the instructions in the various tabs:
+- **Target Type**: Define the type of target to be tested (HTTP API, Direct Model, Custom Provider)
+- **Target Config**: Set the target configuration (file containing the endpoint, delay between requests, custom configuration, etc.)
+- **Application Details**: Specify the expected behavior of the application, its business specifics, and security rules to respect
+- **Plugins**: Choose the plugins to use for generating adversarial inputs; they are also grouped by application type (RAG, MCP, OWASP LLM Top 10 (focus), Mitre, EU AI Act, etc.)
+- **Strategies**: Select the attack strategy to use (base64, leetspeak, multi-turn, homoglyphic, etc.)
+- **Review**: Review the run parameters and options, then launch the red-teaming via the `Run Now` button
 
 
-## Étape suivante
+## Next Step
 
-- [Remerciements](thanks-you.md)
+- [Thanks you](thanks-you.md)
 
-## Ressources
+## Resources
 
 | Information                                                                               | Lien                                                                                                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
