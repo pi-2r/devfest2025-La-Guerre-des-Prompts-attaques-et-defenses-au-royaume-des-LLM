@@ -68,7 +68,7 @@ Create a `.env` file in the `nemo-proxy` directory:
 NEMO_GUARDRAILS_URL=http://localhost:8000
 BOT_API_URL=http://localhost:8080
 # If you use the shared instance of tock
-# BOT_API_URL=192.168.20.2
+# BOT_API_URL=http://192.168.20.2:8080
 
 # OpenAI Key
 OPENAI_API_KEY=YOUR-KEY
