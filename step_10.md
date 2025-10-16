@@ -158,6 +158,18 @@ git clone https://github.com/Azure/PyRIT.git && cd PyRIT
 Ensuite, créez un environnement virtuel Python, activez-le, puis installez les dépendances du projet avec les commandes
 suivantes :
 
+<details>
+  <summary>Installation d'uv (si vous n'avez pas suivi les prérequis)</summary>
+
+Voir documentation ici : https://docs.astral.sh/uv/getting-started/installation/#standalone-installer
+
+En bref :
+```bash
+pip install uv
+```
+</details>
+
+
 ```bash
 # Assurez d'être dans le venv créé à la racine du projet du lab
 # Check que vous êtes dans le bon venv ;) On est jamais trop prudent
