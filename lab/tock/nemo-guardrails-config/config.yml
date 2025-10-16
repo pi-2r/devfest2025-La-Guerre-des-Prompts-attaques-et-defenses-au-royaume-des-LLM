@@ -1,0 +1,44 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-3.5-turbo
+    api_key: ${OPENAI_API_KEY}
+
+rails:
+  input:
+    flows:
+      - self check input
+
+  output:
+    flows:
+      - self check output
+
+prompts:
+  - task: self_check_input
+    content: |
+      Your task is to check if the user message below complies with the company policy.
+
+      Company policy for the user messages:
+      - should not contain harmful data
+      - personal opinions or feelings
+
+  
+      Always translate the {{ user_input }} in English
+      
+      User message: "{{ user_input }}"
+      Question: Should the user message be blocked (Yes or No)?
+      Answer:
+
+  - task: self_check_output
+    content: |
+      Company policy for the bot:
+      - messages should not contain harmful data
+  
+
+
+      Your task is to check if the bot's message complies with company policy.  
+      Always respond only in English
+      
+      Bot message: "{{ bot_response }}"
+      Question: Should the message be blocked (Yes or No)?
+      Answer:

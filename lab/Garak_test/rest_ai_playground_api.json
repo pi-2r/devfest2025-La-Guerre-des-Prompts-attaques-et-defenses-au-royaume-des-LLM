@@ -1,0 +1,32 @@
+{
+  "rest": {
+    "RestGenerator": {
+      "name": "AI-Playground-API",
+      "uri": "http://localhost:REPLACE_WITH_CHATBOT_PORT/chats/REPLACE_WITH_CHAT_ID/messages", 
+      "method": "post",
+      "headers": {
+        "Accept": "*/*",
+        "Accept-Language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Connection": "keep-alive",
+        "Origin": "http://localhost:REPLACE_WITH_CHATBOT_PORT",
+        "Referer": "http://localhost:REPLACE_WITH_CHATBOT_PORT/",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin",
+        "User-Agent": "garak-scanner",
+        "content-type": "application/json",
+        "Cookie": "session=REPLACE_WITH_SESSION_COOKIE; _xsrf=REPLACE_XSRF; username-localhost-8888=REPLACE_HASH"
+      },
+      "req_template_json_object": {
+        "input": "$INPUT",
+        "variables": [
+          {"key":"chatId", "value":"REPLACE_WITH_CHAT_ID"},
+          {"key":"messageType", "value":"0"}
+        ]
+      },
+      "response_json": true,
+      "response_json_field": "value",
+      "request_timeout": 30
+    }
+  }
+}

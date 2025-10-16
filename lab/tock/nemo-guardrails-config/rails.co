@@ -1,0 +1,18 @@
+define bot refuse to respond
+  "I'm sorry, but I can't assist with that request."
+  "I can't provide information on that topic."
+  "That's not something I can help you with."
+
+define flow self check input
+  $should_block = execute self_check_input
+  # If input should be blocked (Yes means block), refuse
+  if $should_block == "Yes"
+    bot refuse to respond with "I can't provide information on that topic."
+    stop
+
+define flow self check output
+  $should_block = execute self_check_output
+  # If output should be blocked (Yes means block), refuse
+  if $should_block == "Yes"
+    bot refuse to respond with "I can't provide information on that topic."
+    stop

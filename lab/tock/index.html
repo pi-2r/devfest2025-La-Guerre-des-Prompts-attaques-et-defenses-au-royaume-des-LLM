@@ -1,0 +1,355 @@
+<title>Devfest 2025</title>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script crossorigin src="https://unpkg.com/tock-react-kit@latest/build/tock-react-kit-standalone.umd.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+        #main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        #history {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 32px 0 120px 0;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 18px 24px;
+            margin: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .user {
+            color: #7b133c;
+            font-weight: bold;
+        }
+        .bot {
+            color: #222;
+        }
+        .meta {
+            font-size: 0.9em;
+            color: #888;
+        }
+        #controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            background: #fff;
+            box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+            padding: 24px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+        #inputField {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #7b133c;
+            font-size: 1.1rem;
+            width: 320px;
+        }
+        #switchLabel {
+            font-size: 1rem;
+            color: #7b133c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 28px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #7b133c;
+        }
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+        #sendBtn {
+            background: #7b133c;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            transition: background 0.2s;
+        }
+        #sendBtn:hover {
+            background: #ff003c;
+        }
+        #clearBtn {
+            background: #ccc;
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            transition: background 0.2s;
+        }
+        #clearBtn:hover {
+            background: #ff003c;
+            color: #fff;
+        }
+        #loadingAnimation {
+            font-size: 1.8rem;
+            color: #7b133c;
+            height: 70px;
+            display: none;  /* Changé de none à flex quand activé par JS */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .thinking-text {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #7b133c;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        /* Animation de vague */
+        .wave-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            gap: 8px;
+        }
+
+        .wave-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #7b133c;
+            display: inline-block;
+            animation: wave 1.5s infinite ease-in-out;
+        }
+
+        .wave-dot:nth-child(1) { animation-delay: 0s; }
+        .wave-dot:nth-child(2) { animation-delay: 0.2s; }
+        .wave-dot:nth-child(3) { animation-delay: 0.4s; }
+        .wave-dot:nth-child(4) { animation-delay: 0.6s; }
+        .wave-dot:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes wave {
+            0%, 40%, 100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+            20% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="history"></div>
+    <div id="loadingAnimation" style="display:none; justify-content:center; align-items:center; width:100%; margin-bottom:16px;">
+        <div class="thinking-text">Le bot est en train de réfléchir...</div>
+        <div class="wave-container">
+            <div class="wave-dot"></div>
+            <div class="wave-dot"></div>
+            <div class="wave-dot"></div>
+            <div class="wave-dot"></div>
+            <div class="wave-dot"></div>
+        </div>
+    </div>
+    <div id="controls">
+        <input id="inputField" type="text" placeholder="Pose ta question au bot..." />
+        <label id="switchLabel">
+            <span>Utiliser NeMo Proxy</span>
+            <span class="switch">
+                <input type="checkbox" id="proxySwitch" />
+                <span class="slider"></span>
+            </span>
+        </label>
+        <button id="sendBtn">Envoyer</button>
+        <button id="clearBtn">Supprimer l'historique</button>
+    </div>
+</div>
+<script>
+    const nemoProxyUrl = 'http://localhost:8002/io/app/new_assistant/web';
+    const botDirectUrl = 'http://localhost:8080/io/app/new_assistant/web';
+    let currentUrl = botDirectUrl;
+    let history = [];
+
+    document.getElementById('proxySwitch').addEventListener('change', function(e) {
+        currentUrl = e.target.checked ? nemoProxyUrl : botDirectUrl;
+    });
+
+    function parseResponse(data, isProxy) {
+        if (isProxy) {
+            // Proxy format
+            let text = (data.responses && data.responses[0] && data.responses[0].text) ? data.responses[0].text : '';
+            let meta = [];
+            if (data.proxy_status) meta.push('Proxy: ' + data.proxy_status);
+            if (data.input_filter_status) meta.push('Input filter: ' + data.input_filter_status);
+            if (data.jailbreak_filter_status) meta.push('Jailbreak: ' + data.jailbreak_filter_status);
+            if (data.guardrails_status) meta.push('Guardrails: ' + data.guardrails_status);
+            if (data.bot_api_status) meta.push('Bot API: ' + data.bot_api_status);
+            return { text, meta: meta.join(' | ') };
+        } else {
+            // Bot direct format
+            let text = (data.responses && data.responses[0] && (data.responses[0].text || data.responses[0].WebMessage || data.responses[0].text)) ? (data.responses[0].text || data.responses[0].WebMessage || data.responses[0].text) : '';
+            let meta = (data.metadata && data.metadata.INTENT) ? 'Intent: ' + data.metadata.INTENT : '';
+            return { text, meta };
+        }
+    }
+
+    function renderHistory() {
+        const historyDiv = document.getElementById('history');
+        historyDiv.innerHTML = '';
+        history.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            const user = document.createElement('div');
+            user.className = 'user';
+            user.textContent = 'Utilisateur : ' + item.question;
+            card.appendChild(user);
+            const bot = document.createElement('div');
+            bot.className = 'bot';
+            bot.innerHTML = 'Bot : ' + item.response.text;
+            card.appendChild(bot);
+            if (item.response.meta) {
+                const meta = document.createElement('div');
+                meta.className = 'meta';
+                let metaHtml = item.response.meta;
+                // Mise en forme spéciale pour Guardrails: blocked
+                if (item.response.meta.includes('Guardrails: blocked')) {
+                    // Remplacer Guardrails: blocked par une version stylée
+                    meta.innerHTML = item.response.meta.replace(
+                        /Guardrails: blocked/g,
+                        '<span style="color:#c00;font-weight:bold;">Guardrails: blocked</span>'
+                    );
+                } else {
+                    meta.textContent = item.response.meta;
+                }
+                card.appendChild(meta);
+            }
+            historyDiv.appendChild(card);
+        });
+        // Scroll en bas
+        historyDiv.scrollTop = historyDiv.scrollHeight;
+    }
+
+    document.getElementById('inputField').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            document.getElementById('sendBtn').click();
+        }
+    });
+
+    function showLoading() {
+        // Afficher l'animation uniquement si le proxy est activé
+        const isProxyEnabled = document.getElementById('proxySwitch').checked;
+        if (isProxyEnabled) {
+            document.getElementById('loadingAnimation').style.display = 'flex';
+        }
+    }
+    function hideLoading() {
+        document.getElementById('loadingAnimation').style.display = 'none';
+    }
+
+    document.getElementById('sendBtn').addEventListener('click', async function() {
+        const userInput = document.getElementById('inputField').value;
+        if (!userInput.trim()) return;
+        document.getElementById('inputField').value = '';
+        const isProxy = (currentUrl === nemoProxyUrl);
+        showLoading();
+        try {
+            const res = await fetch(currentUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: userInput, userId: 'demo-user' })
+            });
+            const data = await res.json();
+            const parsed = parseResponse(data, isProxy);
+            history.push({ question: userInput, response: parsed });
+            renderHistory();
+        } catch (e) {
+            let errorMsg = 'Erreur: ' + e;
+            if (String(e).includes('NetworkError when attempting to fetch resource')) {
+                errorMsg = "Impossible de joindre le serveur. Vérifiez la connexion ou que le service est démarré.";
+            }
+            history.push({ question: userInput, response: { text: errorMsg, meta: '' } });
+            renderHistory();
+        }
+        hideLoading();
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', function() {
+        history = [];
+        renderHistory();
+    });
+</script>
+</body>
+</html>
