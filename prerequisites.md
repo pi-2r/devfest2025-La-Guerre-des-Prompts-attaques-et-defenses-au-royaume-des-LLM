@@ -18,7 +18,6 @@ This tutorial is offered in advance of the session [The Prompt War: Attacks & De
 
 - [Docker Images](#docker-images)
     - [AI Red Teaming Playground Labs](#ai-red-teaming-playground-labs)
-    - [Nemo Guardrails](#nemo-guardrails)
     - [Tock](#tock)
 
 - [Installing Robustness Testing Tools](#installing-robustness-testing-tools)
@@ -68,6 +67,18 @@ During the workshop with **regular use** of **gpt-3.5-turbo** and **moderate use
 
 <img src="img/openai-price.jpg">
 </details>
+
+You can test your OpenAI API key with a simple curl request like this:
+
+```bash
+curl https://api.openai.com/v1/responses \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $OPENAI_API_KEY" \
+-d '{
+"model": "gpt-3.5-turbo",
+"input": "Tell me a three sentence bedtime story about a unicorn."
+}'
+```
 
 ### The Ollama Tool
 
