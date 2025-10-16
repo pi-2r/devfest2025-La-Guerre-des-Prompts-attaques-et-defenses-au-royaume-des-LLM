@@ -100,8 +100,8 @@ Once all services are running:
 
 2. **Create Python virtual environment**:
    ```bash
-   # Create virtual environment
-   python3 -m venv venv
+   # sourcer le venv à la racine du repo devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv
+   source ../../../.venv/bin/activate
    
    # Activate it
    source venv/bin/activate  # On macOS/Linux
@@ -112,13 +112,16 @@ Once all services are running:
 3. **Install dependencies** (fix for pydantic-core error):
    ```bash
    # Upgrade pip first
-   pip install --upgrade pip
+   uv pip install --upgrade pip
    
    # Install dependencies with specific Python version compatibility
-   pip install -r requirements.txt --no-cache-dir
+   uv pip install -r requirements.txt --no-cache-dir
+
+   # Install nemoguardrails
+   uv pip install "nemoguardrails[openai]"
    
    # If pydantic-core error persists, try:
-   pip install pydantic==2.5.0 pydantic-core==2.12.0
+   uv pip install pydantic==2.5.0 pydantic-core==2.12.0
    ```
 
 4. **Set environment variables**:
@@ -130,7 +133,7 @@ Once all services are running:
 5. **Run the application locally**:
    ```bash
    # Development mode with auto-reload
-   uvicorn app:app --host 0.0.0.0 --port 8002 --reload
+   uv run uvicorn app:app --host 0.0.0.0 --port 8002 --reload
    ```
 
 ### Running Tests

@@ -52,7 +52,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # 3. Installer garak
-python -m pip install -U garak==0.13.1
+uv pip install garak==0.13.1
 ```
 
 

@@ -47,15 +47,16 @@ nemo-proxy/
 ### 1. Environment Setup
 
 ```bash
-# Navigate to the project directory
-cd docker/nemo-proxy
+# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
+source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
 
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Navigate to the project directory
+cd lab/tock/docker/nemo-proxy
 
 # Install dependencies
-pip install -r requirements.txt
+uv pip install -r requirements.txt
+
+uv pip install "nemoguardrails[openai]"
 ```
 
 ### 2. Environment Variables
@@ -67,18 +68,23 @@ Create a `.env` file in the `nemo-proxy` directory:
 NEMO_GUARDRAILS_URL=http://localhost:8000
 BOT_API_URL=http://localhost:8080
 
+# OpenAI Key
+OPENAI_API_KEY=YOUR-KEY
+
 # Optional settings
 LOG_LEVEL=DEBUG
+
+GUARDRAILS_CONFIG_PATH=../nemo-guardrails-config
 ```
 
 ### 3. Run the Application
 
 ```bash
-# Run with Python directly
-python app.py
+# Source your env file
+source .env
 
 # Or run with uvicorn for development
-uvicorn app:app --host 0.0.0.0 --port 8001 --reload
+uv run uvicorn app:app --host 0.0.0.0 --port 8001 --reload
 ```
 
 The application will be available at `http://localhost:8001`
@@ -265,7 +271,7 @@ mypy .
 LOG_LEVEL=DEBUG python app.py
 
 # Run with uvicorn debug mode
-uvicorn app:app --host 0.0.0.0 --port 8001 --reload --log-level debug
+uv run uvicorn app:app --host 0.0.0.0 --port 8001 --reload --log-level debug
 ```
 
 ## 📝 API Documentation

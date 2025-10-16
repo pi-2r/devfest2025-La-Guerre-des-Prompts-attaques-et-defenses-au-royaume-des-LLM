@@ -168,13 +168,13 @@ source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
 source .venv/bin/activate
 
 # 3. Mettre à jour pip, setuptools et wheel dans l’environnement
-pip install --upgrade pip setuptools wheel
+uv pip install --upgrade pip setuptools wheel
 
 # 4. Installer la dépendance requise
-pip install IPython
+uv pip install IPython
 
 # 5. Installer ce projet localement en mode développement (utile pour développement/débogage)
-pip install -e .
+uv pip install -e .
 ```
 
 Après exécution, vous devriez obtenir des messages indiquant la création de l’environnement virtuel, puis l’installation

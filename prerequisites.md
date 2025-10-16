@@ -197,7 +197,16 @@ Enfin, pour arrêter l'environnement, utilisez la commande :
 ```bash
 docker compose -f prerequisites-docker-compose-genai.yml down
 ```
- 
+
+### Installation d'uv
+
+Voir documentation ici : https://docs.astral.sh/uv/getting-started/installation/#standalone-installer
+
+En bref :
+```bash
+pip install uv
+```
+
 ### Installation de Garak
 
 Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
@@ -206,13 +215,13 @@ puis exécutez la commande suivante pour cloner le dépôt et entrer automatique
 ```bash
 # 1. Créer un environnement virtuel a la racine du repo
 # cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
-python3 -m venv .venv
+uv venv --python 3.13.2
 
 # 2. Activer l’environnement virtuel
 source .venv/bin/activate
 
 # 3. Installer garak
-python -m pip install -U garak
+uv pip install garak==0.13.1
 ```
 
 ### Installation de PyRIT
@@ -229,7 +238,6 @@ suivantes :
 
 ```bash
 # Assurez d'être dans le venv créé à la racine du projet du lab
-# 1. Créer un environnement virtuel a la racine du repo
 # cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
 source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
 
@@ -237,13 +245,13 @@ source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
 source .venv/bin/activate
 
 # 3. Mettre à jour pip, setuptools et wheel dans l’environnement
-pip install --upgrade pip setuptools wheel
+uv pip install --upgrade pip setuptools wheel
 
 # 4. Installer la dépendance requise
-pip install IPython
+uv pip install IPython
 
 # 5. Installer ce projet localement en mode développement (utile pour développement/débogage)
-pip install -e .
+uv pip install -e .
 ```
 
 Après exécution, vous devriez obtenir des messages indiquant la création de l’environnement virtuel, puis l’installation
