@@ -171,9 +171,8 @@ Votre bot sera alors accessible via l’URL suivante : **io/app/new_assistant/we
 Dans le dossier lab/tock, ouvrez depuis votre navigateur web le fichier index.html, puis dite simplement bonjour au bot.
 
 > **Instance partagée** : Si vous utilisez l'instance partagée de tock pensez à adapter l'URL dans index.html.
-> Remplacez **const botDirectUrl = 'http://localhost:8080/io/app/new_assistant/web';**
-> Par **const botDirectUrl = 'http://192.168.20.2:8080/io/$$VOTRE_USER_CE_QUI_EST_AVANT_LE_@$$/new_assistant/web';**
-> Exemple pour le user medee@mythos.world par : **const botDirectUrl = 'http://192.168.20.2:8080/io/medee/new_assistant/web';**
+> * Remplacer **const bot_api_host = 'localhost';** Par **const bot_api_host = '192.168.20.2';**
+> * Remplacer **const bot_web_connector_path = 'io/app/new_assistant/web';** par exemple par **const bot_web_connector_path = 'io/medee/new_assistant/web';** adapter avec votre user.
 
 Vous devriez avoir ce rendu.
 <img src="img/bot-step1.png" alt="bot-step1">

@@ -312,22 +312,28 @@ class BotApiService:
     def __init__(self, base_url: str = BOT_API_URL):
         self.base_url = base_url
 
-    def send_message(self, data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    def send_message(self, data: Dict[str, Any], ns: str = "app", appname: str = "new_assistant") -> Optional[Dict[str, Any]]:
         """
         Send message to Bot API
 
         Args:
             data: Data to send
+            ns: Namespace for the bot API path
+            appname: Application name for the bot API path
 
         Returns:
             API response or None on error
         """
         try:
-            logger.info(f"=== Attempting to connect to Bot API at: {self.base_url} ===")
+            # Construct the dynamic path
+            bot_api_path = f"/io/{ns}/{appname}/web"
+            full_url = f"{self.base_url}{bot_api_path}"
+            
+            logger.info(f"=== Attempting to connect to Bot API at: {full_url} ===")
             logger.info(f"Sending data: {data}")
 
             response = requests.post(
-                f"{self.base_url}/io/app/new_assistant/web",
+                full_url,
                 json=data,
                 headers={"Content-Type": "application/json"},
                 timeout=60

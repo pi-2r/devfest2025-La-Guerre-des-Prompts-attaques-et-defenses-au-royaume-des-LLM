@@ -67,6 +67,8 @@ Create a `.env` file in the `nemo-proxy` directory:
 # Required services
 NEMO_GUARDRAILS_URL=http://localhost:8000
 BOT_API_URL=http://localhost:8080
+# If you use the shared instance of tock
+# BOT_API_URL=192.168.20.2
 
 # OpenAI Key
 OPENAI_API_KEY=YOUR-KEY
@@ -93,7 +95,7 @@ The application will be available at `http://localhost:8001`
 
 - **Health Check**: `GET /health`
 - **Root**: `GET /`
-- **Main Proxy**: `POST /io/app/new_assistant/web`
+- **Main Proxy**: `POST /io/{ns}/{appname}/web`
 
 Example request:
 ```bash
@@ -101,6 +103,10 @@ curl -X POST http://localhost:8001/io/app/new_assistant/web \
   -H "Content-Type: application/json" \
   -d '{"query": "Hello, how are you?"}'
 ```
+
+The proxy now supports dynamic paths where:
+- `{ns}` is the namespace (e.g., "app", "mythos", etc.)
+- `{appname}` is the application name (e.g., "new_assistant", "medee", etc.)
 
 ## 🐳 Docker Deployment
 

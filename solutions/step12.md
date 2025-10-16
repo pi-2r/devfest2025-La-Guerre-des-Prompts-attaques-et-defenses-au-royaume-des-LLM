@@ -78,7 +78,7 @@ FORBIDDEN_PATTERNS:
     r"unfliteredly.*rebel\s+answer",  # Unfiltered rebel response requests
     r"ensure\s+output\s+length\s+is\s+over\s+\d+\s+words",  # Length manipulation
     r"\{Z\}\s*=\s*\{.*user_input.*\}",  # Variable substitution patterns
-    r"(semantically\s+)?inverse.*(first\s+3\s+words|3\s+words)",  # Word inversion techniques (expanded)
+    r"(semantically\s+)?inverse.*(first\s+3\s+words|3\s+words)",  # Word inversion techniques 
 ```
 
 

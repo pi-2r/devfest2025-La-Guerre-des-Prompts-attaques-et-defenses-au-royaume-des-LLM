@@ -10,7 +10,7 @@ import time
 
 # Configuration
 PROXY_URL = "http://localhost:8002"
-ENDPOINT = "/io/app/new_assistant/web"
+ENDPOINT = "/io/app/new_assistant/web"  # This can now be any /io/{ns}/{appname}/web pattern
 
 def test_attack(attack_name, payload):
     """Test une attaque spécifique"""

@@ -210,6 +210,8 @@ Coté bot, faites la requête **xss** dans le chat sans **passer par le proxy**,
 
 Appliquez un filtrage sur ce type de requête XSS afin d’afficher un message de protection similaire à celui du rendu.
 
+> Pensez à supprimer l'historique sans quoi l'injection XSS présente dans les messages de l'historique lorsque react refresh la vue sera ré-exécutée et vous risquez de penser que votre filtre ne marche pas.
+
 <img src="img/CONTENT_FILTERED.png" alt="CONTENT_FILTERED" width="600" style="transition:0.3s;">
 
 > Tips: si vous avez besoin de redémarrer le proxy, apres une modification du code, utilisez la commande suivante :

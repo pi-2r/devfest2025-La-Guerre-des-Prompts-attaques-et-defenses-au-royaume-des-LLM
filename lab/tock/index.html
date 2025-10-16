@@ -238,8 +238,13 @@
     </div>
 </div>
 <script>
-    const nemoProxyUrl = 'http://localhost:8002/io/app/new_assistant/web';
-    const botDirectUrl = 'http://localhost:8080/io/app/new_assistant/web';
+    const bot_api_host = 'localhost'; // Si vous utilisez l'instance partagée de tock, mettez l'IP 192.168.20.2
+    // Si vous êtes sur l'instance partagée adapter ce path par exemple pour medee@mythos.world le path est 'io/app/medee/web'
+    const bot_web_connector_path = 'io/app/new_assistant/web';
+    // const bot_web_connector_path = 'io/medee/new_assistant/web';
+
+    const nemoProxyUrl = `http://localhost:8002/${bot_web_connector_path}`;
+    const botDirectUrl = `http://${bot_api_host}:8080/${bot_web_connector_path}`;
     let currentUrl = botDirectUrl;
     let history = [];
 

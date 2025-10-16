@@ -47,9 +47,9 @@ async def health_check():
     """Health check endpoint"""
     return {"status": "healthy", "service": "nemo-proxy"}
 
-@app.options("/io/app/new_assistant/web")
-async def options_handler():
-    """Handle OPTIONS requests for CORS preflight"""
+@app.options("/io/{ns}/{appname}/web")
+async def options_handler(ns: str, appname: str):
+    """Handle OPTIONS requests for CORS preflight for dynamic paths"""
     return JSONResponse(
         content={"message": "OK"},
         headers={
@@ -59,17 +59,19 @@ async def options_handler():
         }
     )
 
-@app.post("/io/app/new_assistant/web")
-async def proxy_with_guardrails(request: Request):
+@app.post("/io/{ns}/{appname}/web")
+async def proxy_with_guardrails(request: Request, ns: str, appname: str):
     """
     Main proxy endpoint that applies NeMo Guardrails before forwarding to bot_api
+    Supports dynamic paths: /io/{ns}/{appname}/web
     """
     try:
         # Get request data
         data = await request.json()
         user_input = data.get("query", "")
 
-        logger.info(f"Received request with query: {user_input[:100]}...")
+        logger.info(f"=== Received request for /io/{ns}/{appname}/web ===")
+        logger.info(f"Query: {user_input[:100]}...")
 
         # Step 1: Input sanitization and validation (LLM05)
         logger.info("Starting input sanitization and validation")
@@ -114,7 +116,7 @@ async def proxy_with_guardrails(request: Request):
             logger.info("Request approved by guardrails, forwarding to bot API")
 
             # Step 4: Forward to Bot API if guardrails approve
-            bot_response = bot_service.send_message(data)
+            bot_response = bot_service.send_message(data, ns, appname)
             logger.info("================ Bot API Response ================")
             logger.info(bot_response)
             logger.info("================ ================ ================")
@@ -156,7 +158,7 @@ async def proxy_with_guardrails(request: Request):
         else:
             # Guardrails désactivés, on passe directement au bot_service
             logger.info("Guardrails désactivés, requête envoyée directement au bot API")
-            bot_response = bot_service.send_message(data)
+            bot_response = bot_service.send_message(data, ns, appname)
             logger.info("================ Bot API Response ================")
             logger.info(bot_response)
             logger.info("================ ================ ================")
