@@ -216,7 +216,7 @@ puis exécutez la commande suivante pour cloner le dépôt et entrer automatique
 ```bash
 # 1. Créer un environnement virtuel a la racine du repo
 # cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
-cd ../.. # être au niveau de devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
+cd $(git rev-parse --show-toplevel)
 uv venv --python 3.13.2
 
 # 2. Activer l’environnement virtuel
@@ -239,6 +239,9 @@ Ensuite, créez un environnement virtuel Python, activez-le, puis installez les 
 suivantes :
 
 ```bash
+# Check que vous êtes dans le bon venv ;) On est jamais trop prudent
+[[ "${VIRTUAL_ENV-}" == *"devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM"* ]] || { echo "❌ Wrong/missing venv" >&2; return 1 2>/dev/null || exit 1; }
+
 # Assurez d'être dans le venv créé à la racine du projet du lab
 # cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
 #source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
