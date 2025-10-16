@@ -241,10 +241,12 @@ suivantes :
 ```bash
 # Assurez d'être dans le venv créé à la racine du projet du lab
 # cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
-source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
+#source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
 
 # 2. Activer l’environnement virtuel
-source .venv/bin/activate
+# -> faite un pwd depuis le dossier du codelab pour être sûr d'avoir le bon chemin
+# exemple de rendu sur ma machine : source /Users/pierre_therrode/Desktop/devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
+source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
 
 # 3. Mettre à jour pip, setuptools et wheel dans l’environnement
 uv pip install --upgrade pip setuptools wheel
