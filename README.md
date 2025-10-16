@@ -4,6 +4,17 @@ This GitHub project stems from the workshop by [Benjamin Bernard](https://www.li
 
 ![The Prompt War: Attacks & Defenses in the Realm of LLMs](img/la-guerre-des-prompts-attaques-et-defenses-au-royaume-des-llm.png)
 
+## Network Info
+
+Wi-Fi Access Point:
+* SSID: LLM_ATTACK
+* Password: password
+
+Shared AI Red Team Lab available here: [http://192.168.20.2:5000/login?auth=YOUR_AUTH_KEY](http://192.168.20.2:5000/login?auth=YOUR_AUTH_KEY)
+
+Shared Tock instance available here: http://192.168.20.2/
+
+
 ## Table of contents
 
 <details>
