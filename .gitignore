@@ -95,3 +95,7 @@ tmp/
 # Demo artifacts
 demo_outputs/
 test_results/
+
+# Misc
+lab/PyRIT/settings.xml
+lab/tock/.env
