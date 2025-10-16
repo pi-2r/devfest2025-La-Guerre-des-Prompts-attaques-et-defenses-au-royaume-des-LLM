@@ -36,7 +36,7 @@
 - [Exemple concret : FastAPI n’est pas un guardrail](#exemple-concret--fastapi-nest-pas-un-guardrail)
  
 
-- [Étape suivante](#étape-suivante)v
+- [Étape suivante](#étape-suivante)
 - [Ressources](#ressources)
 
 
