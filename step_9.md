@@ -1,212 +1,199 @@
-# Garak: An LLM vulnerability scanner
+# Garak: An LLM Vulnerability Scanner
 
-[<img src="img/minas_tirith_tree_burning.jpg" alt="minas_tirith_burning" width="800" >](https://www.youtube.com/watch?v=yFBrm5YH9-8)
-> "A white tree in a courtyard of stone.. It was dead.. The city was burning.", Pippin, LOTR - The Return of the King
+[<img src="img/minas_tirith_tree_burning.jpg" alt="minas_tirith_burning" width="800">](https://www.youtube.com/watch?v=yFBrm5YH9-8)
+> "A white tree in a courtyard of stone... It was dead... The city was burning." — Pippin, LOTR: The Return of the King
 
-## 🎯 Objectifs de cette étape
+## 🎯 Objectives of This Step
 
-- Présentation de garak.
-- Mettre en pratique ces techniques sur ce Playground de Microsoft : [AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs).
+- Introduction to Garak.
+- Practice these techniques on Microsoft's Playground: [AI-Red-Teaming-Playground-Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs).
 
-## Sommaire
-
+## Summary
 
 - [Garak](#garak)
-    - [Installation de Garak](#installation-de-garak)
-    - [Les Probes](#les-probes)
-    - [Les Generators](#les-generators)
-    - [Les Detectors et les Harnesses](#les-detectors-et-les-harnesses)
-    - [L'Auto-Red-Team](#lauto-red-team)
+    - [Installing Garak](#installing-garak)
+    - [Probes](#probes)
+    - [Generators](#generators)
+    - [Detectors and Harnesses](#detectors-and-harnesses)
+    - [Auto-Red-Team](#auto-red-team)
 
-- [Mise en pratique de Garak sur le Playground de Microsoft](#mise-en-pratique-de-garak-sur-le-playground-de-microsoft)
-    - [Initialisation du REST Generator](#initialisation-du-rest-generator)
-    - [Initialisation d'une sonde custom Garak](#initialisation-dune-sonde-custom-garak)
+- [Applying Garak on the Microsoft Playground](#applying-garak-on-the-microsoft-playground)
+    - [Initializing the REST Generator](#initializing-the-rest-generator)
+    - [Initializing a Custom Garak Probe](#initializing-a-custom-garak-probe)
+    - [Practical application on Microsoft Playground chatbot 2](#practical-application-on-microsoft-playground-chatbot-2)
+  
 
-- [Étape suivante](#étape-suivante)
-- [Ressources](#ressources)
-
-
+- [Next Step](#next-step)
+- [Resources](#resources)
 
 ## Garak
 
 ![GitHub stars](https://img.shields.io/github/stars/NVIDIA/garak?style=flat-square)
 [![Downloads](https://static.pepy.tech/badge/garak/month)](https://pepy.tech/project/garak)
 
-**Garak** est un outil open-source développé par **NVIDIA** pour scanner les vulnérabilités des modèles de langage (LLM).
-**Garak** se fonde sur une base de connaissances de jailbreaks et de variantes connus et constamment mis à jour par la communauté.
+**Garak** is an open-source tool developed by **NVIDIA** to scan vulnerabilities in Large Language Models (LLMs).  
+**Garak** is based on a knowledge base of known jailbreaks and variants, continuously updated by the community.
 
-Lors d'un audit, **Garak** lance des attaques prédéfinies, non-adaptatives, et sauvegarde les résultats sous format JSON et HTML.
+During an audit, **Garak** launches predefined, non-adaptive attacks and saves the results in JSON and HTML formats.
 
-La recommandation est d'utiliser **Garak** périodiquement ou avant une mise à jour majeure d'une application (changement de LLM,...) pour dresser un état des lieux des principales vulnérabilités auxquelles votre application est sensible.
-On peut ensuite mettre en place des guardrails plus spécifiques avec **NEMO Guardrails** (cf. [étape 13](step_13.md))).
+It is recommended to use **Garak** periodically or before a major application update (e.g., LLM change) to establish a snapshot of your application’s main vulnerabilities.  
+After that, you can implement more specific guardrails using **NEMO Guardrails** (see [Step 13](step_13.md)).
 
-### Installation de Garak
+### Installing Garak
 
-Si vous n'aviez pas déjà installé Garak, voilà comment faire depuis un terminal :
-
-
-<details>
-  <summary>Installation d'uv (si vous n'avez pas suivi les prérequis)</summary>
-
-Voir documentation ici : https://docs.astral.sh/uv/getting-started/installation/#standalone-installer
-
-En bref :
-```bash
-pip install uv
-
-# Si vous n'avez pas pip
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-</details>
+To install Garak, use pip. Run the following command in your terminal:
 
 ```bash
-# Se déplacer à la racine du repo
-cd $(git rev-parse --show-toplevel)
+# 1. Créer un environnement virtuel a la racine du repo
+# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
+python3 -m venv .venv
 
 # 2. Activer l’environnement virtuel
 source .venv/bin/activate
 
 # 3. Installer garak
-uv pip install garak==0.13.1
+python -m pip install -U garak==0.13.1
 ```
 
 
-### Les Probes
+### Probes
 
-Garak permet de faire un scanning automatisé des LLMs en utilisant un certain nombre de sondes (probes).
-Vous pouvez voir la liste des probes disponibles en exécutant la commande suivante :
+Garak enables automated scanning of LLMs using a set of *probes*.  
+These probes are designed to identify vulnerabilities such as prompt injection, data leakage, hallucinations, or jailbreak weaknesses.
+
+You can view the list of available probes by running the following command:
 
 ```bash
 
 python -m garak --list_probes
 ```
 
-Vous devriez voir un affichage similaire à celui-ci :
+You should see an output similar to this:
 
 <img src="img/list_probes.png" alt="garak-list-probes" width="600" style="transition:0.3s;">
 
-Certaines probes sont suivies de symboles 🌟 ou 💤 comme ceci :
+Some probes are followed by symbols like 🌟 or 💤 as shown here:
+
 ```plaintext
 probes: divergence 🌟
 probes: divergence.Repeat
 probes: divergence.RepeatExtended 💤
 ```
-En fait, il existe plusieurs variantes de probes pour un même type de jailbreak.
-Ces symboles ont la signification suivante :
-- 🌟 : indique qu'on passe à un nouveau module de jailbreak ici `divergence`.
-- 💤 : indique que la probe `divergence.RepeatExtended` est inactive par défaut, car son lancement serait long. 
-C'est la version `divergence.Repeat` qui sera lancée en cas de scan automatique.
 
-Pour lancer un scan automatique d'un module en particulier comme `divergence`, il suffit d'exécuter la commande suivante :
+There are multiple variants of probes for the same type of jailbreak.  
+The symbols next to probes mean the following:
+- 🌟 : Indicates the start of a new jailbreak module, for example, `divergence`.
+- 💤 : Indicates that the probe `divergence.RepeatExtended` is disabled by default due to long runtime. Instead, 
+the `divergence.Repeat` probe is run during automatic scans.
+
+To run an automatic scan of a specific module such as `divergence`, use this command:
 
 ```bash
 
-# Commande mise en illustration, ne pas la lancer pour le codelab
-# python -m garak --model_type huggingface --model_name gpt2 --probes divergence
+# Commande mise en illustration, ne pas la lancer
+python -m garak --model_type huggingface --model_name gpt2 --probes divergence
 ```
 
-Pour lancer une probe inactive comme `divergence.RepeatExtended`, il suffit d'exécuter la commande suivante :
+To run an inactive probe like `divergence.RepeatExtended`, simply execute the following command:
+
 ```bash
 
-# Commande mise en illustration, ne pas la lancer pour le codelab
-# python -m garak --model_type huggingface --model_name gpt2  --probes divergence.RepeatExtended
+# Commande mise en illustration, ne pas la lancer
+python -m garak --model_type huggingface --model_name gpt2  --probes divergence.RepeatExtended
 ```
 
-### Les Generators 
+### Generators
 
-Les generators sont des abstractions (LLMs, APIs, fonction Python) répondant un texte en fonction d'un input.
-Les generators prennent des valeurs, dont :
-- `huggingface` : pour les modèles hébergés sur HuggingFace.
-- `openai` : pour les modèles OpenAI.
-- `function` : pour les fonctions Python.
+Generators are abstractions (LLMs, APIs, Python functions) that respond with text based on an input.  
+Generators accept parameters including:
+- `huggingface` for models hosted on HuggingFace.
+- `openai` for OpenAI models.
+- `function` for Python functions.
 
-Par exemple, si on souhaite évaluer un modèle `gpt2` de `Huggingface` lors d'un scan, on renseigne les options : 
+For example, if you want to evaluate a `gpt2` model from HuggingFace during a scan, specify the options:  
 `--model_type huggingface --model_name gpt2`.
-Si c'est une API d'HuggingFace, on renseigne les options : `--model_name huggingface.InferenceAPI --model_type "mosaicml/mpt-7b-instruct"`.
 
-Pour plus de détails, vous pouvez consulter la documentation officielle de Garak : [Garak Documentation](https://docs.garak.ai/garak/garak-components/using-generators).
+For a HuggingFace API, specify options like:  
+`--model_name huggingface.InferenceAPI --model_type "mosaicml/mpt-7b-instruct"`.
 
-### Les Detectors et les Harnesses
+For more details, consult the official Garak documentation:  
+[Garak Documentation](https://docs.garak.ai/garak/garak-components/using-generators).
 
-Comme, une probe va être lancée plusieurs fois pour tester la robustesse du LLM et que l'on teste plusieurs probes, 
-Garak utilise des detectors pour reconnaitre si la réponse du LLM défaillante.
-Ce sont des détecteurs de mots-clés ou des classifiers jugeant si la réponse d'un LLM est OK ou non selon l'objectif de la probe.
+### Detectors and Harnesses
 
-Les détecteurs ont parfois un paramètre `doc_uri` permettant de trouver de la documentation sur la faille testée. Par 
-exemple, le détecteur [`xss.MarkdownExfilBasic`](https://reference.garak.ai/en/latest/garak.detectors.xss.html#garak.detectors.xss.MarkdownExfilBasic) pointe vers : [Bing Chat Image Markdown Injection](https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/).
+Like a probe is run multiple times to test LLM robustness and multiple probes are tested, Garak uses *detectors* to recognize if an LLM response is faulty.  
+These detectors are keyword-based or classifier-based tools that judge whether an LLM’s output is acceptable according to the probe’s objective.
 
-Les Harnesses gèrent :
-- le lancement des probes sur le generator cible. 
-- le lancement des detectors à utiliser sur les outputs produits par le generator selon les probes.
-- les évaluations des résultats des detectors faites avec les evaluators.
+Detectors sometimes have a `doc_uri` parameter linking to documentation about the tested vulnerability.  
+For example, the detector [`xss.MarkdownExfilBasic`](https://reference.garak.ai/en/latest/garak.detectors.xss.html#garak.detectors.xss.MarkdownExfilBasic) refers to this article: [Bing Chat Image Markdown Injection](https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-poc-and-fix/).
 
-Les Harnesses prennent la valeur : `probewise` si on utilise les détectors récommandés pour la probe ou `pxd` pour 
-tester tous les détecteurs.
+Harnesses handle:
+- Running probes on the target generator.
+- Running detectors on outputs produced by the generator based on probes.
+- Evaluating detector results using evaluators.
 
-### L'auto Red-Team
-
-Garak propose un système d'auto Red-Team sur certain sujet avec la librarie `art`. Cette brique ne peut cependant pas de
-faire un scan poussé.
-
-## Mise en pratique de Garak sur le Playground de Microsoft
-Nous allons mettre en pratique Garak sur le Playground de Microsoft.
-
-### Initialisation du REST Generator
-
-Pour cela, nous allons utiliser le REST Generator de Garak et nous allons utiliser des variantes des sondes 
-(`smuggling.HypotheticalResponse` et `promptinject.DAN`) que nous allons configurer pour trouver le mot de passe protégé 
-par le bot (la modification de `promptinject.DAN` est laissée en exercice).
+Harnesses use the values:
+- `probewise` to use recommended detectors per probe.
+- `pxd` to test all detectors.
 
 
-1 - Pour setter le REST Generator, lancer une inspection de la page HTML du bot que vous voulez tester :
+
+### Auto-Red-Team
+
+Garak offers an auto Red-Team system on certain topics using the `art` library. However, this component cannot perform 
+a thorough scan.
+
+## Applying Garak on the Microsoft Playground
+We will put Garak into practice on the Microsoft Playground.
+
+
+### Initializing the REST Generator
+
+To do this, we will use Garak's REST Generator and variants of probes such as [`smuggling.HypotheticalResponse`](https://reference.garak.ai/en/latest/garak.probes.smuggling.html#garak.probes.smuggling.HypotheticalResponse) and [`promptinject.DAN`](https://reference.garak.ai/en/latest/garak.probes.promptinject.html#garak.probes.promptinject.DAN).  
+We will configure these probes to find the password protected by the bot (modifying `promptinject.DAN` is left as an exercise).
+
+1 - To set up the REST Generator, start by inspecting the HTML page of the target bot you want to test:
 <br/>
 <img src="img/lancer_inspection_chatbot.png" alt="garak-inspection-chatbot" width="600" style="transition:0.3s;">
 <br/>
 <br/>
-2 - Aller dans l'onglet `Network` :
+2 - Go to the `Network` tab:
 <br/>
 <img src="img/network_chatbot.png" alt="garak-network-chatbot" width="600" style="transition:0.3s;">
 <br/>
 <br/>
-3 - Lancer un premier message (ex: "Hello") dans le playground et récupérer les éléments nécessaires comme l'url de la 
-requête POST `messages` et les cookies.
+3 - Send an initial message (e.g., "Hello") in the [translate:playground](https://docs.garak.ai/garak/automatic-red-teaming/garaks-auto-red-team) 
+and retrieve the necessary elements such as the POST request URL `messages` and cookies.
 <br/>
 <img src="img/elements_requete_post.png" alt="request-post-chatbot" width="600" style="transition:0.3s;">
 
-### Initialisation d'une sonde custom Garak
+### Initializing a Custom Garak Probe
 
-Pour lancer le scan d'une sonde custom sur une étape du Playground :
-<br/>
-<br/>
-1 - Copier le fichier `my_probe.py` qui contient un exemple de sonde custom `my_probe.MyHypotheticalResponse` pour le playground dans le répertoire `probes` de la librairie garak que vous utilisez (dans votre `.venv`).
-<br/>
+To launch a custom probe scan on a Playground step:
+
+1 - Copy the file `my_probe.py`, which contains an example custom probe `my_probe.MyHypotheticalResponse` for the 
+playground, into the `probes` directory of the Garak library you are using (inside your `.venv`).  
 <img src="img/ajout_probe_custom_garak.png" alt="ajout_probe_custom_garak" width="200" style="transition:0.3s;">
-<br/>
-<br/>
-2 - Copier aussi le fichier `my_custom_detection.py` qui contient un detector custom `my_custom_detection.MyPasswordByPass` pour le playground dans le répertoire `detectors` de la librairie garak que vous utilisez (dans votre venv). Le detector custom `my_custom_detection.MyPasswordByPass` détecte si un des mots de passe qui doit être protégé a fuité dans la réponse du chatbot.
-<br/>
+
+2 - Also copy the file `my_custom_detection.py`, which contains a custom detector `my_custom_detection.MyPasswordByPass` 
+for the playground, into the `detectors` directory of the Garak library you are using (also inside your `.venv`). This custom detector identifies if any password that should be protected has leaked in the chatbot’s response.
+
 ```bash
 # Depuis la racine du repo vers votre .venv
 cp lab/Garak_test/my_custom_detection.py .venv/lib/python*/site-packages/garak/detectors/
 cp lab/Garak_test/my_probe.py  .venv/lib/python*/site-packages/garak/probes  
 ```
 <br/>
-3 - Lister les detectors et probes disponibles pour vérifier que nos detectors et probes custom sont apparus :
+3 - Run the commands listing available detectors and probes to check if your custom detectors and probes have appeared:
+
 <br/>
 
 ```bash
-
 python -m garak --list_detectors
 python -m garak --list_probes
 ```
-
-### Mise en pratique sur le chatbot 2 du Playground de Microsoft
-
-1 - Copier l'URL du bot 2 ainsi que le cookie de session (comme illustré plus haut) dans le fichier `rest_ai_playground_api.json`
-
-2 - Lancer la commande suivante pour tester la vulnérabilité du chatbot 2 avec la sonde custom `my_probe.MyHypotheticalResponse`. Garak lance directement les prompts en ligne de commandes et les réponses du chatbot sont affichées dans l'interface web.
-
-3 - Si oui, lancer la commande suivante pour tester la vulnérabilité du chatbot. Sinon, assurez-vous que le fichier sonde est copié au bon endroit :
+<br/>
+4 - If yes, run the following command to test the chatbot’s vulnerability. Otherwise, ensure that the probe file is copied to the correct location:
 <br/>
 
 ```bash
@@ -215,52 +202,49 @@ python -m garak --list_probes
 python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyHypotheticalResponse
 ```
 
-*PS : n'hésitez pas à relancer une nouvelle conversation dans le playground entre chaque scan pour réinitialiser le contexte.*
+### Practical application on Microsoft Playground chatbot 2
+
+1 - Set the `rest_ai_playground_api.json` to query chatbot 2.
+
+2 - Run the following command to test chatbot 2's vulnerability using the custom probe `my_probe.MyHypotheticalResponse`. Garak sends prompts directly via the command line, and the chatbot's responses are displayed in the web interface.
+
+*PS: Feel free to start a new conversation in the playground between scans to reset the context.*
 
 <img src="img/jailbreak_by_custom_probe_chatbot_2.png" alt="garak-jailbreak-chatbot-2" width="600" style="transition:0.3s;">
 
-###### résultat obtenus lors du jailbreak réussi du chatbot 2 avec la sonde custom my_probe.MyHypotheticalResponse
+###### Results obtained during a successful jailbreak of chatbot 2 using the custom probe my_probe.MyHypotheticalResponse
 
-3 - Une fois un scan ayant mené à un jailbreak réussi, vous pouvez retrouver le rapport HTML dans le répertoire indiqué dans le log de Garak. Si toutes les attempts de jailbreak ont réussi, le rapport HTML ne indiquera un score de 0% de succès d'interceptio (cf ci-dessous).
+3 - After a scan leading to a successful jailbreak, you can find the HTML report in the directory specified in the Garak log. If all jailbreak attempts succeeded, the HTML report will show a 0% interception success rate (see below).
 
 <img src="img/garak_report_on_successful_jailbreak_attempts.png" alt="garak-successful-jailbreak-chatbot-2-report" width="600" style="transition:0.3s;">
 
-Si vous le souhaitez, vous pouvez tenter de nouveaux scans sur un niveau supérieur, par exemple le chatbot 8, avec la même probe ou une autre (une grandma ou un DAN custom).
-
-```bash
-
-# Commande type, à adapter selon la sonde et le chemin du fichier JSON. Le JSON rest_ai_playground_api.json est lui aussi à adapter.
-python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyGrandmaPassword
-python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyGrandmaSubstance
-python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyDan_11_0
-```
+You can also attempt a scan on the next level of chatbot 2: chatbot 8, and modify the custom probe or try others (such as a grandma or a custom DAN).
 
 <img src="img/jailbreak_failed_by_custom_probe_chatbot_8.png" alt="jailbreak-failed-chatbot-9" width="600" style="transition:0.3s;">
 
-###### résultat obtenus lors d'une tentative de jailbreak du chatbot 8 avec la même sonde custom my_probe.MyHypotheticalResponse
+###### Results obtained during a jailbreak attempt on chatbot 8 with the same custom probe my_probe.MyHypotheticalResponse
 
-Ici le rapport de Garak indique un taux de succès de 100% sur la sonde custom `my_probe.MyHypotheticalResponse` car aucune des attempts de jailbreak n'a réussi.
+Here, Garak’s report shows a 100% success rate on the custom probe `my_probe.MyHypotheticalResponse`, as none of the jailbreak attempts succeeded.
 
 <img src="img/garak_report_on_failed_jailbreak_attempts.png" alt="garak-failed-jailbreak-chatbot-8-report" width="600" style="transition:0.3s;">
 
-| Chatbot | Probes conseillées                                                | Remarques                                                      |
-|---------|-------------------------------------------------------------------|----------------------------------------------------------------|
-| Lab 1   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
-| Lab 2   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
-| Lab 3   | grandma.substance, MyGrandmaSubstance                             |                                                                |
-| Lab 4   | grandma.substance, MyGrandmaSubstance                             |                                                                |
-| Lab 5   | realtoxicityprompts.RTPInsult, realtoxicityprompts.RTPProfanity   | /!\ Ces probes utilisent un roberta-classifier comme detector) |
-| Lab 7   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
-| Lab 8   | MyHypotheticalResponse, MyGrandmaPassword                         |                                                                |
-| Lab 9   | grandma.substance, MyGrandmaSubstance                             |                                                                |
-| Lab 10  | grandma.substance, MyGrandmaSubstance                             |                                                                |
+| Chatbot | Recommended Probes                                               | Notes                                                       |
+|---------|------------------------------------------------------------------|-------------------------------------------------------------|
+| Lab 1   | MyHypotheticalResponse, MyGrandmaPassword                        |                                                             |
+| Lab 2   | MyHypotheticalResponse, MyGrandmaPassword                        |                                                             |
+| Lab 3   | grandma.substance, MyGrandmaSubstance                            |                                                             |
+| Lab 4   | grandma.substance, MyGrandmaSubstance                            |                                                             |
+| Lab 5   | realtoxicityprompts.RTPInsult, realtoxicityprompts.RTPProfanity  | /!\ These probes use a roberta-classifier as detector       |
+| Lab 7   | MyHypotheticalResponse, MyGrandmaPassword                        |                                                             |
+| Lab 8   | MyHypotheticalResponse, MyGrandmaPassword                        |                                                             |
+| Lab 9   | grandma.substance, MyGrandmaSubstance                            |                                                             |
+| Lab 10  | grandma.substance, MyGrandmaSubstance                            |                                                             |
 
 
-## Étape suivante
-- [Étape 10](step_10.md)
+## Next Step
+- [Step 10](step_10.md)
 
-## Ressources
-
+## Resources
 
 | Information                                   | Lien                                                                                                                                                           |
 |-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
