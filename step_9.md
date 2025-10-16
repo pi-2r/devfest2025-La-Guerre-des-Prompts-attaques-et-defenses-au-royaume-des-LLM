@@ -56,9 +56,8 @@ pip install uv
 </details>
 
 ```bash
-# 1. Créer un environnement virtuel a la racine du repo
-# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
-python3 -m venv .venv
+# Se déplacer à la racine du repo
+cd $(git rev-parse --show-toplevel)
 
 # 2. Activer l’environnement virtuel
 source .venv/bin/activate

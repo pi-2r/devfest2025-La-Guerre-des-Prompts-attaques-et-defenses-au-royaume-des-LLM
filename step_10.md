@@ -160,12 +160,9 @@ suivantes :
 
 ```bash
 # Assurez d'être dans le venv créé à la racine du projet du lab
-# 1. Créer un environnement virtuel a la racine du repo
-# cd devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM
-source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
-
-# 2. Activer l’environnement virtuel
-source .venv/bin/activate
+# Check que vous êtes dans le bon venv ;) On est jamais trop prudent
+# Celui à la racine du repo.
+[[ "${VIRTUAL_ENV-}" == *"devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM"* ]] || { echo "❌ Wrong/missing venv" >&2; return 1 2>/dev/null || exit 1; }
 
 # 3. Mettre à jour pip, setuptools et wheel dans l’environnement
 uv pip install --upgrade pip setuptools wheel
