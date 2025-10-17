@@ -15,6 +15,8 @@ Lab AI Red Team partagé disponible ici : http://192.168.20.2:5000/login?auth=YO
 
 Instance partagée de Tock disponible ici : http://192.168.20.2/
 
+*Comptes utilisés pour l'instance partagée (vous avez un petite papier), sinon [liste ici](https://docs.google.com/spreadsheets/d/1dUkbyRc33teEPK-bCrGTdLKIvyPblk4PbxfZXNg2VFA/edit?usp=sharing).*
+
 ## Sommaire
 
 <details>
