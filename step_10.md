@@ -152,7 +152,7 @@ Si vous n'avez pas déjà installé PyRIT, voici comment faire depuis votre term
 puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
 
 ```bash
-git clone https://github.com/Azure/PyRIT.git && cd PyRIT
+git clone https://github.com/Azure/PyRIT.git --depth 1 && cd PyRIT
 ```
 
 Ensuite, créez un environnement virtuel Python, activez-le, puis installez les dépendances du projet avec les commandes
@@ -165,7 +165,7 @@ Voir documentation ici : https://docs.astral.sh/uv/getting-started/installation/
 
 En bref :
 ```bash
-pip install uv7
+pip install uv
 
 # Si vous n'avez pas pip
 curl -LsSf https://astral.sh/uv/install.sh | sh

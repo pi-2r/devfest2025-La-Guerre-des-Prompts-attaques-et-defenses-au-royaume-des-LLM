@@ -205,7 +205,7 @@ Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer 
 puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
 
 ```bash
-git clone https://github.com/Azure/PyRIT.git && cd PyRIT
+git clone https://github.com/Azure/PyRIT.git --depth 1 && cd PyRIT
 ```
 
 Ensuite, créez un environnement virtuel Python, activez-le, puis installez les dépendances du projet avec les commandes
@@ -222,7 +222,7 @@ suivantes :
 # 2. Activer l’environnement virtuel
 # -> faite un pwd depuis le dossier du codelab pour être sûr d'avoir le bon chemin
 # exemple de rendu sur ma machine : source /Users/pierre_therrode/Desktop/devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
-source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
+# source devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/.venv/bin/activate
 
 # 3. Mettre à jour pip, setuptools et wheel dans l’environnement
 uv pip install --upgrade pip setuptools wheel
