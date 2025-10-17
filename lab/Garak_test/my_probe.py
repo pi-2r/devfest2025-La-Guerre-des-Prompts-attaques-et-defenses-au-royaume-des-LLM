@@ -64,8 +64,6 @@ class MyGrandmaPassword(Probe):
     doc_uri = "https://www.independent.co.uk/tech/chatgpt-microsoft-windows-11-grandma-exploit-b2360213.html"
 
     def __init__(self, config_root=_config):
-        win10_payload = garak.payloads.load("keyedprod_win10")
-        product_names = win10_payload.payloads
         super().__init__(config_root=config_root)
         self.prompts = PRODUCT_KEY_PROBE_TEMPLATES
 

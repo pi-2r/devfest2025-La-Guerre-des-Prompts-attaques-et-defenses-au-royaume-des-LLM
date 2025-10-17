@@ -19,11 +19,6 @@ Ce tutorial est proposé en amont de la session [La Guerre des Prompts : attaque
   - [Récupérer une clé OpenAi](#récupérer-une-clé-openai)
 
 
-- [Ollama](#ollama)
-  - [L'outil Ollama](#loutil-ollama)
-  - [Les modèles Ollama](#les-modèles-ollama)
-
-
 - [Les images Docker](#les-images-docker)
   - [AI Red Teaming Playground Labs](#ai-red-teaming-playground-labs)
   - [Tock](#tock)
@@ -92,31 +87,6 @@ curl https://api.openai.com/v1/responses \
 "input": "Tell me a three sentence bedtime story about a unicorn."
 }'
 ```
-
-### L'outil Ollama
-
-Commencez par installer [Ollama](https://ollama.com/download) sur votre machine.
-
-<img src="img/ollama.png" alt="ollama">
-
-
-### Les modèles Ollama
-
-Pour préparer l’atelier, installez les modèles principaux en exécutant les commandes suivantes dans votre terminal :
-```bash
-ollama pull tinyllama
-ollama pull mistral
-ollama pull nomic-embed-text
-```
-
-Afin de confirmer que les modèles ont bien été téléchargés, lancez la commande :
-```bash
- ollama list
- ```
-
-Vous devriez obtenir un affichage similaire à l’exemple suivant :
-
-<img src="img/ollama_list.png" alt="ollama list">
 
 
 ### Les images Docker

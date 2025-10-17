@@ -148,7 +148,7 @@ Pour les orchestrateurs, voici quelques details supplémentaires :
 
 ### Installation de PyRIT
 
-Depuis votre terminal, placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
+Si vous n'avez pas déjà installé PyRIT, voici comment faire depuis votre terminal. Placez-vous dans le dossier où vous souhaitez installer le projet, par exemple **Documents**,
 puis exécutez la commande suivante pour cloner le dépôt et entrer automatiquement dans le dossier créé :
 
 ```bash

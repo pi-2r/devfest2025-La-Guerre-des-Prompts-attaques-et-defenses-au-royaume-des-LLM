@@ -41,7 +41,8 @@ La recommandation est d'utiliser **Garak** périodiquement ou avant une mise à 
 On peut ensuite mettre en place des guardrails plus spécifiques avec **NEMO Guardrails** (cf. [étape 13](step_13.md))).
 
 ### Installation de Garak
-Pour installer Garak, vous pouvez utiliser pip. Exécutez la commande suivante dans votre terminal :
+
+Si vous n'aviez pas déjà installé Garak, voilà comment faire depuis un terminal :
 
 
 <details>
@@ -97,15 +98,15 @@ Pour lancer un scan automatique d'un module en particulier comme `divergence`, i
 
 ```bash
 
-# Commande mise en illustration, ne pas la lancer
-python -m garak --model_type huggingface --model_name gpt2 --probes divergence
+# Commande mise en illustration, ne pas la lancer pour le codelab
+# python -m garak --model_type huggingface --model_name gpt2 --probes divergence
 ```
 
 Pour lancer une probe inactive comme `divergence.RepeatExtended`, il suffit d'exécuter la commande suivante :
 ```bash
 
-# Commande mise en illustration, ne pas la lancer
-python -m garak --model_type huggingface --model_name gpt2  --probes divergence.RepeatExtended
+# Commande mise en illustration, ne pas la lancer pour le codelab
+# python -m garak --model_type huggingface --model_name gpt2  --probes divergence.RepeatExtended
 ```
 
 ### Les Generators 
@@ -187,7 +188,7 @@ cp lab/Garak_test/my_custom_detection.py .venv/lib/python*/site-packages/garak/d
 cp lab/Garak_test/my_probe.py  .venv/lib/python*/site-packages/garak/probes  
 ```
 <br/>
-3 - Lancer les commande listant les detectors et probes disponibles pour voir si nos detectors et probes custom sont apparus :
+3 - Lister les detectors et probes disponibles pour vérifier que nos detectors et probes custom sont apparus :
 <br/>
 
 ```bash
@@ -195,7 +196,13 @@ cp lab/Garak_test/my_probe.py  .venv/lib/python*/site-packages/garak/probes
 python -m garak --list_detectors
 python -m garak --list_probes
 ```
-<br/>
+
+### Mise en pratique sur le chatbot 2 du Playground de Microsoft
+
+1 - Copier l'URL du bot 2 ainsi que le cookie de session (comme illustré plus haut) dans le fichier `rest_ai_playground_api.json`
+
+2 - Lancer la commande suivante pour tester la vulnérabilité du chatbot 2 avec la sonde custom `my_probe.MyHypotheticalResponse`. Garak lance directement les prompts en ligne de commandes et les réponses du chatbot sont affichées dans l'interface web.
+
 3 - Si oui, lancer la commande suivante pour tester la vulnérabilité du chatbot. Sinon, assurez-vous que le fichier sonde est copié au bon endroit :
 <br/>
 
@@ -204,12 +211,6 @@ python -m garak --list_probes
 # Commande type, à adapter selon la sonde et le chemin du fichier JSON. Le JSON rest_ai_playground_api.json est lui aussi à adapter.
 python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyHypotheticalResponse
 ```
-
-### Mise en pratique sur le chatbot 2 du Playground de Microsoft
-
-1 - setter le `rest_ai_playground_api.json` pour requêter le chatbot 2.
-
-2 - Lancer la commande suivante pour tester la vulnérabilité du chatbot 2 avec la sonde custom `my_probe.MyHypotheticalResponse`. Garak lance directement les prompts en ligne de commandes et les réponses du chatbot sont affichées dans l'interface web.
 
 *PS : n'hésitez pas à relancer une nouvelle conversation dans le playground entre chaque scan pour réinitialiser le contexte.*
 
@@ -221,7 +222,15 @@ python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --pro
 
 <img src="img/garak_report_on_successful_jailbreak_attempts.png" alt="garak-successful-jailbreak-chatbot-2-report" width="600" style="transition:0.3s;">
 
-Vous pouvez aussi tenter un scan sur le niveau supérieur du chatbot 2 : le chatbot 8 et modifier la sonde custom ou bien en tenter d'autres (une grandma ou un DAN custom).
+Si vous le souhaitez, vous pouvez tenter de nouveaux scans sur un niveau supérieur, par exemple le chatbot 8, avec la même probe ou une autre (une grandma ou un DAN custom).
+
+```bash
+
+# Commande type, à adapter selon la sonde et le chemin du fichier JSON. Le JSON rest_ai_playground_api.json est lui aussi à adapter.
+python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyGrandmaPassword
+python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyGrandmaSubstance
+python -m garak --target_type rest -G path/to/rest_ai_playground_api.json  --probes my_probe.MyDan_11_0
+```
 
 <img src="img/jailbreak_failed_by_custom_probe_chatbot_8.png" alt="jailbreak-failed-chatbot-9" width="600" style="transition:0.3s;">
 
