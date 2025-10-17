@@ -176,6 +176,9 @@ Voir documentation ici : https://docs.astral.sh/uv/getting-started/installation/
 En bref :
 ```bash
 pip install uv
+
+# Si vous n'avez pas pip
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### Installation de Garak
