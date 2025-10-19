@@ -1,5 +1,11 @@
 # [DevFest 2025] La Guerre des Prompts : attaques & défenses au royaume des LLM ⚔️🛡️🤖
 
+
+
+🚧 🇬🇧 🚧 English version available [here](https://github.com/pi-2r/devfest2025-La-Guerre-des-Prompts-attaques-et-defenses-au-royaume-des-LLM/tree/english-version) 🚧 🇬🇧 🚧
+
+
+
 Ce projet github est issue du workshop fait par [Benjamin Bernard](https://www.linkedin.com/in/benvii/), [Xavier Charef](https://www.linkedin.com/in/xavier-charef-6b843497/), [François Nollen](https://www.linkedin.com/in/francois-nollen/) et [Pierre Therrode](https://www.linkedin.com/in/ptherrode/), pour le Devfest 2025, avec comme sujet : [La Guerre des Prompts : attaques & défenses au royaume des LLM ⚔️🛡️🤖](https://devfest2025.gdgnantes.com/en/sessions/la_guerre_des_prompts___attaques___defenses_au_royaume_des_llm________)
 
 <img src="img/la-guerre-des-prompts-attaques-et-defenses-au-royaume-des-llm.png"  alt="La Guerre des Prompts : attaques & défenses au royaume des LLM">
