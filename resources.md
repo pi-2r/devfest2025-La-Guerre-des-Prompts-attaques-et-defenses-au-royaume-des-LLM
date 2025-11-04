@@ -144,17 +144,18 @@
 
 ### Prompt Injection
 
-| Titre / Description                           | Type                | Lien                                                                                                                                                     |
-|-----------------------------------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SecLists - LLM Testing                        | Liste de tests      | [https://github.com/danielmiessler/SecLists/tree/master/Ai/LLM_Testing](https://github.com/danielmiessler/SecLists/tree/master/Ai/LLM_Testing)           |
-| PIPE                                          | Projet GitHub       | [https://github.com/jthack/PIPE](https://github.com/jthack/PIPE)                                                                                         |
-| Adversarial Prompts - Chetan-k-p              | Dataset Huggingface | [https://huggingface.co/datasets/Chetan-k-p/adversarial-prompts](https://huggingface.co/datasets/Chetan-k-p/adversarial-prompts)                         |
-| Successful Adversarial Prompts - rishitchugh  | Dataset Huggingface | [https://huggingface.co/datasets/rishitchugh/successful_adversarial_prompts](https://huggingface.co/datasets/rishitchugh/successful_adversarial_prompts) |
-| Prompt Injection Cleaned Dataset - imoxto     | Dataset Huggingface | [https://huggingface.co/datasets/imoxto/prompt_injection_cleaned_dataset](https://huggingface.co/datasets/imoxto/prompt_injection_cleaned_dataset)       |
-| Datasets collection - Harelix                 | Dataset Huggingface | [https://huggingface.co/Harelix/datasets](https://huggingface.co/Harelix/datasets)                                                                       |
-| Prompt Injections - yanismiraoui              | Dataset Huggingface | [https://huggingface.co/datasets/yanismiraoui/prompt_injections](https://huggingface.co/datasets/yanismiraoui/prompt_injections)                         |
-| Hackaprompt Dataset - hackaprompt             | Dataset Huggingface | [https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset)                       |
-| Prompt Injections - deepset                   | Dataset Huggingface | [https://huggingface.co/datasets/deepset/prompt-injections](https://huggingface.co/datasets/deepset/prompt-injections)                                   |
+| Titre / Description                          | Type                | Lien                                                                                                                                                                                |
+|----------------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SecLists - LLM Testing                       | Liste de tests      | [https://github.com/danielmiessler/SecLists/tree/master/Ai/LLM_Testing](https://github.com/danielmiessler/SecLists/tree/master/Ai/LLM_Testing)                                      |
+| PIPE                                         | Projet GitHub       | [https://github.com/jthack/PIPE](https://github.com/jthack/PIPE)                                                                                                                    |
+| Adversarial Prompts - Chetan-k-p             | Dataset Huggingface | [https://huggingface.co/datasets/Chetan-k-p/adversarial-prompts](https://huggingface.co/datasets/Chetan-k-p/adversarial-prompts)                                                    |
+| Successful Adversarial Prompts - rishitchugh | Dataset Huggingface | [https://huggingface.co/datasets/rishitchugh/successful_adversarial_prompts](https://huggingface.co/datasets/rishitchugh/successful_adversarial_prompts)                            |
+| Prompt Injection Cleaned Dataset - imoxto    | Dataset Huggingface | [https://huggingface.co/datasets/imoxto/prompt_injection_cleaned_dataset](https://huggingface.co/datasets/imoxto/prompt_injection_cleaned_dataset)                                  |
+| Datasets collection - Harelix                | Dataset Huggingface | [https://huggingface.co/Harelix/datasets](https://huggingface.co/Harelix/datasets)                                                                                                  |
+| Prompt Injections - yanismiraoui             | Dataset Huggingface | [https://huggingface.co/datasets/yanismiraoui/prompt_injections](https://huggingface.co/datasets/yanismiraoui/prompt_injections)                                                    |
+| Hackaprompt Dataset - hackaprompt            | Dataset Huggingface | [https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset)                                                  |
+| Prompt Injections - deepset                  | Dataset Huggingface | [https://huggingface.co/datasets/deepset/prompt-injections](https://huggingface.co/datasets/deepset/prompt-injections)                                                              |
+| prompts.chat - f                             | Prompt Library      | [https://prompts.chat](https://prompts.chat) ([https://github.com/f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts))                                         |
 
 
 ### Jailbreak
