@@ -29,3 +29,8 @@ N'hésitez pas à nous laisser un commentaire sur [openfeedback](https://openfee
 
 
 Merci à toutes et à tous ! Et merci au Devfest Nantes 2025 de nous avoir permis d'animer ce codelab !
+
+
+## Merci à vous !! 
+
+[<img src="img/thanks.png" alt="thanks-devfest-2025">](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm)
