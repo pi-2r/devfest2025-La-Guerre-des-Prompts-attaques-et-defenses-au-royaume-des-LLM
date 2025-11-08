@@ -28,3 +28,8 @@ Please leave a comment on [openfeedback](https://openfeedback.io/devfestnantes20
 [![openfeedback-devfest-2025](img/fantastic.png)](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm)
 
 Thank you all! Special thanks to Devfest Nantes 2025 for the opportunity to run this codelab!
+
+
+## Thank you!!
+
+[<img src="img/thanks.png" alt="thanks-devfest-2025">](https://openfeedback.io/devfestnantes2025/2025-10-17/laguerredespromptsattaquesdefensesauroyaumedesllm)
