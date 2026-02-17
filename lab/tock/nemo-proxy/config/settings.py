@@ -21,7 +21,6 @@ CORS_METHODS = ["GET", "POST", "OPTIONS"]
 CORS_HEADERS = ["*"]
 
 # Optimized NeMo Guardrails settings
-USE_DIRECT_GUARDRAILS = os.getenv("USE_DIRECT_GUARDRAILS", "true").lower() == "true"
-USE_GUARDRAILS = os.getenv("USE_GUARDRAILS", "false").lower() == "true"
+USE_GUARDRAILS = os.getenv("USE_GUARDRAILS", "true").lower() == "true"
 # Utiliser le chemin vers la configuration montée dans le conteneur Docker
 GUARDRAILS_CONFIG_PATH = os.getenv("GUARDRAILS_CONFIG_PATH", "/app/nemo-guardrails-config")
