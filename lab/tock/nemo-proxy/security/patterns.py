@@ -21,6 +21,7 @@ FORBIDDEN_PATTERNS = [
     r"(act\s+as|pretend\s+to\s+be|simulate)\s+(a\s+hacker|an\s+attacker|a\s+malicious\s+user)",  # Role-playing as malicious entities
     r"(prompt\s+injection|prompt\s+hacking|meta\s+prompt|hidden\s+instruction)",  # Prompt injection or meta-prompting attempts
     r"(disregard|ignore|forget)\s+(all\s+)?(previous\s+instructions|all\s+previous\s+rules)",  # Attempts to reset or ignore instructions
+    r"ignore\s+all\s+instruction",  # Catches "IGNORE ALL INSTRUCTION" variations
     r"(reveal\s+your\s+training\s+data|show\s+internal\s+information|disclose\s+confidential\s+details)",  # Requests for internal information
     r"(create\s+a\s+virus|write\s+a\s+malware|generate\s+a\s+trojan)",  # Requests for malicious code creation
     r"(illegal\s+activity|criminal\s+act|unlawful\s+behavior)",  # General illegal activity mentions

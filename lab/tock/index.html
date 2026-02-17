@@ -392,12 +392,11 @@
                     meta.className = 'meta';
                     let metaHtml = item.response.meta;
                     // Mise en forme spéciale pour Guardrails: blocked
-                    if (item.response.meta.includes('Guardrails: blocked')) {
-                        // Remplacer Guardrails: blocked par une version stylée
-                        meta.innerHTML = item.response.meta.replace(
-                            /Guardrails: blocked/g,
-                            '<span style="color:#c00;font-weight:bold;">Guardrails: blocked</span>'
-                        );
+                    if (item.response.meta.includes('Guardrails: blocked') || item.response.meta.includes('Jailbreak: blocked')) {
+                        // Remplacer Guardrails: blocked et Jailbreak: blocked par une version stylée
+                        meta.innerHTML = item.response.meta
+                            .replace(/Guardrails: blocked/g, '<span style="color:#c00;font-weight:bold;">Guardrails: blocked</span>')
+                            .replace(/Jailbreak: blocked/g, '<span style="color:#c00;font-weight:bold;">Jailbreak: blocked</span>');
                     } else {
                         meta.textContent = item.response.meta;
                     }
